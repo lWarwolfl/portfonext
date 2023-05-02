@@ -1,0 +1,89 @@
+//Imported styles
+@import "./mixins.scss";
+@import "./globals.scss";
+
+//Header styles desktop
+.header {
+	@include flex-row;
+	align-items: center;
+	justify-content: flex-start;
+	$height: 40px;
+	width: 100%;
+	height: $height;
+	.name {
+		@include flex-row;
+		align-items: center;
+		justify-content: flex-start;
+		.logo {
+			@include gradient-animation-effect;
+			@include flex-row;
+			cursor: pointer;
+			align-items: center;
+			justify-content: center;
+			height: $height;
+			aspect-ratio: 1 / 1;
+			border-radius: $height/2;
+			margin-right: 8px;
+			padding-top: 5px;
+			transition: $transition-f;
+			box-shadow: 0 0px 0px var(--primary-color-transparent);
+			.image {
+				@include background-contain;
+				height: $height/1.5;
+				aspect-ratio: 1 / 1;
+				background-image: url("../public/image/png/logo.png");
+				transition: $transition-f;
+			}
+		}
+		.logo:hover {
+			@include gradient-animation-effect-hover;
+			box-shadow: 0 0 30px var(--primary-color-transparent);
+		}
+		.text {
+			font-size: $font-size-el;
+			font-weight: $font-weight-bold;
+			color: var(--font-color-primary);
+		}
+	}
+	.navbar {
+		@include flex-row;
+		align-items: center;
+		justify-content: center;
+		padding: 20px 0;
+		.link {
+			$padding: 20px;
+			margin-right: -10px;
+			height: $height;
+			border-radius: $height/2;
+			padding-right: $padding;
+			padding-left: $padding;
+			color: var(--font-color-primary);
+			font-weight: $font-weight-medium;
+			font-size: $font-size-m;
+			text-transform: unset;
+		}
+		.link:last-child {
+			margin-right: 0;
+		}
+	}
+	.button {
+		$padding: 20px;
+		margin-left: auto;
+		height: $height;
+		border-radius: $height/2;
+		padding-right: $padding;
+		padding-left: $padding;
+		color: var(--font-color-primary);
+		font-weight: $font-weight-medium;
+		font-size: $font-size-m;
+		text-transform: unset;
+		box-shadow: 0 0px 0px var(--primary-color-transparent);
+		transition: $transition-f;
+	}
+	.button:hover {
+		box-shadow: 0 0 30px var(--primary-color-transparent);
+	}
+	.button::before {
+		@include masked-button;
+	}
+}

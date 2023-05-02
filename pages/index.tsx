@@ -1,21 +1,16 @@
+import Head from 'next/head';
 import * as React from 'react';
-import Container from '@mui/material/Container';
-// import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 
 export default function Home() {
   return (
-    <Container maxWidth="lg">
-      <Box
-        sx={{
-          my: 4,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-      </Box>
-    </Container>
-  );
+		<>
+			<Head>
+				<title>Sina Kheiry - React.js developer and UI/UX designer</title>
+				<meta name="viewport" content="initial-scale=1, width=device-width" />
+      </Head>
+      <main>
+        
+      </main>
+		</>
+	);
 }

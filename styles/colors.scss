@@ -1,0 +1,25 @@
+:root {
+	--gradient-main: linear-gradient(90deg, #00dbde 0%, #B721FF 150%);
+	--primary-color: #00dbde;
+	--primary-color-light: #48dadc;
+	--primary-color-transparent: #00dade5a;
+	--secondary-color: #B721FF;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--body-color: #f1f1f1;
+		--font-color-primary: #081f32;
+		--font-color-secondary: #474766;
+		--outline-color: #36364d;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--body-color: #0d1117;
+		--font-color-primary: #e1daee;
+		--font-color-secondary: #948f9e;
+		--outline-color: #beb8ca;
+	}
+}
