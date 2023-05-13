@@ -41,6 +41,9 @@ export const font = localFont({
 
 // Create a theme instance.
 const theme = createTheme({
+	palette: {
+		mode: "dark",
+	},
 	typography: {
 		fontFamily: font.style.fontFamily,
 		h1: {

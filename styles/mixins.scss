@@ -1,3 +1,11 @@
+@import './globals.scss';
+
+@mixin width-fix {
+    max-width: $max-width-global;
+	padding: $padding-global;
+	margin: 0 auto;
+}
+
 @mixin flex-row {
     display: flex;
     flex-direction: row;
@@ -39,7 +47,7 @@
     right:0;
     bottom:0;
     padding: 1.5px;
-    border-radius: 20px;
+    border-radius: $border-radius-global;
     background: var(--gradient-main);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);

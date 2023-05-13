@@ -3,10 +3,6 @@
 @import "./mixins.scss";
 @import "./globals.scss";
 
-//Global variables
-$max-width-global: 1300px;
-$padding-global: 20px;
-
 //Global styles
 * {
 	box-sizing: border-box;
@@ -15,11 +11,13 @@ $padding-global: 20px;
 }
 
 #__next {
+	height: 100%;
+}
+
+.width-fix {
 	max-width: $max-width-global;
 	padding: $padding-global;
 	margin: 0 auto;
-	padding: 20px;
-	height: 100%;
 }
 
 html,
