@@ -7,9 +7,6 @@
 	position: relative;
 	width: 100%;
 	.header {
-		position: absolute;
-		top: 0;
-		left: 0;
 		$height: 40px;
 		width: 100%;
 		.fix {
@@ -99,15 +96,16 @@
 		}
 	}
 
-	.parallax {
-		background-image: url("../public/image/jpg/hero.jpg");
+	.planets {
+		position: absolute;
+		background-image: url("../public/image/png/hero.png");
 		width: 100%;
 		height: 70vh;
-		background-attachment: fixed;
-		background-position: 50% 80%;
+		// background-attachment: fixed;
+		background-position: top;
 		background-repeat: no-repeat;
 		background-size: cover;
-		opacity: 0.35;
+		opacity: 0.8;
 		z-index: -1;
 	}
 }

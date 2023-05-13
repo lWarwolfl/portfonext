@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 export default function Header() {
 	return (
 		<div className={styles.container}>
-			<div className={styles.parallax}></div>
+			<div className={styles.planets}></div>
 			<div className={styles.header}>
 				<div className={styles.fix}>
 					<div className={styles.name}>

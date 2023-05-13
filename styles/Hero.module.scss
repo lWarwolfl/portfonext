@@ -1,0 +1,35 @@
+//Imported styles
+@import "./mixins.scss";
+@import "./globals.scss";
+
+//Header styles desktop
+.container {
+	@include flex-row-inline;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+	.intro {
+		@include flex-row-inline;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		margin: 200px auto;
+		.big {
+			@include gradient-text;
+			// color: var(--font-color-primary);
+			font-size: 4em;
+			font-weight: $font-weight-black;
+			text-transform: uppercase;
+		}
+		.small {
+			width: 100%;
+			color: var(--font-color-primary);
+			font-size: $font-size-l;
+			font-weight: $font-weight-bold;
+			text-align: justify;
+			text-align-last: justify;
+			text-transform: uppercase;
+		}
+	}
+}

@@ -36,6 +36,11 @@ export const font = localFont({
 			weight: "700",
 			style: "normal",
 		},
+		{
+			path: "../public/fonts/Mona-Sans-Black.woff2",
+			weight: "800",
+			style: "normal",
+		},
 	],
 });
 
