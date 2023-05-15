@@ -1,4 +1,3 @@
-import DescriptionCard from "@/components/DescriptionCard";
 import Hero from "@/components/Hero";
 import Particle from "@/components/Particle";
 import Head from "next/head";
@@ -13,10 +12,6 @@ export default function Home() {
 			</Head>
 			<main className="width-fix">
 				<Hero />
-				{/* <DescriptionCard />
-				<DescriptionCard />
-				<DescriptionCard />
-				<DescriptionCard /> */}
 			</main>
 			<Particle />
 		</>

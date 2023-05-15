@@ -3,8 +3,8 @@ import styles from "../styles/Header.module.scss";
 import { Button } from "@mui/material";
 import Image from "next/image";
 import hollowplanets from "../public/image/png/hollowplanets.png";
-import bigplanet1 from "../public/image/png/bigplanet1.png";
-import smallplanet1 from "../public/image/png/smallplanet1.png";
+import bigplanet1 from "../public/image/svg/bigplanet1.svg";
+import smallplanet1 from "../public/image/svg/smallplanet1.svg";
 
 export default function Header() {
 	return (
