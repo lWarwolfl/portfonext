@@ -96,16 +96,80 @@
 		}
 	}
 
-	.planets {
+	.hollowplanets {
+		@include background-cover;
 		position: absolute;
-		background-image: url("../public/image/png/hero.png");
 		width: 100%;
-		height: 70vh;
-		// background-attachment: fixed;
-		background-position: top;
-		background-repeat: no-repeat;
-		background-size: cover;
 		opacity: 0.8;
 		z-index: -1;
 	}
+
+	.bigplanet {
+		@include background-contain;
+		$size: 1200px;
+		position: absolute;
+		width: $size;
+		height: $size;
+		left: -140px;
+		top: -680px;
+		opacity: 0.8;
+		z-index: -1;
+		animation: planet-move 400s linear infinite;
+	}
+
+	.smallplanet {
+		@include background-contain;
+		$size: 250px;
+		position: absolute;
+		top: 180px;
+		right: 130px;
+		aspect-ratio: 1 / 1;
+		width: $size;
+		height: $size;
+		opacity: 0.8;
+		z-index: -1;
+
+		animation: planet-move 70s linear infinite;
+	}
 }
+
+//animation
+@keyframes planet-move {
+  0% {
+    transform: translate(0, 30px) rotate(0deg);
+  }
+  9.09% {
+    transform: translate(25.98px, 19.85px) rotate(40deg);
+  }
+  18.18% {
+    transform: translate(44.29px, 7.36px) rotate(80deg);
+  }
+  27.27% {
+    transform: translate(51.96px, -15.04px) rotate(120deg);
+  }
+  36.36% {
+    transform: translate(47.54px, -35.85px) rotate(160deg);
+  }
+  45.45% {
+    transform: translate(31.97px, -50.88px) rotate(200deg);
+  }
+  54.54% {
+    transform: translate(8.66px, -53.28px) rotate(240deg);
+  }
+  63.63% {
+    transform: translate(-15.04px, -42.16px) rotate(280deg);
+  }
+  72.72% {
+    transform: translate(-29.49px, -21.35px) rotate(320deg);
+  }
+  81.81% {
+    transform: translate(-29.49px, 9.21px) rotate(360deg);
+  }
+  90.9% {
+    transform: translate(-17.78px, 26.51px) rotate(400deg);
+  }
+  100% {
+    transform: translate(0, 30px) rotate(440deg);
+  }
+}
+

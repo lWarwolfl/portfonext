@@ -1,5 +1,6 @@
 import DescriptionCard from "@/components/DescriptionCard";
 import Hero from "@/components/Hero";
+import Particle from "@/components/Particle";
 import Head from "next/head";
 import * as React from "react";
 
@@ -17,6 +18,7 @@ export default function Home() {
 				<DescriptionCard />
 				<DescriptionCard /> */}
 			</main>
+			<Particle />
 		</>
 	);
 }

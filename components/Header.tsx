@@ -1,17 +1,41 @@
-import React from 'react'
-import styles from "../styles/Header.module.scss"
-import { Button } from '@mui/material';
+import React from "react";
+import styles from "../styles/Header.module.scss";
+import { Button } from "@mui/material";
+import Image from "next/image";
+import hollowplanets from "../public/image/png/hollowplanets.png";
+import bigplanet1 from "../public/image/png/bigplanet1.png";
+import smallplanet1 from "../public/image/png/smallplanet1.png";
 
 export default function Header() {
 	return (
 		<div className={styles.container}>
-			<div className={styles.planets}></div>
+			<Image
+				src={hollowplanets}
+				alt="Hollow Planets"
+				quality={100}
+				priority={true}
+				className={styles.hollowplanets}
+			/>
+			<Image
+				src={bigplanet1}
+				alt="Big Planet 1"
+				quality={100}
+				priority={true}
+				className={styles.bigplanet}
+			/>
+			<Image
+				src={smallplanet1}
+				alt="Small Planet 1"
+				quality={100}
+				priority={true}
+				className={styles.smallplanet}
+			/>
 			<div className={styles.header}>
 				<div className={styles.fix}>
 					<div className={styles.name}>
-						<div className={styles.logo}>
+						<a className={styles.logo} href="#hero">
 							<div className={styles.image}></div>
-						</div>
+						</a>
 						{/* <div className={styles.text}>Mohamad Sina Kheiry</div> */}
 					</div>
 					<div className={styles.navbar}>
