@@ -106,12 +106,12 @@
 
 	.bigplanet {
 		@include background-contain;
-		$size: 800px;
+		$size: 1200px;
 		position: absolute;
 		width: $size;
 		height: $size;
-		left: 50px;
-		top: -550px;
+		left: -140px;
+		top: -680px;
 		opacity: 0.8;
 		z-index: -1;
 		animation: planet-move 400s linear infinite;
