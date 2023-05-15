@@ -8,7 +8,7 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Sina Kheiry - React.js developer and UI/UX designer</title>
+				<title>Sina Kheiri - React.js developer and UI/UX designer</title>
 				<meta name="viewport" content="initial-scale=1, width=device-width" />
 			</Head>
 			<main className="width-fix">
