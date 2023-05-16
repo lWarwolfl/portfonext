@@ -20,7 +20,7 @@ export default function StyledCard({ id, content }: Props) {
 			const ySkew =
 				((mouseY - containerRect.height / 2) / (containerRect.height / 2)) * 2;
 			containerRef.current.style.transform = `perspective(1000px) rotateX(${ySkew}deg) rotateY(${-xSkew}deg)`;
-			setGlowPosition({ x: mouseX, y: mouseY });
+			setGlowPosition({ x: mouseX - 100, y: mouseY - 100 });
 		}
 	}
 
