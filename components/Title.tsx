@@ -7,5 +7,9 @@ type Props = {
 };
 
 export default function Title({ title, description }: Props) {
-	return <h1 className={styles.container}></h1>;
+	return (
+		<h1 className={styles.title}>
+			`${title} `<span className={styles.accent}>{description}</span>
+		</h1>
+	);
 }
