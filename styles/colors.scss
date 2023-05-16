@@ -27,8 +27,8 @@
 @media (prefers-color-scheme: light) {
 	:root {
 		--body-color: #f1f1f1;
-		--contrast-color: #1a1a1a;
-		--transparent-background: hsla(0, 0%, 20%, 0.1);
+		--contrast-color: #c4c4c4;
+		--transparent-background: hsla(0, 0%, 20%, 0.15);
 		--font-color-primary: #081f32;
 		--font-color-secondary: #474766;
 		--outline-color: #36364d;
@@ -38,8 +38,8 @@
 @media (prefers-color-scheme: dark) {
 	:root {
 		--body-color: #0d1117;
-		--contrast-color: #e6e6e6;
-		--transparent-background: hsla(0, 0%, 80%, 0.1);
+		--contrast-color: #5a5a5a;
+		--transparent-background: hsla(0, 0%, 80%, 0.15);
 		--font-color-primary: #f1f1f1;
 		--font-color-secondary: #dddddd;
 		--outline-color: #beb8ca;

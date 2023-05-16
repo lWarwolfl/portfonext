@@ -4,9 +4,31 @@
 
 //Styled Card styles desktop
 .container {
-	@include flex-row-inline;
-	align-items: center;
-	justify-content: center;
+	@include flex-row;
 	position: relative;
 	width: 100%;
+	padding:60px 20px;
+	border: 1px solid var(--contrast-color);
+	background-color: var(--transparent-background);
+	border-radius: $border-radius-global;
+	overflow: hidden;
+	.glow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		$size: 200px;
+		width: $size;
+		height: $size;
+		background-color: var(--accent-color);
+		filter: blur(100px);
+		transition-property: opacity;
+		transition-duration: $transition-f;
+		opacity: 0;
+	}
+}
+
+.container:hover {
+	.glow {
+		opacity: 0.9;
+	}
 }

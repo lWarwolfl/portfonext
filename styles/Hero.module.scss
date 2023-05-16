@@ -11,13 +11,13 @@
 	position: relative;
 	width: 100%;
 	.intro {
-		@include flex-row-inline;
+		@include flex-column;
 		align-items: center;
 		justify-content: center;
-		flex-direction: column;
-		margin: 200px auto;
+		margin: 200px auto 250px;
 		.big {
 			@include gradient-text-loop;
+			width: 100%;
 			font-size: 3.5em;
 			font-weight: $font-weight-black;
 			text-transform: uppercase;
@@ -27,6 +27,7 @@
 			animation: gradient-animation 50s linear infinite;
 		}
 		.small {
+			display: inline-block;
 			width: 100%;
 			margin-top: -15px;
 			color: var(--font-color-primary);
@@ -45,9 +46,14 @@
 
 @media screen and (max-width: 800px) {
 	.container {
+		justify-content: flex-start;
 		.intro {
+			margin: 10px auto 250px;
 			.small {
-				font-size: $font-size-l;
+				margin-top: 0;
+				text-align: left;
+				text-align-last: left;
+				font-size: $font-size-xxxxl;
 			}
 		}
 	}
@@ -57,7 +63,10 @@
 	.container {
 		.intro {
 			.small {
-				font-size: $font-size-m;
+				font-size: $font-size-xxxl;
+			}
+			.big {
+				font-size: 3.2em;
 			}
 		}
 	}

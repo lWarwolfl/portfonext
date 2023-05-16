@@ -144,17 +144,24 @@
 			.navbar {
 				display: none;
 			}
+			.button {
+				font-weight: $font-weight-bold;
+			}
 		}
+
 		.bigplanet {
+			display: none;
 			$size: 700px;
 			width: $size;
 			height: $size;
 			top: -400px;
 		}
+
 		.smallplanet {
-			top: 450px;
+			top: 250px;
 			right: 30%;
 		}
+
 		.hollowplanets {
 			display: none;
 		}

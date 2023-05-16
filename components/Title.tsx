@@ -9,7 +9,7 @@ type Props = {
 export default function Title({ title, description }: Props) {
 	return (
 		<h1 className={styles.title}>
-			`${title} `<span className={styles.accent}>{description}</span>
+			<span className={styles.accent}>{title}</span> {description}
 		</h1>
 	);
 }
