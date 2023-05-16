@@ -51,9 +51,7 @@
 			margin: 10px auto 250px;
 			.small {
 				margin-top: 0;
-				text-align: left;
-				text-align-last: left;
-				font-size: $font-size-xxxxl;
+				font-size: $font-size-l;
 			}
 		}
 	}
@@ -63,10 +61,7 @@
 	.container {
 		.intro {
 			.small {
-				font-size: $font-size-xxxl;
-			}
-			.big {
-				font-size: 3.2em;
+				font-size: $font-size-em;
 			}
 		}
 	}

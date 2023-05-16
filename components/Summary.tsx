@@ -7,7 +7,7 @@ export default function Summary() {
 	const content = <div></div>;
 	return (
 		<div id="summary" className={styles.container}>
-			<Title title="Summary" description="so you can know me better" />
+			<Title title="Summary" description="for you to know me" />
 			<StyledCard id="summarycard" content={content} />
 		</div>
 	);
