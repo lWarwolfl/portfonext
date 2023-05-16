@@ -51,21 +51,6 @@ const theme = createTheme({
 	},
 	typography: {
 		fontFamily: font.style.fontFamily,
-		h1: {
-			fontWeight: 600,
-		},
-		h2: {
-			fontWeight: 500,
-		},
-		h3: {
-			fontWeight: 500,
-		},
-		h4: {
-			fontWeight: 500,
-		},
-		h6: {
-			fontWeight: 500,
-		},
 	},
 });
 

@@ -1,0 +1,15 @@
+//Imported styles
+@import "./mixins.scss";
+@import "./globals.scss";
+
+//Styled Card styles desktop
+.title {
+	@include flex-row-inline;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+	.accent {
+		
+	}
+}

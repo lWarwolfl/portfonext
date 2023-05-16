@@ -2,9 +2,11 @@
 @import "./mixins.scss";
 @import "./globals.scss";
 
-//Summary styles desktop
+//Styled Card styles desktop
 .container {
-	@include flex-column;
+	@include flex-row-inline;
+	align-items: center;
+	justify-content: center;
 	position: relative;
 	width: 100%;
 }

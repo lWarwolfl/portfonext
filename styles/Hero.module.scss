@@ -1,8 +1,9 @@
 //Imported styles
+@import "./animations.scss";
 @import "./mixins.scss";
 @import "./globals.scss";
 
-//Header styles desktop
+//Hero styles desktop
 .container {
 	@include flex-row-inline;
 	align-items: center;
@@ -16,20 +17,48 @@
 		flex-direction: column;
 		margin: 200px auto;
 		.big {
-			@include gradient-text;
-			// color: var(--font-color-primary);
-			font-size: 4em;
+			@include gradient-text-loop;
+			font-size: 3.5em;
 			font-weight: $font-weight-black;
 			text-transform: uppercase;
+			background-size: 400% 100%;
+			background-position: 0% center;
+
+			animation: gradient-animation 50s linear infinite;
 		}
 		.small {
 			width: 100%;
+			margin-top: -15px;
 			color: var(--font-color-primary);
-			font-size: $font-size-l;
-			font-weight: $font-weight-bold;
+			font-size: $font-size-xl;
+			font-weight: $font-weight-black;
 			text-align: justify;
 			text-align-last: justify;
-			text-transform: uppercase;
+			text-transform: capitalize;
+			.accent {
+				@include gradient-text-accent;
+				display: inline-block;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.container {
+		.intro {
+			.small {
+				font-size: $font-size-l;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.container {
+		.intro {
+			.small {
+				font-size: $font-size-m;
+			}
 		}
 	}
 }

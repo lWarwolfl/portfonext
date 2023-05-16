@@ -3,8 +3,8 @@ import styles from "../styles/Header.module.scss";
 import { Button } from "@mui/material";
 import Image from "next/image";
 import hollowplanets from "../public/image/png/hollowplanets.png";
-import bigplanet1 from "../public/image/svg/bigplanet1.svg";
-import smallplanet1 from "../public/image/svg/smallplanet1.svg";
+import planet1 from "../public/image/svg/planet1.svg";
+import planet2 from "../public/image/svg/planet2.svg";
 
 export default function Header() {
 	return (
@@ -12,22 +12,17 @@ export default function Header() {
 			<Image
 				src={hollowplanets}
 				alt="Hollow Planets"
-				quality={100}
-				priority={true}
 				className={styles.hollowplanets}
 			/>
 			<Image
-				src={bigplanet1}
-				alt="Big Planet 1"
-				quality={100}
+				src={planet2}
+				alt="Big Planet"
 				priority={true}
 				className={styles.bigplanet}
 			/>
 			<Image
-				src={smallplanet1}
-				alt="Small Planet 1"
-				quality={100}
-				priority={true}
+				src={planet1}
+				alt="Small Planet"
 				className={styles.smallplanet}
 			/>
 			<div className={styles.header}>

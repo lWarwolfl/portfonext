@@ -1,9 +1,27 @@
 :root {
-	--gradient-main: linear-gradient(90deg, #00fbff 0%, #B721FF 100%);
-	--primary-color: #00dbde;
-	--primary-color-light: #48dadc;
+	--gradient-main: linear-gradient(
+		90deg,
+		#00fbff 0%,
+		#257cff 40%,
+		#b721ff 100%
+	);
+	--gradient-accent: linear-gradient(
+		90deg,
+		#40c463 0%,
+		#6afb90 100%
+	);
+	--gradient-main-loop: linear-gradient(
+		90deg,
+		#b721ff 0%,
+		#257cff 33%,
+		#00fbff 66%,
+		#b721ff 100%
+	);
+	--primary-color: #227bff;
+	--primary-color-light: #5d9eff;
 	--primary-color-transparent: #00dade5a;
-	--secondary-color: #B721FF;
+	--secondary-color: #dd7df7;
+	--accent-color: #40c463;
 }
 
 @media (prefers-color-scheme: light) {
@@ -23,7 +41,7 @@
 		--contrast-color: #e6e6e6;
 		--transparent-background: hsla(0, 0%, 80%, 0.1);
 		--font-color-primary: #f1f1f1;
-		--font-color-secondary: #eeeeee;
+		--font-color-secondary: #dddddd;
 		--outline-color: #beb8ca;
 	}
 }
