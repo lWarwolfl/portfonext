@@ -3,17 +3,13 @@ import Image from "next/image";
 import styles from "../styles/Summary.module.scss";
 import StyledCard from "./StyledCard";
 import Title from "./Title";
-import photo from "../public/image/jpg/photo.jpg";
+import planet3 from "../public/image/svg/planet3.svg";
 
 export default function Summary() {
 	const content = (
 		<>
 			<div className={styles.splitimage}>
-				<Image
-					src={photo}
-					alt="My photo"
-					className={styles.image}
-				/>
+				<Image src={planet3} alt="My photo" className={styles.image} />
 			</div>
 			<div className={styles.splittext}>
 				<div className={styles.title}>Sina Kheiri</div>
