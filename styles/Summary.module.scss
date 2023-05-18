@@ -1,4 +1,5 @@
 //Imported styles
+@import "./animations.scss";
 @import "./mixins.scss";
 @import "./globals.scss";
 
@@ -9,6 +10,57 @@
 	width: 100%;
 }
 
-.split {
-	
+.splitimage {
+	@include flex-column;
+	margin-right: 30px;
+	.image {
+		@include background-cover;
+		width: 200px;
+		height: 200px;
+		border-radius: 150px;
+		background-image: url("../public/image/jpg/photo.jpg");
+		// margin-bottom: 20px;
+	}
+	// .socialcontainer {
+	// 	.socialbuttoncontainer {
+	// 		.icon {
+
+	// 		}
+	// 		.socialbutton{
+
+	// 		}
+	// 		.bar {
+
+	// 		}
+	// 	}
+	// }
+}
+
+.splittext {
+	@include flex-column;
+	flex: 1;
+	.title {
+		@include gradient-text-loop;
+		margin-bottom: 10px;
+		font-size: $font-size-xxl;
+		font-weight: $font-weight-black;
+		text-transform: capitalize;
+
+		animation: gradient-animation 50s linear infinite;
+	}
+	.description {
+		width: 100%;
+		color: var(--font-color-primary);
+		font-size: $font-size-em;
+		font-weight: $font-weight-regular;
+		text-align: justify;
+		text-align-last: left;
+		text-transform: capitalize;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.splitimage {
+		margin-right: 0;
+	}
 }

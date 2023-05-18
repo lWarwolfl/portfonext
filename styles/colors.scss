@@ -5,10 +5,25 @@
 		#257cff 40%,
 		#b721ff 100%
 	);
-	--gradient-accent: linear-gradient(
+	--gradient-green: linear-gradient(
 		90deg,
 		#40c463 0%,
 		#6afb90 100%
+	);
+	--gradient-red: linear-gradient(
+		90deg,
+		#c44040 0%,
+		#fb6a6a 100%
+	);
+	--gradient-yellow: linear-gradient(
+		90deg,
+		#d4db40 0%,
+		#e3fb6a 100%
+	);
+	--gradient-orange: linear-gradient(
+		90deg,
+		#e2812c 0%,
+		#fbbe6a 100%
 	);
 	--gradient-main-loop: linear-gradient(
 		90deg,
@@ -41,7 +56,7 @@
 		--contrast-color: #5a5a5a;
 		--transparent-background: hsla(0, 0%, 80%, 0.15);
 		--font-color-primary: #f1f1f1;
-		--font-color-secondary: #dddddd;
+		--font-color-secondary: #bcbcbc;
 		--outline-color: #beb8ca;
 	}
 }

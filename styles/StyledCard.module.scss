@@ -5,6 +5,7 @@
 //Styled Card styles desktop
 .container {
 	@include flex-row;
+	flex-wrap: wrap;
 	position: relative;
 	width: 100%;
 	padding: 20px;
@@ -17,7 +18,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		$size: 200px;
+		$size: 400px;
 		width: $size;
 		height: $size;
 		background-color: var(--accent-color);
@@ -25,11 +26,12 @@
 		transition-property: opacity;
 		transition-duration: $transition-f;
 		opacity: 0;
+		z-index: -2;
 	}
 }
 
 .container:hover {
 	.glow {
-		opacity: 0.75;
+		opacity: 0.4;
 	}
 }
