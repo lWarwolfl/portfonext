@@ -78,14 +78,11 @@
 			font-size: $font-size-s;
 			text-transform: unset;
 			background-color: var(--transparent-background);
-			// border: 1.5px solid var(--contrast-color);
 			box-shadow: 0 0px 0px var(--primary-color-transparent);
 			transition: $transition-f;
-			// opacity: 1;
 		}
 		.button:hover {
 			box-shadow: 0 0 30px var(--primary-color-transparent);
-			// opacity: 0.8;
 		}
 		.button::before {
 			@include gradient-border;

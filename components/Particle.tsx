@@ -1,33 +1,39 @@
 import { useCallback } from "react";
+import Particles from "react-particles";
 import type { Container, Engine } from "tsparticles-engine";
-import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import styles from "../styles/Particle.module.scss";
 
 export default function Particle() {
-	const particlesInit = useCallback(async (engine: Engine) => {// you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
+	const particlesInit = useCallback(async (engine: Engine) => {
+		// you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
 		// this loads the tsparticles package bundle, it's the easiest method for getting everything ready
 		// starting from v2 you can add only the features you need reducing the bundle size
 		await loadFull(engine);
 	}, []);
 
 	const particlesLoaded = useCallback(
-		async (container: Container | undefined) => {
-			
-		},
+		async (container: Container | undefined) => {},
 		[]
 	);
 	return (
 		<Particles
 			id="tsparticles"
+			className={styles.container}
+			canvasClassName={styles.canvas}
 			init={particlesInit}
 			loaded={particlesLoaded}
 			options={{
+				autoPlay: true,
 				background: {
 					color: {
 						value: "transparent",
 					},
 				},
-				fpsLimit: 60,
+				fullScreen: {
+					enable: false,
+				},
+				fpsLimit: 120,
 				particles: {
 					color: {
 						value: ["#00fbff", "#B721FF", "#40c463"],
@@ -68,8 +74,7 @@ export default function Particle() {
 						},
 					},
 				},
-				detectRetina: true,
 			}}
 		/>
 	);
-};
+}

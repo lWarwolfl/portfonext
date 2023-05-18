@@ -20,15 +20,11 @@ export default function Header() {
 				priority={true}
 				className={styles.bigplanet}
 			/>
-			<Image
-				src={planet1}
-				alt="Small Planet"
-				className={styles.smallplanet}
-			/>
+			<Image src={planet1} alt="Small Planet" className={styles.smallplanet} />
 			<div className={styles.header}>
 				<div className={styles.fix}>
 					<div className={styles.name}>
-						<a className={styles.logo} href="#hero">
+						<a className={styles.logo} href="#__next">
 							<div className={styles.image}></div>
 						</a>
 						{/* <div className={styles.text}>Mohamad Sina Kheiry</div> */}

@@ -1,0 +1,17 @@
+//Imported styles
+@import "./mixins.scss";
+@import "./globals.scss";
+
+//Particle styles desktop
+.container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -2;
+	.canvas {
+		position: relative;
+		z-index: -2;
+	}
+}

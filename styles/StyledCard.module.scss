@@ -7,11 +7,12 @@
 	@include flex-row;
 	position: relative;
 	width: 100%;
-	padding:60px 20px;
+	padding: 20px;
 	border: 1px solid var(--contrast-color);
 	background-color: var(--transparent-background);
 	border-radius: $border-radius-global;
 	overflow: hidden;
+	transition: $transition-vf;
 	.glow {
 		position: absolute;
 		top: 0;
@@ -29,6 +30,6 @@
 
 .container:hover {
 	.glow {
-		opacity: 0.9;
+		opacity: 0.75;
 	}
 }
