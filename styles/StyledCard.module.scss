@@ -8,9 +8,9 @@
 	flex-wrap: wrap;
 	position: relative;
 	width: 100%;
-	padding: 20px;
+	padding: 50px;
 	border: 1px solid var(--contrast-color);
-	background-color: var(--transparent-background);
+	background-color: var(--card-background);
 	border-radius: $border-radius-global;
 	overflow: hidden;
 	transition: $transition-vf;
@@ -18,12 +18,16 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		$size: 400px;
+		$size: 650px;
 		width: $size;
 		height: $size;
+		filter: blur(180px);
+		border-radius: 300px;
+		opacity: 0;
+		transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+		mix-blend-mode: soft-light;
+		will-change: transform;
 		background-color: var(--accent-color);
-		filter: blur(100px);
-		transition-property: opacity;
 		transition-duration: $transition-f;
 		opacity: 0;
 		z-index: -2;
@@ -32,6 +36,18 @@
 
 .container:hover {
 	.glow {
-		opacity: 0.4;
+		opacity: 0.85;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.container {
+		padding: 20px;
+	}
+
+	.container:hover {
+		.glow {
+			opacity: 0;
+		}
 	}
 }

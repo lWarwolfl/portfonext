@@ -22,7 +22,7 @@ export const font = localFont({
 			style: "normal",
 		},
 		{
-			path: "../public/fonts/Mona-Sans-Medium.woff2",
+			path: "../public/fonts/Mona-Sans-SemiBold.woff2",
 			weight: "500",
 			style: "normal",
 		},

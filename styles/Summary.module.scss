@@ -12,13 +12,16 @@
 
 .splitimage {
 	@include flex-column;
+	align-items: center;
+	justify-content: center;
 	margin-right: 30px;
+	max-width: 230px;
+	min-width: 200px;
 	.image {
 		@include background-cover;
-		width: 200px;
-		height: 200px;
-		border-radius: 150px;
-		// margin-bottom: 20px;
+		width: 100%;
+		height: auto;
+		border-radius: 100%;
 	}
 	// .socialcontainer {
 	// 	.socialbuttoncontainer {
@@ -38,28 +41,30 @@
 .splittext {
 	@include flex-column;
 	flex: 1;
-	.title {
-		@include gradient-text-loop;
-		margin-bottom: 10px;
-		font-size: $font-size-xxl;
-		font-weight: $font-weight-black;
-		text-transform: capitalize;
-
-		animation: gradient-animation 50s linear infinite;
-	}
+	min-width: 300px;
 	.description {
 		width: 100%;
-		color: var(--font-color-primary);
-		font-size: $font-size-em;
-		font-weight: $font-weight-regular;
+		color: var(--font-color-secondary);
+		font-size: $font-size-l;
+		font-weight: $font-weight-semibold;
 		text-align: justify;
 		text-align-last: left;
-		text-transform: capitalize;
+		line-height: $font-size-xxxl;
+		.bold {
+			font-weight: $font-weight-bold;
+			color: var(--font-color-primary);
+		}
+		.break {
+			margin-bottom: 8px;
+		}
 	}
 }
 
 @media screen and (max-width: 800px) {
 	.splitimage {
 		margin-right: 0;
+		max-width: unset;
+		width: 100%;
+		margin-bottom: 15px;
 	}
 }

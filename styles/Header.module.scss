@@ -58,7 +58,7 @@
 				padding-right: $padding;
 				padding-left: $padding;
 				color: var(--font-color-primary);
-				font-weight: $font-weight-medium;
+				font-weight: $font-weight-semibold;
 				font-size: $font-size-m;
 				text-transform: unset;
 			}
@@ -74,7 +74,7 @@
 			padding-right: $padding;
 			padding-left: $padding;
 			color: var(--font-color-primary);
-			font-weight: $font-weight-medium;
+			font-weight: $font-weight-semibold;
 			font-size: $font-size-s;
 			text-transform: unset;
 			background-color: var(--transparent-background);
@@ -140,9 +140,6 @@
 		.header {
 			.navbar {
 				display: none;
-			}
-			.button {
-				font-weight: $font-weight-bold;
 			}
 		}
 
