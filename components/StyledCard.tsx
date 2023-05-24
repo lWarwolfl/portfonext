@@ -1,12 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styles from "../styles/StyledCard.module.scss";
 
 type Props = {
 	id: string;
+	narrowbottom: boolean;
 	content: React.ReactNode;
 };
 
-export default function StyledCard({ id, content }: Props) {
+export default function StyledCard({ id, narrowbottom, content }: Props) {
 	const [glowPosition, setGlowPosition] = useState({ x: 0, y: 0 });
 	const containerRef = useRef<HTMLDivElement>(null);
 
@@ -30,10 +31,25 @@ export default function StyledCard({ id, content }: Props) {
 		}
 	}
 
+	useEffect(() => {
+		const handleResize = () => {
+			const isDesktop = window.matchMedia("(hover: hover)").matches;
+			if (!isDesktop && containerRef.current) {
+				containerRef.current.style.transform = "";
+			}
+		};
+
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+
 	return (
 		<div
 			id={id}
-			className={styles.container}
+			className={`${styles.container} ${narrowbottom && styles.narrowbottom}`}
 			onMouseMove={handleMouseMove}
 			onMouseLeave={handleMouseLeave}
 			ref={containerRef}

@@ -21,6 +21,12 @@
 	flex-direction: column;
 }
 
+@mixin overflow-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @mixin background-contain {
 	background-size: contain;
 	background-position: center center;

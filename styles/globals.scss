@@ -19,12 +19,14 @@ $font-size-xxxxl: 2rem;
 //Font weights
 $font-weight-light: 300;
 $font-weight-regular: 400;
-$font-weight-semibold: 500;
-$font-weight-bold: 600;
-$font-weight-extrabold: 700;
-$font-weight-black: 800;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
 
 //Transition speeds
+$transition-vs: 1000ms;
 $transition-s: 500ms;
 $transition-m: 300ms;
 $transition-f: 200ms;

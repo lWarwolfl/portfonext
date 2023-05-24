@@ -4,6 +4,12 @@ import styles from "../styles/Summary.module.scss";
 import StyledCard from "./StyledCard";
 import Title from "./Title";
 import photo from "../public/image/jpg/photo.jpg";
+import { Button } from "@mui/material";
+import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
+import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import TelegramIcon from "@mui/icons-material/Telegram";
 
 export default function Summary() {
 	const content = (
@@ -11,6 +17,7 @@ export default function Summary() {
 			<div className={styles.splitimage}>
 				<Image src={photo} alt="My photo" className={styles.image} />
 			</div>
+
 			<div className={styles.splittext}>
 				<div className={styles.description}>
 					I am <span className={styles.bold}>Sina Kheiri</span> and As a
@@ -34,12 +41,62 @@ export default function Summary() {
 					industry trends and best practices.
 				</div>
 			</div>
+
+			<div className={styles.social}>
+				<a
+					href="mailto:sinakheiri.dev@gmail.com"
+					target="_blank"
+					className={`${styles.socialcontainer} ${styles.green}`}
+				>
+					<MailOutlineRoundedIcon
+						className={`${styles.icon} ${styles.static}`}
+					/>
+					<Button className={styles.button}>sinakheiri.dev@gmail.com</Button>
+					<KeyboardArrowRightRoundedIcon className={styles.icon} />
+					<div className={styles.bar}></div>
+				</a>
+
+				<a
+					href="https://www.linkedin.com/in/mohamad-sina-kheiri-068b19245/"
+					target="_blank"
+					className={`${styles.socialcontainer} ${styles.yellow}`}
+				>
+					<LinkedInIcon className={`${styles.icon} ${styles.static}`} />
+					<Button className={styles.button}>
+						linkedin.com/in/mohamad-sina-kheiri-068b19245
+					</Button>
+					<KeyboardArrowRightRoundedIcon className={styles.icon} />
+					<div className={styles.bar}></div>
+				</a>
+
+				<a
+					href="https://github.com/lWarwolfl"
+					target="_blank"
+					className={`${styles.socialcontainer} ${styles.orange}`}
+				>
+					<GitHubIcon className={`${styles.icon} ${styles.static}`} />
+					<Button className={styles.button}>github.com/lWarwolfl</Button>
+					<KeyboardArrowRightRoundedIcon className={styles.icon} />
+					<div className={styles.bar}></div>
+				</a>
+
+				<a
+					href="https://t.me/cnawam"
+					target="_blank"
+					className={`${styles.socialcontainer} ${styles.red}`}
+				>
+					<TelegramIcon className={`${styles.icon} ${styles.static}`} />
+					<Button className={styles.button}>t.me/cnawam</Button>
+					<KeyboardArrowRightRoundedIcon className={styles.icon} />
+					<div className={styles.bar}></div>
+				</a>
+			</div>
 		</>
 	);
 	return (
 		<div id="summary" className={styles.container}>
 			<Title title="Summary" description="for you to know me" />
-			<StyledCard id="summarycard" content={content} />
+			<StyledCard id="summarycard" narrowbottom={true} content={content} />
 		</div>
 	);
 }

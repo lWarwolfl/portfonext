@@ -14,6 +14,7 @@
 	border-radius: $border-radius-global;
 	overflow: hidden;
 	transition: $transition-vf;
+
 	.glow {
 		position: absolute;
 		top: 0;
@@ -24,14 +25,17 @@
 		filter: blur(180px);
 		border-radius: 300px;
 		opacity: 0;
-		transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+		transition: opacity $transition-vs cubic-bezier(0.16, 1, 0.3, 1);
 		mix-blend-mode: soft-light;
 		will-change: transform;
-		background-color: var(--accent-color);
-		transition-duration: $transition-f;
+		background-color: var(--green-color);
 		opacity: 0;
 		z-index: -2;
 	}
+}
+
+.container.narrowbottom {
+	padding: 50px 50px 30px;
 }
 
 .container:hover {
@@ -43,6 +47,10 @@
 @media screen and (max-width: 800px) {
 	.container {
 		padding: 20px;
+	}
+
+	.container.narrowbottom {
+		padding: 20px 20px 0;
 	}
 
 	.container:hover {
