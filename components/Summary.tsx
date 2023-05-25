@@ -51,7 +51,7 @@ export default function Summary() {
 				<a
 					href="mailto:sinakheiri.dev@gmail.com"
 					target="_blank"
-					className={`${styles.socialcontainer} ${styles.green}`}
+					className={`${styles.socialcontainer} ${styles.purple}`}
 				>
 					<MailOutlineRoundedIcon
 						className={`${styles.icon} ${styles.static}`}
@@ -64,7 +64,7 @@ export default function Summary() {
 				<a
 					href="https://www.linkedin.com/in/mohamad-sina-kheiri-068b19245/"
 					target="_blank"
-					className={`${styles.socialcontainer} ${styles.purple}`}
+					className={`${styles.socialcontainer} ${styles.blue}`}
 				>
 					<LinkedInIcon className={`${styles.icon} ${styles.static}`} />
 					<Button className={styles.button}>
@@ -77,7 +77,7 @@ export default function Summary() {
 				<a
 					href="https://github.com/lWarwolfl"
 					target="_blank"
-					className={`${styles.socialcontainer} ${styles.blue}`}
+					className={`${styles.socialcontainer} ${styles.green}`}
 				>
 					<GitHubIcon className={`${styles.icon} ${styles.static}`} />
 					<Button className={styles.button}>github.com/lWarwolfl</Button>
@@ -88,7 +88,7 @@ export default function Summary() {
 				<a
 					href="https://t.me/cnawam"
 					target="_blank"
-					className={`${styles.socialcontainer} ${styles.cyan}`}
+					className={`${styles.socialcontainer} ${styles.aqua}`}
 				>
 					<TelegramIcon className={`${styles.icon} ${styles.static}`} />
 					<Button className={styles.button}>t.me/cnawam</Button>

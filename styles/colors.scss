@@ -13,19 +13,17 @@
 		#b721ff 100%
 	);
 	--gradient-green: linear-gradient(90deg, #40c463 0%, #6afb90 100%);
-	--gradient-green-cyan: linear-gradient(90deg, #40c463, #00fbff);
-	--gradient-blue-purple: linear-gradient(90deg, #257cff, #b721ff);
-	--gradient-green-blue: linear-gradient(90deg, #40c463, #257cff);
-	--gradient-blue-cyan: linear-gradient(90deg, #257cff, #00fbff);
+	--gradient-blue: linear-gradient(90deg, #257cff, #72aaff);
+	--gradient-aqua: linear-gradient(90deg, #00bfff, #57fcff);
+	--gradient-purple: linear-gradient(90deg, #b721ff, #d16fff);
 
 	--primary-color: #227bff;
 	--primary-color-light: #5d9eff;
 	--primary-color-transparent: #5d9eff67;
-	--secondary-color: #dd7df7;
-	--green-color: #66bf6d;
-	--purple-color: #b721ff;
-	--blue-color: #257cff;
-	--cyan-color: #00fbff;
+	--green-color: #40c463;
+	--purple-color: #d16fff;
+	--blue-color: #72aaff;
+	--aqua-color: #00bfff;
 }
 
 @media (prefers-color-scheme: light) {
