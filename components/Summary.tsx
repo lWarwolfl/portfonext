@@ -15,7 +15,12 @@ export default function Summary() {
 	const content = (
 		<>
 			<div className={styles.splitimage}>
-				<Image src={photo} alt="My photo" className={styles.image} />
+				<Image
+					src={photo}
+					priority={true}
+					alt="My photo"
+					className={styles.image}
+				/>
 			</div>
 
 			<div className={styles.splittext}>
@@ -59,7 +64,7 @@ export default function Summary() {
 				<a
 					href="https://www.linkedin.com/in/mohamad-sina-kheiri-068b19245/"
 					target="_blank"
-					className={`${styles.socialcontainer} ${styles.yellow}`}
+					className={`${styles.socialcontainer} ${styles.purple}`}
 				>
 					<LinkedInIcon className={`${styles.icon} ${styles.static}`} />
 					<Button className={styles.button}>
@@ -72,7 +77,7 @@ export default function Summary() {
 				<a
 					href="https://github.com/lWarwolfl"
 					target="_blank"
-					className={`${styles.socialcontainer} ${styles.orange}`}
+					className={`${styles.socialcontainer} ${styles.blue}`}
 				>
 					<GitHubIcon className={`${styles.icon} ${styles.static}`} />
 					<Button className={styles.button}>github.com/lWarwolfl</Button>
@@ -83,7 +88,7 @@ export default function Summary() {
 				<a
 					href="https://t.me/cnawam"
 					target="_blank"
-					className={`${styles.socialcontainer} ${styles.red}`}
+					className={`${styles.socialcontainer} ${styles.cyan}`}
 				>
 					<TelegramIcon className={`${styles.icon} ${styles.static}`} />
 					<Button className={styles.button}>t.me/cnawam</Button>
@@ -95,7 +100,10 @@ export default function Summary() {
 	);
 	return (
 		<div id="summary" className={styles.container}>
-			<Title title="Summary" description="for you to know me" />
+			<Title
+				title="Unveiling My Story:"
+				description="Exploring Growth, Skills, and Meaningful Experiences"
+			/>
 			<StyledCard id="summarycard" narrowbottom={true} content={content} />
 		</div>
 	);

@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import Particle from "@/components/Particle";
 import Summary from "@/components/Summary";
 import Head from "next/head";
 import * as React from "react";
@@ -15,7 +14,6 @@ export default function Home() {
 				<Hero />
 				<Summary />
 			</main>
-			<Particle />
 		</>
 	);
 }

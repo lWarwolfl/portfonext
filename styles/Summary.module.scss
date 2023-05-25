@@ -64,37 +64,37 @@
 		}
 
 		.bar {
-			background-image: var(--gradient-green);
+			background-image: var(--gradient-green-cyan);
 		}
 	}
 
-	.socialcontainer.red {
+	.socialcontainer.purple {
 		.icon {
-			color: var(--red-color);
+			color: var(--purple-color);
 		}
 
 		.bar {
-			background-image: var(--gradient-red);
+			background-image: var(--gradient-blue-purple);
 		}
 	}
 
-	.socialcontainer.yellow {
+	.socialcontainer.blue {
 		.icon {
-			color: var(--yellow-color);
+			color: var(--blue-color);
 		}
 
 		.bar {
-			background-image: var(--gradient-yellow);
+			background-image: var(--gradient-green-blue);
 		}
 	}
 
-	.socialcontainer.orange {
+	.socialcontainer.cyan {
 		.icon {
-			color: var(--orange-color);
+			color: var(--cyan-color);
 		}
 
 		.bar {
-			background-image: var(--gradient-orange);
+			background-image: var(--gradient-blue-cyan);
 		}
 	}
 

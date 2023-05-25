@@ -7,11 +7,19 @@ import planet1 from "../public/image/svg/planet1.svg";
 import planet2 from "../public/image/svg/planet2.svg";
 
 export default function Header() {
+	const handleClick = (id : string) => {
+		const element = document.getElementById(id);
+		if (element) {
+			element.scrollIntoView({ behavior: "smooth" });
+		}
+	};
+
 	return (
 		<div className={styles.container}>
 			<Image
 				src={hollowplanets}
 				alt="Hollow Planets"
+				priority={true}
 				className={styles.hollowplanets}
 			/>
 			<Image
@@ -30,23 +38,41 @@ export default function Header() {
 						{/* <div className={styles.text}>Mohamad Sina Kheiry</div> */}
 					</div>
 					<div className={styles.navbar}>
-						<Button className={styles.link} href="#summary">
+						<Button
+							className={styles.link}
+							onClick={() => handleClick("summary")}
+						>
 							Summary
 						</Button>
-						<Button className={styles.link} href="#skills">
+						<Button
+							className={styles.link}
+							onClick={() => handleClick("skills")}
+						>
 							Skills
 						</Button>
-						<Button className={styles.link} href="#workexperience">
+						<Button
+							className={styles.link}
+							onClick={() => handleClick("workexperience")}
+						>
 							Work Experience
 						</Button>
-						<Button className={styles.link} href="#projects">
+						<Button
+							className={styles.link}
+							onClick={() => handleClick("projects")}
+						>
 							Projects
 						</Button>
-						<Button className={styles.link} href="#education">
+						<Button
+							className={styles.link}
+							onClick={() => handleClick("education")}
+						>
 							Education
 						</Button>
 					</div>
-					<Button className={styles.button} href="#contact">
+					<Button
+						className={styles.button}
+						onClick={() => handleClick("contact")}
+					>
 						Contact Me
 					</Button>
 				</div>

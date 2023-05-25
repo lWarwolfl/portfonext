@@ -13,7 +13,7 @@
 	background-color: var(--card-background);
 	border-radius: $border-radius-global;
 	overflow: hidden;
-	transition: $transition-vf;
+	transition: transform $transition-f cubic-bezier(0.16, 1, 0.3, 1);
 
 	.glow {
 		position: absolute;
@@ -40,7 +40,7 @@
 
 .container:hover {
 	.glow {
-		opacity: 0.85;
+		opacity: 0.75;
 	}
 }
 

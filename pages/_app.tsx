@@ -7,6 +7,7 @@ import { CacheProvider, EmotionCache } from "@emotion/react";
 import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
 import Header from "@/components/Header";
+import Particle from "@/components/Particle";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -24,6 +25,7 @@ export default function MyApp(props: MyAppProps) {
 				<CssBaseline />
 				<Header />
 				<Component {...pageProps} />
+				<Particle />
 			</ThemeProvider>
 		</CacheProvider>
 	);
