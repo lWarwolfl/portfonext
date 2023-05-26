@@ -1,32 +1,57 @@
 import * as React from "react";
-import "../styles/index.scss";
-import { AppProps } from "next/app";
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import { CacheProvider, EmotionCache } from "@emotion/react";
-import theme from "../src/theme";
-import createEmotionCache from "../src/createEmotionCache";
+import "@/styles/index.scss";
+import type { AppProps } from "next/app";
+
+//using next.js 13 font optimization to add our font to all pages
+import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Particle from "@/components/Particle";
+export const font = localFont({
+	src: [
+		{
+			path: "../public/fonts/Mona-Sans-Light.woff2",
+			weight: "300",
+			style: "normal",
+		},
+		{
+			path: "../public/fonts/Mona-Sans-Regular.woff2",
+			weight: "400",
+			style: "normal",
+		},
+		{
+			path: "../public/fonts/Mona-Sans-Medium.woff2",
+			weight: "500",
+			style: "normal",
+		},
+		{
+			path: "../public/fonts/Mona-Sans-SemiBold.woff2",
+			weight: "600",
+			style: "normal",
+		},
+		{
+			path: "../public/fonts/Mona-Sans-Bold.woff2",
+			weight: "700",
+			style: "normal",
+		},
+		{
+			path: "../public/fonts/Mona-Sans-ExtraBold.woff2",
+			weight: "800",
+			style: "normal",
+		},
+		{
+			path: "../public/fonts/Mona-Sans-Black.woff2",
+			weight: "900",
+			style: "normal",
+		},
+	],
+});
 
-// Client-side cache, shared for the whole session of the user in the browser.
-const clientSideEmotionCache = createEmotionCache();
-
-export interface MyAppProps extends AppProps {
-	emotionCache?: EmotionCache;
-}
-
-export default function MyApp(props: MyAppProps) {
-	const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<CacheProvider value={emotionCache}>
-			<ThemeProvider theme={theme}>
-				{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-				<CssBaseline />
-				<Header />
-				<Component {...pageProps} />
-				<Particle />
-			</ThemeProvider>
-		</CacheProvider>
+		<main className={font.className}>
+			<Header />
+			<Component {...pageProps} />
+			<Particle />
+		</main>
 	);
 }
