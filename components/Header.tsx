@@ -7,10 +7,10 @@ import planet1 from "../public/image/svg/planet1.svg";
 import planet2 from "../public/image/svg/planet2.svg";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 import RouteOutlinedIcon from "@mui/icons-material/RouteOutlined";
-import FitnessCenterRoundedIcon from "@mui/icons-material/FitnessCenterRounded";
-import WorkRoundedIcon from "@mui/icons-material/WorkRounded";
-import SettingsSuggestRoundedIcon from "@mui/icons-material/SettingsSuggestRounded";
-import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
+import HandymanOutlinedIcon from "@mui/icons-material/HandymanOutlined";
+import CardTravelRoundedIcon from "@mui/icons-material/CardTravelRounded";
+import DataObjectRoundedIcon from "@mui/icons-material/DataObjectRounded";
+import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
 import PublicRoundedIcon from "@mui/icons-material/PublicRounded";
 
 interface Link {
@@ -29,15 +29,15 @@ export default function Header() {
 
 	const links: Link[] = [
 		{ id: "summary", text: "Summary", icon: RouteOutlinedIcon },
-		{ id: "skills", text: "Skills", icon: FitnessCenterRoundedIcon },
+		{ id: "skill", text: "Skills", icon: HandymanOutlinedIcon },
 		{
 			id: "workexperience",
 			text: "Work Experience",
-			icon: WorkRoundedIcon,
+			icon: CardTravelRoundedIcon,
 		},
-		{ id: "projects", text: "Projects", icon: SettingsSuggestRoundedIcon },
-		{ id: "education", text: "Education", icon: SchoolRoundedIcon },
-		{ id: "language", text: "Language", icon: PublicRoundedIcon },
+		{ id: "project", text: "Projects", icon: DataObjectRoundedIcon },
+		{ id: "education", text: "Education", icon: LibraryBooksOutlinedIcon },
+		{ id: "language", text: "Languages", icon: PublicRoundedIcon },
 	];
 
 	return (
