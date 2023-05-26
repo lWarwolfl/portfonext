@@ -17,7 +17,7 @@ import Link from "next/link";
 interface Link {
 	id: string;
 	text: string;
-	icon?: React.ElementType;
+	icon: React.ElementType;
 }
 
 export default function Header() {
