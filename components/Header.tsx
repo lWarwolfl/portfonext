@@ -12,6 +12,7 @@ import CardTravelRoundedIcon from "@mui/icons-material/CardTravelRounded";
 import DataObjectRoundedIcon from "@mui/icons-material/DataObjectRounded";
 import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
 import PublicRoundedIcon from "@mui/icons-material/PublicRounded";
+import Link from "next/link";
 
 interface Link {
 	id: string;
@@ -58,9 +59,9 @@ export default function Header() {
 			<div className={styles.header}>
 				<div className={styles.fix}>
 					<div className={styles.name}>
-						<a className={styles.logo} href="/">
+						<Link className={styles.logo} href="/">
 							<div className={styles.image}></div>
-						</a>
+						</Link>
 						{/* <div className={styles.text}>Mohamad Sina Kheiry</div> */}
 					</div>
 					<div className={styles.navbar}>
