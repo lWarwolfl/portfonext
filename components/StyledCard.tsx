@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import styles from "../styles/StyledCard.module.scss";
 
 type Props = {
@@ -12,7 +12,7 @@ export default function StyledCard({ id, narrowbottom, content }: Props) {
 	const containerRef = useRef<HTMLDivElement>(null);
 
 	function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
-		if (containerRef.current) {
+		if (containerRef.current && window.innerWidth > 768) {
 			const containerRect = containerRef.current.getBoundingClientRect();
 			const mouseX = event.clientX - containerRect.left;
 			const mouseY = event.clientY - containerRect.top;
@@ -30,21 +30,6 @@ export default function StyledCard({ id, narrowbottom, content }: Props) {
 			containerRef.current.style.transform = "";
 		}
 	}
-
-	useEffect(() => {
-		const handleResize = () => {
-			const isDesktop = window.matchMedia("(hover: hover)").matches;
-			if (!isDesktop && containerRef.current) {
-				containerRef.current.style.transform = "";
-			}
-		};
-
-		window.addEventListener("resize", handleResize);
-
-		return () => {
-			window.removeEventListener("resize", handleResize);
-		};
-	}, []);
 
 	return (
 		<div
