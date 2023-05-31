@@ -28,15 +28,15 @@ export default function Header() {
 
 	const links: Link[] = [
 		{ id: "summary", text: "Summary", icon: RouteOutlinedIcon },
-		{ id: "skill", text: "Skills", icon: HandymanOutlinedIcon },
+		{ id: "skills", text: "Skills", icon: HandymanOutlinedIcon },
 		{
 			id: "workexperience",
 			text: "Work Experience",
 			icon: CardTravelRoundedIcon,
 		},
-		{ id: "project", text: "Projects", icon: DataObjectRoundedIcon },
+		{ id: "projects", text: "Projects", icon: DataObjectRoundedIcon },
 		{ id: "education", text: "Education", icon: LibraryBooksOutlinedIcon },
-		{ id: "language", text: "Languages", icon: PublicRoundedIcon },
+		{ id: "languages", text: "Languages", icon: PublicRoundedIcon },
 	];
 
 	const containerRef = useRef<HTMLDivElement>(null);
@@ -72,8 +72,8 @@ export default function Header() {
 						</Link>
 					</div>
 					<div className={styles.navbar}>
-						{links.map((link) => (
-							<div className={styles.linkcontainer} key={link.id}>
+						{links.map((link, i) => (
+							<div className={styles.linkcontainer} key={i}>
 								<link.icon className={`${styles.icon} ${styles.static}`} />
 								<Button
 									className={styles.link}

@@ -38,6 +38,13 @@
 	padding: 50px 50px 30px;
 }
 
+.container.small {
+	padding: 20px;
+	width: calc(($max-width-global / 4) - 30px);
+	min-width: 150px;
+	margin-bottom: 20px;
+}
+
 .container:hover {
 	.glow {
 		opacity: 0.75;
@@ -51,6 +58,11 @@
 
 	.container.narrowbottom {
 		padding: 20px 20px 0;
+	}
+
+	.container.small {
+		padding: 10px;
+		width: 100%;
 	}
 
 	.container:hover {

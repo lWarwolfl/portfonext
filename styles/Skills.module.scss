@@ -1,0 +1,71 @@
+//Imported styles
+@import "./animations.scss";
+@import "./mixins.scss";
+@import "./globals.scss";
+
+//Summary styles desktop
+.container {
+	@include flex-column;
+	position: relative;
+	width: 100%;
+	margin-top: 80px;
+}
+
+.skillcontainer {
+	@include flex-row;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+@media screen and (max-width: 800px) {
+	.container {
+		margin-top: 30px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.container {
+		margin-top: 20px;
+	}
+}
+
+// .socialcontainer.green {
+// 		.icon {
+// 			color: var(--green-color);
+// 		}
+
+// 		.bar {
+// 			background-image: var(--gradient-green);
+// 		}
+// 	}
+
+// 	.socialcontainer.purple {
+// 		.icon {
+// 			color: var(--purple-color);
+// 		}
+
+// 		.bar {
+// 			background-image: var(--gradient-purple);
+// 		}
+// 	}
+
+// 	.socialcontainer.blue {
+// 		.icon {
+// 			color: var(--blue-color);
+// 		}
+
+// 		.bar {
+// 			background-image: var(--gradient-blue);
+// 		}
+// 	}
+
+// 	.socialcontainer.aqua {
+// 		.icon {
+// 			color: var(--aqua-color);
+// 		}
+
+// 		.bar {
+// 			background-image: var(--gradient-aqua);
+// 		}
+// 	}

@@ -11,14 +11,20 @@ $height: 40px;
 	z-index: 10;
 	width: 100%;
 	transition: top $transition-m cubic-bezier(0.16, 1, 0.3, 1);
-	top: 0;
+	top: 15px;
 	left: 0;
 
 	.fix {
 		@include flex-row;
-		@include width-fix;
 		align-items: center;
 		justify-content: flex-start;
+		border-radius: $border-radius-global;
+		max-width: calc($max-width-global - 30px);
+		padding: 5px;
+		margin: 0 auto;
+		background-color: transparent;
+		transition: background-color $transition-m cubic-bezier(0.16, 1, 0.3, 1);
+
 	}
 
 	.name {
@@ -135,7 +141,8 @@ $height: 40px;
 		border-radius: $border-radius-global;
 		color: var(--blue-color);
 		background-color: transparent;
-		transition: background-color $transition-f cubic-bezier(0.16, 1, 0.3, 1);
+		transition: background-color $transition-f cubic-bezier(0.16, 1, 0.3, 1),
+			opacity $transition-s cubic-bezier(0.16, 1, 0.3, 1);
 
 		.iconfirst {
 			position: absolute;
@@ -182,19 +189,21 @@ $height: 40px;
 		background-color: var(--transparent-background);
 		box-shadow: 0 0px 0px var(--primary-color-transparent);
 		transition: $transition-f;
+		border: 2px solid var(--blue-color);
 	}
 
 	.button:hover {
 		box-shadow: 0 0 30px var(--primary-color-transparent);
 	}
-
-	.button::before {
-		@include gradient-border;
-	}
 }
 
 .stick {
-	top: 8px;
+	top: 23px;
+
+	.fix {
+		backdrop-filter: blur(5px);
+		background-color: var(--primary-color-transparent);
+	}
 
 	.upbutton {
 		opacity: 1;

@@ -12,7 +12,41 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import AnimatedContainer from "./AnimatedContainer";
 
+interface Link {
+	link: string;
+	color: "purple" | "green" | "blue" | "aqua";
+	text: string;
+	icon: React.ElementType;
+}
+
 export default function Summary() {
+	const links: Link[] = [
+		{
+			link: "mailto:sinakheiri.dev@gmail.com",
+			color: "purple",
+			text: "sinakheiri.dev@gmail.com",
+			icon: MailOutlineRoundedIcon,
+		},
+		{
+			link: "https://www.linkedin.com/in/mohamad-sina-kheiri-068b19245/",
+			color: "green",
+			text: "linkedin.com/in/mohamad-sina-kheiri-068b19245",
+			icon: LinkedInIcon,
+		},
+		{
+			link: "https://github.com/lWarwolfl",
+			color: "blue",
+			text: "github.com/lWarwolfl",
+			icon: GitHubIcon,
+		},
+		{
+			link: "https://t.me/cnawam",
+			text: "t.me/cnawam",
+			color: "aqua",
+			icon: TelegramIcon,
+		},
+	];
+
 	const content = (
 		<>
 			<div className={styles.splitimage}>
@@ -49,66 +83,32 @@ export default function Summary() {
 			</div>
 
 			<div className={styles.social}>
-				<a
-					href="mailto:sinakheiri.dev@gmail.com"
-					target="_blank"
-					className={`${styles.socialcontainer} ${styles.purple}`}
-				>
-					<MailOutlineRoundedIcon
-						className={`${styles.icon} ${styles.static}`}
-					/>
-					<Button className={styles.button}>sinakheiri.dev@gmail.com</Button>
-					<KeyboardArrowRightRoundedIcon className={styles.icon} />
-					<div className={styles.bar}></div>
-				</a>
-
-				<a
-					href="https://www.linkedin.com/in/mohamad-sina-kheiri-068b19245/"
-					target="_blank"
-					className={`${styles.socialcontainer} ${styles.blue}`}
-				>
-					<LinkedInIcon className={`${styles.icon} ${styles.static}`} />
-					<Button className={styles.button}>
-						linkedin.com/in/mohamad-sina-kheiri-068b19245
-					</Button>
-					<KeyboardArrowRightRoundedIcon className={styles.icon} />
-					<div className={styles.bar}></div>
-				</a>
-
-				<a
-					href="https://github.com/lWarwolfl"
-					target="_blank"
-					className={`${styles.socialcontainer} ${styles.green}`}
-				>
-					<GitHubIcon className={`${styles.icon} ${styles.static}`} />
-					<Button className={styles.button}>github.com/lWarwolfl</Button>
-					<KeyboardArrowRightRoundedIcon className={styles.icon} />
-					<div className={styles.bar}></div>
-				</a>
-
-				<a
-					href="https://t.me/cnawam"
-					target="_blank"
-					className={`${styles.socialcontainer} ${styles.aqua}`}
-				>
-					<TelegramIcon className={`${styles.icon} ${styles.static}`} />
-					<Button className={styles.button}>t.me/cnawam</Button>
-					<KeyboardArrowRightRoundedIcon className={styles.icon} />
-					<div className={styles.bar}></div>
-				</a>
+				{links.map((link, i) => (
+					<a
+						href={link.link}
+						target="_blank"
+						className={`${styles.socialcontainer} ${styles[link.color]}`}
+						key={i}
+					>
+						<link.icon className={`${styles.icon} ${styles.static}`} />
+						<Button className={styles.button}>{link.text}</Button>
+						<KeyboardArrowRightRoundedIcon className={styles.icon} />
+						<div className={styles.bar}></div>
+					</a>
+				))}
 			</div>
 		</>
 	);
 	return (
 		<div id="summary" className={styles.container}>
-			<AnimatedContainer animationDirection="left" animationSpeed="medium">
+			<AnimatedContainer animationDirection="top" animationSpeed="medium">
 				<Title
 					title="Unveiling My Story:"
 					description="Exploring Growth, Skills, and Meaningful Experiences"
 				/>
 			</AnimatedContainer>
-			<AnimatedContainer animationDirection="left" animationSpeed="slow">
-				<StyledCard id="summarycard" narrowbottom={true} content={content} />
+			<AnimatedContainer animationDirection="top" animationSpeed="slow">
+				<StyledCard variant="narrowbottom" content={content} />
 			</AnimatedContainer>
 		</div>
 	);

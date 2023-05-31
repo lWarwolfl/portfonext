@@ -2,12 +2,12 @@ import React, { useRef, useState } from "react";
 import styles from "../styles/StyledCard.module.scss";
 
 type Props = {
-	id: string;
-	narrowbottom: boolean;
+	id?: string;
+	variant: string;
 	content: React.ReactNode;
 };
 
-export default function StyledCard({ id, narrowbottom, content }: Props) {
+export default function StyledCard({ id, variant, content }: Props) {
 	const [glowPosition, setGlowPosition] = useState({ x: 0, y: 0 });
 	const containerRef = useRef<HTMLDivElement>(null);
 
@@ -34,7 +34,9 @@ export default function StyledCard({ id, narrowbottom, content }: Props) {
 	return (
 		<div
 			id={id}
-			className={`${styles.container} ${narrowbottom && styles.narrowbottom}`}
+			className={`${styles.container} ${
+				variant === "narrowbottom" && styles.narrowbottom
+			} ${variant === "small" && styles.small}`}
 			onMouseMove={handleMouseMove}
 			onMouseLeave={handleMouseLeave}
 			ref={containerRef}

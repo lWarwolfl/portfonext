@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Images from "@/components/Images";
+import Skills from "@/components/Skills";
 import Summary from "@/components/Summary";
 import Head from "next/head";
 import * as React from "react";
@@ -14,6 +15,7 @@ export default function Home() {
 			<main className="width-fix">
 				<Hero />
 				<Summary />
+				<Skills />
 				<Images />
 			</main>
 		</>
