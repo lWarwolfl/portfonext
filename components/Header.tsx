@@ -22,7 +22,12 @@ export default function Header() {
 	const handleClick = (id: string) => {
 		const element = document.getElementById(id);
 		if (element) {
-			element.scrollIntoView({ behavior: "smooth" });
+			const scrollPosition = element.offsetTop - 100;
+
+			document.body.scrollTo({
+				top: scrollPosition,
+				behavior: "smooth",
+			});
 		}
 	};
 

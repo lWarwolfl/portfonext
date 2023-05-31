@@ -15,7 +15,7 @@ interface Skill {
 export default function Skills() {
 	const skills: Skill[] = [
 		{
-			name: "first",
+			name: "",
 			color: "purple",
 			image: "",
 			percent: "",
