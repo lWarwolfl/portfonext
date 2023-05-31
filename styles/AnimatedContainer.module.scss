@@ -1,0 +1,62 @@
+//Imported styles
+@import "./animations.scss";
+@import "./mixins.scss";
+@import "./globals.scss";
+
+//Animated Container styles desktop
+$position: 200px;
+
+.container {
+	opacity: 0;
+}
+
+.fast {
+	transition: opacity $transition-f ease-in-out,
+		transform $transition-f ease-in-out;
+}
+
+.medium {
+	transition: opacity $transition-m ease-in-out,
+		transform $transition-m ease-in-out;
+}
+
+.slow {
+	transition: opacity $transition-s ease-in-out,
+		transform $transition-s ease-in-out;
+}
+
+.show {
+	opacity: 1;
+}
+
+.top {
+	transform: translate(0, calc(0px - $position));
+}
+
+.top.show {
+	transform: translate(0, 0);
+}
+
+.right {
+	transform: translate($position, 0);
+}
+
+.right.show {
+	transform: translate(0, 0);
+}
+
+.bottom {
+	transform: translate(0, $position);
+}
+
+.bottom.show {
+	transform: translate(0, 0);
+}
+
+.left {
+	transform: translate(calc(0px - $position), 0);
+}
+
+.left.show {
+	transform: translate(0, 0);
+}

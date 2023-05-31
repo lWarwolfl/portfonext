@@ -10,6 +10,7 @@ import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TelegramIcon from "@mui/icons-material/Telegram";
+import AnimatedContainer from "./AnimatedContainer";
 
 export default function Summary() {
 	const content = (
@@ -100,11 +101,15 @@ export default function Summary() {
 	);
 	return (
 		<div id="summary" className={styles.container}>
-			<Title
-				title="Unveiling My Story:"
-				description="Exploring Growth, Skills, and Meaningful Experiences"
-			/>
-			<StyledCard id="summarycard" narrowbottom={true} content={content} />
+			<AnimatedContainer animationDirection="left" animationSpeed="medium">
+				<Title
+					title="Unveiling My Story:"
+					description="Exploring Growth, Skills, and Meaningful Experiences"
+				/>
+			</AnimatedContainer>
+			<AnimatedContainer animationDirection="left" animationSpeed="slow">
+				<StyledCard id="summarycard" narrowbottom={true} content={content} />
+			</AnimatedContainer>
 		</div>
 	);
 }

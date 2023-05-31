@@ -4,224 +4,221 @@
 @import "./globals.scss";
 
 //Header styles desktop
-.container {
-	position: relative;
+$height: 40px;
+
+.header {
+	position: fixed;
+	z-index: 10;
 	width: 100%;
+	transition: top $transition-m cubic-bezier(0.16, 1, 0.3, 1);
+	top: 0;
+	left: 0;
 
-	.header {
-		$height: 40px;
-		width: 100%;
+	.fix {
+		@include flex-row;
+		@include width-fix;
+		align-items: center;
+		justify-content: flex-start;
+	}
 
-		.fix {
+	.name {
+		@include flex-row;
+		align-items: center;
+		justify-content: flex-start;
+
+		.logo {
+			@include gradient-animation-effect;
 			@include flex-row;
-			@include width-fix;
-			align-items: center;
-			justify-content: flex-start;
-		}
-
-		.name {
-			@include flex-row;
-			align-items: center;
-			justify-content: flex-start;
-
-			.logo {
-				@include gradient-animation-effect;
-				@include flex-row;
-				cursor: pointer;
-				align-items: center;
-				justify-content: center;
-				height: $height;
-				aspect-ratio: 1 / 1;
-				border-radius: $height/2;
-				margin-right: 8px;
-				padding-top: 5px;
-				transition: $transition-f;
-				box-shadow: 0 0px 0px var(--primary-color-transparent);
-
-				.image {
-					@include background-contain;
-					height: $height/1.5;
-					aspect-ratio: 1 / 1;
-					background-image: url("../public/image/png/logo.png");
-					transition: $transition-f;
-				}
-			}
-
-			.logo:hover {
-				@include gradient-animation-effect-hover;
-				box-shadow: 0 0 30px var(--primary-color-transparent);
-			}
-		}
-
-		.navbar {
-			@include flex-row;
+			cursor: pointer;
 			align-items: center;
 			justify-content: center;
-
-			.linkcontainer {
-				position: relative;
-				display: inline-block;
-
-				.icon {
-					position: absolute;
-					color: var(--blue-color);
-					top: calc(50% - calc($font-size-xxxl / 2));
-					right: 15px;
-					opacity: 0;
-					font-size: $font-size-xxxl;
-					transition: opacity $transition-s cubic-bezier(0.16, 1, 0.3, 1),
-						right $transition-s cubic-bezier(0.16, 1, 0.3, 1);
-				}
-
-				.icon.static {
-					top: calc(50% - calc($font-size-xxl / 2));
-					left: 8px;
-					opacity: 1;
-					font-size: $font-size-xxl;
-				}
-
-				.link {
-					display: block;
-					height: $height;
-					border-radius: $border-radius-global;
-					padding-right: 20px;
-					padding-left: 40px;
-					color: var(--font-color-primary);
-					font-weight: $font-weight-medium;
-					font-size: $font-size-m;
-					text-transform: unset;
-					transition: padding-right $transition-s cubic-bezier(0.16, 1, 0.3, 1),
-						padding-left $transition-s cubic-bezier(0.16, 1, 0.3, 1);
-					max-width: 260px;
-					@include overflow-ellipsis;
-				}
-			}
-
-			.linkcontainer:hover {
-				.link {
-					padding-right: 40px;
-					padding-left: 20px;
-					background-color: var(--transparent-background);
-				}
-
-				.icon {
-					right: 8px;
-					opacity: 1;
-				}
-
-				.icon.static {
-					left: 15px;
-					opacity: 0;
-				}
-			}
-
-			.linkcontainer:first-child {
-				margin-left: 15px;
-			}
-		}
-
-		.button {
-			$padding: 20px;
-			margin-left: auto;
 			height: $height;
-			border-radius: $border-radius-global;
-			padding-right: $padding;
-			padding-left: $padding;
-			color: var(--font-color-primary);
-			font-weight: $font-weight-medium;
-			font-size: $font-size-s;
-			text-transform: unset;
-			background-color: var(--transparent-background);
-			box-shadow: 0 0px 0px var(--primary-color-transparent);
+			aspect-ratio: 1 / 1;
+			border-radius: $height/2;
+			margin-right: 8px;
+			padding-top: 5px;
 			transition: $transition-f;
+			box-shadow: 0 0px 0px var(--primary-color-transparent);
+
+			.image {
+				@include background-contain;
+				height: $height/1.5;
+				aspect-ratio: 1 / 1;
+				background-image: url("../public/image/png/logo.png");
+				transition: $transition-f;
+			}
 		}
 
-		.button:hover {
+		.logo:hover {
+			@include gradient-animation-effect-hover;
 			box-shadow: 0 0 30px var(--primary-color-transparent);
 		}
+	}
 
-		.button::before {
-			@include gradient-border;
+	.navbar {
+		@include flex-row;
+		align-items: center;
+		justify-content: center;
+
+		.linkcontainer {
+			position: relative;
+			display: inline-block;
+
+			.icon {
+				position: absolute;
+				color: var(--blue-color);
+				top: calc(50% - calc($font-size-xxxl / 2));
+				right: 15px;
+				opacity: 0;
+				font-size: $font-size-xxxl;
+				transition: opacity $transition-s cubic-bezier(0.16, 1, 0.3, 1),
+					right $transition-s cubic-bezier(0.16, 1, 0.3, 1);
+			}
+
+			.icon.static {
+				top: calc(50% - calc($font-size-xxl / 2));
+				left: 8px;
+				opacity: 1;
+				font-size: $font-size-xxl;
+			}
+
+			.link {
+				display: block;
+				height: $height;
+				border-radius: $border-radius-global;
+				padding-right: 20px;
+				padding-left: 40px;
+				background-color: transparent;
+				color: var(--font-color-primary);
+				font-weight: $font-weight-medium;
+				font-size: $font-size-m;
+				text-transform: unset;
+				transition: padding-right $transition-s cubic-bezier(0.16, 1, 0.3, 1),
+					padding-left $transition-s cubic-bezier(0.16, 1, 0.3, 1),
+					background-color $transition-f cubic-bezier(0.16, 1, 0.3, 1);
+			}
+		}
+
+		.linkcontainer:hover {
+			.link {
+				padding-right: 40px;
+				padding-left: 20px;
+				background-color: var(--transparent-background);
+			}
+
+			.icon {
+				right: 8px;
+				opacity: 1;
+			}
+
+			.icon.static {
+				left: 15px;
+				opacity: 0;
+			}
+		}
+
+		.linkcontainer:first-child {
+			margin-left: 15px;
 		}
 	}
 
-	.hollowplanets {
-		@include background-contain;
-		position: absolute;
-		width: 100%;
-		height: auto;
-		opacity: 0.8;
-		z-index: -1;
+	.upbutton {
+		pointer-events: none;
+		opacity: 0;
+		display: block;
+		height: $height;
+		width: $height;
+		padding: 0;
+		min-width: unset;
+		align-items: center;
+		line-height: 0;
+		border-radius: $border-radius-global;
+		color: var(--blue-color);
+		background-color: transparent;
+		transition: background-color $transition-f cubic-bezier(0.16, 1, 0.3, 1);
+
+		.iconfirst {
+			position: absolute;
+			top: calc(($height / 2) - calc($font-size-xxxl / 2));
+			left: calc(($height / 2) - calc($font-size-xxxl / 2));
+			opacity: 1;
+			font-size: $font-size-xxxl;
+			transition: opacity $transition-s cubic-bezier(0.16, 1, 0.3, 1);
+		}
+
+		.iconsecond {
+			position: absolute;
+			top: calc(($height / 2) - calc($font-size-xxxl / 2));
+			left: calc(($height / 2) - calc($font-size-xxxl / 2));
+			opacity: 0;
+			font-size: $font-size-xxxl;
+			transition: opacity $transition-s cubic-bezier(0.16, 1, 0.3, 1);
+		}
 	}
 
-	.bigplanet {
-		@include background-contain;
-		$size: 900px;
-		position: absolute;
-		width: $size;
-		height: $size;
-		left: 0;
-		top: -550px;
-		opacity: 0.8;
-		z-index: -1;
-		animation: planet-move 400s linear infinite;
+	.upbutton:hover {
+		background-color: var(--transparent-background);
+
+		.iconfirst {
+			opacity: 0;
+		}
+
+		.iconsecond {
+			opacity: 1;
+		}
 	}
 
-	.smallplanet {
-		@include background-contain;
-		$size: 250px;
-		position: absolute;
-		top: 180px;
-		right: 130px;
-		aspect-ratio: 1 / 1;
-		width: $size;
-		height: $size;
-		opacity: 0.8;
-		z-index: -1;
+	.button {
+		$padding: 20px;
+		margin-left: auto;
+		height: $height;
+		border-radius: $border-radius-global;
+		padding-right: $padding;
+		padding-left: $padding;
+		color: var(--font-color-primary);
+		font-weight: $font-weight-medium;
+		font-size: $font-size-s;
+		text-transform: unset;
+		background-color: var(--transparent-background);
+		box-shadow: 0 0px 0px var(--primary-color-transparent);
+		transition: $transition-f;
+	}
 
-		animation: planet-move 140s linear infinite;
+	.button:hover {
+		box-shadow: 0 0 30px var(--primary-color-transparent);
+	}
+
+	.button::before {
+		@include gradient-border;
 	}
 }
 
-@media screen and (max-width: 1200px) {
-	.container {
-		.smallplanet {
-			top: 400px;
-		}
+.stick {
+	top: 8px;
+
+	.upbutton {
+		opacity: 1;
+		pointer-events: unset;
+	}
+}
+
+.dummyheader {
+	width: 100%;
+	padding: 20px;
+
+	.dummy {
+		height: $height;
 	}
 }
 
 @media screen and (max-width: 1050px) {
-	.container {
-		.header {
-			.navbar {
-				display: none;
-			}
-
-			.button {
-				font-weight: $font-weight-semibold;
-			}
-		}
-	}
-}
-
-@media screen and (max-width: 800px) {
-	.container {
-		.bigplanet {
+	.header {
+		.navbar {
 			display: none;
-			$size: 700px;
-			width: $size;
-			height: $size;
-			top: -400px;
 		}
 
-		.smallplanet {
-			top: 220px;
-			right: calc(50% - 125px);
-		}
-
-		.hollowplanets {
-			display: none;
+		.button {
+			font-weight: $font-weight-semibold;
 		}
 	}
 }

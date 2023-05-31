@@ -1,10 +1,6 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styles from "../styles/Header.module.scss";
 import { Button } from "@mui/material";
-import Image from "next/image";
-import hollowplanets from "../public/image/png/hollowplanets.png";
-import planet1 from "../public/image/svg/planet1.svg";
-import planet2 from "../public/image/svg/planet2.svg";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 import RouteOutlinedIcon from "@mui/icons-material/RouteOutlined";
 import HandymanOutlinedIcon from "@mui/icons-material/HandymanOutlined";
@@ -12,6 +8,8 @@ import CardTravelRoundedIcon from "@mui/icons-material/CardTravelRounded";
 import DataObjectRoundedIcon from "@mui/icons-material/DataObjectRounded";
 import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
 import PublicRoundedIcon from "@mui/icons-material/PublicRounded";
+import KeyboardDoubleArrowUpRoundedIcon from "@mui/icons-material/KeyboardDoubleArrowUpRounded";
+import KeyboardArrowUpRoundedIcon from "@mui/icons-material/KeyboardArrowUpRounded";
 import Link from "next/link";
 
 interface Link {
@@ -41,35 +39,42 @@ export default function Header() {
 		{ id: "language", text: "Languages", icon: PublicRoundedIcon },
 	];
 
+	const containerRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (containerRef.current && window.innerWidth > 768) {
+				const scrollYPosition = document.body.scrollTop;
+
+				if (scrollYPosition >= 10) {
+					containerRef.current.classList.add(styles.stick);
+				} else {
+					containerRef.current.classList.remove(styles.stick);
+				}
+			}
+		};
+
+		document.body.addEventListener("scroll", handleScroll);
+		handleScroll(); // Handle initial scroll position
+
+		return () => {
+			document.body.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
 	return (
-		<div className={styles.container}>
-			<Image
-				src={hollowplanets}
-				alt="Hollow Planets"
-				priority={true}
-				className={styles.hollowplanets}
-			/>
-			<Image
-				src={planet2}
-				alt="Big Planet"
-				priority={true}
-				className={styles.bigplanet}
-			/>
-			<Image src={planet1} alt="Small Planet" className={styles.smallplanet} />
-			<div className={styles.header}>
+		<>
+			<div className={styles.header} ref={containerRef}>
 				<div className={styles.fix}>
 					<div className={styles.name}>
 						<Link className={styles.logo} href="/">
 							<div className={styles.image}></div>
 						</Link>
-						{/* <div className={styles.text}>Mohamad Sina Kheiry</div> */}
 					</div>
 					<div className={styles.navbar}>
 						{links.map((link) => (
 							<div className={styles.linkcontainer} key={link.id}>
-								{link.icon && (
-									<link.icon className={`${styles.icon} ${styles.static}`} />
-								)}
+								<link.icon className={`${styles.icon} ${styles.static}`} />
 								<Button
 									className={styles.link}
 									onClick={() => handleClick(link.id)}
@@ -80,6 +85,14 @@ export default function Header() {
 								<div className={styles.bar}></div>
 							</div>
 						))}
+
+						<Button
+							className={styles.upbutton}
+							onClick={() => handleClick("top")}
+						>
+							<KeyboardArrowUpRoundedIcon className={styles.iconfirst} />
+							<KeyboardDoubleArrowUpRoundedIcon className={styles.iconsecond} />
+						</Button>
 					</div>
 					<Button
 						className={styles.button}
@@ -89,6 +102,9 @@ export default function Header() {
 					</Button>
 				</div>
 			</div>
-		</div>
+			<div id="top" className={styles.dummyheader}>
+				<div className={styles.dummy}></div>
+			</div>
+		</>
 	);
 }

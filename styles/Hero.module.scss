@@ -10,11 +10,13 @@
 	justify-content: center;
 	position: relative;
 	width: 100%;
+	
 	.intro {
 		@include flex-column;
 		align-items: center;
 		justify-content: center;
-		margin: 215px auto 275px;
+		margin: 215px auto 320px;
+
 		.big {
 			@include gradient-text-loop;
 			width: 100%;
@@ -24,16 +26,18 @@
 
 			animation: gradient-animation 50s linear infinite;
 		}
+
 		.small {
 			display: inline-block;
 			width: 100%;
-			margin-top: -15px;
+			margin-top: -8px;
 			color: var(--font-color-primary);
 			font-size: $font-size-xl;
 			font-weight: $font-weight-black;
 			text-align: justify;
 			text-align-last: justify;
 			text-transform: capitalize;
+
 			.accent {
 				@include gradient-text-accent;
 				display: inline-block;
@@ -45,8 +49,10 @@
 @media screen and (max-width: 800px) {
 	.container {
 		justify-content: flex-start;
+
 		.intro {
 			margin: 10px auto 250px;
+
 			.small {
 				margin-top: 0;
 				font-size: $font-size-l;
