@@ -19,7 +19,7 @@
 	min-width: 200px;
 
 	.image {
-		@include background-cover;
+		@include background-contain;
 		width: 100%;
 		height: auto;
 		border-radius: 100%;
@@ -122,6 +122,7 @@
 		}
 
 		.button {
+			@include overflow-ellipsis;
 			display: block;
 			height: $height;
 			border-radius: $border-radius-global;
@@ -135,7 +136,6 @@
 			transition: padding-right $transition-s cubic-bezier(0.16, 1, 0.3, 1),
 				padding-left $transition-s cubic-bezier(0.16, 1, 0.3, 1);
 			max-width: 260px;
-			@include overflow-ellipsis;
 		}
 
 		.bar {

@@ -16,6 +16,124 @@
 	width: 100%;
 	flex-wrap: wrap;
 	justify-content: space-between;
+
+	.skill {
+		@include flex-column;
+
+		.data {
+			@include flex-row;
+			align-items: center;
+			width: 100%;
+
+			.image {
+				@include background-contain;
+				width: $font-size-xxl;
+				height: $font-size-xxl;
+				margin-right: 15px;
+				border-radius: 100%;
+			}
+
+			.name {
+				@include overflow-ellipsis;
+				width: 100%;
+				margin-right: 15px;
+				color: var(--font-color-primary);
+				font-weight: $font-weight-medium;
+				font-size: $font-size-m;
+			}
+
+			.icon {
+				color: var(--blue-color);
+				font-size: $font-size-xxl;
+			}
+		}
+
+		.barcontainer {
+			@include flex-row;
+			align-items: center;
+			margin-top: 20px;
+
+			.percent {
+				width: 40px;
+				margin-right: 8px;
+				color: var(--font-color-primary);
+				font-weight: $font-weight-semibold;
+				font-size: $font-size-s;
+			}
+
+			.bar {
+			$height: 8px;
+			position: relative;
+			width: 100%;
+			height: $height;
+			border-radius: calc($height / 2);
+
+			.fill {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: $height;
+				border-radius: calc($height / 2);
+			}
+		}
+		}
+	}
+
+	.skill.green {
+		.data {
+			.icon {
+				color: var(--green-color);
+			}
+		}
+
+		.bar {
+			.fill {
+				background-image: var(--gradient-green);
+			}
+		}
+	}
+
+	.skill.purple {
+		.data {
+			.icon {
+				color: var(--purple-color);
+			}
+		}
+
+		.bar {
+			.fill {
+				background-image: var(--gradient-purple);
+			}
+		}
+	}
+
+	.skill.blue {
+		.data {
+			.icon {
+				color: var(--blue-color);
+			}
+		}
+
+		.bar {
+			.fill {
+				background-image: var(--gradient-blue);
+			}
+		}
+	}
+
+	.skill.aqua {
+		.data {
+			.icon {
+				color: var(--aqua-color);
+			}
+		}
+
+		.bar {
+			.fill {
+				background-image: var(--gradient-aqua);
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 800px) {
@@ -29,43 +147,3 @@
 		margin-top: 20px;
 	}
 }
-
-// .socialcontainer.green {
-// 		.icon {
-// 			color: var(--green-color);
-// 		}
-
-// 		.bar {
-// 			background-image: var(--gradient-green);
-// 		}
-// 	}
-
-// 	.socialcontainer.purple {
-// 		.icon {
-// 			color: var(--purple-color);
-// 		}
-
-// 		.bar {
-// 			background-image: var(--gradient-purple);
-// 		}
-// 	}
-
-// 	.socialcontainer.blue {
-// 		.icon {
-// 			color: var(--blue-color);
-// 		}
-
-// 		.bar {
-// 			background-image: var(--gradient-blue);
-// 		}
-// 	}
-
-// 	.socialcontainer.aqua {
-// 		.icon {
-// 			color: var(--aqua-color);
-// 		}
-
-// 		.bar {
-// 			background-image: var(--gradient-aqua);
-// 		}
-// 	}

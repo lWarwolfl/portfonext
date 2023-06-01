@@ -10,6 +10,7 @@ import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
 import PublicRoundedIcon from "@mui/icons-material/PublicRounded";
 import KeyboardDoubleArrowUpRoundedIcon from "@mui/icons-material/KeyboardDoubleArrowUpRounded";
 import KeyboardArrowUpRoundedIcon from "@mui/icons-material/KeyboardArrowUpRounded";
+import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import Link from "next/link";
 
 interface Link {
@@ -99,12 +100,17 @@ export default function Header() {
 							<KeyboardDoubleArrowUpRoundedIcon className={styles.iconsecond} />
 						</Button>
 					</div>
-					<Button
-						className={styles.button}
-						onClick={() => handleClick("contact")}
-					>
-						Contact Me
-					</Button>
+					<div className={styles.buttoncontainer}>
+						<SendRoundedIcon className={`${styles.icon} ${styles.static}`} />
+						<Button
+							className={styles.button}
+							onClick={() => handleClick("contact")}
+						>
+							Contact Me
+						</Button>
+						<KeyboardArrowRightRoundedIcon className={styles.icon} />
+						<div className={styles.bar}></div>
+					</div>
 				</div>
 			</div>
 			<div id="top" className={styles.dummyheader}>

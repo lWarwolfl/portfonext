@@ -3,11 +3,12 @@ import styles from "../styles/StyledCard.module.scss";
 
 type Props = {
 	id?: string;
+	className?: string;
 	variant: string;
 	content: React.ReactNode;
 };
 
-export default function StyledCard({ id, variant, content }: Props) {
+export default function StyledCard({ id, className, variant, content }: Props) {
 	const [glowPosition, setGlowPosition] = useState({ x: 0, y: 0 });
 	const containerRef = useRef<HTMLDivElement>(null);
 
@@ -16,10 +17,17 @@ export default function StyledCard({ id, variant, content }: Props) {
 			const containerRect = containerRef.current.getBoundingClientRect();
 			const mouseX = event.clientX - containerRect.left;
 			const mouseY = event.clientY - containerRect.top;
+
+			let multiplier = 2;
+
+			if (variant === "small") multiplier = 5;
+
 			const xSkew =
-				((mouseX - containerRect.width / 2) / (containerRect.width / 2)) * 2;
+				((mouseX - containerRect.width / 2) / (containerRect.width / 2)) *
+				multiplier;
 			const ySkew =
-				((mouseY - containerRect.height / 2) / (containerRect.height / 2)) * 2;
+				((mouseY - containerRect.height / 2) / (containerRect.height / 2)) *
+				multiplier;
 			containerRef.current.style.transform = `perspective(1000px) rotateX(${ySkew}deg) rotateY(${-xSkew}deg)`;
 			setGlowPosition({ x: mouseX - 325, y: mouseY - 325 });
 		}
@@ -34,7 +42,7 @@ export default function StyledCard({ id, variant, content }: Props) {
 	return (
 		<div
 			id={id}
-			className={`${styles.container} ${
+			className={`${className} ${styles.container} ${
 				variant === "narrowbottom" && styles.narrowbottom
 			} ${variant === "small" && styles.small}`}
 			onMouseMove={handleMouseMove}

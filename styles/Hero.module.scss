@@ -10,12 +10,12 @@
 	justify-content: center;
 	position: relative;
 	width: 100%;
-	
+
 	.intro {
 		@include flex-column;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: center;
-		margin: 215px auto 320px;
+		margin: 200px auto 300px;
 
 		.big {
 			@include gradient-text-loop;
@@ -29,18 +29,71 @@
 
 		.small {
 			display: inline-block;
-			width: 100%;
-			margin-top: -8px;
 			color: var(--font-color-primary);
 			font-size: $font-size-xl;
 			font-weight: $font-weight-black;
-			text-align: justify;
-			text-align-last: justify;
 			text-transform: capitalize;
 
 			.accent {
 				@include gradient-text-accent;
 				display: inline-block;
+			}
+		}
+
+		.buttoncontainer {
+			position: relative;
+			display: inline-block;
+			margin-top: 15px;
+
+			.icon {
+				position: absolute;
+				color: var(--blue-color);
+				top: calc(50% - calc($font-size-xl / 2));
+				right: 15px;
+				opacity: 0;
+				font-size: $font-size-xl;
+				transition: opacity $transition-s cubic-bezier(0.16, 1, 0.3, 1),
+					right $transition-s cubic-bezier(0.16, 1, 0.3, 1);
+			}
+
+			.icon.static {
+				left: 8px;
+				opacity: 1;
+			}
+
+			.button {
+				display: block;
+				height: 40px;
+				border-radius: $border-radius-global;
+				padding-right: 20px;
+				padding-left: 40px;
+				border: 2px dashed var(--blue-color);
+				background-color: var(--primary-color-transparent);
+				color: var(--font-color-primary);
+				font-weight: $font-weight-medium;
+				font-size: $font-size-s;
+				text-transform: unset;
+				transition: padding-right $transition-s cubic-bezier(0.16, 1, 0.3, 1),
+					padding-left $transition-s cubic-bezier(0.16, 1, 0.3, 1),
+					background-color $transition-f cubic-bezier(0.16, 1, 0.3, 1);
+			}
+		}
+
+		.buttoncontainer:hover {
+			.button {
+				padding-right: 40px;
+				padding-left: 20px;
+				background-color: var(--transparent-background);
+			}
+
+			.icon {
+				right: 8px;
+				opacity: 1;
+			}
+
+			.icon.static {
+				left: 15px;
+				opacity: 0;
 			}
 		}
 	}

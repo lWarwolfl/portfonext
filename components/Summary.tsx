@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Summary.module.scss";
 import StyledCard from "./StyledCard";
 import Title from "./Title";
-import photo from "../public/image/jpg/photo.jpg";
+import photo from "../public/image/svg/photo.svg";
 import { Button } from "@mui/material";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
