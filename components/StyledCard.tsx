@@ -22,7 +22,7 @@ export default function StyledCard({ id, className, variant, content }: Props) {
 			let offset = 150;
 
 			if (variant === "small") {
-				multiplier = 6;
+				multiplier = 8;
 				offset = 100;
 			}	
 
