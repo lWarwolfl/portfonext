@@ -16,6 +16,10 @@
 	--gradient-blue: linear-gradient(90deg, #257cff, #72aaff);
 	--gradient-aqua: linear-gradient(90deg, #00d0ff, #57ffc1);
 	--gradient-purple: linear-gradient(90deg, #b721ff, #d16fff);
+	--gradient-pink: linear-gradient(90deg, #ff21e9, #ff6ff3);
+	--gradient-white: linear-gradient(90deg, #c8c8c8, #f1f1f1);
+	--gradient-yellow: linear-gradient(90deg, #fff421, #fdff6f);
+	--gradient-red: linear-gradient(90deg, #ff3021, #ff796f);
 
 	--primary-color: #227bff;
 	--primary-color-light: #5d9eff;
@@ -24,6 +28,10 @@
 	--purple-color: #c851ff;
 	--blue-color: #448fff;
 	--aqua-color: #5fdfff;
+	--white-color: #f1f1f1;
+	--pink-color: #da3dca;
+	--yellow-color: #dbd341;
+	--red-color: #d34339;
 }
 
 @media (prefers-color-scheme: light) {

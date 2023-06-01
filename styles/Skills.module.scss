@@ -133,6 +133,62 @@
 			}
 		}
 	}
+
+	.skill.white {
+		.data {
+			.icon {
+				color: var(--white-color);
+			}
+		}
+
+		.bar {
+			.fill {
+				background-image: var(--gradient-white);
+			}
+		}
+	}
+
+	.skill.pink {
+		.data {
+			.icon {
+				color: var(--pink-color);
+			}
+		}
+
+		.bar {
+			.fill {
+				background-image: var(--gradient-pink);
+			}
+		}
+	}
+
+	.skill.yellow {
+		.data {
+			.icon {
+				color: var(--yellow-color);
+			}
+		}
+
+		.bar {
+			.fill {
+				background-image: var(--gradient-yellow);
+			}
+		}
+	}
+
+	.skill.red {
+		.data {
+			.icon {
+				color: var(--red-color);
+			}
+		}
+
+		.bar {
+			.fill {
+				background-image: var(--gradient-red);
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 800px) {

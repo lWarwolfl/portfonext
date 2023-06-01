@@ -19,7 +19,15 @@ import materialui from "../public/image/svg/skills/materialui.svg";
 interface Skill {
 	name: string;
 	type: "code" | "design" | "other";
-	color: "purple" | "green" | "blue" | "aqua";
+	color:
+		| "purple"
+		| "green"
+		| "blue"
+		| "aqua"
+		| "white"
+		| "pink"
+		| "yellow"
+		| "red";
 	image: string;
 	percent: string;
 }
@@ -29,42 +37,42 @@ export default function Skills() {
 		{
 			name: "Next.js Framework",
 			type: "code",
-			color: "purple",
+			color: "white",
 			image: nextjs,
 			percent: "75%",
 		},
 		{
 			name: "React.js Framework",
 			type: "code",
-			color: "blue",
+			color: "aqua",
 			image: reactjs,
 			percent: "100%",
 		},
 		{
 			name: "Javascript",
 			type: "code",
-			color: "green",
+			color: "yellow",
 			image: javascript,
 			percent: "75%",
 		},
 		{
 			name: "Typescript",
 			type: "code",
-			color: "aqua",
+			color: "blue",
 			image: typescript,
 			percent: "50%",
 		},
 		{
 			name: "Material UI",
 			type: "design",
-			color: "aqua",
+			color: "blue",
 			image: materialui,
 			percent: "75%",
 		},
 		{
 			name: "Html 5",
 			type: "code",
-			color: "green",
+			color: "red",
 			image: html,
 			percent: "100%",
 		},
@@ -78,7 +86,7 @@ export default function Skills() {
 		{
 			name: "SCSS",
 			type: "code",
-			color: "purple",
+			color: "pink",
 			image: scss,
 			percent: "100%",
 		},
