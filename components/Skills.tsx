@@ -8,6 +8,7 @@ import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import DesignServicesRoundedIcon from '@mui/icons-material/DesignServicesRounded';
 import BoltRoundedIcon from '@mui/icons-material/BoltRounded';
 import nextjs from "../public/image/svg/skills/nextjs.svg";
+import reactjs from "../public/image/svg/skills/reactjs.svg";
 
 interface Skill {
 	name: string;
@@ -25,6 +26,13 @@ export default function Skills() {
 			color: "purple",
 			image: nextjs,
 			percent: "75%",
+		},
+		{
+			name: "React.js Framework",
+			type: "code",
+			color: "green",
+			image: reactjs,
+			percent: "100%",
 		},
 	];
 

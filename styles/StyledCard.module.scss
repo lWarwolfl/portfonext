@@ -3,6 +3,8 @@
 @import "./globals.scss";
 
 //Styled Card styles desktop
+$marginsmall: 30px;
+
 .container {
 	@include flex-row;
 	flex-wrap: wrap;
@@ -19,7 +21,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		$size: 650px;
+		$size: 300px;
 		width: $size;
 		height: $size;
 		filter: blur(180px);
@@ -28,7 +30,7 @@
 		transition: opacity $transition-vs cubic-bezier(0.16, 1, 0.3, 1);
 		mix-blend-mode: soft-light;
 		will-change: transform;
-		background-color: var(--green-color);
+		background-color: var(--blue-color);
 		opacity: 0;
 		z-index: -2;
 	}
@@ -40,14 +42,41 @@
 
 .container.small {
 	padding: 20px;
-	width: calc(($max-width-global / 4) - 30px);
+	width: calc((100% / 4) - ($marginsmall * 3) / 4);
 	min-width: 150px;
 	margin-bottom: 20px;
+	margin-right: $marginsmall;
+
+	.glow {
+		$size: 200px;
+		width: $size;
+		height: $size;
+		background-color: var(--purple-color);
+		filter: blur(130px);
+	}
+}
+
+.container.small:nth-child(4n) {
+	margin-right: 0px;
 }
 
 .container:hover {
 	.glow {
 		opacity: 0.75;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.container.small {
+		width: calc((100% / 3) - ($marginsmall * 2) / 3);
+	}
+
+	.container.small:nth-child(4n) {
+		margin-right: $marginsmall;
+	}
+
+	.container.small:nth-child(3n) {
+		margin-right: 0px;
 	}
 }
 
@@ -61,13 +90,45 @@
 	}
 
 	.container.small {
-		padding: 10px;
-		width: 100%;
+		padding: 15px;
+		width: calc((100% / 2) - ($marginsmall) / 2);
+	}
+
+	.container.small:nth-child(4n) {
+		margin-right: $marginsmall;
+	}
+
+	.container.small:nth-child(3n) {
+		margin-right: $marginsmall;
+	}
+
+	.container.small:nth-child(2n) {
+		margin-right: 0px;
 	}
 
 	.container:hover {
 		.glow {
 			opacity: 0;
 		}
+	}
+}
+
+
+@media screen and (max-width: 800px) {
+	.container.small {
+		width: 100%;
+		margin-right: 0px;
+	}
+
+	.container.small:nth-child(4n) {
+		margin-right: 0px;
+	}
+
+	.container.small:nth-child(3n) {
+		margin-right: 0px;
+	}
+
+	.container.small:nth-child(2n) {
+		margin-right: 0px;
 	}
 }

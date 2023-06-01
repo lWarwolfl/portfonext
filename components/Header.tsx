@@ -75,6 +75,7 @@ export default function Header() {
 					<Link className={styles.logo} href="/">
 						<div className={styles.image}></div>
 					</Link>
+
 					<div className={styles.navbar}>
 						{links.map((link, i) => (
 							<div className={styles.linkcontainer} key={i}>
@@ -98,6 +99,7 @@ export default function Header() {
 							<KeyboardDoubleArrowUpRoundedIcon className={styles.iconsecond} />
 						</Button>
 					</div>
+					
 					<div className={styles.buttoncontainer}>
 						<SendRoundedIcon className={`${styles.icon} ${styles.static}`} />
 						<Button
