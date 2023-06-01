@@ -35,7 +35,7 @@
 		width: 100%;
 		color: var(--font-color-secondary);
 		font-size: $font-size-l;
-		font-weight: $font-weight-semibold;
+		font-weight: $font-weight-medium;
 		text-align: justify;
 		text-align-last: left;
 		line-height: $font-size-xxxl;
@@ -43,6 +43,12 @@
 		.bold {
 			font-weight: $font-weight-bold;
 			color: var(--font-color-primary);
+		}
+
+		.accent {
+			@include gradient-text-accent;
+			font-weight: $font-weight-black;
+			display: inline-block;
 		}
 
 		.break {

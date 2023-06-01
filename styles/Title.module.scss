@@ -10,6 +10,7 @@
 	color: var(--font-color-primary);
 	font-size: $font-size-xxxxl;
 	font-weight: $font-weight-extrabold;
+	
 	.accent {
 		@include gradient-text-accent;
 		display: inline-block;
