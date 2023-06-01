@@ -60,8 +60,8 @@ export default function Summary() {
 
 			<div className={styles.splittext}>
 				<div className={styles.description}>
-					I am <span className={styles.accent}>Sina Kheiri</span> and As a
-					React.js developer with{" "}
+					I am <span className={styles.accent}>Sina Kheiri</span> and As a{" "}
+					<span className={styles.bold}>React.js developer</span> with{" "}
 					<span className={styles.bold}>4 years of experience</span> in{" "}
 					<span className={styles.bold}>frontend development</span> and{" "}
 					<span className={styles.bold}>UI/UX design</span>, I possess a diverse
