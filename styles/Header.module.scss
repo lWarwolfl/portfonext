@@ -26,12 +26,7 @@ $height: 40px;
 		transition: background-color $transition-m cubic-bezier(0.16, 1, 0.3, 1);
 	}
 
-	.name {
-		@include flex-row;
-		align-items: center;
-		justify-content: flex-start;
-
-		.logo {
+	.logo {
 			@include gradient-animation-effect;
 			@include flex-row;
 			cursor: pointer;
@@ -58,7 +53,6 @@ $height: 40px;
 			@include gradient-animation-effect-hover;
 			box-shadow: 0 0 30px var(--primary-color-transparent);
 		}
-	}
 
 	.navbar {
 		@include flex-row;

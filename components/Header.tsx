@@ -72,11 +72,9 @@ export default function Header() {
 		<>
 			<div className={styles.header} ref={containerRef}>
 				<div className={styles.fix}>
-					<div className={styles.name}>
-						<Link className={styles.logo} href="/">
-							<div className={styles.image}></div>
-						</Link>
-					</div>
+					<Link className={styles.logo} href="/">
+						<div className={styles.image}></div>
+					</Link>
 					<div className={styles.navbar}>
 						{links.map((link, i) => (
 							<div className={styles.linkcontainer} key={i}>
