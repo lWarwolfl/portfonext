@@ -87,13 +87,28 @@ export default function Summary() {
 					<a
 						href={link.link}
 						target="_blank"
-						className={`${styles.socialcontainer} ${styles[link.color]}`}
+						className={styles.socialcontainer}
 						key={i}
 					>
-						<link.icon className={`${styles.icon} ${styles.static}`} />
+						<link.icon
+							style={{
+								color: `var(--${link.color}-color)`,
+							}}
+							className={`${styles.icon} ${styles.static}`}
+						/>
 						<Button className={styles.button}>{link.text}</Button>
-						<KeyboardArrowRightRoundedIcon className={styles.icon} />
-						<div className={styles.bar}></div>
+						<KeyboardArrowRightRoundedIcon
+							style={{
+								color: `var(--${link.color}-color)`,
+							}}
+							className={styles.icon}
+						/>
+						<div
+							style={{
+								backgroundImage: `var(--gradient-${link.color})`,
+							}}
+							className={styles.bar}
+						></div>
 					</a>
 				))}
 			</div>

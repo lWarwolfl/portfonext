@@ -94,7 +94,7 @@ export default function Skills() {
 
 	const content = skills.map((skill, i) => (
 		<StyledCard
-			className={`${styles.skill} ${styles[skill.color]}`}
+			className={styles.skill}
 			key={i}
 			variant="small"
 			content={
@@ -108,7 +108,12 @@ export default function Skills() {
 						/>
 						<div className={styles.name}>{skill.name}</div>
 						{skill.type === "code" && (
-							<CodeRoundedIcon className={styles.icon} />
+							<CodeRoundedIcon
+								style={{
+									color: `var(--${skill.color}-color)`,
+								}}
+								className={styles.icon}
+							/>
 						)}
 						{skill.type === "design" && (
 							<DesignServicesRoundedIcon className={styles.icon} />
@@ -122,7 +127,10 @@ export default function Skills() {
 						<div className={styles.bar}>
 							<div
 								className={styles.fill}
-								style={{ width: `${skill.percent}` }}
+								style={{
+									width: `${skill.percent}`,
+									backgroundImage: `var(--gradient-${skill.color})`,
+								}}
 							></div>
 						</div>
 					</div>
