@@ -80,12 +80,17 @@
 
 @mixin gradient-text-accent {
 	@include gradient-text;
-	background-image: var(--gradient-green);
+	background-image: var(--gradient-aqua);
+}
+
+@mixin gradient-text-purple {
+	@include gradient-text;
+	background-image: var(--gradient-purple);
 }
 
 @mixin gradient-text-loop {
 	@include gradient-text;
 	background-image: var(--gradient-main-loop);
-	background-size: 400% 100%;
+	background-size: 200% 100%;
 	background-position: 0% center;
 }

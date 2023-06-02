@@ -19,7 +19,7 @@ export default function StyledCard({ id, className, variant, content }: Props) {
 			const mouseY = event.clientY - containerRect.top;
 
 			let multiplier = 2;
-			let offset = 150;
+			let offset = 125;
 
 			if (variant === "small") {
 				multiplier = 8;

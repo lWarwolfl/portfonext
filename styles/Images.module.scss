@@ -17,13 +17,14 @@
 
 .bigplanet {
 	@include background-contain;
-	$size: 900px;
+	$size: 700px;
 	position: absolute;
 	width: $size;
 	height: $size;
-	left: 0;
-	top: -550px;
+	left: 20px;
+	top: -400px;
 	opacity: 0.8;
+	filter: hue-rotate(-40deg) brightness(0.9);
 	z-index: -1;
 	animation: planet-move 400s linear infinite;
 }
@@ -32,8 +33,8 @@
 	@include background-contain;
 	$size: 250px;
 	position: absolute;
-	top: 180px;
-	right: 130px;
+	top: 400px;
+	right: 120px;
 	aspect-ratio: 1 / 1;
 	width: $size;
 	height: $size;

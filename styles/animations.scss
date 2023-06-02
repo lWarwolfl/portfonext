@@ -2,40 +2,45 @@
   0% {
     transform: translate(0, 30px) rotate(0deg);
   }
-  9.09% {
-    transform: translate(25.98px, 19.85px) rotate(40deg);
+  8.33% {
+    transform: translate(15px, 25px) rotate(30deg);
   }
-  18.18% {
-    transform: translate(44.29px, 7.36px) rotate(80deg);
+  16.67% {
+    transform: translate(25px, 15px) rotate(60deg);
   }
-  27.27% {
-    transform: translate(51.96px, -15.04px) rotate(120deg);
+  25% {
+    transform: translate(30px, 0) rotate(90deg);
   }
-  36.36% {
-    transform: translate(47.54px, -35.85px) rotate(160deg);
+  33.33% {
+    transform: translate(25, -15px) rotate(120deg);
   }
-  45.45% {
-    transform: translate(31.97px, -50.88px) rotate(200deg);
+  41.67% {
+    transform: translate(15px, -25px) rotate(150deg);
   }
-  54.54% {
-    transform: translate(8.66px, -53.28px) rotate(240deg);
+  50% {
+    transform: translate(0, -30px) rotate(180deg);
   }
-  63.63% {
-    transform: translate(-15.04px, -42.16px) rotate(280deg);
+  58.33% {
+    transform: translate(-15px, -25px) rotate(210deg);
   }
-  72.72% {
-    transform: translate(-29.49px, -21.35px) rotate(320deg);
+  66.67% {
+    transform: translate(-25px, -15px) rotate(240deg);
   }
-  81.81% {
-    transform: translate(-29.49px, 9.21px) rotate(360deg);
+  75% {
+    transform: translate(-30px, 0) rotate(270deg);
   }
-  90.9% {
-    transform: translate(-17.78px, 26.51px) rotate(400deg);
+  83.33% {
+    transform: translate(-25px, 15px) rotate(300deg);
+  }
+  91.67% {
+    transform: translate(-15px, 25px) rotate(330deg);
   }
   100% {
-    transform: translate(0, 30px) rotate(440deg);
+    transform: translate(0, 30px) rotate(360deg);
   }
 }
+
+
 
 @keyframes gradient-animation {
   0% {

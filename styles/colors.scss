@@ -8,13 +8,14 @@
 	--gradient-main-loop: linear-gradient(
 		90deg,
 		#b721ff 0%,
-		#257cff 33%,
-		#00fbff 66%,
+		#6625ff 35%,
+		#257cff 50%,
+		#6625ff 65%,
 		#b721ff 100%
 	);
 	--gradient-green: linear-gradient(90deg, #40c463 0%, #6afb90 100%);
 	--gradient-blue: linear-gradient(90deg, #257cff, #72aaff);
-	--gradient-aqua: linear-gradient(90deg, #00d0ff, #57ffc1);
+	--gradient-aqua: linear-gradient(90deg, #00aaff, hsl(170, 100%, 67%));
 	--gradient-purple: linear-gradient(90deg, #b721ff, #d16fff);
 	--gradient-pink: linear-gradient(90deg, #ff21e9, #ff6ff3);
 	--gradient-white: linear-gradient(90deg, #c8c8c8, #f1f1f1);
