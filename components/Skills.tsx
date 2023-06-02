@@ -15,6 +15,16 @@ import css from "../public/image/svg/skills/css.svg";
 import scss from "../public/image/svg/skills/scss.svg";
 import html from "../public/image/svg/skills/html.svg";
 import materialui from "../public/image/svg/skills/materialui.svg";
+import redux from "../public/image/svg/skills/redux.svg";
+import bootstrap from "../public/image/svg/skills/bootstrap.svg";
+import formik from "../public/image/svg/skills/formik.svg";
+import axios from "../public/image/svg/skills/axios.svg";
+import jquery from "../public/image/svg/skills/jquery.svg";
+import figma from "../public/image/svg/skills/figma.svg";
+import adobexd from "../public/image/svg/skills/adobexd.svg";
+import adobeillustrator from "../public/image/svg/skills/adobeillustrator.svg";
+import agile from "../public/image/svg/skills/agile.svg";
+import github from "../public/image/svg/skills/github.svg";
 
 interface Skill {
 	name: string;
@@ -27,7 +37,8 @@ interface Skill {
 		| "white"
 		| "pink"
 		| "yellow"
-		| "red";
+		| "red"
+		| "orange";
 	image: string;
 	percent: string;
 }
@@ -63,18 +74,18 @@ export default function Skills() {
 			percent: "50%",
 		},
 		{
+			name: "Redux Toolkit(Redux.js)",
+			type: "code",
+			color: "purple",
+			image: redux,
+			percent: "100%",
+		},
+		{
 			name: "Material UI",
 			type: "design",
 			color: "blue",
 			image: materialui,
 			percent: "75%",
-		},
-		{
-			name: "Html 5",
-			type: "code",
-			color: "red",
-			image: html,
-			percent: "100%",
 		},
 		{
 			name: "CSS 3",
@@ -88,6 +99,76 @@ export default function Skills() {
 			type: "code",
 			color: "pink",
 			image: scss,
+			percent: "100%",
+		},
+		{
+			name: "Html 5",
+			type: "code",
+			color: "red",
+			image: html,
+			percent: "100%",
+		},
+		{
+			name: "Figma",
+			type: "design",
+			color: "orange",
+			image: figma,
+			percent: "100%",
+		},
+		{
+			name: "Adobe XD",
+			type: "design",
+			color: "purple",
+			image: adobexd,
+			percent: "100%",
+		},
+		{
+			name: "Adobe Illustrator",
+			type: "design",
+			color: "orange",
+			image: adobeillustrator,
+			percent: "75%",
+		},
+		{
+			name: "Github",
+			type: "other",
+			color: "white",
+			image: github,
+			percent: "100%",
+		},
+		{
+			name: "Agile Methodologies",
+			type: "other",
+			color: "green",
+			image: agile,
+			percent: "75%",
+		},
+		{
+			name: "Bootstrap",
+			type: "design",
+			color: "pink",
+			image: bootstrap,
+			percent: "75%",
+		},
+		{
+			name: "Jquery",
+			type: "code",
+			color: "blue",
+			image: jquery,
+			percent: "100%",
+		},
+		{
+			name: "Formik",
+			type: "code",
+			color: "blue",
+			image: formik,
+			percent: "100%",
+		},
+		{
+			name: "Axios",
+			type: "code",
+			color: "white",
+			image: axios,
 			percent: "100%",
 		},
 	];
@@ -116,10 +197,20 @@ export default function Skills() {
 							/>
 						)}
 						{skill.type === "design" && (
-							<DesignServicesRoundedIcon className={styles.icon} />
+							<DesignServicesRoundedIcon
+								style={{
+									color: `var(--${skill.color}-color)`,
+								}}
+								className={styles.icon}
+							/>
 						)}
 						{skill.type === "other" && (
-							<BoltRoundedIcon className={styles.icon} />
+							<BoltRoundedIcon
+								style={{
+									color: `var(--${skill.color}-color)`,
+								}}
+								className={styles.icon}
+							/>
 						)}
 					</div>
 					<div className={styles.barcontainer}>
