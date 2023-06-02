@@ -118,7 +118,7 @@ export default function Skills() {
 		{
 			name: "Adobe XD",
 			type: "design",
-			color: "purple",
+			color: "pink",
 			image: adobexd,
 			percent: "100%",
 		},
@@ -146,7 +146,7 @@ export default function Skills() {
 		{
 			name: "Bootstrap",
 			type: "design",
-			color: "pink",
+			color: "purple",
 			image: bootstrap,
 			percent: "75%",
 		},
