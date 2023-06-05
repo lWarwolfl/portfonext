@@ -15,19 +15,34 @@ export default function Hero() {
 					<span className={styles.accent}>designer</span>
 				</div>
 
-				<a
-					href="/files/Resume.pdf"
-					target="_blank"
-					rel="noopener noreferrer"
-					className={styles.buttoncontainer}
-				>
-					<PictureAsPdfOutlinedIcon
-						className={`${styles.icon} ${styles.static}`}
-					/>
-					<Button className={styles.button}>My resume</Button>
-					<FileDownloadOutlinedIcon className={styles.icon} />
-					<div className={styles.bar}></div>
-				</a>
+				<div className={styles.buttons}>
+					<a
+						href="/files/resume-en.pdf"
+						target="_blank"
+						rel="noopener noreferrer"
+						className={styles.buttoncontainer}
+					>
+						<PictureAsPdfOutlinedIcon
+							className={`${styles.icon} ${styles.static}`}
+						/>
+						<Button className={styles.button}>Resume (en)</Button>
+						<FileDownloadOutlinedIcon className={styles.icon} />
+						<div className={styles.bar}></div>
+					</a>
+					<a
+						href="/files/resume-fa.pdf"
+						target="_blank"
+						rel="noopener noreferrer"
+						className={`${styles.buttoncontainer} ${styles.purple}`}
+					>
+						<PictureAsPdfOutlinedIcon
+							className={`${styles.icon} ${styles.static}`}
+						/>
+						<Button className={styles.button}>Resume (fa)</Button>
+						<FileDownloadOutlinedIcon className={styles.icon} />
+						<div className={styles.bar}></div>
+					</a>
+				</div>
 			</div>
 		</div>
 	);
