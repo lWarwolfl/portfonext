@@ -25,7 +25,7 @@ export default function Hero() {
 						<PictureAsPdfOutlinedIcon
 							className={`${styles.icon} ${styles.static}`}
 						/>
-						<Button className={styles.button}>Resume (en)</Button>
+						<Button className={styles.button}>Resume - en</Button>
 						<FileDownloadOutlinedIcon className={styles.icon} />
 						<div className={styles.bar}></div>
 					</a>
@@ -38,7 +38,7 @@ export default function Hero() {
 						<PictureAsPdfOutlinedIcon
 							className={`${styles.icon} ${styles.static}`}
 						/>
-						<Button className={styles.button}>Resume (fa)</Button>
+						<Button className={styles.button}>Resume - fa</Button>
 						<FileDownloadOutlinedIcon className={styles.icon} />
 						<div className={styles.bar}></div>
 					</a>
