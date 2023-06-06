@@ -5,10 +5,10 @@ type Props = {
 	id?: string;
 	className?: string;
 	variant: string;
-	content: React.ReactNode;
+	children: React.ReactNode;
 };
 
-export default function StyledCard({ id, className, variant, content }: Props) {
+export default function StyledCard({ id, className, variant, children }: Props) {
 	const [glowPosition, setGlowPosition] = useState({ x: 0, y: 0 });
 	const containerRef = useRef<HTMLDivElement>(null);
 
@@ -57,7 +57,7 @@ export default function StyledCard({ id, className, variant, content }: Props) {
 				className={styles.glow}
 				style={{ top: `${glowPosition.y}px`, left: `${glowPosition.x}px` }}
 			></div>
-			{content}
+			{children}
 		</div>
 	);
 }
