@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Images from "@/components/Images";
 import Skills from "@/components/Skills";
 import Summary from "@/components/Summary";
+import WorkExperience from "@/components/WorkExperience";
 import Head from "next/head";
 import * as React from "react";
 
@@ -16,6 +17,7 @@ export default function Home() {
 				<Hero />
 				<Summary />
 				<Skills />
+				<WorkExperience />
 				<Images />
 			</main>
 		</>

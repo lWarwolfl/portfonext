@@ -24,6 +24,11 @@ export default function StyledCard({ id, className, variant, children }: Props) 
 			if (variant === "small") {
 				multiplier = 8;
 				offset = 100;
+			}
+			
+			if (variant === "smallfull") {
+				multiplier = 5;
+				offset = 75;
 			}	
 
 			const xSkew =
@@ -48,7 +53,9 @@ export default function StyledCard({ id, className, variant, children }: Props) 
 			id={id}
 			className={`${className} ${styles.container} ${
 				variant === "narrowbottom" && styles.narrowbottom
-			} ${variant === "small" && styles.small}`}
+			} ${variant === "small" && styles.small} ${
+				variant === "smallfull" && styles.smallfull
+			}`}
 			onMouseMove={handleMouseMove}
 			onMouseLeave={handleMouseLeave}
 			ref={containerRef}

@@ -56,6 +56,20 @@ $marginsmall: 30px;
 	}
 }
 
+.container.smallfull {
+	padding: 15px;
+	width: 100%;
+	margin-bottom: 20px;
+
+	.glow {
+		$size: 150px;
+		width: $size;
+		height: $size;
+		background-color: var(--aqua-color);
+		filter: blur(100px);
+	}
+}
+
 .container.small:nth-child(4n) {
 	margin-right: 0px;
 }
@@ -113,8 +127,7 @@ $marginsmall: 30px;
 	}
 }
 
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
 	.container.small {
 		width: 100%;
 		margin-right: 0px;

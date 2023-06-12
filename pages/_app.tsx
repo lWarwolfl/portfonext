@@ -1,5 +1,6 @@
 import * as React from "react";
 import "@/styles/index.scss";
+import "@/styles/SplittedContainer.scss";
 import type { AppProps } from "next/app";
 
 //using next.js 13 font optimization to add our font to all pages
