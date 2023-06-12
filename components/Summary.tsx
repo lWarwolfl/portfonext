@@ -14,7 +14,16 @@ import AnimatedContainer from "./AnimatedContainer";
 
 interface Link {
 	link: string;
-	color: "purple" | "green" | "blue" | "aqua";
+	color:
+		| "purple"
+		| "green"
+		| "blue"
+		| "aqua"
+		| "white"
+		| "pink"
+		| "yellow"
+		| "red"
+		| "orange";
 	text: string;
 	icon: React.ElementType;
 }

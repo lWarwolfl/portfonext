@@ -25,6 +25,11 @@ $position: 100px;
 		transform $transition-s ease-in-out;
 }
 
+.veryslow {
+	transition: opacity $transition-vs ease-in-out,
+		transform $transition-vs ease-in-out;
+}
+
 .show {
 	opacity: 1;
 }

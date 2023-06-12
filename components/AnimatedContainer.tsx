@@ -5,7 +5,7 @@ type AnimatedContainerProps = {
 	id?: string;
 	className?: string;
 	animationDirection: "top" | "right" | "bottom" | "left";
-	animationSpeed: "fast" | "medium" | "slow";
+	animationSpeed: "fast" | "medium" | "slow" | "veryslow";
 	children: React.ReactNode;
 };
 

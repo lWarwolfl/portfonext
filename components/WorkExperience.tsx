@@ -12,7 +12,17 @@ import SplittedContainer from "./SplittedContainer";
 interface Company {
 	name: string;
 	link: string;
-	color: "purple" | "green" | "blue" | "aqua";
+	animationSpeed: "fast" | "medium" | "slow" | "veryslow";
+	color:
+		| "purple"
+		| "green"
+		| "blue"
+		| "aqua"
+		| "white"
+		| "pink"
+		| "yellow"
+		| "red"
+		| "orange";
 }
 
 export default function WorkExperience() {
@@ -20,11 +30,13 @@ export default function WorkExperience() {
 		{
 			name: "sinakheiri.dev@gmail.com",
 			link: "mailto:sinakheiri.dev@gmail.com",
+			animationSpeed: "slow",
 			color: "purple",
 		},
 		{
 			name: "sinakheiri.dev@gmail.com",
 			link: "mailto:sinakheiri.dev@gmail.com",
+			animationSpeed: "veryslow",
 			color: "purple",
 		},
 	];
@@ -41,7 +53,7 @@ export default function WorkExperience() {
 			<SplittedContainer>
 				{companies.map((company, i) => {
 					return (
-						<AnimatedContainer animationDirection="top" animationSpeed="slow">
+						<AnimatedContainer animationDirection="top" animationSpeed={company.animationSpeed}>
 							<StyledCard
 								className={styles.skill}
 								key={i}
