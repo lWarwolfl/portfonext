@@ -8,157 +8,91 @@
 	@include flex-column;
 	position: relative;
 	width: 100%;
-}
 
-.splitimage {
-	@include flex-column;
-	align-items: center;
-	justify-content: center;
-	margin-right: 30px;
-	max-width: 230px;
-	min-width: 200px;
-
-	.image {
-		@include background-contain;
-		width: 100%;
-		height: auto;
-		border-radius: 100%;
-	}
-}
-
-.splittext {
-	@include flex-column;
-	flex: 1;
-	min-width: 300px;
-
-	.description {
-		width: 100%;
-		color: var(--font-color-secondary);
-		font-size: $font-size-l;
-		font-weight: $font-weight-medium;
-		text-align: justify;
-		text-align-last: left;
-		line-height: $font-size-xxxl;
-
-		.bold {
-			font-weight: $font-weight-bold;
-			color: var(--font-color-primary);
-		}
-
-		.accent {
-			@include gradient-text-accent;
-			font-weight: $font-weight-black;
-			display: inline-block;
-		}
-
-		.break {
-			margin-bottom: 8px;
-		}
-	}
-}
-
-.social {
-	width: 100%;
-	margin-top: 40px;
-	@include flex-row;
-	flex-wrap: wrap;
-	$height: 50px;
-
-	.socialcontainer {
+	.companycontainer {
+		$height: 70px;
 		position: relative;
-		margin-right: 15px;
 		display: inline-block;
 		margin-bottom: 20px;
+		width: 100%;
+
+		.image {
+			@include background-contain;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			width: calc($height - 20px);
+			height: calc($height - 20px);
+			border-radius: 5px;
+		}
 
 		.icon {
 			position: absolute;
 			top: calc(50% - calc($font-size-xxxl / 2));
-			right: 15px;
+			right: 25px;
 			opacity: 0;
 			font-size: $font-size-xxxl;
 			transition: opacity $transition-s cubic-bezier(0.16, 1, 0.3, 1),
 				right $transition-s cubic-bezier(0.16, 1, 0.3, 1);
 		}
 
-		.icon.static {
-			top: calc(50% - calc($font-size-xxl / 2));
-			left: 8px;
-			opacity: 1;
-			font-size: $font-size-xxl;
-		}
-
 		.button {
-			@include overflow-ellipsis;
+			width: 100%;
 			display: block;
 			height: $height;
 			border-radius: $border-radius-global;
-			padding-right: 20px;
-			padding-left: 40px;
-			color: var(--font-color-primary);
+			padding-right: calc($font-size-xxxl + 25px);
+			padding-left: calc($height + 10px);
+			background-color: var(--primary-color-transparent);
+			color: var(--font-color-secondary);
 			font-weight: $font-weight-medium;
-			font-size: $font-size-m;
+			font-size: $font-size-em;
+			line-height: $font-size-xxl;
 			text-transform: unset;
-			background-color: var(--transparent-background);
+			text-align: left;
 			transition: padding-right $transition-s cubic-bezier(0.16, 1, 0.3, 1),
-				padding-left $transition-s cubic-bezier(0.16, 1, 0.3, 1);
-			max-width: 260px;
-		}
+				padding-left $transition-s cubic-bezier(0.16, 1, 0.3, 1),
+				background-color $transition-f cubic-bezier(0.16, 1, 0.3, 1);
 
-		.bar {
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			height: 6px;
-			width: 0%;
-			border-radius: 3px;
-			background-color: var(--gradient-green);
-			transition-property: width;
-			transition: width $transition-s cubic-bezier(0.16, 1, 0.3, 1);
-			z-index: 2;
+			.bold {
+				color: var(--font-color-primary);
+				font-weight: $font-weight-semibold;
+			}
 		}
 	}
 
-	.socialcontainer:hover {
-		.bar {
-			width: 100%;
-		}
-
+	.companycontainer:hover {
 		.button {
-			padding-right: 40px;
-			padding-left: 20px;
+			background-color: var(--transparent-background);
 		}
 
 		.icon {
-			right: 8px;
+			right: 15px;
 			opacity: 1;
 		}
+	}
 
-		.icon.static {
-			left: 15px;
-			opacity: 0;
+	.experience {
+		.icon {
+			vertical-align: middle;
+			font-size: $font-size-xl;
+			margin-right: 10px;
+			margin-bottom: 5px;
+		}
+
+		.text {
+			color: var(--font-color-secondary);
+			font-weight: $font-weight-medium;
+			font-size: $font-size-em;
+			line-height: $font-size-xxxl;
+
+			.bold {
+				color: var(--font-color-primary);
+				font-weight: $font-weight-semibold;
+			}
 		}
 	}
 }
 
 @media screen and (max-width: 800px) {
-	.splitimage {
-		margin-right: 0;
-		max-width: unset;
-		width: 100%;
-		margin-bottom: 15px;
-	}
-}
-
-@media screen and (max-width: 600px) {
-	.social {
-		.socialcontainer {
-			width: 100%;
-			margin-right: 0;
-			.button {
-				max-width: unset;
-				width: 100%;
-				text-align: left;
-			}
-		}
-	}
 }

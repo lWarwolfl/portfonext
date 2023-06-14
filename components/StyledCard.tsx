@@ -27,7 +27,7 @@ export default function StyledCard({ id, className, variant, children }: Props) 
 			}
 			
 			if (variant === "smallfull") {
-				multiplier = 5;
+				multiplier = 4;
 				offset = 75;
 			}	
 
