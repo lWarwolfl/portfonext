@@ -42,7 +42,7 @@
 			height: $height;
 			border-radius: $border-radius-global;
 			padding-right: calc($font-size-xxxl + 25px);
-			padding-left: calc($height + 10px);
+			padding-left: $height;
 			background-color: var(--primary-color-transparent);
 			color: var(--font-color-secondary);
 			font-weight: $font-weight-medium;
@@ -94,5 +94,19 @@
 	}
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 500px) {
+	.container {
+		.companycontainer {
+			.button {
+				padding-right: 10px;
+				font-size: $font-size-r;
+			}
+		}
+
+		.companycontainer:hover {
+			.icon {
+				opacity: 0;
+			}
+		}
+	}
 }
