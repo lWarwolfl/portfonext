@@ -12,3 +12,10 @@ export type Color =
 export type AnimationSpeed = "fast" | "medium" | "slow" | "veryslow";
 
 export type SkillType = "code" | "design" | "other";
+
+export type StaticImageData = {
+	src: string;
+	height: number;
+	width: number;
+	blurDataURL?: string;
+};

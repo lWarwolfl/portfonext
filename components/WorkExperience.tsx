@@ -11,14 +11,7 @@ import AnimatedContainer from "./AnimatedContainer";
 import SplittedContainer from "./SplittedContainer";
 import agahpadidar from "../public/image/jpg/company/agahpadidar.jpg";
 import ponisha from "../public/image/png/company/ponisha.png";
-import { AnimationSpeed, Color } from "@/utils/types";
-
-type StaticImageData = {
-	src: string;
-	height: number;
-	width: number;
-	blurDataURL?: string;
-};
+import { AnimationSpeed, Color, StaticImageData } from "@/utils/types";
 
 interface Company {
 	alt: string;
