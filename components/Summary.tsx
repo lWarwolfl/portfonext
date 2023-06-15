@@ -65,7 +65,7 @@ export default function Summary() {
 				/>
 			</AnimatedContainer>
 			<AnimatedContainer animationDirection="top" animationSpeed="slow">
-				<StyledCard variant="narrowbottom">
+				<StyledCard glow="blue" variant="narrowbottom">
 					<div className={styles.splitimage}>
 						<Image
 							src={photo}

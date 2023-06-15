@@ -25,20 +25,12 @@ import adobexd from "../public/image/svg/skills/adobexd.svg";
 import adobeillustrator from "../public/image/svg/skills/adobeillustrator.svg";
 import agile from "../public/image/svg/skills/agile.svg";
 import github from "../public/image/svg/skills/github.svg";
+import { Color, SkillType } from "@/utils/types";
 
 interface Skill {
 	name: string;
-	type: "code" | "design" | "other";
-	color:
-		| "purple"
-		| "green"
-		| "blue"
-		| "aqua"
-		| "white"
-		| "pink"
-		| "yellow"
-		| "red"
-		| "orange";
+	type: SkillType;
+	color: Color;
 	image: string;
 	percent: string;
 }
@@ -188,7 +180,12 @@ export default function Skills() {
 			>
 				{skills.map((skill, i) => {
 					return (
-						<StyledCard className={styles.skill} key={i} variant="small">
+						<StyledCard
+							glow={skill.color}
+							className={styles.skill}
+							key={i}
+							variant="small"
+						>
 							<div className={styles.data} key={i}>
 								<Image
 									src={skill.image}

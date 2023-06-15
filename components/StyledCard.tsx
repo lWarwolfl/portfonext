@@ -1,14 +1,16 @@
 import React, { useRef, useState } from "react";
 import styles from "../styles/StyledCard.module.scss";
+import { Color } from "@/utils/types";
 
 type Props = {
 	id?: string;
 	className?: string;
 	variant: string;
 	children: React.ReactNode;
+	glow: Color;
 };
 
-export default function StyledCard({ id, className, variant, children }: Props) {
+export default function StyledCard({ id, glow, className, variant, children }: Props) {
 	const [glowPosition, setGlowPosition] = useState({ x: 0, y: 0 });
 	const containerRef = useRef<HTMLDivElement>(null);
 
@@ -25,11 +27,11 @@ export default function StyledCard({ id, className, variant, children }: Props) 
 				multiplier = 8;
 				offset = 100;
 			}
-			
+
 			if (variant === "smallfull") {
 				multiplier = 4;
 				offset = 75;
-			}	
+			}
 
 			const xSkew =
 				((mouseX - containerRect.width / 2) / (containerRect.width / 2)) *
@@ -62,7 +64,11 @@ export default function StyledCard({ id, className, variant, children }: Props) 
 		>
 			<div
 				className={styles.glow}
-				style={{ top: `${glowPosition.y}px`, left: `${glowPosition.x}px` }}
+				style={{
+					top: `${glowPosition.y}px`,
+					left: `${glowPosition.x}px`,
+					backgroundColor: `var(--${glow}-color)`,
+				}}
 			></div>
 			{children}
 		</div>

@@ -11,6 +11,7 @@ import AnimatedContainer from "./AnimatedContainer";
 import SplittedContainer from "./SplittedContainer";
 import agahpadidar from "../public/image/jpg/company/agahpadidar.jpg";
 import ponisha from "../public/image/png/company/ponisha.png";
+import { AnimationSpeed, Color } from "@/utils/types";
 
 type StaticImageData = {
 	src: string;
@@ -27,17 +28,8 @@ interface Company {
 	icon: React.ElementType;
 	listicon: React.ElementType;
 	experiences: string[] | React.ReactNode[];
-	animationSpeed: "fast" | "medium" | "slow" | "veryslow";
-	color:
-		| "purple"
-		| "green"
-		| "blue"
-		| "aqua"
-		| "white"
-		| "pink"
-		| "yellow"
-		| "red"
-		| "orange";
+	animationSpeed: AnimationSpeed;
+	color: Color;
 }
 
 export default function WorkExperience() {
@@ -104,8 +96,8 @@ export default function WorkExperience() {
 			listicon: LibraryAddCheckOutlinedIcon,
 			experiences: [
 				<>
-					Designed <span className={styles.bold}>user interfaces</span>user
-					interfaces for mobile apps and websites.
+					Designed <span className={styles.bold}>User interfaces</span> for
+					mobile apps and websites.
 				</>,
 				<>
 					Created{" "}
@@ -174,6 +166,7 @@ export default function WorkExperience() {
 										className={styles.experience}
 										key={index}
 										variant="smallfull"
+										glow={company.color}
 									>
 										<company.listicon
 											style={{

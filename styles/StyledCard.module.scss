@@ -30,7 +30,6 @@ $marginsmall: 30px;
 		transition: opacity $transition-vs cubic-bezier(0.16, 1, 0.3, 1);
 		mix-blend-mode: soft-light;
 		will-change: transform;
-		background-color: var(--blue-color);
 		opacity: 0;
 		z-index: -2;
 	}
@@ -51,7 +50,6 @@ $marginsmall: 30px;
 		$size: 200px;
 		width: $size;
 		height: $size;
-		background-color: var(--purple-color);
 		filter: blur(130px);
 	}
 }
@@ -66,7 +64,6 @@ $marginsmall: 30px;
 		$size: 150px;
 		width: $size;
 		height: $size;
-		background-color: var(--aqua-color);
 		filter: blur(100px);
 	}
 }
