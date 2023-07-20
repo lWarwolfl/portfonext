@@ -37,19 +37,7 @@
 	--orange-color: #ff9421;
 }
 
-@media (prefers-color-scheme: light) {
-	:root {
-		--body-color: #0d1117;
-		--contrast-color: #30363d;
-		--transparent-background: hsla(0, 0%, 80%, 0.15);
-		--card-background: #161b22d0;
-		--font-color-primary: #f1f1f1;
-		--font-color-secondary: #d3d3d3;
-		--outline-color: #beb8ca;
-	}
-}
-
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light), (prefers-color-scheme: dark) {
 	:root {
 		--body-color: #0d1117;
 		--contrast-color: #30363d;

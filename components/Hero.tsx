@@ -17,7 +17,7 @@ export default function Hero() {
 
 				<div className={styles.buttons}>
 					<a
-						href="/files/resume-en.pdf"
+						href="/files/resume/en/Resume.pdf"
 						target="_blank"
 						rel="noopener noreferrer"
 						className={styles.buttoncontainer}
@@ -30,7 +30,7 @@ export default function Hero() {
 						<div className={styles.bar}></div>
 					</a>
 					<a
-						href="/files/resume-fa.pdf"
+						href="/files/resume/fa/Resume.pdf"
 						target="_blank"
 						rel="noopener noreferrer"
 						className={`${styles.buttoncontainer} ${styles.purple}`}
