@@ -48,6 +48,26 @@ export const font = localFont({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+	React.useEffect(() => {
+		if (typeof window !== "undefined") {
+			setTimeout(() => {
+				const loader = document.getElementById("globalLoader");
+				if (loader) loader.style.backgroundColor = "#0d1117bb";
+			}, 100);
+
+			setTimeout(() => {
+				const loader = document.getElementById("globalLoader");
+				if (loader) loader.style.opacity = "0";
+			}, 1300);
+
+			setTimeout(() => {
+				const loader = document.getElementById("globalLoader");
+				if (loader) loader.style.display = "none";
+				 document.body.style.overflowY = "auto";
+			}, 1600);
+		}
+	}, []);
+
 	return (
 		<main className={font.className}>
 			<Header />

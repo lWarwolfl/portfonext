@@ -33,7 +33,7 @@ export default function Particle() {
 				fullScreen: {
 					enable: false,
 				},
-				fpsLimit: 120,
+				fpsLimit: 60,
 				particles: {
 					color: {
 						value: ["#00fbff", "#B721FF", "#40c463"],
@@ -48,7 +48,7 @@ export default function Particle() {
 							default: "bounce",
 						},
 						random: false,
-						speed: 0.1,
+						speed: 0.13,
 						straight: false,
 					},
 					number: {
@@ -56,7 +56,7 @@ export default function Particle() {
 							enable: true,
 							area: 800,
 						},
-						value: 80,
+						value: 40,
 					},
 					opacity: {
 						value: 0.9,
@@ -65,7 +65,7 @@ export default function Particle() {
 						type: "circle",
 					},
 					size: {
-						value: { min: 1.5, max: 2.5 },
+						value: { min: 2, max: 3 },
 						anim: {
 							enable: true,
 							speed: 2,
