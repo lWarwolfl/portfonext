@@ -53,6 +53,7 @@ export default function App({ Component, pageProps }: AppProps) {
 			setTimeout(() => {
 				const loader = document.getElementById("globalLoader");
 				if (loader) loader.style.backgroundColor = "#0d1117bb";
+				document.body.style.overflowY = "auto";
 			}, 100);
 
 			setTimeout(() => {
@@ -63,7 +64,6 @@ export default function App({ Component, pageProps }: AppProps) {
 			setTimeout(() => {
 				const loader = document.getElementById("globalLoader");
 				if (loader) loader.style.display = "none";
-				 document.body.style.overflowY = "auto";
 			}, 1600);
 		}
 	}, []);

@@ -49,20 +49,20 @@ a {
 	// scrollbar style for chrome and firefox
 
 	::-webkit-scrollbar {
-		width: 8px;
+		width: 4px;
 	}
 	::-webkit-scrollbar-track {
-		background: #f1f1f1;
+		background: var(--body-color);
 	}
 	::-webkit-scrollbar-thumb {
-		background: #888;
+		background: var(--contrast-color);
 	}
 	::-webkit-scrollbar-thumb:hover {
-		background: #555;
+		background: var(--transparent-background);
 	}
 
 	body {
 		scrollbar-width: thin; /* "auto" or "thin" */
-		scrollbar-color: #888 #f1f1f1; /* scroll thumb and track */
+		scrollbar-color: var(--contrast-color) var(--body-color); /* scroll thumb and track */
 	}
 }
