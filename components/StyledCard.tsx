@@ -10,7 +10,13 @@ type Props = {
 	glow: Color;
 };
 
-export default function StyledCard({ id, glow, className, variant, children }: Props) {
+export default function StyledCard({
+	id,
+	glow,
+	className,
+	variant,
+	children,
+}: Props) {
 	const [glowPosition, setGlowPosition] = useState({ x: 0, y: 0 });
 	const containerRef = useRef<HTMLDivElement>(null);
 
@@ -25,7 +31,12 @@ export default function StyledCard({ id, glow, className, variant, children }: P
 
 			if (variant === "small") {
 				multiplier = 8;
-				offset = 100;
+				offset = 75;
+			}
+
+			if (variant === "medium") {
+				multiplier = 6;
+				offset = 85;
 			}
 
 			if (variant === "smallfull") {
@@ -56,8 +67,8 @@ export default function StyledCard({ id, glow, className, variant, children }: P
 			className={`${className} ${styles.container} ${
 				variant === "narrowbottom" && styles.narrowbottom
 			} ${variant === "small" && styles.small} ${
-				variant === "smallfull" && styles.smallfull
-			}`}
+				variant === "medium" && styles.medium
+			} ${variant === "smallfull" && styles.smallfull}`}
 			onMouseMove={handleMouseMove}
 			onMouseLeave={handleMouseLeave}
 			ref={containerRef}

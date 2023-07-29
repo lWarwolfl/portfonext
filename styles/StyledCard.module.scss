@@ -3,16 +3,15 @@
 @import "./globals.scss";
 
 //Styled Card styles desktop
-$marginsmall: 30px;
-
 .container {
 	@include flex-row;
 	flex-wrap: wrap;
 	position: relative;
+	direction: rtl;
 	width: 100%;
 	padding: 50px;
-	border: 1px solid var(--contrast-color);
-	background-color: var(--card-background);
+	border: 1.5px solid var(--contrast-color);
+	background-color: var(--card-color);
 	border-radius: $border-radius-global;
 	overflow: hidden;
 	transition: transform $transition-f cubic-bezier(0.16, 1, 0.3, 1);
@@ -28,7 +27,6 @@ $marginsmall: 30px;
 		border-radius: calc($size / 2);
 		opacity: 0;
 		transition: opacity $transition-vs cubic-bezier(0.16, 1, 0.3, 1);
-		mix-blend-mode: soft-light;
 		will-change: transform;
 		opacity: 0;
 		z-index: -2;
@@ -41,23 +39,33 @@ $marginsmall: 30px;
 
 .container.small {
 	padding: 20px;
-	width: calc((100% / 4) - ($marginsmall * 3) / 4);
+	flex-basis: 23%;
 	min-width: 150px;
-	margin-bottom: 20px;
-	margin-right: $marginsmall;
 
 	.glow {
-		$size: 200px;
+		$size: 150px;
 		width: $size;
 		height: $size;
-		filter: blur(130px);
+		filter: blur(110px);
+	}
+}
+
+.container.medium {
+	padding: 15px;
+	flex-basis: 31%;
+	min-width: 150px;
+
+	.glow {
+		$size: 170px;
+		width: $size;
+		height: $size;
+		filter: blur(120px);
 	}
 }
 
 .container.smallfull {
 	padding: 15px;
 	width: 100%;
-	margin-bottom: 20px;
 	display: block;
 
 	.glow {
@@ -68,10 +76,6 @@ $marginsmall: 30px;
 	}
 }
 
-.container.small:nth-child(4n) {
-	margin-right: 0px;
-}
-
 .container:hover {
 	.glow {
 		opacity: 0.75;
@@ -80,15 +84,7 @@ $marginsmall: 30px;
 
 @media screen and (max-width: 1200px) {
 	.container.small {
-		width: calc((100% / 3) - ($marginsmall * 2) / 3);
-	}
-
-	.container.small:nth-child(4n) {
-		margin-right: $marginsmall;
-	}
-
-	.container.small:nth-child(3n) {
-		margin-right: 0px;
+		flex-basis: 31%;
 	}
 }
 
@@ -101,21 +97,8 @@ $marginsmall: 30px;
 		padding: 20px 20px 0;
 	}
 
-	.container.small {
-		padding: 15px;
-		width: calc((100% / 2) - ($marginsmall) / 2);
-	}
-
-	.container.small:nth-child(4n) {
-		margin-right: $marginsmall;
-	}
-
-	.container.small:nth-child(3n) {
-		margin-right: $marginsmall;
-	}
-
-	.container.small:nth-child(2n) {
-		margin-right: 0px;
+	.container.medium, .container.small {
+		flex-basis: 48%;
 	}
 
 	.container:hover {
@@ -126,20 +109,7 @@ $marginsmall: 30px;
 }
 
 @media screen and (max-width: 600px) {
-	.container.small {
-		width: 100%;
-		margin-right: 0px;
-	}
-
-	.container.small:nth-child(4n) {
-		margin-right: 0px;
-	}
-
-	.container.small:nth-child(3n) {
-		margin-right: 0px;
-	}
-
-	.container.small:nth-child(2n) {
-		margin-right: 0px;
+	.container.medium, .container.small {
+		flex-basis: 100%;
 	}
 }
