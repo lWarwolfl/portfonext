@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import loader from "../utils/loader";
+import { loader } from "../utils/loader";
 
 export default function Document() {
 	return (
