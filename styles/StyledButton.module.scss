@@ -75,7 +75,7 @@ body .button {
 	}
 }
 
-.button:hover {
+body .button:hover {
 	padding-right: 45px;
 	padding-left: 25px;
 
@@ -94,15 +94,15 @@ body .button {
 	}
 }
 
-.button.glass {
+body .button.glass {
 	background-color: var(--more-transparent-background);
 }
 
-.button.glass:hover {
+body .button.glass:hover {
 	background-color: var(--transparent-background);
 }
 
-.button:hover {
+body .button:hover {
 	background-color: var(--transparent-background);
 }
 
