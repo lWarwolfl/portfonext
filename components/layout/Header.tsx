@@ -82,6 +82,7 @@ export default function Header() {
 					<div className={styles.navbar}>
 						{links.map((link, i) => (
 							<StyledButton
+								key={i}
 								className={styles.link}
 								idLink={link.id}
 								icon={KeyboardArrowRightRoundedIcon}
