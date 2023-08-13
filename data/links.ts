@@ -2,7 +2,7 @@ import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TelegramIcon from "@mui/icons-material/Telegram";
-import { Link } from "@/components/Summary";
+import { Link } from "@/components/landing/Summary";
 
 export const links: Link[] = [
 	{

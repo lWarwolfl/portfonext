@@ -1,7 +1,7 @@
 //Imported styles
-@import "./animations.scss";
-@import "./mixins.scss";
-@import "./globals.scss";
+@import "@/styles/animations.scss";
+@import "@/styles/mixins.scss";
+@import "@/styles/globals.scss";
 
 //Header styles desktop
 .hollowplanets {
@@ -53,15 +53,10 @@
 @media screen and (max-width: 800px) {
 	.bigplanet {
 		display: none;
-		$size: 700px;
-		width: $size;
-		height: $size;
-		top: -400px;
 	}
 
 	.smallplanet {
-		top: 220px;
-		right: calc(50% - 125px);
+		display: none;
 	}
 
 	.hollowplanets {

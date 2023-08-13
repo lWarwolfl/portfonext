@@ -1,8 +1,7 @@
 :root {
 	--gradient-main: linear-gradient(
 		90deg,
-		#00fbff 0%,
-		#257cff 40%,
+		#257cff 0%,
 		#b721ff 100%
 	);
 	--gradient-main-loop: linear-gradient(
@@ -13,6 +12,7 @@
 		#6625ff 65%,
 		#b721ff 100%
 	);
+	
 	--gradient-green: linear-gradient(90deg, #40c463 0%, #6afb90 100%);
 	--gradient-blue: linear-gradient(90deg, #257cff, #72aaff);
 	--gradient-aqua: linear-gradient(90deg, #00aaff, hsl(170, 100%, 67%));
@@ -25,7 +25,9 @@
 
 	--primary-color: #227bff;
 	--primary-color-light: #5d9eff;
-	--primary-color-transparent: #18283f41;
+	--primary-color-transparent: rgba(24, 40, 63, 0.5);
+	--primary-color-more-transparent: rgba(24, 40, 63, 0.25);
+
 	--green-color: #40c463;
 	--purple-color: #c851ff;
 	--blue-color: #448fff;
@@ -42,6 +44,7 @@
 		--body-color: #0d1117;
 		--contrast-color: #30363d;
 		--transparent-background: hsla(0, 0%, 80%, 0.15);
+		--more-transparent-background: hsla(0, 0%, 80%, 0.05);
 		--card-background: #161b22d0;
 		--font-color-primary: #f1f1f1;
 		--font-color-secondary: #d3d3d3;

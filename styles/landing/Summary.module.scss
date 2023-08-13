@@ -1,7 +1,7 @@
 //Imported styles
-@import "./animations.scss";
-@import "./mixins.scss";
-@import "./globals.scss";
+@import "@/styles/animations.scss";
+@import "@/styles/mixins.scss";
+@import "@/styles/globals.scss";
 
 //Summary styles desktop
 .container {
@@ -36,8 +36,6 @@
 		color: var(--font-color-secondary);
 		font-size: $font-size-l;
 		font-weight: $font-weight-medium;
-		text-align: justify;
-		text-align-last: left;
 		line-height: $font-size-xxxl;
 
 		.bold {
@@ -76,8 +74,8 @@
 			right: 15px;
 			opacity: 0;
 			font-size: $font-size-xxxl;
-			transition: opacity $transition-s cubic-bezier(0.16, 1, 0.3, 1),
-				right $transition-s cubic-bezier(0.16, 1, 0.3, 1);
+			transition: opacity $transition-s $transition-ease,
+				right $transition-s $transition-ease;
 		}
 
 		.icon.static {
@@ -99,8 +97,8 @@
 			font-size: $font-size-m;
 			text-transform: unset;
 			background-color: var(--transparent-background);
-			transition: padding-right $transition-s cubic-bezier(0.16, 1, 0.3, 1),
-				padding-left $transition-s cubic-bezier(0.16, 1, 0.3, 1);
+			transition: padding-right $transition-s $transition-ease,
+				padding-left $transition-s $transition-ease;
 			max-width: 260px;
 		}
 
@@ -113,7 +111,7 @@
 			border-radius: 3px;
 			background-color: var(--gradient-green);
 			transition-property: width;
-			transition: width $transition-s cubic-bezier(0.16, 1, 0.3, 1);
+			transition: width $transition-s $transition-ease;
 			z-index: 2;
 		}
 	}
@@ -154,6 +152,7 @@
 		.socialcontainer {
 			width: 100%;
 			margin-right: 0;
+
 			.button {
 				max-width: unset;
 				width: 100%;

@@ -1,10 +1,10 @@
-import Hero from "@/components/Hero";
-import Images from "@/components/Images";
-import Skills from "@/components/Skills";
-import Summary from "@/components/Summary";
-import WorkExperience from "@/components/WorkExperience";
-import Head from "next/head";
 import * as React from "react";
+import Hero from "@/components/landing/Hero";
+import Images from "@/components/landing/Images";
+import Skills from "@/components/landing/Skills";
+import Summary from "@/components/landing/Summary";
+import WorkExperience from "@/components/landing/WorkExperience";
+import Head from "next/head";
 
 export default function Home() {
 	return (

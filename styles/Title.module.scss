@@ -1,6 +1,6 @@
 //Imported styles
-@import "./mixins.scss";
-@import "./globals.scss";
+@import "@/styles/mixins.scss";
+@import "@/styles/globals.scss";
 
 //Styled Card styles desktop
 .title {
@@ -12,19 +12,19 @@
 	font-weight: $font-weight-extrabold;
 	
 	.accent {
-		@include gradient-text-accent;
+		@include gradient-text-normal;
 		display: inline-block;
 	}
 }
 
 @media screen and (max-width: 800px) {
 	.title {
-		font-size: $font-size-xxl;
+		font-size: $font-size-xxxl;
 	}
 }
 
 @media screen and (max-width: 500px) {
 	.title {
-		font-size: $font-size-l;
+		font-size: $font-size-xl;
 	}
 }

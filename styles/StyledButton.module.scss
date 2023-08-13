@@ -1,0 +1,106 @@
+//Imported styles
+@import "@/styles/animations.scss";
+@import "@/styles/mixins.scss";
+@import "@/styles/globals.scss";
+
+//StyledButton styles desktop
+.button {
+	display: block;
+	position: relative;
+	border-radius: 7px;
+	padding-right: 25px;
+	padding-left: 45px;
+	min-width: unset;
+	width: unset;
+	max-width: 240px;
+	color: var(--font-color-primary);
+	font-weight: $font-weight-medium;
+	font-size: $font-size-r;
+	text-transform: unset;
+	transition: padding-right $transition-m $transition-ease,
+		padding-left $transition-m $transition-ease,
+		background-color $transition-m $transition-ease;
+
+	.text {
+		display: inline-block;
+		@include overflow-ellipsis;
+		width: 100%;
+	}
+
+	.icon {
+		position: absolute;
+		right: 16px;
+		opacity: 0;
+		transition: opacity $transition-s $transition-ease,
+			right $transition-s $transition-ease;
+		z-index: 1;
+	}
+
+	.icon.small {
+		top: calc(50% - calc($font-size-l / 2));
+		font-size: $font-size-l;
+	}
+
+	.icon.normal {
+		top: calc(50% - calc($font-size-xl / 2));
+		font-size: $font-size-xl;
+	}
+
+	.icon.big {
+		top: calc(50% - calc($font-size-xxl / 2));
+		font-size: $font-size-xxl;
+	}
+
+	.icon.large {
+		top: calc(50% - calc($font-size-xxxl / 2));
+		font-size: $font-size-xxxl;
+	}
+
+	.icon.static {
+		left: 14px;
+		opacity: 1;
+		z-index: 1;
+	}
+
+	.bar {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 0%;
+		border-radius: 3px;
+		background-color: var(--gradient-green);
+		transition-property: width;
+		transition: width $transition-s $transition-ease;
+		z-index: 2;
+	}
+}
+
+.button:hover {
+	padding-right: 45px;
+	padding-left: 25px;
+
+	.icon {
+		right: 14px;
+		opacity: 1;
+	}
+
+	.icon.static {
+		left: 16px;
+		opacity: 0;
+	}
+
+	.bar {
+		width: 100%;
+	}
+}
+
+.button.glass {
+	background-color: var(--more-transparent-background);
+}
+
+.button:hover.glass {
+	background-color: var(--transparent-background);
+}
+
+@media screen and (max-width: 1050px) {
+}

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import styles from "../styles/Header.module.scss";
+import styles from "@/styles/layout/Header.module.scss";
 import { Button } from "@mui/material";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 import RouteOutlinedIcon from "@mui/icons-material/RouteOutlined";
@@ -12,6 +12,9 @@ import KeyboardDoubleArrowUpRoundedIcon from "@mui/icons-material/KeyboardDouble
 import KeyboardArrowUpRoundedIcon from "@mui/icons-material/KeyboardArrowUpRounded";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import Link from "next/link";
+import StyledButton from "@/components/StyledButton";
+import Image from "next/image";
+import logo from "@/public/image/png/logo.png";
 
 interface Link {
 	id: string;
@@ -49,7 +52,7 @@ export default function Header() {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			if (containerRef.current && window.innerWidth > 768) {
+			if (containerRef.current) {
 				const scrollYPosition = document.body.scrollTop;
 
 				if (scrollYPosition >= 10) {
@@ -73,7 +76,7 @@ export default function Header() {
 			<div className={styles.header} ref={containerRef}>
 				<div className={styles.fix}>
 					<Link className={styles.logo} href="/">
-						<div className={styles.image}></div>
+						<Image alt="logo" src={logo} className={styles.image}></Image>
 					</Link>
 
 					<div className={styles.navbar}>
@@ -95,22 +98,25 @@ export default function Header() {
 							className={styles.upbutton}
 							onClick={() => handleClick("top")}
 						>
-							<KeyboardArrowUpRoundedIcon className={styles.iconfirst} />
-							<KeyboardDoubleArrowUpRoundedIcon className={styles.iconsecond} />
+							<KeyboardArrowUpRoundedIcon
+								className={`${styles.icon} ${styles.first}`}
+							/>
+							<KeyboardDoubleArrowUpRoundedIcon
+								className={`${styles.icon} ${styles.second}`}
+							/>
 						</Button>
 					</div>
-					
-					<div className={styles.buttoncontainer}>
-						<SendRoundedIcon className={`${styles.icon} ${styles.static}`} />
-						<Button
-							className={styles.button}
-							onClick={() => handleClick("contact")}
-						>
-							Contact Me
-						</Button>
-						<KeyboardArrowRightRoundedIcon className={styles.icon} />
-						<div className={styles.bar}></div>
-					</div>
+
+					<StyledButton
+						className={styles.button}
+						idLink=""
+						background="glass"
+						icon={KeyboardArrowRightRoundedIcon}
+						staticIcon={SendRoundedIcon}
+						iconSize="large"
+					>
+						Contact Me
+					</StyledButton>
 				</div>
 			</div>
 			<div id="top" className={styles.dummyheader}>

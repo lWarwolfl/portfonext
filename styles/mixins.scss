@@ -1,4 +1,4 @@
-@import "./globals.scss";
+@import "@/styles/globals.scss";
 
 @mixin width-fix {
 	max-width: $max-width-global;
@@ -71,6 +71,7 @@
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	text-fill-color: transparent;
+	font-weight: $font-weight-black;
 }
 
 @mixin gradient-text-normal {

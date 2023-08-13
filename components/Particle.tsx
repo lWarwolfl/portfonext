@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import Particles from "react-particles";
 import type { Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
-import styles from "../styles/Particle.module.scss";
+import styles from "@/styles/Particle.module.scss";
 
 export default function Particle() {
 	const particlesInit = useCallback(async (engine: Engine) => {
@@ -36,7 +36,7 @@ export default function Particle() {
 				fpsLimit: 60,
 				particles: {
 					color: {
-						value: ["#00fbff", "#B721FF", "#40c463"],
+						value: ["#B721FF", "#227bff"],
 					},
 					collisions: {
 						enable: true,

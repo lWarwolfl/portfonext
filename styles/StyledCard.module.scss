@@ -1,6 +1,6 @@
 //Imported styles
-@import "./mixins.scss";
-@import "./globals.scss";
+@import "@/styles/mixins.scss";
+@import "@/styles/globals.scss";
 
 //Styled Card styles desktop
 $marginsmall: 30px;
@@ -15,7 +15,7 @@ $marginsmall: 30px;
 	background-color: var(--card-background);
 	border-radius: $border-radius-global;
 	overflow: hidden;
-	transition: transform $transition-f cubic-bezier(0.16, 1, 0.3, 1);
+	transition: transform $transition-f $transition-ease;
 
 	.glow {
 		position: absolute;
@@ -27,7 +27,7 @@ $marginsmall: 30px;
 		filter: blur(180px);
 		border-radius: calc($size / 2);
 		opacity: 0;
-		transition: opacity $transition-vs cubic-bezier(0.16, 1, 0.3, 1);
+		transition: opacity $transition-vs $transition-ease;
 		mix-blend-mode: soft-light;
 		will-change: transform;
 		opacity: 0;

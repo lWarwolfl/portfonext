@@ -1,0 +1,205 @@
+//Imported styles
+@import "@/styles/animations.scss";
+@import "@/styles/mixins.scss";
+@import "@/styles/globals.scss";
+
+//Header styles desktop
+$height: 40px;
+
+.header {
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	transition: background-color $transition-m $transition-ease,
+		padding $transition-m $transition-ease;
+	background-color: transparent;
+	top: 0;
+	left: 0;
+	padding: 20px;
+
+	.fix {
+		@include flex-row;
+		@include width-fix;
+		padding: 0;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	.logo {
+		@include gradient-animation-effect;
+		@include flex-row;
+		cursor: pointer;
+		align-items: center;
+		justify-content: center;
+		height: $height;
+		aspect-ratio: 1 / 1;
+		border-radius: $height/2;
+		margin-right: 8px;
+		padding-top: 5px;
+		transition: $transition-f;
+		box-shadow: 0 0px 0px var(--primary-color-transparent);
+
+		.image {
+			@include background-contain;
+			height: $height/1.5;
+			width: auto;
+			transition: $transition-f;
+		}
+	}
+
+	.logo:hover {
+		@include gradient-animation-effect-hover;
+		box-shadow: 0 0 30px var(--primary-color-transparent);
+	}
+
+	.navbar {
+		@include flex-row;
+		align-items: center;
+		justify-content: center;
+
+		.linkcontainer {
+			position: relative;
+			display: inline-block;
+
+			.icon {
+				position: absolute;
+				color: var(--blue-color);
+				top: calc(50% - calc($font-size-xxxl / 2));
+				right: 15px;
+				opacity: 0;
+				font-size: $font-size-xxxl;
+				transition: opacity $transition-s $transition-ease,
+					right $transition-s $transition-ease;
+			}
+
+			.icon.static {
+				top: calc(50% - calc($font-size-xxl / 2));
+				left: 8px;
+				opacity: 1;
+				font-size: $font-size-xxl;
+			}
+
+			.link {
+				display: block;
+				height: $height;
+				border-radius: $border-radius-global;
+				padding-right: 20px;
+				padding-left: 40px;
+				background-color: transparent;
+				color: var(--font-color-primary);
+				font-weight: $font-weight-medium;
+				font-size: $font-size-m;
+				text-transform: unset;
+				transition: padding-right $transition-s $transition-ease,
+					padding-left $transition-s $transition-ease,
+					background-color $transition-f $transition-ease;
+			}
+		}
+
+		.linkcontainer:hover {
+			.link {
+				padding-right: 40px;
+				padding-left: 20px;
+				background-color: var(--transparent-background);
+			}
+
+			.icon {
+				right: 8px;
+				opacity: 1;
+			}
+
+			.icon.static {
+				left: 15px;
+				opacity: 0;
+			}
+		}
+
+		.linkcontainer:first-child {
+			margin-left: 15px;
+		}
+	}
+
+	.upbutton {
+		pointer-events: none;
+		opacity: 0;
+		display: block;
+		height: $height;
+		width: $height;
+		padding: 0;
+		min-width: unset;
+		align-items: center;
+		line-height: 0;
+		border-radius: $border-radius-global;
+		color: var(--blue-color);
+		background-color: transparent;
+		transition: background-color $transition-f $transition-ease,
+			opacity $transition-s $transition-ease;
+
+		.icon {
+			position: absolute;
+			top: calc(($height / 2) - calc($font-size-xxxl / 2));
+			left: calc(($height / 2) - calc($font-size-xxxl / 2));
+			font-size: $font-size-xxxl;
+			transition: opacity $transition-s $transition-ease;
+		}
+
+		.icon.first {
+			opacity: 1;
+		}
+
+		.icon.second {
+			opacity: 0;
+		}
+	}
+
+	.upbutton:hover {
+		background-color: var(--transparent-background);
+
+		.icon.first {
+			opacity: 0;
+		}
+
+		.icon.second {
+			opacity: 1;
+		}
+	}
+
+	.button {
+		margin-left: auto;
+	}
+}
+
+.stick {
+	backdrop-filter: blur(5px);
+	background-color: var(--primary-color-more-transparent);
+	padding: 10px 20px;
+
+	.upbutton {
+		opacity: 1;
+		pointer-events: unset;
+	}
+}
+
+@media screen and (max-width: 1050px) {
+	.header {
+		.navbar {
+			.linkcontainer {
+				display: none;
+			}
+		}
+
+		.upbutton {
+			.icon.first {
+				display: none;
+			}
+
+			.icon.second {
+				opacity: 1;
+			}
+		}
+
+		.button {
+			font-weight: $font-weight-semibold;
+		}
+	}
+}

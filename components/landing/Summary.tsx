@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import styles from "../styles/Summary.module.scss";
-import StyledCard from "./StyledCard";
-import Title from "./Title";
-import photo from "../public/image/svg/photo.svg";
+import styles from "@/styles/landing/Summary.module.scss";
+import StyledCard from "@/components/StyledCard";
+import Title from "@/components/Title";
+import photo from "@/public/image/svg/photo.svg";
 import { Button } from "@mui/material";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
-import AnimatedContainer from "./AnimatedContainer";
+import AnimatedContainer from "@/components/AnimatedContainer";
 import { Color } from "@/utils/types";
 import { links } from "@/data/links";
 

@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "../styles/Images.module.scss";
+import styles from "@/styles/landing/Images.module.scss";
 import Image from "next/image";
-import hollowplanets from "../public/image/png/hollowplanets.png";
-import planet1 from "../public/image/svg/planet1.svg";
-import planet2 from "../public/image/svg/planet2.svg";
+import hollowplanets from "@/public/image/png/hollowplanets.png";
+import planet1 from "@/public/image/svg/planet1.svg";
+import planet2 from "@/public/image/svg/planet2.svg";
 
 export default function Images() {
 

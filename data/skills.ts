@@ -16,7 +16,7 @@ import adobexd from "../public/image/svg/skills/adobexd.svg";
 import adobeillustrator from "../public/image/svg/skills/adobeillustrator.svg";
 import agile from "../public/image/svg/skills/agile.svg";
 import github from "../public/image/svg/skills/github.svg";
-import { Skill } from "@/components/Skills";
+import { Skill } from "@/components/landing/Skills";
 
 export const skills: Skill[] = [
 	{

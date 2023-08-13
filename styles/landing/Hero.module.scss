@@ -1,0 +1,93 @@
+//Imported styles
+@import "@/styles/animations.scss";
+@import "@/styles/mixins.scss";
+@import "@/styles/globals.scss";
+
+//Hero styles desktop
+.container {
+	@include flex-row-inline;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+	height: 100dvh;
+
+	.intro {
+		@include flex-column;
+		align-items: flex-start;
+		justify-content: center;
+		margin: 0 auto;
+
+		.big {
+			@include gradient-text-loop;
+			width: 100%;
+			font-size: 3.5em;
+			font-weight: $font-weight-black;
+			text-transform: uppercase;
+			animation: gradient-animation 8s linear infinite;
+		}
+
+		.small {
+			display: inline-block;
+			color: var(--font-color-primary);
+			font-size: $font-size-xl;
+			font-weight: $font-weight-black;
+			text-transform: capitalize;
+
+			.accent {
+				@include gradient-text-normal;
+				display: inline-block;
+			}
+		}
+
+		.links {
+			@include flex-row;
+
+			.link {
+				margin-top: 15px;
+				margin-right: 15px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.container {
+		.intro {
+			.small {
+				margin-top: 0;
+				font-size: $font-size-xxl;
+				width: 100%;
+				text-transform: uppercase;
+
+				.and {
+					display: block;
+					width: 100%;
+					height: 10px;
+					opacity: 0;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.container {
+		.intro {
+			.buttons {
+				flex-wrap: wrap;
+				justify-content: space-between;
+				width: 100%;
+
+				.buttoncontainer {
+					margin-right: 0;
+					flex-basis: 48%;
+
+					.button {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

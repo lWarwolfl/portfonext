@@ -32,3 +32,6 @@ $transition-s: 500ms;
 $transition-m: 300ms;
 $transition-f: 200ms;
 $transition-vf: 80ms;
+
+//Transition Easing
+$transition-ease: cubic-bezier(0.16, 1, 0.3, 1);

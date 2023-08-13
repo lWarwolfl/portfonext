@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import styles from "../styles/AnimatedContainer.module.scss";
+import styles from "@/styles/AnimatedContainer.module.scss";
 
 type AnimatedContainerProps = {
 	id?: string;

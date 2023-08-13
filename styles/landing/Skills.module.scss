@@ -1,7 +1,7 @@
 //Imported styles
-@import "./animations.scss";
-@import "./mixins.scss";
-@import "./globals.scss";
+@import "@/styles/animations.scss";
+@import "@/styles/mixins.scss";
+@import "@/styles/globals.scss";
 
 //Summary styles desktop
 .container {
@@ -62,21 +62,21 @@
 			}
 
 			.bar {
-			$height: 8px;
-			position: relative;
-			width: 100%;
-			height: $height;
-			border-radius: calc($height / 2);
-			background-color: var(--transparent-background);
-
-			.fill {
-				position: absolute;
-				top: 0;
-				left: 0;
+				$height: 8px;
+				position: relative;
+				width: 100%;
 				height: $height;
 				border-radius: calc($height / 2);
+				background-color: var(--transparent-background);
+
+				.fill {
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: $height;
+					border-radius: calc($height / 2);
+				}
 			}
-		}
 		}
 	}
 }

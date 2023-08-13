@@ -1,10 +1,10 @@
 //Imported styles
-@import "./animations.scss";
-@import "./mixins.scss";
-@import "./globals.scss";
+@import "@/styles/animations.scss";
+@import "@/styles/mixins.scss";
+@import "@/styles/globals.scss";
 
 //Animated Container styles desktop
-$position: 100px;
+$position: 40px;
 
 .container {
 	opacity: 0;
