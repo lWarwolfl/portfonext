@@ -66,6 +66,7 @@ export default function Summary() {
 					<div className={styles.links}>
 						{links.map((link, i) => (
 							<StyledButton
+								key={i}
 								className={styles.link}
 								externalLink={link.link}
 								icon={KeyboardArrowRightRoundedIcon}
