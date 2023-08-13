@@ -24,7 +24,6 @@ export default function Hero() {
 						background="glass"
 						icon={FileDownloadOutlinedIcon}
 						staticIcon={PictureAsPdfOutlinedIcon}
-						iconSize="large"
 						color="blue"
 					>
 						Resume - en
@@ -37,7 +36,6 @@ export default function Hero() {
 						background="glass"
 						icon={FileDownloadOutlinedIcon}
 						staticIcon={PictureAsPdfOutlinedIcon}
-						iconSize="large"
 						color="purple"
 					>
 						Resume - fa

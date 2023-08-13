@@ -81,17 +81,16 @@ export default function Header() {
 
 					<div className={styles.navbar}>
 						{links.map((link, i) => (
-							<div className={styles.linkcontainer} key={i}>
-								<link.icon className={`${styles.icon} ${styles.static}`} />
-								<Button
-									className={styles.link}
-									onClick={() => handleClick(link.id)}
-								>
-									{link.text}
-								</Button>
-								<KeyboardArrowRightRoundedIcon className={styles.icon} />
-								<div className={styles.bar}></div>
-							</div>
+							<StyledButton
+								className={styles.link}
+								idLink={link.id}
+								icon={KeyboardArrowRightRoundedIcon}
+								staticIcon={link.icon}
+								iconSize="large"
+								staticIconSize="big"
+							>
+								{link.text}
+							</StyledButton>
 						))}
 
 						<Button

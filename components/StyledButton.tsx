@@ -89,6 +89,7 @@ export default function StyledButton({
 						style={{
 							backgroundImage: `var(--gradient-${color})`,
 							height: barHeight,
+							borderRadius: `calc(${barHeight} / 2)`,
 						}}
 					></div>
 				) : null}

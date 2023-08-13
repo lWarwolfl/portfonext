@@ -51,14 +51,7 @@ export default function WorkExperience() {
 									alt={company.alt}
 									className={styles.image}
 								/>
-								<Button
-									style={{
-										border: `2px dashed var(--${company.color}-color)`,
-									}}
-									className={styles.button}
-								>
-									{company.name}
-								</Button>
+								<Button className={styles.button}>{company.name}</Button>
 								<company.icon
 									style={{
 										color: `var(--${company.color}-color)`,

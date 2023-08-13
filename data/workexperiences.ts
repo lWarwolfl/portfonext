@@ -2,7 +2,6 @@ import * as React from "react";
 import { WorkExperience } from "@/components/landing/WorkExperience";
 import styles from "@/styles/landing/WorkExperience.module.scss";
 import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LibraryAddCheckOutlinedIcon from "@mui/icons-material/LibraryAddCheckOutlined";
 import agahpadidar from "@/public/image/jpg/company/agahpadidar.jpg";
 import ponisha from "@/public/image/png/company/ponisha.png";
@@ -18,7 +17,7 @@ export const workexperiences: WorkExperience[] = [
 		),
 		link: "https://www.linkedin.com/company/agahpadidar/",
 		logo: agahpadidar,
-		icon: LinkedInIcon,
+		icon: OpenInNewRoundedIcon,
 		listicon: LibraryAddCheckOutlinedIcon,
 		experiences: [
 			React.createElement(

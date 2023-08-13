@@ -55,86 +55,15 @@
 	}
 }
 
-.social {
+.links {
 	width: 100%;
 	margin-top: 40px;
 	@include flex-row;
 	flex-wrap: wrap;
 	$height: 50px;
 
-	.socialcontainer {
-		position: relative;
+	.link {
 		margin-right: 15px;
-		display: inline-block;
-		margin-bottom: 20px;
-
-		.icon {
-			position: absolute;
-			top: calc(50% - calc($font-size-xxxl / 2));
-			right: 15px;
-			opacity: 0;
-			font-size: $font-size-xxxl;
-			transition: opacity $transition-s $transition-ease,
-				right $transition-s $transition-ease;
-		}
-
-		.icon.static {
-			top: calc(50% - calc($font-size-xxl / 2));
-			left: 8px;
-			opacity: 1;
-			font-size: $font-size-xxl;
-		}
-
-		.button {
-			@include overflow-ellipsis;
-			display: block;
-			height: $height;
-			border-radius: $border-radius-global;
-			padding-right: 20px;
-			padding-left: 40px;
-			color: var(--font-color-primary);
-			font-weight: $font-weight-medium;
-			font-size: $font-size-m;
-			text-transform: unset;
-			background-color: var(--transparent-background);
-			transition: padding-right $transition-s $transition-ease,
-				padding-left $transition-s $transition-ease;
-			max-width: 260px;
-		}
-
-		.bar {
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			height: 6px;
-			width: 0%;
-			border-radius: 3px;
-			background-color: var(--gradient-green);
-			transition-property: width;
-			transition: width $transition-s $transition-ease;
-			z-index: 2;
-		}
-	}
-
-	.socialcontainer:hover {
-		.bar {
-			width: 100%;
-		}
-
-		.button {
-			padding-right: 40px;
-			padding-left: 20px;
-		}
-
-		.icon {
-			right: 8px;
-			opacity: 1;
-		}
-
-		.icon.static {
-			left: 15px;
-			opacity: 0;
-		}
 	}
 }
 
@@ -148,16 +77,10 @@
 }
 
 @media screen and (max-width: 600px) {
-	.social {
-		.socialcontainer {
+	.links {
+		.link {
 			width: 100%;
 			margin-right: 0;
-
-			.button {
-				max-width: unset;
-				width: 100%;
-				text-align: left;
-			}
 		}
 	}
 }

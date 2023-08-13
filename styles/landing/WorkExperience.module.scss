@@ -24,16 +24,17 @@
 			width: calc($height - 20px);
 			height: calc($height - 20px);
 			border-radius: 5px;
+			z-index: 1;
 		}
 
 		.icon {
 			position: absolute;
-			top: calc(50% - calc($font-size-xxxl / 2));
-			right: 25px;
-			opacity: 0;
-			font-size: $font-size-xxxl;
+			top: calc(50% - calc($font-size-xxl / 2));
+			right: 18px;
+			font-size: $font-size-xxl;
 			transition: opacity $transition-s $transition-ease,
 				right $transition-s $transition-ease;
+			z-index: 1;
 		}
 
 		.button {
@@ -41,9 +42,10 @@
 			display: block;
 			height: $height;
 			border-radius: $border-radius-global;
+			border: 1px solid var(--contrast-color);
 			padding-right: calc($font-size-xxxl + 25px);
 			padding-left: $height;
-			background-color: var(--primary-color-transparent);
+			background-color: var(--more-transparent-background);
 			color: var(--font-color-secondary);
 			font-weight: $font-weight-medium;
 			font-size: $font-size-em;
@@ -64,11 +66,6 @@
 	.companycontainer:hover {
 		.button {
 			background-color: var(--transparent-background);
-		}
-
-		.icon {
-			right: 15px;
-			opacity: 1;
 		}
 	}
 

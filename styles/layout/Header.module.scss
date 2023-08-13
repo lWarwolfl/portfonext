@@ -57,64 +57,7 @@ $height: 40px;
 		align-items: center;
 		justify-content: center;
 
-		.linkcontainer {
-			position: relative;
-			display: inline-block;
-
-			.icon {
-				position: absolute;
-				color: var(--blue-color);
-				top: calc(50% - calc($font-size-xxxl / 2));
-				right: 15px;
-				opacity: 0;
-				font-size: $font-size-xxxl;
-				transition: opacity $transition-s $transition-ease,
-					right $transition-s $transition-ease;
-			}
-
-			.icon.static {
-				top: calc(50% - calc($font-size-xxl / 2));
-				left: 8px;
-				opacity: 1;
-				font-size: $font-size-xxl;
-			}
-
-			.link {
-				display: block;
-				height: $height;
-				border-radius: $border-radius-global;
-				padding-right: 20px;
-				padding-left: 40px;
-				background-color: transparent;
-				color: var(--font-color-primary);
-				font-weight: $font-weight-medium;
-				font-size: $font-size-m;
-				text-transform: unset;
-				transition: padding-right $transition-s $transition-ease,
-					padding-left $transition-s $transition-ease,
-					background-color $transition-f $transition-ease;
-			}
-		}
-
-		.linkcontainer:hover {
-			.link {
-				padding-right: 40px;
-				padding-left: 20px;
-				background-color: var(--transparent-background);
-			}
-
-			.icon {
-				right: 8px;
-				opacity: 1;
-			}
-
-			.icon.static {
-				left: 15px;
-				opacity: 0;
-			}
-		}
-
-		.linkcontainer:first-child {
+		.link:first-child {
 			margin-left: 15px;
 		}
 	}
@@ -166,6 +109,7 @@ $height: 40px;
 
 	.button {
 		margin-left: auto;
+		font-size: $font-size-r;
 	}
 }
 
@@ -196,10 +140,6 @@ $height: 40px;
 			.icon.second {
 				opacity: 1;
 			}
-		}
-
-		.button {
-			font-weight: $font-weight-semibold;
 		}
 	}
 }

@@ -4,7 +4,7 @@ import styles from "@/styles/landing/Summary.module.scss";
 import StyledCard from "@/components/StyledCard";
 import Title from "@/components/Title";
 import photo from "@/public/image/svg/photo.svg";
-import { Button } from "@mui/material";
+import StyledButton from "@/components/StyledButton";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 import AnimatedContainer from "@/components/AnimatedContainer";
 import { Color } from "@/utils/types";
@@ -63,34 +63,22 @@ export default function Summary() {
 						</div>
 					</div>
 
-					<div className={styles.social}>
+					<div className={styles.links}>
 						{links.map((link, i) => (
-							<a
-								href={link.link}
-								target="_blank"
-								className={styles.socialcontainer}
-								key={i}
+							<StyledButton
+								className={styles.link}
+								externalLink={link.link}
+								icon={KeyboardArrowRightRoundedIcon}
+								staticIcon={link.icon}
+								iconSize="large"
+								staticIconSize="big"
+								color={link.color}
+								background="glass"
+								height="48px"
+								barHeight="5px"
 							>
-								<link.icon
-									style={{
-										color: `var(--${link.color}-color)`,
-									}}
-									className={`${styles.icon} ${styles.static}`}
-								/>
-								<Button className={styles.button}>{link.text}</Button>
-								<KeyboardArrowRightRoundedIcon
-									style={{
-										color: `var(--${link.color}-color)`,
-									}}
-									className={styles.icon}
-								/>
-								<div
-									style={{
-										backgroundImage: `var(--gradient-${link.color})`,
-									}}
-									className={styles.bar}
-								></div>
-							</a>
+								{link.text}
+							</StyledButton>
 						))}
 					</div>
 				</StyledCard>
