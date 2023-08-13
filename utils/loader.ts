@@ -27,11 +27,11 @@ overflow-x: hidden;
 }
 .loader {
 position: absolute !important;
-top: calc(50% - 60px);
-left: calc(50% - 60px);
+top: calc(50% - 50px);
+left: calc(50% - 50px);
  animation: spin 14s linear infinite;
- width: 120px;
- height: 120px;
+ width: 100px;
+ height: 100px;
  position: relative;
  background-position: center;
  background-size: contain;
@@ -41,11 +41,11 @@ left: calc(50% - 60px);
 
 .loaderring1 {
 position: absolute !important;
-top: calc(50% - 73px);
-left: calc(50% - 73px);
+top: calc(50% - 63px);
+left: calc(50% - 63px);
  animation: spin 2s linear infinite;
- width: 146px;
- height: 146px;
+ width: 126px;
+ height: 126px;
  position: relative;
  background-position: center;
  background-size: contain;
@@ -56,11 +56,11 @@ left: calc(50% - 73px);
 
 .loaderring2 {
 position: absolute !important;
-top: calc(50% - 88px);
-left: calc(50% - 88px);
+top: calc(50% - 78px);
+left: calc(50% - 78px);
  animation: spin 2s linear infinite;
- width: 176px;
- height: 176px;
+ width: 156px;
+ height: 156px;
  position: relative;
  background-position: center;
  background-size: contain;
