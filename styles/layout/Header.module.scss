@@ -20,7 +20,7 @@ $height: 40px;
 	.fix {
 		@include flex-row;
 		@include width-fix;
-		padding: 0;
+		padding: 0 20px;
 		align-items: center;
 		justify-content: flex-start;
 	}
@@ -126,6 +126,10 @@ $height: 40px;
 
 @media screen and (max-width: 1050px) {
 	.header {
+		.fix {
+			padding: 0;
+		}
+
 		.navbar {
 			.linkcontainer {
 				display: none;

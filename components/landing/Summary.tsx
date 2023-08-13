@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "@/styles/landing/Summary.module.scss";
 import StyledCard from "@/components/StyledCard";
 import Title from "@/components/Title";
-import photo from "@/public/image/svg/photo.svg";
+import photo from "@/public/image/jpg/photo.jpg";
 import StyledButton from "@/components/StyledButton";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 import AnimatedContainer from "@/components/AnimatedContainer";
