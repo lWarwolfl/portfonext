@@ -11,9 +11,7 @@ export default function Hero() {
 				<div className={styles.big}>professional</div>
 
 				<div className={styles.small}>
-					Front-end <span className={styles.accent}>developer</span>{" "}
-					<span className={styles.and}>&</span> UI/UX{" "}
-					<span className={styles.accent}>designer</span>
+					Front-end <span className={styles.accent}>developer</span>
 				</div>
 
 				<div className={styles.links}>

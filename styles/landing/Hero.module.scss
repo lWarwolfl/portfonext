@@ -30,7 +30,7 @@
 		.small {
 			display: inline-block;
 			color: var(--font-color-primary);
-			font-size: $font-size-xl;
+			font-size: 1.7rem;
 			font-weight: $font-weight-black;
 			text-transform: capitalize;
 
@@ -56,16 +56,8 @@
 		.intro {
 			.small {
 				margin-top: 0;
-				font-size: $font-size-xxl;
 				width: 100%;
 				text-transform: uppercase;
-
-				.and {
-					display: block;
-					width: 100%;
-					height: 10px;
-					opacity: 0;
-				}
 			}
 		}
 	}

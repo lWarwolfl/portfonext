@@ -60,10 +60,10 @@
 	margin-top: 40px;
 	@include flex-row;
 	flex-wrap: wrap;
-	$height: 50px;
 
 	.link {
 		margin-right: 15px;
+		margin-bottom: 20px;
 	}
 }
 
@@ -73,6 +73,16 @@
 		max-width: unset;
 		width: 100%;
 		margin-bottom: 15px;
+	}
+
+	.links {
+		justify-content: space-between;
+
+		.link {
+			margin-right: 0;
+			width: 48%;
+			max-width: unset;
+		}
 	}
 }
 

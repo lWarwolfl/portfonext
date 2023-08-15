@@ -9,8 +9,8 @@ body .button {
 	align-items: center;
 	position: relative;
 	border-radius: 7px;
-	padding-right: 25px;
-	padding-left: 45px;
+	padding-right: 20px;
+	padding-left: 35px;
 	min-width: unset;
 	width: unset;
 	max-width: 240px;
@@ -30,7 +30,7 @@ body .button {
 
 	.icon {
 		position: absolute;
-		right: 12px;
+		right: 8px;
 		opacity: 0;
 		transition: opacity $transition-s $transition-ease,
 			right $transition-s $transition-ease;
@@ -58,7 +58,7 @@ body .button {
 	}
 
 	.icon.static {
-		left: 12px;
+		left: 4px;
 		opacity: 1;
 		z-index: 1;
 	}
@@ -76,6 +76,47 @@ body .button {
 }
 
 body .button:hover {
+	padding-right: 35px;
+	padding-left: 20px;
+
+	.icon {
+		right: 4px;
+		opacity: 1;
+	}
+
+	.icon.static {
+		left: 2px;
+		opacity: 0;
+	}
+
+	.bar {
+		width: 100%;
+	}
+}
+
+body .button.glass {
+	background-color: var(--more-transparent-background);
+	padding-right: 25px;
+	padding-left: 45px;
+
+	.icon {
+		position: absolute;
+		right: 12px;
+		opacity: 0;
+		transition: opacity $transition-s $transition-ease,
+			right $transition-s $transition-ease;
+		z-index: 1;
+	}
+
+	.icon.static {
+		left: 12px;
+		opacity: 1;
+		z-index: 1;
+	}
+}
+
+body .button.glass:hover {
+	background-color: var(--transparent-background);
 	padding-right: 45px;
 	padding-left: 25px;
 
@@ -88,18 +129,6 @@ body .button:hover {
 		left: 12px;
 		opacity: 0;
 	}
-
-	.bar {
-		width: 100%;
-	}
-}
-
-body .button.glass {
-	background-color: var(--more-transparent-background);
-}
-
-body .button.glass:hover {
-	background-color: var(--transparent-background);
 }
 
 body .button:hover {
