@@ -21,10 +21,7 @@ export default function Summary() {
 	return (
 		<div id="summary" className={styles.container}>
 			<AnimatedContainer animationDirection="top" animationSpeed="medium">
-				<Title
-					title="Unveiling My Story:"
-					description="Exploring Growth, Skills, and Meaningful Experiences"
-				/>
+				<Title title="Unveiling My Story:" description="The Path Less Traveled" />
 			</AnimatedContainer>
 			<AnimatedContainer animationDirection="top" animationSpeed="slow">
 				<StyledCard glow="blue" variant="narrowbottom">

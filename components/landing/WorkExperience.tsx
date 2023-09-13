@@ -28,8 +28,8 @@ export default function WorkExperience() {
 		<div id="workexperience" className={styles.container}>
 			<AnimatedContainer animationDirection="top" animationSpeed="medium">
 				<Title
-					title="Ventures and Victories:"
-					description="Impactful Contributions and Achievements"
+					title="From Novice to Navigator:"
+					description="Navigating My Career Journey"
 				/>
 			</AnimatedContainer>
 

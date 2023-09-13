@@ -5,6 +5,7 @@ import Skills from "@/components/landing/Skills";
 import Summary from "@/components/landing/Summary";
 import WorkExperience from "@/components/landing/WorkExperience";
 import Head from "next/head";
+import Languages from "@/components/landing/Languages";
 
 export default function Home() {
 	return (
@@ -18,6 +19,7 @@ export default function Home() {
 				<Summary />
 				<Skills />
 				<WorkExperience />
+				<Languages />
 				<Images />
 			</main>
 		</>

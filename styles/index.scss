@@ -39,12 +39,6 @@ a {
 	text-decoration: none;
 }
 
-@media screen and (max-width: 800px) {
-	html body {
-		font-size: $font-size-g-mobile;
-	}
-}
-
 ::-webkit-scrollbar {
 	width: 4px;
 }
@@ -64,4 +58,16 @@ a {
 body {
 	scrollbar-width: thin;
 	scrollbar-color: var(--contrast-color) var(--body-color);
+}
+
+@media screen and (max-width: 800px) {
+	html body {
+		font-size: $font-size-g-mobile;
+	}
+}
+
+@media screen and (max-width: 530px) {
+	.width-fix {
+		padding-bottom: 80px;
+	}
 }

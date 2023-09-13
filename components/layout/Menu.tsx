@@ -27,7 +27,7 @@ export default function Menu() {
 		},
 		{ id: "", text: "Projects", icon: DataObjectRoundedIcon },
 		{ id: "", text: "Education", icon: LibraryBooksOutlinedIcon },
-		{ id: "", text: "Languages", icon: PublicRoundedIcon },
+		{ id: "languages", text: "Languages", icon: PublicRoundedIcon },
 	];
 
 	const [isTablet, setIsTablet] = React.useState(false);

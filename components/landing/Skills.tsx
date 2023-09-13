@@ -22,10 +22,7 @@ export default function Skills() {
 	return (
 		<div id="skills" className={styles.container}>
 			<AnimatedContainer animationDirection="top" animationSpeed="medium">
-				<Title
-					title="Mastering the Craft:"
-					description="Cultivating Skills for Personal and Professional Growth"
-				/>
+				<Title title="Skills:" description="Crafting My Arsenal of Abilities" />
 			</AnimatedContainer>
 			<AnimatedContainer
 				className={styles.skillcontainer}
