@@ -23,6 +23,7 @@ export default function Hero() {
 						background="glass"
 						icon={FileDownloadOutlinedIcon}
 						staticIcon={PictureAsPdfOutlinedIcon}
+						fontSize="small"
 						color="blue"
 					>
 						My resume

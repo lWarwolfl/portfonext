@@ -14,7 +14,9 @@ export const workexperiences: WorkExperience[] = [
 			React.Fragment,
 			null,
 			React.createElement("span", { className: styles.bold }, "Exmodules"),
-			"(remote) - Front-end(React.js/Next.js)  Developer"
+			" (Remote)",
+			React.createElement("br"),
+			"Front-end(React.js/Next.js) Developer"
 		),
 		link: "https://exmodules.com/",
 		logo: exmodules,
@@ -52,7 +54,9 @@ export const workexperiences: WorkExperience[] = [
 			React.Fragment,
 			null,
 			React.createElement("span", { className: styles.bold }, "Ponisha"),
-			"(freelancing) - Front-end Developer and UI Designer"
+			" (Freelancing)",
+			React.createElement("br"),
+			"Front-end Developer and UI Designer"
 		),
 		link: "https://ponisha.ir/profile/warwolf",
 		logo: ponisha,
@@ -95,7 +99,9 @@ export const workexperiences: WorkExperience[] = [
 			React.Fragment,
 			null,
 			React.createElement("span", { className: styles.bold }, "Agahpadidar"),
-			"(remote) - React.js Developer and UI/UX Designer"
+			" (Full-time)",
+			React.createElement("br"),
+			"Front-end(React.js) Developer"
 		),
 		link: "https://www.linkedin.com/company/agahpadidar/",
 		logo: agahpadidar,

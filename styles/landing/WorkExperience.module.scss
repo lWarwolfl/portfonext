@@ -23,6 +23,7 @@
 		color: var(--font-color-secondary);
 		font-weight: $font-weight-medium;
 		font-size: $font-size-em;
+		line-height: $font-size-2xl;
 		transition: padding-right $transition-s $transition-ease,
 			padding-left $transition-s $transition-ease,
 			background-color $transition-f $transition-ease;
@@ -32,13 +33,19 @@
 			font-weight: $font-weight-semibold;
 		}
 
-		.image {
-			@include background-contain;
+		.imagecontainer {
+			text-align: center;
 			width: 50px;
 			height: 50px;
-			border-radius: 5px;
 			margin-right: 15px;
 			z-index: 1;
+
+			.image {
+				@include background-contain;
+				width: auto;
+				height: 50px;
+				border-radius: 5px;
+			}
 		}
 
 		.text {
@@ -90,6 +97,14 @@
 			.button {
 				padding-right: 10px;
 				font-size: $font-size-r;
+			}
+
+			.text {
+				margin-right: 0;
+			}
+
+			.icon {
+				display: none;
 			}
 		}
 

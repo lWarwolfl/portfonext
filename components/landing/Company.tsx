@@ -13,7 +13,9 @@ export default function Company({ company, i }: Props) {
 	return (
 		<>
 			<a href={company.link} target="_blank" className={styles.companycontainer} key={i}>
-				<Image src={company.logo} alt={company.alt} className={styles.image} />
+				<div className={styles.imagecontainer}>
+					<Image src={company.logo} alt={company.alt} className={styles.image} />
+				</div>
 				<div className={styles.text}>{company.name}</div>
 				<company.icon
 					style={{

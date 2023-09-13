@@ -10,19 +10,25 @@ $height: 40px;
 	position: fixed;
 	z-index: 10;
 	width: 100%;
-	transition: background-color $transition-m $transition-ease,
-		padding $transition-m $transition-ease;
+	transition-property: background-color, top;
+	transition-timing-function: $transition-ease;
+	transition-duration: $transition-m;
 	background-color: transparent;
-	top: 0;
+	padding: 0 20px;
+	top: 20px;
 	left: 0;
-	padding: 20px;
 
 	.fix {
 		@include flex-row;
 		@include width-fix;
-		padding: 0 20px;
+		padding: 0;
 		align-items: center;
 		justify-content: flex-start;
+		max-width: 1260px;
+		border-radius: $border-radius-global;
+		transition-property: padding;
+		transition-timing-function: $transition-ease;
+		transition-duration: $transition-m;
 	}
 
 	.logo {
@@ -34,7 +40,7 @@ $height: 40px;
 		height: $height;
 		aspect-ratio: 1 / 1;
 		border-radius: $height/2;
-		margin-right: 8px;
+		margin-right: 12px;
 		padding-top: 5px;
 		transition: $transition-f;
 		box-shadow: 0 0px 0px var(--primary-color-transparent);
@@ -52,17 +58,16 @@ $height: 40px;
 		box-shadow: 0 0 30px var(--primary-color-transparent);
 	}
 
-	.navbar {
-		@include flex-row;
-		align-items: center;
-		justify-content: center;
-
-		.link:first-child {
-			margin-left: 15px;
+	.navbarcontainer {
+		.navbar {
+			@include flex-row;
+			align-items: center;
+			justify-content: center;
 		}
 	}
 
 	.upbutton {
+		pointer-events: none;
 		opacity: 0;
 	}
 
@@ -72,39 +77,53 @@ $height: 40px;
 	}
 }
 
-.stick {
-	backdrop-filter: blur(5px);
-	background-color: var(--primary-color-more-transparent);
-	padding: 10px 20px;
+.header.stick {
+	top: 12px;
+
+	.fix {
+		backdrop-filter: blur(5px);
+		background-color: var(--primary-color-more-transparent);
+		padding: 10px;
+	}
 
 	.upbutton {
+		pointer-events: unset;
 		opacity: 1;
-	}
-}
-
-@media screen and (max-width: 1300px) {
-	.header {
-		.fix {
-			padding: 0;
-		}
 	}
 }
 
 @media screen and (max-width: 1050px) {
 	.header {
-		.navbar {
-			.link {
-				margin-right: 15px;
+		.navbarcontainer {
+			.navbar {
+				.link {
+					margin-right: 15px;
+				}
 			}
 		}
 	}
 }
 
 @media screen and (max-width: 530px) {
-	.header {
+	.navbarcontainer {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		padding: 10px 20px;
+		z-index: 10;
+
 		.navbar {
+			@include flex-row;
+			justify-content: space-between;
+			width: 100%;
+			padding: 10px;
+			backdrop-filter: blur(5px);
+			background-color: var(--primary-color-more-transparent);
+			border-radius: $border-radius-global;
+
 			.link {
-				display: none;
+				margin-right: 0;
 			}
 		}
 	}

@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "@/styles/layout/Header.module.scss";
-import { Button } from "@mui/material";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 import RouteOutlinedIcon from "@mui/icons-material/RouteOutlined";
 import HandymanOutlinedIcon from "@mui/icons-material/HandymanOutlined";
@@ -15,6 +14,7 @@ import Link from "next/link";
 import StyledButton from "@/components/StyledButton";
 import Image from "next/image";
 import logo from "@/public/image/png/logo.png";
+import Menu from "./Menu";
 
 interface Link {
 	id: string;
@@ -23,32 +23,8 @@ interface Link {
 }
 
 export default function Header() {
-	const handleClick = (id: string) => {
-		const element = document.getElementById(id);
-		if (element) {
-			const scrollPosition = element.offsetTop - 100;
-
-			document.body.scrollTo({
-				top: scrollPosition,
-				behavior: "smooth",
-			});
-		}
-	};
-
-	const links: Link[] = [
-		{ id: "summary", text: "Summary", icon: RouteOutlinedIcon },
-		{ id: "skills", text: "Skills", icon: HandymanOutlinedIcon },
-		{
-			id: "workexperience",
-			text: "Work Experience",
-			icon: CardTravelRoundedIcon,
-		},
-		{ id: "", text: "Projects", icon: DataObjectRoundedIcon },
-		{ id: "", text: "Education", icon: LibraryBooksOutlinedIcon },
-		{ id: "", text: "Languages", icon: PublicRoundedIcon },
-	];
-
 	const containerRef = React.useRef<HTMLDivElement>(null);
+	const [isTablet, setIsTablet] = React.useState(false);
 	const [isMobile, setIsMobile] = React.useState(false);
 
 	React.useEffect(() => {
@@ -67,10 +43,12 @@ export default function Header() {
 		document.body.addEventListener("scroll", handleScroll);
 		handleScroll();
 
-		setIsMobile(window.innerWidth <= 1050);
+		setIsTablet(window.innerWidth <= 1050);
+		setIsMobile(window.innerWidth <= 530);
 
 		const handleResize = () => {
-			setIsMobile(window.innerWidth <= 1050);
+			setIsTablet(window.innerWidth <= 1050);
+			setIsMobile(window.innerWidth <= 530);
 		};
 
 		window.addEventListener("resize", handleResize);
@@ -89,36 +67,18 @@ export default function Header() {
 						<Image alt="logo" src={logo} className={styles.image}></Image>
 					</Link>
 
-					<div className={styles.navbar}>
-						{links.map((link, i) => (
-							<StyledButton
-								key={i}
-								className={styles.link}
-								idLink={link.id}
-								icon={KeyboardArrowRightRoundedIcon}
-								staticIcon={link.icon}
-								fontSize="small"
-								iconSize="large"
-								staticIconSize="big"
-								disabled={link.id === ""}
-								iconButton={isMobile}
-								background={isMobile ? "glass" : "transparent"}
-							>
-								{link.text}
-							</StyledButton>
-						))}
+					{!isMobile ? <Menu /> : null}
 
-						<StyledButton
-							className={styles.upbutton}
-							idLink="top"
-							icon={KeyboardDoubleArrowUpRoundedIcon}
-							staticIcon={KeyboardArrowUpRoundedIcon}
-							iconSize="big"
-							staticIconSize="big"
-							background="glass"
-							iconButton
-						/>
-					</div>
+					<StyledButton
+						className={styles.upbutton}
+						idLink="top"
+						icon={KeyboardDoubleArrowUpRoundedIcon}
+						staticIcon={KeyboardArrowUpRoundedIcon}
+						iconSize="big"
+						staticIconSize="big"
+						background="glass"
+						iconButton
+					/>
 
 					<StyledButton
 						className={styles.button}
@@ -128,7 +88,7 @@ export default function Header() {
 						staticIcon={SendRoundedIcon}
 						fontSize="small"
 						iconSize="large"
-						iconButton={isMobile}
+						iconButton={isTablet}
 						disabled
 					>
 						Contact Me
@@ -138,6 +98,7 @@ export default function Header() {
 			<div id="top" className={styles.dummyheader}>
 				<div className={styles.dummy}></div>
 			</div>
+			{isMobile ? <Menu /> : null}
 		</>
 	);
 }
