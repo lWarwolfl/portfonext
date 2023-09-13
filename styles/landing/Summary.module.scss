@@ -13,7 +13,7 @@
 .splitimage {
 	@include flex-column;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	margin-right: 30px;
 	max-width: 230px;
 	min-width: 200px;
@@ -34,12 +34,12 @@
 	.description {
 		width: 100%;
 		color: var(--font-color-secondary);
-		font-size: $font-size-l;
+		font-size: $font-size-em;
 		font-weight: $font-weight-medium;
-		line-height: $font-size-xxxl;
+		line-height: $font-size-2xl;
 
 		.bold {
-			font-weight: $font-weight-bold;
+			font-weight: $font-weight-semibold;
 			color: var(--font-color-primary);
 		}
 
@@ -55,6 +55,31 @@
 	}
 }
 
+.extratext {
+	width: 100%;
+	margin-top: 8px;
+	display: none;
+	color: var(--font-color-secondary);
+	font-size: $font-size-em;
+	font-weight: $font-weight-medium;
+	line-height: $font-size-2xl;
+
+	.bold {
+		font-weight: $font-weight-semibold;
+		color: var(--font-color-primary);
+	}
+
+	.accent {
+		@include gradient-text-accent;
+		font-weight: $font-weight-black;
+		display: inline-block;
+	}
+
+	.break {
+		margin-bottom: 8px;
+	}
+}
+
 .links {
 	width: 100%;
 	margin-top: 40px;
@@ -67,12 +92,30 @@
 	}
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 950px) {
+	.splittext {
+		.description {
+			.extra {
+				display: none;
+			}
+		}
+	}
+
+	.extratext {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 700px) {
 	.splitimage {
 		margin-right: 0;
 		max-width: unset;
 		width: 100%;
-		margin-bottom: 15px;
+		margin-bottom: 30px;
+	}
+
+	.extratext {
+		margin-top: 0;
 	}
 
 	.links {

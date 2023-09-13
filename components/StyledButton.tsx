@@ -12,12 +12,15 @@ interface Props {
 	download?: boolean;
 	children?: React.ReactNode;
 	color?: Color;
+	fontSize?: "small" | "normal" | "big" | "large";
 	staticIconSize?: "small" | "normal" | "big" | "large";
 	iconSize?: "small" | "normal" | "big" | "large";
 	height?: string;
 	barHeight?: string;
 	background?: "transparent" | "glass";
-	icon: React.ElementType;
+	iconButton?: boolean;
+	disabled?: boolean;
+	icon?: React.ElementType;
 	staticIcon: React.ElementType;
 }
 
@@ -29,11 +32,14 @@ export default function StyledButton({
 	download = false,
 	children,
 	color = "blue",
+	fontSize = "normal",
 	iconSize = "normal",
 	staticIconSize = "normal",
 	height = "40px",
 	barHeight,
 	background = "transparent",
+	iconButton = false,
+	disabled = false,
 	icon: IconComponent,
 	staticIcon: StaticIconComponent,
 }: Props) {
@@ -68,21 +74,33 @@ export default function StyledButton({
 			<>
 				<StaticIconComponent
 					className={`${styles.icon} ${styles.static} ${
-						staticIconSize === "small" ? styles.small : ""
-					} ${staticIconSize === "normal" ? styles.normal : ""} ${
-						staticIconSize === "big" ? styles.big : ""
-					} ${staticIconSize === "large" ? styles.large : ""}`}
+						IconComponent ? styles.hasicon : ""
+					} ${staticIconSize === "small" ? styles.small : ""} ${
+						staticIconSize === "normal" ? styles.normal : ""
+					} ${staticIconSize === "big" ? styles.big : ""} ${
+						staticIconSize === "large" ? styles.large : ""
+					}`}
 					style={{ color: `var(--${color}-color)` }}
 				/>
-				<div className={styles.text}>{children}</div>
-				<IconComponent
-					className={`${styles.icon} ${
-						iconSize === "small" ? styles.small : ""
-					} ${iconSize === "normal" ? styles.normal : ""} ${
-						iconSize === "big" ? styles.big : ""
-					} ${iconSize === "large" ? styles.large : ""}`}
-					style={{ color: `var(--${color}-color)` }}
-				/>
+				<div
+					className={`${styles.text} ${fontSize === "small" ? styles.small : ""} ${
+						fontSize === "normal" ? styles.normal : ""
+					} ${fontSize === "big" ? styles.big : ""} ${
+						fontSize === "large" ? styles.large : ""
+					}`}
+				>
+					{children}
+				</div>
+				{IconComponent ? (
+					<IconComponent
+						className={`${styles.icon} ${iconSize === "small" ? styles.small : ""} ${
+							iconSize === "normal" ? styles.normal : ""
+						} ${iconSize === "big" ? styles.big : ""} ${
+							iconSize === "large" ? styles.large : ""
+						}`}
+						style={{ color: `var(--${color}-color)` }}
+					/>
+				) : null}
 				{barHeight ? (
 					<div
 						className={styles.bar}
@@ -104,9 +122,9 @@ export default function StyledButton({
 					href={externalLink}
 					target="_blank"
 					rel={`${download ? "noopener noreferrer" : ""}`}
-					className={`${className} ${styles.button} ${
+					className={`${className} ${styles.button} ${disabled ? styles.disabled : ""} ${
 						background === "glass" ? styles.glass : ""
-					}`}
+					} ${iconButton ? styles.iconbutton : ""}`}
 					style={{ height: height }}
 				>
 					<Content />
@@ -114,9 +132,9 @@ export default function StyledButton({
 			) : (
 				<Button
 					onClick={handleClick}
-					className={`${className} ${styles.button} ${
+					className={`${className} ${styles.button} ${disabled ? styles.disabled : ""} ${
 						background === "glass" ? styles.glass : null
-					}`}
+					} ${iconButton ? styles.iconbutton : ""}`}
 					style={{ height: height }}
 				>
 					<Content />

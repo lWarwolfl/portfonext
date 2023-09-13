@@ -5,7 +5,7 @@
 
 //Hero styles desktop
 .container {
-	@include flex-row-inline;
+	@include flex-row;
 	align-items: center;
 	justify-content: center;
 	position: relative;
@@ -21,7 +21,7 @@
 		.big {
 			@include gradient-text-loop;
 			width: 100%;
-			font-size: 3.5em;
+			font-size: $font-size-9xl;
 			font-weight: $font-weight-black;
 			text-transform: uppercase;
 			animation: gradient-animation 8s linear infinite;
@@ -30,13 +30,17 @@
 		.small {
 			display: inline-block;
 			color: var(--font-color-primary);
-			font-size: 1.65rem;
+			font-size: $font-size-2xl;
 			font-weight: $font-weight-black;
-			text-transform: capitalize;
 
 			.accent {
 				@include gradient-text-normal;
 				display: inline-block;
+			}
+
+			.note {
+				font-weight: $font-weight-bold;
+				font-size: $font-size-xl;
 			}
 		}
 
@@ -51,13 +55,27 @@
 	}
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
 	.container {
+		align-items: flex-start;
+		padding-top: 80px;
+
 		.intro {
+			width: 100%;
+
+			.big {
+				font-size: $font-size-6xl;
+			}
+
 			.small {
-				margin-top: 0;
+				margin-top: 5px;
 				width: 100%;
-				font-size: 2.05rem;
+				font-size: $font-size-2xl;
+
+				.note {
+					display: block;
+					margin-top: 8px;
+				}
 			}
 		}
 	}

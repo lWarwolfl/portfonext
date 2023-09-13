@@ -1,6 +1,6 @@
-import loadingplanet from "../public/image/svg/loading/loadingplanet.svg";
-import loadingring1 from "../public/image/png/loading/loadingring1.png";
-import loadingring2 from "../public/image/png/loading/loadingring2.png";
+import loadingplanet from "@/public/image/svg/loading/loadingplanet.svg";
+import loadingring1 from "@/public/image/png/loading/loadingring1.png";
+import loadingring2 from "@/public/image/png/loading/loadingring2.png";
 
 export const loader = `
 * {

@@ -8,7 +8,7 @@ import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
 import DesignServicesRoundedIcon from "@mui/icons-material/DesignServicesRounded";
 import BoltRoundedIcon from "@mui/icons-material/BoltRounded";
 import { Color, SkillType } from "@/utils/types";
-import { skills } from "@/data/skills";
+import { skills } from "@/components/data/skills";
 
 export interface Skill {
 	name: string;
@@ -18,7 +18,7 @@ export interface Skill {
 	percent: string;
 }
 
-export default function Skills() {	
+export default function Skills() {
 	return (
 		<div id="skills" className={styles.container}>
 			<AnimatedContainer animationDirection="top" animationSpeed="medium">

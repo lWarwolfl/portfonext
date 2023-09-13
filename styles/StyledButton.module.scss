@@ -16,11 +16,9 @@ body .button {
 	max-width: 240px;
 	color: var(--font-color-primary);
 	font-weight: $font-weight-medium;
-	font-size: $font-size-m;
 	text-transform: unset;
 	transition: padding-right $transition-m $transition-ease,
-		padding-left $transition-m $transition-ease,
-		background-color $transition-m $transition-ease;
+		padding-left $transition-m $transition-ease, background-color $transition-m $transition-ease;
 
 	.text {
 		display: inline-block;
@@ -28,12 +26,27 @@ body .button {
 		width: 100%;
 	}
 
+	.text.small {
+		font-size: $font-size-r;
+	}
+
+	.text.normal {
+		font-size: $font-size-m;
+	}
+
+	.text.big {
+		font-size: $font-size-l;
+	}
+
+	.text.large {
+		font-size: $font-size-xl;
+	}
+
 	.icon {
 		position: absolute;
 		right: 8px;
 		opacity: 0;
-		transition: opacity $transition-s $transition-ease,
-			right $transition-s $transition-ease;
+		transition: opacity $transition-s $transition-ease, right $transition-s $transition-ease;
 		z-index: 1;
 	}
 
@@ -48,13 +61,13 @@ body .button {
 	}
 
 	.icon.big {
-		top: calc(50% - calc($font-size-xxl / 2));
-		font-size: $font-size-xxl;
+		top: calc(50% - calc($font-size-2xl / 2));
+		font-size: $font-size-2xl;
 	}
 
 	.icon.large {
-		top: calc(50% - calc($font-size-xxxl / 2));
-		font-size: $font-size-xxxl;
+		top: calc(50% - calc($font-size-3xl / 2));
+		font-size: $font-size-3xl;
 	}
 
 	.icon.static {
@@ -103,8 +116,7 @@ body .button.glass {
 		position: absolute;
 		right: 12px;
 		opacity: 0;
-		transition: opacity $transition-s $transition-ease,
-			right $transition-s $transition-ease;
+		transition: opacity $transition-s $transition-ease, right $transition-s $transition-ease;
 		z-index: 1;
 	}
 
@@ -133,6 +145,64 @@ body .button.glass:hover {
 
 body .button:hover {
 	background-color: var(--transparent-background);
+}
+
+body .button.iconbutton {
+	padding: 0;
+	justify-content: center;
+	aspect-ratio: 1 / 1;
+	max-width: unset;
+
+	.text {
+		display: none;
+	}
+
+	.bar {
+		display: none;
+	}
+
+	.icon {
+		right: unset;
+	}
+
+	.icon.small {
+		left: calc(50% - calc($font-size-l / 2));
+	}
+
+	.icon.normal {
+		left: calc(50% - calc($font-size-xl / 2));
+	}
+
+	.icon.big {
+		left: calc(50% - calc($font-size-2xl / 2));
+	}
+
+	.icon.large {
+		left: calc(50% - calc($font-size-3xl / 2));
+	}
+}
+
+body .button.iconbutton:hover {
+	padding: 0;
+	
+	.icon {
+		right: unset;
+		opacity: 1;
+	}
+
+	.icon.static {
+		left: unset;
+		opacity: 1;
+	}
+
+	.icon.static.hasicon {
+		opacity: 0;
+	}
+}
+
+body .button.disabled {
+	pointer-events: none;
+	opacity: 0.6;
 }
 
 @media screen and (max-width: 1050px) {

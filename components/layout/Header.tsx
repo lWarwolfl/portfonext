@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import styles from "@/styles/layout/Header.module.scss";
 import { Button } from "@mui/material";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
@@ -43,14 +43,15 @@ export default function Header() {
 			text: "Work Experience",
 			icon: CardTravelRoundedIcon,
 		},
-		{ id: "projects", text: "Projects", icon: DataObjectRoundedIcon },
-		{ id: "education", text: "Education", icon: LibraryBooksOutlinedIcon },
-		{ id: "languages", text: "Languages", icon: PublicRoundedIcon },
+		{ id: "", text: "Projects", icon: DataObjectRoundedIcon },
+		{ id: "", text: "Education", icon: LibraryBooksOutlinedIcon },
+		{ id: "", text: "Languages", icon: PublicRoundedIcon },
 	];
 
-	const containerRef = useRef<HTMLDivElement>(null);
+	const containerRef = React.useRef<HTMLDivElement>(null);
+	const [isMobile, setIsMobile] = React.useState(false);
 
-	useEffect(() => {
+	React.useEffect(() => {
 		const handleScroll = () => {
 			if (containerRef.current) {
 				const scrollYPosition = document.body.scrollTop;
@@ -64,10 +65,19 @@ export default function Header() {
 		};
 
 		document.body.addEventListener("scroll", handleScroll);
-		handleScroll(); // Handle initial scroll position
+		handleScroll();
+
+		setIsMobile(window.innerWidth <= 1050);
+
+		const handleResize = () => {
+			setIsMobile(window.innerWidth <= 1050);
+		};
+
+		window.addEventListener("resize", handleResize);
 
 		return () => {
 			document.body.removeEventListener("scroll", handleScroll);
+			window.removeEventListener("resize", handleResize);
 		};
 	}, []);
 
@@ -87,24 +97,27 @@ export default function Header() {
 								idLink={link.id}
 								icon={KeyboardArrowRightRoundedIcon}
 								staticIcon={link.icon}
+								fontSize="small"
 								iconSize="large"
 								staticIconSize="big"
+								disabled={link.id === ""}
+								iconButton={isMobile}
+								background={isMobile ? "glass" : "transparent"}
 							>
 								{link.text}
 							</StyledButton>
 						))}
 
-						<Button
+						<StyledButton
 							className={styles.upbutton}
-							onClick={() => handleClick("top")}
-						>
-							<KeyboardArrowUpRoundedIcon
-								className={`${styles.icon} ${styles.first}`}
-							/>
-							<KeyboardDoubleArrowUpRoundedIcon
-								className={`${styles.icon} ${styles.second}`}
-							/>
-						</Button>
+							idLink="top"
+							icon={KeyboardDoubleArrowUpRoundedIcon}
+							staticIcon={KeyboardArrowUpRoundedIcon}
+							iconSize="big"
+							staticIconSize="big"
+							background="glass"
+							iconButton
+						/>
 					</div>
 
 					<StyledButton
@@ -113,7 +126,10 @@ export default function Header() {
 						background="glass"
 						icon={KeyboardArrowRightRoundedIcon}
 						staticIcon={SendRoundedIcon}
+						fontSize="small"
 						iconSize="large"
+						iconButton={isMobile}
+						disabled
 					>
 						Contact Me
 					</StyledButton>

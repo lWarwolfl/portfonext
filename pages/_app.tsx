@@ -1,12 +1,12 @@
 import * as React from "react";
-import "@/styles/index.scss";
-import "@/styles/SplittedContainer.scss";
+import "../styles/index.scss";
+import "../styles/SplittedContainer.scss";
 import type { AppProps } from "next/app";
 
 //using next.js 13 font optimization to add our font to all pages
 import localFont from "next/font/local";
-import Header from "@/components/layout/Header";
-import Particle from "@/components/Particle";
+import Header from "../components/layout/Header";
+import Particle from "../components/Particle";
 export const font = localFont({
 	src: [
 		{

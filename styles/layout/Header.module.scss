@@ -63,48 +63,7 @@ $height: 40px;
 	}
 
 	.upbutton {
-		pointer-events: none;
 		opacity: 0;
-		display: block;
-		height: $height;
-		width: $height;
-		padding: 0;
-		min-width: unset;
-		align-items: center;
-		line-height: 0;
-		border-radius: $border-radius-global;
-		color: var(--blue-color);
-		background-color: transparent;
-		transition: background-color $transition-f $transition-ease,
-			opacity $transition-s $transition-ease;
-
-		.icon {
-			position: absolute;
-			top: calc(($height / 2) - calc($font-size-xxxl / 2));
-			left: calc(($height / 2) - calc($font-size-xxxl / 2));
-			font-size: $font-size-xxxl;
-			transition: opacity $transition-s $transition-ease;
-		}
-
-		.icon.first {
-			opacity: 1;
-		}
-
-		.icon.second {
-			opacity: 0;
-		}
-	}
-
-	.upbutton:hover {
-		background-color: var(--transparent-background);
-
-		.icon.first {
-			opacity: 0;
-		}
-
-		.icon.second {
-			opacity: 1;
-		}
 	}
 
 	.button {
@@ -120,27 +79,32 @@ $height: 40px;
 
 	.upbutton {
 		opacity: 1;
-		pointer-events: unset;
+	}
+}
+
+@media screen and (max-width: 1300px) {
+	.header {
+		.fix {
+			padding: 0;
+		}
 	}
 }
 
 @media screen and (max-width: 1050px) {
 	.header {
-		.fix {
-			padding: 0;
-		}
-
-		.button {
-			display: none;
-		}
-
-		.upbutton {
-			.icon.first {
-				display: none;
+		.navbar {
+			.link {
+				margin-right: 15px;
 			}
+		}
+	}
+}
 
-			.icon.second {
-				opacity: 1;
+@media screen and (max-width: 530px) {
+	.header {
+		.navbar {
+			.link {
+				display: none;
 			}
 		}
 	}

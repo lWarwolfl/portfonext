@@ -11,7 +11,8 @@ export default function Hero() {
 				<div className={styles.big}>professional</div>
 
 				<div className={styles.small}>
-					Front-end <span className={styles.accent}>developer</span>
+					Front-end <span className={styles.accent}>developer</span>{" "}
+					<span className={styles.note}>(Next.js/React.js)</span>
 				</div>
 
 				<div className={styles.links}>
@@ -24,19 +25,7 @@ export default function Hero() {
 						staticIcon={PictureAsPdfOutlinedIcon}
 						color="blue"
 					>
-						Resume - en
-					</StyledButton>
-
-					<StyledButton
-						className={styles.link}
-						externalLink="/files/resume/fa/Resume.pdf"
-						download
-						background="glass"
-						icon={FileDownloadOutlinedIcon}
-						staticIcon={PictureAsPdfOutlinedIcon}
-						color="purple"
-					>
-						Resume - fa
+						My resume
 					</StyledButton>
 				</div>
 			</div>

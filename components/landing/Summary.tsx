@@ -8,7 +8,7 @@ import StyledButton from "@/components/StyledButton";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 import AnimatedContainer from "@/components/AnimatedContainer";
 import { Color } from "@/utils/types";
-import { links } from "@/data/links";
+import { links } from "@/components/data/links";
 
 export interface Link {
 	link: string;
@@ -40,27 +40,50 @@ export default function Summary() {
 					<div className={styles.splittext}>
 						<div className={styles.description}>
 							I am <span className={styles.accent}>Sina Kheiri</span> and As a{" "}
-							<span className={styles.bold}>React.js developer</span> with{" "}
+							<span className={styles.bold}>Next.js/React.js developer</span> with{" "}
 							<span className={styles.bold}>4 years of experience</span> in{" "}
-							<span className={styles.bold}>frontend development</span> and{" "}
-							<span className={styles.bold}>UI/UX design</span>, I possess a
+							<span className={styles.bold}>frontend development</span> I possess a
 							diverse skill set of{" "}
-							<span className={styles.bold}>22+ technical abilities</span>. My
-							expertise includes developing responsive web applications,
-							designing user interfaces, and implementing complex features using
-							React.js.
-							<div className={styles.break}></div>I am proficient in{" "}
-							<span className={styles.bold}>Vanilla web developing</span> and
-							have experience working with various libraries and frameworks such
-							as{" "}
+							<span className={styles.bold}>25+ technical abilities</span>. I am
+							proficient in web development, whether using{" "}
+							<span className={styles.bold}>popular frameworks</span> or working with
+							vanilla HTML, CSS, and JavaScript and I have experience working with
+							various technologies such as{" "}
 							<span className={styles.bold}>
-								React.js, Next.js, Redux Toolkit and Material UI
+								Next.js, React.js, Typescript, Redux Toolkit
 							</span>
-							. With a strong focus on delivering high-quality code and
-							exceptional user experiences, I am committed to staying{" "}
-							<span className={styles.bold}>up-to-date</span> with the latest
-							industry trends and best practices.
+							.
+							<span className={styles.extra}>
+								<div className={styles.break}></div>I also have the knowledge and
+								skills for UI Design and I have created{" "}
+								<span className={styles.bold}>
+									User personas, Wireframes, High fidelity projects
+								</span>{" "}
+								and <span className={styles.bold}>Prototypes</span> using{" "}
+								<span className={styles.bold}>Figma and Adobe XD</span>.
+								<div className={styles.break}></div> With a strong focus on
+								delivering <span className={styles.bold}>high-quality code</span>{" "}
+								and <span className={styles.bold}>exceptional user interfaces</span>
+								, I am committed to staying{" "}
+								<span className={styles.bold}>up-to-date</span> with the latest
+								industry trends and best practices.
+							</span>
 						</div>
+					</div>
+
+					<div className={styles.extratext}>
+						<div className={styles.break}></div>I also have the knowledge and skills for
+						UI Design and I have created{" "}
+						<span className={styles.bold}>
+							User personas, Wireframes, High fidelity projects
+						</span>{" "}
+						and <span className={styles.bold}>Prototypes</span> using{" "}
+						<span className={styles.bold}>Figma and Adobe XD</span>.
+						<div className={styles.break}></div> With a strong focus on delivering{" "}
+						<span className={styles.bold}>high-quality code</span> and{" "}
+						<span className={styles.bold}>exceptional user interfaces</span>, I am
+						committed to staying <span className={styles.bold}>up-to-date</span> with
+						the latest industry trends and best practices.
 					</div>
 
 					<div className={styles.links}>

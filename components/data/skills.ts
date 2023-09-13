@@ -1,21 +1,22 @@
-import nextjs from "../public/image/svg/skills/nextjs.svg";
-import reactjs from "../public/image/svg/skills/reactjs.svg";
-import javascript from "../public/image/svg/skills/javascript.svg";
-import typescript from "../public/image/svg/skills/typescript.svg";
-import css from "../public/image/svg/skills/css.svg";
-import scss from "../public/image/svg/skills/scss.svg";
-import html from "../public/image/svg/skills/html.svg";
-import materialui from "../public/image/svg/skills/materialui.svg";
-import redux from "../public/image/svg/skills/redux.svg";
-import bootstrap from "../public/image/svg/skills/bootstrap.svg";
-import formik from "../public/image/svg/skills/formik.svg";
-import axios from "../public/image/svg/skills/axios.svg";
-import jquery from "../public/image/svg/skills/jquery.svg";
-import figma from "../public/image/svg/skills/figma.svg";
-import adobexd from "../public/image/svg/skills/adobexd.svg";
-import adobeillustrator from "../public/image/svg/skills/adobeillustrator.svg";
-import agile from "../public/image/svg/skills/agile.svg";
-import github from "../public/image/svg/skills/github.svg";
+import nextjs from "@/public/image/svg/skills/nextjs.svg";
+import reactjs from "@/public/image/svg/skills/reactjs.svg";
+import javascript from "@/public/image/svg/skills/javascript.svg";
+import typescript from "@/public/image/svg/skills/typescript.svg";
+import css from "@/public/image/svg/skills/css.svg";
+import scss from "@/public/image/svg/skills/scss.svg";
+import html from "@/public/image/svg/skills/html.svg";
+import materialui from "@/public/image/svg/skills/materialui.svg";
+import redux from "@/public/image/svg/skills/redux.svg";
+import bootstrap from "@/public/image/svg/skills/bootstrap.svg";
+import formik from "@/public/image/svg/skills/formik.svg";
+import axios from "@/public/image/svg/skills/axios.svg";
+import jquery from "@/public/image/svg/skills/jquery.svg";
+import figma from "@/public/image/svg/skills/figma.svg";
+import adobexd from "@/public/image/svg/skills/adobexd.svg";
+import adobeillustrator from "@/public/image/svg/skills/adobeillustrator.svg";
+import agile from "@/public/image/svg/skills/agile.svg";
+import github from "@/public/image/svg/skills/github.svg";
+import cleancode from "@/public/image/svg/skills/cleancode.svg";
 import { Skill } from "@/components/landing/Skills";
 
 export const skills: Skill[] = [
@@ -116,6 +117,13 @@ export const skills: Skill[] = [
 		color: "green",
 		image: agile,
 		percent: "75%",
+	},
+	{
+		name: "Clean code principles",
+		type: "other",
+		color: "blue",
+		image: cleancode,
+		percent: "100%",
 	},
 	{
 		name: "Bootstrap",

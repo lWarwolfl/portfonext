@@ -10,63 +10,56 @@
 	width: 100%;
 
 	.companycontainer {
-		$height: 70px;
+		@include flex-row;
+		align-items: center;
 		position: relative;
-		display: inline-block;
+		margin-top: 20px;
 		margin-bottom: 20px;
+		padding: 10px;
 		width: 100%;
+		border-radius: $border-radius-global;
+		border: 1px solid var(--contrast-color);
+		background-color: var(--more-transparent-background);
+		color: var(--font-color-secondary);
+		font-weight: $font-weight-medium;
+		font-size: $font-size-em;
+		transition: padding-right $transition-s $transition-ease,
+			padding-left $transition-s $transition-ease,
+			background-color $transition-f $transition-ease;
+
+		.bold {
+			color: var(--font-color-primary);
+			font-weight: $font-weight-semibold;
+		}
 
 		.image {
 			@include background-contain;
-			position: absolute;
-			top: 10px;
-			left: 10px;
-			width: calc($height - 20px);
-			height: calc($height - 20px);
+			width: 50px;
+			height: 50px;
 			border-radius: 5px;
+			margin-right: 15px;
 			z-index: 1;
+		}
+
+		.text {
+			margin-right: 10px;
 		}
 
 		.icon {
-			position: absolute;
-			top: calc(50% - calc($font-size-xxl / 2));
-			right: 18px;
-			font-size: $font-size-xxl;
-			transition: opacity $transition-s $transition-ease,
-				right $transition-s $transition-ease;
+			margin-right: 10px;
+			margin-left: auto;
+			font-size: $font-size-2xl;
+			transition: opacity $transition-s $transition-ease, right $transition-s $transition-ease;
 			z-index: 1;
-		}
-
-		.button {
-			width: 100%;
-			display: block;
-			height: $height;
-			border-radius: $border-radius-global;
-			border: 1px solid var(--contrast-color);
-			padding-right: calc($font-size-xxxl + 25px);
-			padding-left: $height;
-			background-color: var(--more-transparent-background);
-			color: var(--font-color-secondary);
-			font-weight: $font-weight-medium;
-			font-size: $font-size-em;
-			line-height: $font-size-xxl;
-			text-transform: unset;
-			text-align: left;
-			transition: padding-right $transition-s $transition-ease,
-				padding-left $transition-s $transition-ease,
-				background-color $transition-f $transition-ease;
-
-			.bold {
-				color: var(--font-color-primary);
-				font-weight: $font-weight-semibold;
-			}
 		}
 	}
 
 	.companycontainer:hover {
-		.button {
-			background-color: var(--transparent-background);
-		}
+		background-color: var(--transparent-background);
+	}
+
+	.companycontainer:first-child {
+		margin-top: 0;
 	}
 
 	.experience {
@@ -81,7 +74,7 @@
 			color: var(--font-color-secondary);
 			font-weight: $font-weight-medium;
 			font-size: $font-size-em;
-			line-height: $font-size-xxxl;
+			line-height: $font-size-3xl;
 
 			.bold {
 				color: var(--font-color-primary);
