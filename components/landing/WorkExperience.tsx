@@ -40,7 +40,7 @@ export default function WorkExperience() {
 					className={styles.container}
 				>
 					{firstHalf.map((company, i) => {
-						return <Company company={company} i={i} />;
+						return <Company key={i} company={company} i={i} />;
 					})}
 				</AnimatedContainer>
 
@@ -50,7 +50,7 @@ export default function WorkExperience() {
 					className={styles.container}
 				>
 					{secondHalf.map((company, i) => {
-						return <Company company={company} i={i} />;
+						return <Company key={i} company={company} i={i} />;
 					})}
 				</AnimatedContainer>
 			</SplittedContainer>
