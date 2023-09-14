@@ -11,7 +11,7 @@ export default function Hero() {
 				<div className={styles.big}>professional</div>
 
 				<div className={styles.small}>
-					Front-end <span className={styles.accent}>developer</span>{" "}
+					Front-end <span className={styles.accent}>Developer</span>{" "}
 					<span className={styles.note}>(Next.js/React.js)</span>
 				</div>
 
