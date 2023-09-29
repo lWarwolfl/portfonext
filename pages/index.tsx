@@ -6,6 +6,7 @@ import Summary from "@/components/landing/Summary";
 import WorkExperience from "@/components/landing/WorkExperience";
 import Head from "next/head";
 import Languages from "@/components/landing/Languages";
+import Education from "@/components/landing/Education";
 
 export default function Home() {
 	return (
@@ -19,6 +20,7 @@ export default function Home() {
 				<Summary />
 				<Skills />
 				<WorkExperience />
+				<Education />
 				<Languages />
 				<Images />
 			</main>
