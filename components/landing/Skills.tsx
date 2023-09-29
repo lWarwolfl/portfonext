@@ -8,7 +8,7 @@ import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
 import DesignServicesRoundedIcon from "@mui/icons-material/DesignServicesRounded";
 import BoltRoundedIcon from "@mui/icons-material/BoltRounded";
 import { Color, SkillType } from "@/utils/types";
-import { skills } from "@/components/data/skills";
+import { skills } from "@/data/skills";
 
 export interface Skill {
 	name: string;

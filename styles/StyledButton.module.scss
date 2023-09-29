@@ -205,5 +205,10 @@ body .button.disabled {
 	opacity: 0.6;
 }
 
+body .button.active {
+	pointer-events: none;
+	background-color: var(--transparent-background);
+}
+
 @media screen and (max-width: 1050px) {
 }

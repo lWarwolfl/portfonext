@@ -20,6 +20,7 @@ interface Props {
 	background?: "transparent" | "glass";
 	iconButton?: boolean;
 	disabled?: boolean;
+	active?: boolean;
 	icon?: React.ElementType;
 	staticIcon: React.ElementType;
 }
@@ -40,6 +41,7 @@ export default function StyledButton({
 	background = "transparent",
 	iconButton = false,
 	disabled = false,
+	active = false,
 	icon: IconComponent,
 	staticIcon: StaticIconComponent,
 }: Props) {
@@ -123,8 +125,10 @@ export default function StyledButton({
 					target="_blank"
 					rel={`${download ? "noopener noreferrer" : ""}`}
 					className={`${className} ${styles.button} ${disabled ? styles.disabled : ""} ${
-						background === "glass" ? styles.glass : ""
-					} ${iconButton ? styles.iconbutton : ""}`}
+						active ? styles.active : ""
+					} ${background === "glass" ? styles.glass : ""} ${
+						iconButton ? styles.iconbutton : ""
+					}`}
 					style={{ height: height }}
 				>
 					<Content />
@@ -133,8 +137,10 @@ export default function StyledButton({
 				<Button
 					onClick={handleClick}
 					className={`${className} ${styles.button} ${disabled ? styles.disabled : ""} ${
-						background === "glass" ? styles.glass : null
-					} ${iconButton ? styles.iconbutton : ""}`}
+						active ? styles.active : ""
+					} ${background === "glass" ? styles.glass : null} ${
+						iconButton ? styles.iconbutton : ""
+					}`}
 					style={{ height: height }}
 				>
 					<Content />

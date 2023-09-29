@@ -6,7 +6,7 @@ import Title from "@/components/Title";
 import AnimatedContainer from "@/components/AnimatedContainer";
 import LanguageIcon from "@mui/icons-material/Language";
 import { Color } from "@/utils/types";
-import { languages } from "../data/languages";
+import { languages } from "@/data/languages";
 
 export interface Language {
 	name: string;

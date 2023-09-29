@@ -8,7 +8,6 @@ export default function Document() {
 				<meta name="robots" content="noindex"></meta>
 				<meta name="theme-color" content="#0d1117" />
 				<link rel="shortcut icon" href="/favicon.ico" />
-				<meta name="emotion-insertion-point" content="" />
 				<style>{loader}</style>
 			</Head>
 			<body>

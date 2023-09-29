@@ -1,12 +1,6 @@
 import React from "react";
 import styles from "@/styles/layout/Header.module.scss";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
-import RouteOutlinedIcon from "@mui/icons-material/RouteOutlined";
-import HandymanOutlinedIcon from "@mui/icons-material/HandymanOutlined";
-import CardTravelRoundedIcon from "@mui/icons-material/CardTravelRounded";
-import DataObjectRoundedIcon from "@mui/icons-material/DataObjectRounded";
-import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
-import PublicRoundedIcon from "@mui/icons-material/PublicRounded";
 import KeyboardDoubleArrowUpRoundedIcon from "@mui/icons-material/KeyboardDoubleArrowUpRounded";
 import KeyboardArrowUpRoundedIcon from "@mui/icons-material/KeyboardArrowUpRounded";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
@@ -72,7 +66,7 @@ export default function Header() {
 					<StyledButton
 						className={styles.upbutton}
 						idLink="top"
-						icon={KeyboardDoubleArrowUpRoundedIcon}
+						icon={!isMobile ? KeyboardDoubleArrowUpRoundedIcon : undefined}
 						staticIcon={KeyboardArrowUpRoundedIcon}
 						iconSize="big"
 						staticIconSize="big"
@@ -84,7 +78,7 @@ export default function Header() {
 						className={styles.button}
 						idLink=""
 						background="glass"
-						icon={KeyboardArrowRightRoundedIcon}
+						icon={!isMobile ? KeyboardArrowRightRoundedIcon : undefined}
 						staticIcon={SendRoundedIcon}
 						fontSize="small"
 						iconSize="large"

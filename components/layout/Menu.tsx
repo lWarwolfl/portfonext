@@ -31,12 +31,15 @@ export default function Menu() {
 	];
 
 	const [isTablet, setIsTablet] = React.useState(false);
+	const [isMobile, setIsMobile] = React.useState(false);
 
 	React.useEffect(() => {
 		setIsTablet(window.innerWidth <= 1050);
+		setIsMobile(window.innerWidth <= 530);
 
 		const handleResize = () => {
 			setIsTablet(window.innerWidth <= 1050);
+			setIsMobile(window.innerWidth <= 530);
 		};
 
 		window.addEventListener("resize", handleResize);
@@ -54,7 +57,7 @@ export default function Menu() {
 						key={i}
 						className={styles.link}
 						idLink={link.id}
-						icon={KeyboardArrowRightRoundedIcon}
+						icon={!isMobile ? KeyboardArrowRightRoundedIcon : undefined}
 						staticIcon={link.icon}
 						fontSize="small"
 						iconSize="large"

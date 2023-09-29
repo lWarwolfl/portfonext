@@ -1,7 +1,7 @@
 import fa from "@/public/image/svg/languages/fa.svg";
 import en from "@/public/image/svg/languages/en.svg";
 import de from "@/public/image/svg/languages/de.svg";
-import { Language } from "../landing/Languages";
+import { Language } from "../components/landing/Languages";
 
 export const languages: Language[] = [
 	{

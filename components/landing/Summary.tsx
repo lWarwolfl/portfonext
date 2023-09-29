@@ -8,7 +8,7 @@ import StyledButton from "@/components/StyledButton";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 import AnimatedContainer from "@/components/AnimatedContainer";
 import { Color } from "@/utils/types";
-import { links } from "@/components/data/links";
+import { links } from "@/data/links";
 
 export interface Link {
 	link: string;
