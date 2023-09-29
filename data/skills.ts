@@ -17,6 +17,8 @@ import adobeillustrator from "@/public/image/svg/skills/adobeillustrator.svg";
 import agile from "@/public/image/svg/skills/agile.svg";
 import github from "@/public/image/svg/skills/github.svg";
 import cleancode from "@/public/image/svg/skills/cleancode.svg";
+import jest from "@/public/image/svg/skills/jest.svg";
+import tailwind from "@/public/image/svg/skills/tailwind.svg";
 import { Skill } from "@/components/landing/Skills";
 
 export const skills: Skill[] = [
@@ -25,7 +27,7 @@ export const skills: Skill[] = [
 		type: "code",
 		color: "white",
 		image: nextjs,
-		percent: "75%",
+		percent: "100%",
 	},
 	{
 		name: "React.js Framework",
@@ -46,7 +48,7 @@ export const skills: Skill[] = [
 		type: "code",
 		color: "blue",
 		image: typescript,
-		percent: "50%",
+		percent: "75%",
 	},
 	{
 		name: "Redux Toolkit(Redux.js)",
@@ -60,7 +62,14 @@ export const skills: Skill[] = [
 		type: "design",
 		color: "blue",
 		image: materialui,
-		percent: "75%",
+		percent: "100%",
+	},
+	{
+		name: "Tailwind CSS",
+		type: "design",
+		color: "aqua",
+		image: tailwind,
+		percent: "100%",
 	},
 	{
 		name: "CSS 3",
@@ -102,7 +111,7 @@ export const skills: Skill[] = [
 		type: "design",
 		color: "orange",
 		image: adobeillustrator,
-		percent: "75%",
+		percent: "50%",
 	},
 	{
 		name: "Github",
@@ -152,5 +161,12 @@ export const skills: Skill[] = [
 		color: "white",
 		image: axios,
 		percent: "100%",
+	},
+	{
+		name: "Jest",
+		type: "code",
+		color: "red",
+		image: jest,
+		percent: "75%",
 	},
 ];

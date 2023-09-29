@@ -16,10 +16,10 @@ export const languages: Language[] = [
 		image: en,
 		percent: "90%",
 	},
-	{
-		name: "Dutch (Beginner)",
-		color: "aqua",
-		image: de,
-		percent: "15%",
-	},
+	// {
+	// 	name: "Dutch (Beginner)",
+	// 	color: "aqua",
+	// 	image: de,
+	// 	percent: "15%",
+	// },
 ];
