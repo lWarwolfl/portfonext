@@ -25,7 +25,7 @@ export default function Menu() {
 			text: "Work Experience",
 			icon: CardTravelRoundedIcon,
 		},
-		{ id: "", text: "Projects", icon: DataObjectRoundedIcon },
+		{ id: "projects", text: "Projects", icon: DataObjectRoundedIcon },
 		{ id: "education", text: "Education", icon: LibraryBooksOutlinedIcon },
 		{ id: "languages", text: "Languages", icon: PublicRoundedIcon },
 	];

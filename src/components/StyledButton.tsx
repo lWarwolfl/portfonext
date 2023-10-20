@@ -66,7 +66,7 @@ export default function StyledButton({
 	const handleClick = () => {
 		if (idLink !== "") {
 			handleLocalClick();
-		} else if (localLink != "") {
+		} else if (localLink !== "") {
 			handleLocalLinkClick();
 		}
 	};

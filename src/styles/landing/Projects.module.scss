@@ -1,0 +1,23 @@
+//Imported styles
+@import "@/styles/animations.scss";
+@import "@/styles/mixins.scss";
+@import "@/styles/globals.scss";
+
+//Projects styles desktop
+.container {
+	@include flex-column;
+	position: relative;
+	width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+	.container {
+		margin-top: 30px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.container {
+		margin-top: 20px;
+	}
+}

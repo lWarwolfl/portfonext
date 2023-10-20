@@ -3,9 +3,10 @@ import styles from "@/styles/landing/Education.module.scss";
 import Title from "@/components/Title";
 import AnimatedContainer from "@/components/AnimatedContainer";
 import SplittedContainer from "@/components/SplittedContainer";
-import { Color, StaticImageData } from "@/utils/types";
+import { Color } from "@/utils/types";
 import Institute from "./Institute";
 import { educations } from "@/data/educations";
+import { StaticImageData } from "next/image";
 
 export interface Education {
 	name: string | React.ReactNode;

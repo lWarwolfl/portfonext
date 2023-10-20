@@ -33,30 +33,30 @@ export const educations: Education[] = [
 		alt: "beheshti",
 		color: "blue",
 	},
-	{
-		name: React.createElement(
-			React.Fragment,
-			null,
-			React.createElement("span", { className: styles.bold }, "Mathematics"),
-			" (High school) - 2016 to 2019",
-			React.createElement("br"),
-			"Shahid soltani 4 school for gifted students(Sampad)"
-		),
-		logo: sampad,
-		alt: "sampad",
-		color: "white",
-	},
-	{
-		name: React.createElement(
-			React.Fragment,
-			null,
-			React.createElement("span", { className: styles.bold }, "Mathematics"),
-			" (Middle school) - 2013 to 2016",
-			React.createElement("br"),
-			"Shahid bahonar 4 school for gifted students(Sampad)"
-		),
-		logo: sampad,
-		alt: "sampad",
-		color: "white",
-	},
+	// {
+	// 	name: React.createElement(
+	// 		React.Fragment,
+	// 		null,
+	// 		React.createElement("span", { className: styles.bold }, "Mathematics"),
+	// 		" (High school) - 2016 to 2019",
+	// 		React.createElement("br"),
+	// 		"Shahid soltani 4 school for gifted students(Sampad)"
+	// 	),
+	// 	logo: sampad,
+	// 	alt: "sampad",
+	// 	color: "white",
+	// },
+	// {
+	// 	name: React.createElement(
+	// 		React.Fragment,
+	// 		null,
+	// 		React.createElement("span", { className: styles.bold }, "Mathematics"),
+	// 		" (Middle school) - 2013 to 2016",
+	// 		React.createElement("br"),
+	// 		"Shahid bahonar 4 school for gifted students(Sampad)"
+	// 	),
+	// 	logo: sampad,
+	// 	alt: "sampad",
+	// 	color: "white",
+	// },
 ];

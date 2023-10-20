@@ -3,9 +3,10 @@ import styles from "@/styles/landing/WorkExperience.module.scss";
 import Title from "@/components/Title";
 import AnimatedContainer from "@/components/AnimatedContainer";
 import SplittedContainer from "@/components/SplittedContainer";
-import { Color, StaticImageData } from "@/utils/types";
+import { Color } from "@/utils/types";
 import { workexperiences } from "@/data/workexperiences";
 import Company from "./Company";
+import { StaticImageData } from "next/image";
 
 export interface WorkExperience {
 	alt: string;

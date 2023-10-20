@@ -7,6 +7,7 @@ import WorkExperience from "@/components/landing/WorkExperience";
 import Head from "next/head";
 import Languages from "@/components/landing/Languages";
 import Education from "@/components/landing/Education";
+import Projects from "@/components/landing/Projects";
 
 export default function Home() {
 	return (
@@ -20,6 +21,7 @@ export default function Home() {
 				<Summary />
 				<Skills />
 				<WorkExperience />
+				<Projects />
 				<Education />
 				<Languages />
 				<Images />

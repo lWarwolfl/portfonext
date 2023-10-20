@@ -5,20 +5,13 @@ import { Color } from "@/utils/types";
 type Props = {
 	id?: string;
 	className?: string;
-	variant: string;
+	variant: "narrowbottom" | "small" | "smallfull";
 	children: React.ReactNode;
 	glow: Color;
 	move?: boolean;
 };
 
-export default function StyledCard({
-	id,
-	glow,
-	className,
-	variant,
-	children,
-	move = true,
-}: Props) {
+export default function StyledCard({ id, glow, className, variant, children, move = true }: Props) {
 	const [glowPosition, setGlowPosition] = useState({ x: 0, y: 0 });
 	const containerRef = useRef<HTMLDivElement>(null);
 
