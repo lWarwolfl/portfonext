@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import styles from "@/styles/StyledCard.module.scss";
+import styles from "../styles/StyledCard.module.scss";
 import { Color } from "@/utils/types";
 
 type Props = {
@@ -8,6 +8,7 @@ type Props = {
 	variant: string;
 	children: React.ReactNode;
 	glow: Color;
+	move?: boolean;
 };
 
 export default function StyledCard({
@@ -16,12 +17,13 @@ export default function StyledCard({
 	className,
 	variant,
 	children,
+	move = true,
 }: Props) {
 	const [glowPosition, setGlowPosition] = useState({ x: 0, y: 0 });
 	const containerRef = useRef<HTMLDivElement>(null);
 
 	function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
-		if (containerRef.current && window.innerWidth > 768) {
+		if (containerRef.current && window.innerWidth > 768 && move) {
 			const containerRect = containerRef.current.getBoundingClientRect();
 			const mouseX = event.clientX - containerRect.left;
 			const mouseY = event.clientY - containerRect.top;
@@ -34,22 +36,15 @@ export default function StyledCard({
 				offset = 75;
 			}
 
-			if (variant === "medium") {
-				multiplier = 6;
-				offset = 85;
-			}
-
 			if (variant === "smallfull") {
 				multiplier = 4;
 				offset = 75;
 			}
 
 			const xSkew =
-				((mouseX - containerRect.width / 2) / (containerRect.width / 2)) *
-				multiplier;
+				((mouseX - containerRect.width / 2) / (containerRect.width / 2)) * multiplier;
 			const ySkew =
-				((mouseY - containerRect.height / 2) / (containerRect.height / 2)) *
-				multiplier;
+				((mouseY - containerRect.height / 2) / (containerRect.height / 2)) * multiplier;
 			containerRef.current.style.transform = `perspective(1000px) rotateX(${ySkew}deg) rotateY(${-xSkew}deg)`;
 			setGlowPosition({ x: mouseX - offset, y: mouseY - offset });
 		}
@@ -67,8 +62,8 @@ export default function StyledCard({
 			className={`${className} ${styles.container} ${
 				variant === "narrowbottom" && styles.narrowbottom
 			} ${variant === "small" && styles.small} ${
-				variant === "medium" && styles.medium
-			} ${variant === "smallfull" && styles.smallfull}`}
+				variant === "smallfull" && styles.smallfull
+			}`}
 			onMouseMove={handleMouseMove}
 			onMouseLeave={handleMouseLeave}
 			ref={containerRef}
