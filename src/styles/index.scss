@@ -1,7 +1,10 @@
 //Imported styles
-@import "@/styles/colors.scss";
-@import "@/styles/mixins.scss";
-@import "@/styles/globals.scss";
+@import "./colors.scss";
+@import "./animations.scss";
+@import "./mixins.scss";
+@import "./globals.scss";
+@import "./Swiper.scss";
+@import "./SplittedContainer.scss";
 
 //Global styles
 * {

@@ -1,0 +1,45 @@
+//Swiper styles
+body {
+	.swiper {
+		padding-bottom: 20px;
+
+		.swiper-pagination {
+			top: unset;
+			bottom: 5px;
+		}
+	}
+
+	.swiper.image-slider {
+		.swiper-slide {
+			@include background-cover;
+			background-position: top center;
+			height: 100%;
+			width: 100%;
+			border-radius: 8px;
+		}
+
+        .swiper-pagination {
+            @include flex-row;
+
+            .swiper-pagination-bullet {
+                flex: 1;
+                height: 6px;
+                border-radius: 3px;
+                background-color: var(--contrast-color);
+            }
+            
+            .swiper-pagination-bullet.swiper-pagination-bullet-active {
+                background-image: var(--gradient-main);
+            }
+        }
+
+        .swiper-scrollbar {
+            background-color: var(--contrast-color);
+            height: 5px;
+
+            .swiper-scrollbar-drag {
+                background-image: var(--gradient-main);
+            }
+        }
+	}
+}

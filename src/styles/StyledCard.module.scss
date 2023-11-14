@@ -1,6 +1,7 @@
 //Imported styles
-@import "@/styles/mixins.scss";
-@import "@/styles/globals.scss";
+@import "./animations.scss";
+@import "./mixins.scss";
+@import "./globals.scss";
 
 //Styled Card styles desktop
 $marginsmall: 30px;
@@ -33,10 +34,25 @@ $marginsmall: 30px;
 		opacity: 0;
 		z-index: -2;
 	}
+
+	&:hover {
+		.glow {
+			opacity: 0.75;
+		}
+	}
+}
+
+.container.betterglow {
+	&:hover {
+		.glow {
+			opacity: 1;
+			filter: blur(150px) !important;
+		}
+	}
 }
 
 .container.narrowbottom {
-	padding: 50px 50px 30px;
+	padding: 34px 34px 14px;
 }
 
 .container.small {
@@ -70,12 +86,6 @@ $marginsmall: 30px;
 
 .container.small:nth-child(4n) {
 	margin-right: 0px;
-}
-
-.container:hover {
-	.glow {
-		opacity: 0.75;
-	}
 }
 
 @media screen and (max-width: 1200px) {

@@ -1,13 +1,31 @@
 //Imported styles
-@import "@/styles/animations.scss";
-@import "@/styles/mixins.scss";
-@import "@/styles/globals.scss";
+@import "../animations.scss";
+@import "../mixins.scss";
+@import "../globals.scss";
 
 //Projects styles desktop
 .container {
 	@include flex-column;
 	position: relative;
 	width: 100%;
+
+	.projectcontainer {
+		@include flex-column;
+		position: relative;
+		width: 100%;
+
+		.project {
+			@include flex-row;
+			justify-content: space-between;
+
+			.slider {
+				width: 25%;
+				aspect-ratio: 4/5;
+				margin: 0 20px 20px 0;
+				color: var(--font-color-primary);
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 800px) {

@@ -27,12 +27,12 @@ export default function Projects() {
 				/>
 			</AnimatedContainer>
 			<AnimatedContainer
-				className={styles.skillcontainer}
+				className={styles.projectcontainer}
 				animationDirection="top"
 				animationSpeed="slow"
 			>
-				<StyledCard glow="yellow" className={styles.skill} variant="narrowbottom">
-					<ImageSlider images={[modernist1, modernist2, modernist3]} />
+				<StyledCard move={false} glow="yellow" className={styles.project} variant="narrowbottom">
+					<ImageSlider className={styles.slider} images={[modernist1, modernist2, modernist3]} />
 				</StyledCard>
 			</AnimatedContainer>
 		</div>

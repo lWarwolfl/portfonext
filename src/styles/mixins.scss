@@ -1,5 +1,3 @@
-@import "@/styles/globals.scss";
-
 @mixin width-fix {
 	max-width: $max-width-global;
 	padding: $padding-global;
@@ -91,6 +89,12 @@
 
 @mixin gradient-text-loop {
 	@include gradient-text;
+	background-image: var(--gradient-main-loop);
+	background-size: 200% 100%;
+	background-position: 0% center;
+}
+
+@mixin gradient-loop {
 	background-image: var(--gradient-main-loop);
 	background-size: 200% 100%;
 	background-position: 0% center;

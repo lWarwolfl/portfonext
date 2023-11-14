@@ -1,17 +1,9 @@
-import React, { useRef, useState } from "react";
-import styles from "../styles/StyledCard.module.scss";
-import { StaticImageData } from "next/image";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
+import React from "react";
 import "swiper/css";
-import "swiper/css/pagination";
-
-import "./styles.css";
-
-// import required modules
-import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css/scrollbar";
+import { StaticImageData } from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Scrollbar } from "swiper/modules";
 
 type Props = {
 	id?: string;
@@ -23,20 +15,24 @@ export default function ImageSlider({ id, className, images }: Props) {
 	return (
 		<Swiper
 			id={id}
-			spaceBetween={30}
 			centeredSlides={true}
+			slidesPerView={1}
 			autoplay={{
 				delay: 6000,
 				disableOnInteraction: false,
 			}}
-			pagination={{
-				clickable: true,
+			scrollbar={{
+				draggable: true,
 			}}
 			navigation={true}
-			modules={[Autoplay, Pagination]}
-			className={`swiper ${className} ${styles.container}`}
+			modules={[Autoplay, Scrollbar]}
+			className={`swiper image-slider ${className}`}
 		>
-			<SwiperSlide>Slide 1</SwiperSlide>
+			{images.map((item, index) => {
+				return (
+					<SwiperSlide key={index} style={{ backgroundImage: `url("${item.src}")` }} />
+				);
+			})}
 		</Swiper>
 	);
 }

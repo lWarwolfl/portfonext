@@ -16,7 +16,7 @@ export default function StyledCard({ id, glow, className, variant, children, mov
 	const containerRef = useRef<HTMLDivElement>(null);
 
 	function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
-		if (containerRef.current && window.innerWidth > 768 && move) {
+		if (containerRef.current && window.innerWidth > 768) {
 			const containerRect = containerRef.current.getBoundingClientRect();
 			const mouseX = event.clientX - containerRect.left;
 			const mouseY = event.clientY - containerRect.top;
@@ -34,12 +34,14 @@ export default function StyledCard({ id, glow, className, variant, children, mov
 				offset = 75;
 			}
 
-			const xSkew =
-				((mouseX - containerRect.width / 2) / (containerRect.width / 2)) * multiplier;
-			const ySkew =
-				((mouseY - containerRect.height / 2) / (containerRect.height / 2)) * multiplier;
-			containerRef.current.style.transform = `perspective(1000px) rotateX(${ySkew}deg) rotateY(${-xSkew}deg)`;
-			setGlowPosition({ x: mouseX - offset, y: mouseY - offset });
+			if (move) {
+				const xSkew =
+					((mouseX - containerRect.width / 2) / (containerRect.width / 2)) * multiplier;
+				const ySkew =
+					((mouseY - containerRect.height / 2) / (containerRect.height / 2)) * multiplier;
+				containerRef.current.style.transform = `perspective(1000px) rotateX(${ySkew}deg) rotateY(${-xSkew}deg)`;
+				setGlowPosition({ x: mouseX - offset, y: mouseY - offset });
+			}
 		}
 	}
 
@@ -56,7 +58,7 @@ export default function StyledCard({ id, glow, className, variant, children, mov
 				variant === "narrowbottom" && styles.narrowbottom
 			} ${variant === "small" && styles.small} ${
 				variant === "smallfull" && styles.smallfull
-			}`}
+			} ${!move ? styles.betterglow : ""}`}
 			onMouseMove={handleMouseMove}
 			onMouseLeave={handleMouseLeave}
 			ref={containerRef}

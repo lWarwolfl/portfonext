@@ -24,7 +24,7 @@ export default function Summary() {
 				<Title title="Unveiling My Story:" description="The Path Less Traveled" />
 			</AnimatedContainer>
 			<AnimatedContainer animationDirection="top" animationSpeed="slow">
-				<StyledCard glow="blue" variant="narrowbottom">
+				<StyledCard move={false} glow="blue" variant="narrowbottom">
 					<div className={styles.splitimage}>
 						<Image
 							src={photo}
