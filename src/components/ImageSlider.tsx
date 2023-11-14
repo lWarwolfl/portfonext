@@ -1,9 +1,10 @@
 import React from "react";
 import "swiper/css";
 import "swiper/css/scrollbar";
+import "swiper/css/effect-coverflow";
 import { StaticImageData } from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Scrollbar } from "swiper/modules";
+import { Pagination, EffectCoverflow, Autoplay } from "swiper/modules";
 
 type Props = {
 	id?: string;
@@ -15,17 +16,19 @@ export default function ImageSlider({ id, className, images }: Props) {
 	return (
 		<Swiper
 			id={id}
-			centeredSlides={true}
-			slidesPerView={1}
+			direction="horizontal"
+			effect={"coverflow"}
 			autoplay={{
 				delay: 6000,
 				disableOnInteraction: false,
 			}}
-			scrollbar={{
-				draggable: true,
+			slidesPerView={3}
+			spaceBetween={20}
+			pagination={{
+				clickable: true,
 			}}
-			navigation={true}
-			modules={[Autoplay, Scrollbar]}
+			modules={[EffectCoverflow, Pagination, Autoplay]}
+			coverflowEffect={{ rotate: 10, stretch: 0, depth: 200, slideShadows: true }}
 			className={`swiper image-slider ${className}`}
 		>
 			{images.map((item, index) => {
