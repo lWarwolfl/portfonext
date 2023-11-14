@@ -18,52 +18,49 @@ export interface Language {
 export default function Languages() {
 	return (
 		<div id="languages" className={styles.container}>
-			<AnimatedContainer animationDirection="top" animationSpeed="medium">
+			<AnimatedContainer animationDirection="top" animationSpeed="slow">
 				<Title title="Languages:" description="The Global Tapestry of My Communication" />
-			</AnimatedContainer>
-			<AnimatedContainer
-				className={styles.skillcontainer}
-				animationDirection="top"
-				animationSpeed="slow"
-			>
-				{languages.map((language, i) => {
-					return (
-						<StyledCard
-							glow={language.color}
-							className={styles.skill}
-							key={i}
-							variant="small"
-						>
-							<div className={styles.data} key={i}>
-								<Image
-									src={language.image}
-									alt={language.name}
-									priority={true}
-									className={styles.image}
-								/>
-								<div className={styles.name}>{language.name}</div>
-								<LanguageIcon
-									style={{
-										color: `var(--${language.color}-color)`,
-									}}
-									className={styles.icon}
-								/>
-							</div>
-							<div className={styles.barcontainer}>
-								<div className={styles.percent}>{language.percent}</div>
-								<div className={styles.bar}>
-									<div
-										className={styles.fill}
+
+				<div className={styles.skillcontainer}>
+					{languages.map((language, i) => {
+						return (
+							<StyledCard
+								glow={language.color}
+								className={styles.skill}
+								key={i}
+								variant="small"
+							>
+								<div className={styles.data} key={i}>
+									<Image
+										src={language.image}
+										alt={language.name}
+										priority={true}
+										className={styles.image}
+									/>
+									<div className={styles.name}>{language.name}</div>
+									<LanguageIcon
 										style={{
-											width: `${language.percent}`,
-											backgroundImage: `var(--gradient-${language.color})`,
+											color: `var(--${language.color}-color)`,
 										}}
-									></div>
+										className={styles.icon}
+									/>
 								</div>
-							</div>
-						</StyledCard>
-					);
-				})}
+								<div className={styles.barcontainer}>
+									<div className={styles.percent}>{language.percent}</div>
+									<div className={styles.bar}>
+										<div
+											className={styles.fill}
+											style={{
+												width: `${language.percent}`,
+												backgroundImage: `var(--gradient-${language.color})`,
+											}}
+										></div>
+									</div>
+								</div>
+							</StyledCard>
+						);
+					})}
+				</div>
 			</AnimatedContainer>
 		</div>
 	);

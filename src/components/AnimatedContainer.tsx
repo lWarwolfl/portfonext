@@ -24,7 +24,7 @@ export default function AnimatedContainer({
 				const containerTop = containerRef.current.getBoundingClientRect().top;
 				const windowHeight = window.innerHeight;
 
-				if (containerTop - windowHeight <= -150 || window.innerWidth < 768) {
+				if (containerTop - windowHeight <= -200 || window.innerWidth < 768) {
 					containerRef.current.classList.add(styles.show);
 				} else {
 					containerRef.current.classList.remove(styles.show);
@@ -42,9 +42,9 @@ export default function AnimatedContainer({
 
 	return (
 		<div
-			ref={containerRef}
 			id={id}
-			className={`animated-container ${styles.container} ${styles[animationDirection]} ${styles[animationSpeed]} ${className}`}
+			ref={containerRef}
+			className={`${styles.container} ${styles[animationDirection]} ${styles[animationSpeed]} ${className}`}
 		>
 			{children}
 		</div>

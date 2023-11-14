@@ -8,26 +8,24 @@ $position: 40px;
 
 .container {
 	opacity: 0;
+	transition-timing-function: $transition-ease;
+	transition-property: opacity, transform;
 }
 
 .fast {
-	transition: opacity $transition-f ease-in-out,
-		transform $transition-f ease-in-out;
+	transition-duration: $transition-f;
 }
 
 .medium {
-	transition: opacity $transition-m ease-in-out,
-		transform $transition-m ease-in-out;
+	transition-duration: $transition-m;
 }
 
 .slow {
-	transition: opacity $transition-s ease-in-out,
-		transform $transition-s ease-in-out;
+	transition-duration: $transition-s;
 }
 
 .veryslow {
-	transition: opacity $transition-vs ease-in-out,
-		transform $transition-vs ease-in-out;
+	transition-duration: $transition-vs;
 }
 
 .show {

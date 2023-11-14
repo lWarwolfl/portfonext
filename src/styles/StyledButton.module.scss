@@ -17,8 +17,9 @@ body .button {
 	color: var(--font-color-primary);
 	font-weight: $font-weight-medium;
 	text-transform: unset;
-	transition: padding-right $transition-m $transition-ease,
-		padding-left $transition-m $transition-ease, background-color $transition-m $transition-ease;
+	transition-duration: $transition-m;
+	transition-timing-function: $transition-ease;
+	transition-property: padding-right, padding-left, background-color;
 
 	.text {
 		display: inline-block;
@@ -46,7 +47,9 @@ body .button {
 		position: absolute;
 		right: 8px;
 		opacity: 0;
-		transition: opacity $transition-s $transition-ease, right $transition-s $transition-ease;
+		transition-duration: $transition-m;
+		transition-timing-function: $transition-ease;
+		transition-property: right, opacity;
 		z-index: 1;
 	}
 
@@ -82,8 +85,9 @@ body .button {
 		bottom: 0;
 		width: 0%;
 		background-color: var(--gradient-green);
+		transition-duration: $transition-m;
+		transition-timing-function: $transition-ease;
 		transition-property: width;
-		transition: width $transition-s $transition-ease;
 		z-index: 2;
 	}
 }
@@ -116,7 +120,9 @@ body .button.glass {
 		position: absolute;
 		right: 12px;
 		opacity: 0;
-		transition: opacity $transition-s $transition-ease, right $transition-s $transition-ease;
+		transition-duration: $transition-m;
+		transition-timing-function: $transition-ease;
+		transition-property: right, opacity;
 		z-index: 1;
 	}
 
@@ -184,7 +190,7 @@ body .button.iconbutton {
 
 body .button.iconbutton:hover {
 	padding: 0;
-	
+
 	.icon {
 		right: unset;
 		opacity: 1;

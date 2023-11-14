@@ -6,19 +6,19 @@ $margin: 50px;
 	width: 100%;
 	flex-wrap: wrap;
 
-	.animated-container {
+	& > div {
 		width: calc(50% - calc($margin / 2));
 		margin-right: $margin;
 	}
 
-	.animated-container:nth-child(2n) {
+	& > div:nth-child(2n) {
 		margin-right: 0;
 	}
 }
 
 @media screen and (max-width: 800px) {
 	.splitted-container {
-		.animated-container {
+		& > div {
 			width: 100%;
 			margin-right: 0;
 		}

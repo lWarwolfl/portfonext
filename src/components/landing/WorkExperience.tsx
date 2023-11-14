@@ -27,34 +27,26 @@ export default function WorkExperience() {
 
 	return (
 		<div id="workexperience" className={styles.container}>
-			<AnimatedContainer animationDirection="top" animationSpeed="medium">
+			<AnimatedContainer animationDirection="top" animationSpeed="slow">
 				<Title
 					title="From Novice to Navigator:"
 					description="Navigating My Career Journey"
 				/>
+
+				<SplittedContainer>
+					<div className={styles.container}>
+						{firstHalf.map((company, i) => {
+							return <Company key={i} company={company} i={i} />;
+						})}
+					</div>
+
+					<div className={styles.container}>
+						{secondHalf.map((company, i) => {
+							return <Company key={i} company={company} i={i} />;
+						})}
+					</div>
+				</SplittedContainer>
 			</AnimatedContainer>
-
-			<SplittedContainer>
-				<AnimatedContainer
-					animationDirection="top"
-					animationSpeed="slow"
-					className={styles.container}
-				>
-					{firstHalf.map((company, i) => {
-						return <Company key={i} company={company} i={i} />;
-					})}
-				</AnimatedContainer>
-
-				<AnimatedContainer
-					animationDirection="top"
-					animationSpeed="veryslow"
-					className={styles.container}
-				>
-					{secondHalf.map((company, i) => {
-						return <Company key={i} company={company} i={i} />;
-					})}
-				</AnimatedContainer>
-			</SplittedContainer>
 		</div>
 	);
 }

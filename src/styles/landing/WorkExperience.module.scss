@@ -24,9 +24,9 @@
 		font-weight: $font-weight-medium;
 		font-size: $font-size-em;
 		line-height: $font-size-2xl;
-		transition: padding-right $transition-s $transition-ease,
-			padding-left $transition-s $transition-ease,
-			background-color $transition-f $transition-ease;
+		transition-duration: $transition-m;
+		transition-timing-function: $transition-ease;
+		transition-property: padding-right, padding-left, background-color;
 
 		.bold {
 			color: var(--font-color-primary);
@@ -56,7 +56,9 @@
 			margin-right: 10px;
 			margin-left: auto;
 			font-size: $font-size-2xl;
-			transition: opacity $transition-s $transition-ease, right $transition-s $transition-ease;
+			transition-duration: $transition-m;
+			transition-timing-function: $transition-ease;
+			transition-property: right, opacity;
 			z-index: 1;
 		}
 	}

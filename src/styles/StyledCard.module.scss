@@ -16,7 +16,9 @@ $marginsmall: 30px;
 	background-color: var(--card-background);
 	border-radius: $border-radius-global;
 	overflow: hidden;
-	transition: transform $transition-f $transition-ease;
+	transition-duration: $transition-f;
+	transition-timing-function: $transition-ease;
+	transition-property: transform;
 
 	.glow {
 		position: absolute;
@@ -28,7 +30,9 @@ $marginsmall: 30px;
 		filter: blur(180px);
 		border-radius: calc($size / 2);
 		opacity: 0;
-		transition: opacity $transition-vs $transition-ease;
+		transition-duration: $transition-m;
+		transition-timing-function: $transition-ease;
+		transition-property: opacity;
 		mix-blend-mode: soft-light;
 		will-change: transform;
 		opacity: 0;

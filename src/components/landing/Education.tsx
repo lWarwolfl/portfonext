@@ -23,31 +23,23 @@ export default function Education() {
 
 	return (
 		<div id="education" className={styles.container}>
-			<AnimatedContainer animationDirection="top" animationSpeed="medium">
+			<AnimatedContainer animationDirection="top" animationSpeed="slow">
 				<Title title="My Academic Odyssey:" description="Learning Beyond the Classroom" />
+
+				<SplittedContainer>
+					<div className={styles.container}>
+						{firstHalf.map((institute, i) => {
+							return <Institute key={i} institute={institute} />;
+						})}
+					</div>
+
+					<div className={styles.container}>
+						{secondHalf.map((institute, i) => {
+							return <Institute key={i} institute={institute} />;
+						})}
+					</div>
+				</SplittedContainer>
 			</AnimatedContainer>
-
-			<SplittedContainer>
-				<AnimatedContainer
-					animationDirection="top"
-					animationSpeed="slow"
-					className={styles.container}
-				>
-					{firstHalf.map((institute, i) => {
-						return <Institute key={i} institute={institute} />;
-					})}
-				</AnimatedContainer>
-
-				<AnimatedContainer
-					animationDirection="top"
-					animationSpeed="veryslow"
-					className={styles.container}
-				>
-					{secondHalf.map((institute, i) => {
-						return <Institute key={i} institute={institute} />;
-					})}
-				</AnimatedContainer>
-			</SplittedContainer>
 		</div>
 	);
 }
