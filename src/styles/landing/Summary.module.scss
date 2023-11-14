@@ -15,8 +15,8 @@
 	align-items: center;
 	justify-content: flex-start;
 	margin-right: 30px;
-	max-width: 230px;
-	min-width: 200px;
+	max-width: 200px;
+	min-width: 170px;
 
 	.image {
 		@include background-contain;
@@ -30,6 +30,7 @@
 	@include flex-column;
 	flex: 1;
 	min-width: 300px;
+	padding-top: 10px;
 
 	.description {
 		width: 100%;
@@ -94,6 +95,8 @@
 
 @media screen and (max-width: 950px) {
 	.splittext {
+		padding-top: 0;
+
 		.description {
 			.extra {
 				display: none;
@@ -103,6 +106,11 @@
 
 	.extratext {
 		display: block;
+	}
+
+	.splitimage {
+		max-width: 230px;
+		min-width: 200px;
 	}
 }
 

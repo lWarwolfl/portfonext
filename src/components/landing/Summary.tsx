@@ -20,10 +20,8 @@ export interface Link {
 export default function Summary() {
 	return (
 		<div id="summary" className={styles.container}>
-			<AnimatedContainer animationDirection="top" animationSpeed="medium">
-				<Title title="Unveiling My Story:" description="The Path Less Traveled" />
-			</AnimatedContainer>
 			<AnimatedContainer animationDirection="top" animationSpeed="slow">
+				<Title title="Unveiling My Story:" description="The Path Less Traveled" />
 				<StyledCard move={false} glow="blue" variant="narrowbottom">
 					<div className={styles.splitimage}>
 						<Image
@@ -41,15 +39,12 @@ export default function Summary() {
 							<span className={styles.bold}>4 years of experience</span> in{" "}
 							<span className={styles.bold}>frontend development</span> I possess a
 							diverse skill set of{" "}
-							<span className={styles.bold}>25+ technical abilities</span>. I am
-							proficient in web development, whether using{" "}
-							<span className={styles.bold}>popular frameworks</span> or working with
-							vanilla HTML, CSS, and JavaScript and I have experience working with
-							various technologies such as{" "}
-							<span className={styles.bold}>
-								Next.js, React.js, Typescript, Redux Toolkit
-							</span>
-							.
+							<span className={styles.bold}>25+ technical abilities</span>.{" "}
+							<div className={styles.break}></div> With a strong focus on delivering{" "}
+							<span className={styles.bold}>high-quality code</span> and{" "}
+							<span className={styles.bold}>exceptional user interfaces</span>, I am
+							committed to staying <span className={styles.bold}>up-to-date</span>{" "}
+							with the latest industry trends and best practices.
 							<span className={styles.extra}>
 								<div className={styles.break}></div>I also have the knowledge and
 								skills for UI Design and I have created{" "}
@@ -58,12 +53,6 @@ export default function Summary() {
 								</span>{" "}
 								and <span className={styles.bold}>Prototypes</span> using{" "}
 								<span className={styles.bold}>Figma and Adobe XD</span>.
-								<div className={styles.break}></div> With a strong focus on
-								delivering <span className={styles.bold}>high-quality code</span>{" "}
-								and <span className={styles.bold}>exceptional user interfaces</span>
-								, I am committed to staying{" "}
-								<span className={styles.bold}>up-to-date</span> with the latest
-								industry trends and best practices.
 							</span>
 						</div>
 					</div>
@@ -76,11 +65,6 @@ export default function Summary() {
 						</span>{" "}
 						and <span className={styles.bold}>Prototypes</span> using{" "}
 						<span className={styles.bold}>Figma and Adobe XD</span>.
-						<div className={styles.break}></div> With a strong focus on delivering{" "}
-						<span className={styles.bold}>high-quality code</span> and{" "}
-						<span className={styles.bold}>exceptional user interfaces</span>, I am
-						committed to staying <span className={styles.bold}>up-to-date</span> with
-						the latest industry trends and best practices.
 					</div>
 
 					<div className={styles.links}>
