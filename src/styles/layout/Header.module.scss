@@ -16,7 +16,7 @@ $height: 40px;
 	background-color: transparent;
 	padding: 0 20px;
 	top: 20px;
-	left: 0;
+	left: -2px;
 
 	.fix {
 		@include flex-row;
@@ -41,14 +41,16 @@ $height: 40px;
 		aspect-ratio: 1 / 1;
 		border-radius: $height/2;
 		padding-top: 5px;
-		transition: $transition-f;
+		transition-duration: $transition-f;
+		transition-timing-function: $transition-ease;
 		box-shadow: 0 0px 0px var(--primary-color-transparent);
 
 		.image {
 			@include background-contain;
 			height: $height/1.5;
 			width: auto;
-			transition: $transition-f;
+			transition-duration: $transition-f;
+		transition-timing-function: $transition-ease;
 		}
 	}
 
