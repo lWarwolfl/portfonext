@@ -1,41 +1,165 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import ReactDOM from "react-dom";
 import "swiper/css";
-import "swiper/css/scrollbar";
 import "swiper/css/effect-coverflow";
-import { StaticImageData } from "next/image";
+import "swiper/css/navigation";
+import styles from "@/styles/ImageSlider.module.scss";
+import Image, { StaticImageData } from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, EffectCoverflow, Autoplay } from "swiper/modules";
+import { Pagination, EffectCoverflow, Autoplay, Navigation } from "swiper/modules";
+import FullscreenRoundedIcon from "@mui/icons-material/FullscreenRounded";
+import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import StyledButton from "@/components/StyledButton";
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
 
 type Props = {
-	id?: string;
 	className?: string;
+	title: string;
+	accent: string;
 	images: StaticImageData[];
 };
 
-export default function ImageSlider({ id, className, images }: Props) {
+export default function ImageSlider({ className, title, accent, images }: Props) {
+	const [isOpen, setIsOpen] = useState(false);
+
+	const handleButtonClick = () => {
+		setIsOpen((prevIsOpen) => !prevIsOpen);
+	};
+
+	const handleDownloadImages = () => {
+		const zip = new JSZip();
+		const folder = zip.folder(`${title}-${accent}`);
+
+		images.forEach((item, index) => {
+			const blob = fetch(item.src).then((response) => response.blob());
+			folder?.file(`image-${index + 1}.png`, blob);
+		});
+
+		zip.generateAsync({ type: "blob" }).then((content) => {
+			saveAs(content, `${title}-${accent}.zip`);
+		});
+	};
+
+	const portalContainerRef = useRef<HTMLElement | null>(null);
+
+	useEffect(() => {
+		const portalContainer = document.createElement("div");
+		portalContainer.id = "fullslider-portal-container";
+		document.getElementById("root")?.appendChild(portalContainer);
+		portalContainerRef.current = portalContainer;
+
+		return () => {
+			if (portalContainerRef.current) {
+				document.getElementById("root")?.removeChild(portalContainerRef.current);
+			}
+		};
+	}, []);
+
+	const fullSliderPortal = isOpen
+		? ReactDOM.createPortal(
+				<div className={styles.fullslider}>
+					<div className={styles.slidercontainer}>
+						<div className={styles.title}>
+							{title}
+							<span className={styles.accent}>{accent}</span>
+							<StyledButton
+								className={styles.button}
+								customClick={handleButtonClick}
+								staticIcon={CloseRoundedIcon}
+								fontSize="small"
+								iconSize="large"
+								staticIconSize="big"
+								background="glass"
+								iconButton
+							/>
+						</div>
+
+						<Swiper
+							slidesPerView={1}
+							pagination={{
+								clickable: true,
+							}}
+							draggable={false}
+							preventClicks={false}
+							modules={[Navigation, Pagination]}
+							navigation
+							className={`swiper full-image-slider`}
+						>
+							{images.map((item, index) => {
+								return (
+									<SwiperSlide key={index}>
+										<Image
+											className="image"
+											alt={`slide-${index}`}
+											src={item}
+										/>
+									</SwiperSlide>
+								);
+							})}
+						</Swiper>
+					</div>
+				</div>,
+				portalContainerRef.current!
+		  )
+		: null;
+
 	return (
-		<Swiper
-			id={id}
-			direction="horizontal"
-			effect={"coverflow"}
-			autoplay={{
-				delay: 6000,
-				disableOnInteraction: false,
-			}}
-			slidesPerView={3}
-			spaceBetween={20}
-			pagination={{
-				clickable: true,
-			}}
-			modules={[EffectCoverflow, Pagination, Autoplay]}
-			coverflowEffect={{ rotate: 10, stretch: 0, depth: 200, slideShadows: true }}
-			className={`swiper image-slider ${className}`}
-		>
-			{images.map((item, index) => {
-				return (
-					<SwiperSlide key={index} style={{ backgroundImage: `url("${item.src}")` }} />
-				);
-			})}
-		</Swiper>
+		<>
+			<div className={`${styles.container} ${className}`}>
+				<Swiper
+					effect={"coverflow"}
+					autoplay={{
+						delay: 6000,
+						disableOnInteraction: false,
+					}}
+					slidesPerView={3}
+					spaceBetween={20}
+					pagination={{
+						clickable: true,
+					}}
+					modules={[EffectCoverflow, Pagination, Autoplay]}
+					coverflowEffect={{ rotate: 10, stretch: 0, depth: 200, slideShadows: true }}
+					className={`swiper image-slider`}
+				>
+					{images.map((item, index) => {
+						return (
+							<SwiperSlide
+								key={index}
+								style={{ backgroundImage: `url("${item.src}")` }}
+							/>
+						);
+					})}
+				</Swiper>
+
+				<div className={styles.buttoncontainer}>
+					<StyledButton
+						className={styles.button}
+						customClick={handleDownloadImages}
+						staticIcon={FileDownloadOutlinedIcon}
+						fontSize="small"
+						iconSize="large"
+						staticIconSize="big"
+						background="glass"
+						color="green"
+						iconButton
+					/>
+
+					<StyledButton
+						className={styles.button}
+						customClick={handleButtonClick}
+						staticIcon={FullscreenRoundedIcon}
+						fontSize="small"
+						iconSize="large"
+						staticIconSize="big"
+						background="glass"
+						iconButton
+					/>
+				</div>
+			</div>
+
+			{fullSliderPortal}
+		</>
 	);
 }

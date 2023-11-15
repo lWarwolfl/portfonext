@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import styles from "@/styles/landing/Projects.module.scss";
 import StyledCard from "@/components/StyledCard";
 import Title from "@/components/Title";
@@ -25,38 +24,37 @@ export default function Projects() {
 					title="Showcasing My Passion Projects:"
 					description="Where Creativity Takes Flight"
 				/>
-			</AnimatedContainer>
-			<AnimatedContainer
-				className={styles.projectcontainer}
-				animationDirection="top"
-				animationSpeed="slow"
-			>
-				<StyledCard
-					move={false}
-					glow="yellow"
-					className={styles.project}
-					variant="narrowbottom"
-				>
-					<ImageSlider
-						className={styles.slider}
-						images={[modernist1, modernist2, modernist3]}
-					/>
-					<div className={styles.content}>
-						<div className={styles.section}>
-							<div className={styles.title}>
-								Modernist{" "}
-								<span className={styles.accent}>
-									(Front-end Development - Vanilla)
-								</span>
-							</div>
-							<div className={styles.description}>
-								Modernist which is a personal project that showcases my expertise in
-								designing a{" "}
-								<span className={styles.bold}>Customizable HTML Template</span>.
+
+				<div className={styles.projectcontainer}>
+					<StyledCard
+						move={false}
+						glow="yellow"
+						className={styles.project}
+						variant="narrowbottom"
+					>
+						<ImageSlider
+							className={styles.slider}
+							title="Modernist"
+							accent="(Front-end Development - Vanilla)"
+							images={[modernist1, modernist2, modernist3]}
+						/>
+						<div className={styles.content}>
+							<div className={styles.section}>
+								<div className={styles.title}>
+									Modernist{" "}
+									<span className={styles.accent}>
+										(Front-end Development - Vanilla)
+									</span>
+								</div>
+								<div className={styles.description}>
+									Modernist which is a personal project that showcases my
+									expertise in designing a{" "}
+									<span className={styles.bold}>Customizable HTML Template</span>.
+								</div>
 							</div>
 						</div>
-					</div>
-				</StyledCard>
+					</StyledCard>
+				</div>
 			</AnimatedContainer>
 		</div>
 	);

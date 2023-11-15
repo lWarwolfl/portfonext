@@ -1,0 +1,66 @@
+//Imported styles
+@import "./animations.scss";
+@import "./mixins.scss";
+@import "./globals.scss";
+
+//Image Slider styles
+.container {
+	position: relative;
+
+	.buttoncontainer {
+		position: absolute;
+		right: 40px;
+		bottom: 0;
+		z-index: 10;
+
+		.button {
+			margin-right: 10px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.fullslider {
+	@include flex-column;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100dvw;
+	height: 100dvh;
+	background-color: rgba(13, 17, 23, 0.85);
+	backdrop-filter: blur(2px);
+	z-index: 10000;
+
+	.slidercontainer {
+		@include width-fix;
+		max-width: 1000px;
+		width: 100%;
+		height: 100%;
+
+		.title {
+			@include flex-row;
+			width: 100%;
+			align-items: center;
+			position: relative;
+			font-weight: $font-weight-bold;
+			font-size: $font-size-xl;
+			color: var(--font-color-primary);
+			letter-spacing: 0.5px;
+			margin-bottom: 20px;
+
+			.accent {
+				font-size: $font-size-l;
+				color: var(--font-color-secondary);
+				margin-left: 8px;
+			}
+
+			.button {
+				margin-left: auto;
+			}
+		}
+	}
+}

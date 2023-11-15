@@ -67,7 +67,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	}, []);
 
 	return (
-		<main className={font.className}>
+		<main id="root" className={font.className}>
 			<Header />
 			<Component {...pageProps} />
 			<Particle />

@@ -20,6 +20,8 @@
 		"@types/react-dom": "18.0.11",
 		"eslint": "8.36.0",
 		"eslint-config-next": "^14.0.2",
+		"file-saver": "^2.0.5",
+		"jszip": "^3.10.1",
 		"next": "^14.0.2",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
@@ -29,6 +31,9 @@
 		"swiper": "^10.3.1",
 		"tsparticles": "^2.9.3",
 		"tsparticles-engine": "^2.9.3",
-		"typescript": "5.0.2"
+		"typescript": "^5.1.6"
+	},
+	"devDependencies": {
+		"@types/file-saver": "^2.0.7"
 	}
 }

@@ -6,17 +6,17 @@
 //Projects styles desktop
 .container {
 	@include flex-column;
-	position: relative;
 	width: 100%;
+	position: relative;
 
 	.projectcontainer {
 		@include flex-column;
-		position: relative;
 		width: 100%;
 
 		.project {
 			@include flex-row;
 			justify-content: space-between;
+			position: relative;
 
 			.slider {
 				width: 48%;
