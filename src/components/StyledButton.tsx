@@ -2,7 +2,7 @@ import React from "react";
 import styles from "@/styles/StyledButton.module.scss";
 import { Button } from "@mui/material";
 import { Color } from "@/utils/types";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 interface Props {
 	className?: string;
@@ -22,6 +22,7 @@ interface Props {
 	disabled?: boolean;
 	active?: boolean;
 	icon?: React.ElementType;
+	customClick?: () => void;
 	staticIcon: React.ElementType;
 }
 
@@ -44,6 +45,7 @@ export default function StyledButton({
 	active = false,
 	icon: IconComponent,
 	staticIcon: StaticIconComponent,
+	customClick,
 }: Props) {
 	const router = useRouter();
 
@@ -66,7 +68,7 @@ export default function StyledButton({
 	const handleClick = () => {
 		if (idLink !== "") {
 			handleLocalClick();
-		} else if (localLink !== "") {
+		} else if (localLink != "") {
 			handleLocalLinkClick();
 		}
 	};
@@ -135,7 +137,7 @@ export default function StyledButton({
 				</a>
 			) : (
 				<Button
-					onClick={handleClick}
+					onClick={customClick ? customClick : handleClick}
 					className={`${className} ${styles.button} ${disabled ? styles.disabled : ""} ${
 						active ? styles.active : ""
 					} ${background === "glass" ? styles.glass : null} ${
