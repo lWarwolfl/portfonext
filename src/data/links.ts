@@ -12,7 +12,7 @@ export const links: Link[] = [
 		icon: MailOutlineRoundedIcon,
 	},
 	{
-		link: "https://www.linkedin.com/in/mohamad-sina-kheiri/",
+		link: "https://www.linkedin.com/in/mohamad-sina-kheiri",
 		color: "green",
 		text: "linkedin.com/in/mohamad-sina-kheiri",
 		icon: LinkedInIcon,
