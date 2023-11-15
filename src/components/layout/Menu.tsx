@@ -9,6 +9,7 @@ import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
 import PublicRoundedIcon from "@mui/icons-material/PublicRounded";
 import Link from "next/link";
 import StyledButton from "@/components/StyledButton";
+import useWindowSmallerThan from "@/hooks/useWindowSmallerThan";
 
 interface Link {
 	id: string;
@@ -30,24 +31,8 @@ export default function Menu() {
 		{ id: "languages", text: "Languages", icon: PublicRoundedIcon },
 	];
 
-	const [isTablet, setIsTablet] = React.useState(false);
-	const [isMobile, setIsMobile] = React.useState(false);
-
-	React.useEffect(() => {
-		setIsTablet(window.innerWidth <= 1050);
-		setIsMobile(window.innerWidth <= 530);
-
-		const handleResize = () => {
-			setIsTablet(window.innerWidth <= 1050);
-			setIsMobile(window.innerWidth <= 530);
-		};
-
-		window.addEventListener("resize", handleResize);
-
-		return () => {
-			window.removeEventListener("resize", handleResize);
-		};
-	}, []);
+	const isMobile = useWindowSmallerThan({ size: 530 });
+	const isTablet = useWindowSmallerThan({ size: 1050 });
 
 	return (
 		<div className={styles.navbarcontainer}>

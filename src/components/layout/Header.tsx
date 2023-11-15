@@ -9,6 +9,7 @@ import StyledButton from "@/components/StyledButton";
 import Image from "next/image";
 import logo from "@/public/image/png/logo.png";
 import Menu from "./Menu";
+import useWindowSmallerThan from "@/hooks/useWindowSmallerThan";
 
 interface Link {
 	id: string;
@@ -18,8 +19,8 @@ interface Link {
 
 export default function Header() {
 	const containerRef = React.useRef<HTMLDivElement>(null);
-	const [isTablet, setIsTablet] = React.useState(false);
-	const [isMobile, setIsMobile] = React.useState(false);
+	const isMobile = useWindowSmallerThan({ size: 530 });
+	const isTablet = useWindowSmallerThan({ size: 1050 });
 
 	React.useEffect(() => {
 		const handleScroll = () => {
@@ -37,19 +38,8 @@ export default function Header() {
 		document.body.addEventListener("scroll", handleScroll);
 		handleScroll();
 
-		setIsTablet(window.innerWidth <= 1050);
-		setIsMobile(window.innerWidth <= 530);
-
-		const handleResize = () => {
-			setIsTablet(window.innerWidth <= 1050);
-			setIsMobile(window.innerWidth <= 530);
-		};
-
-		window.addEventListener("resize", handleResize);
-
 		return () => {
 			document.body.removeEventListener("scroll", handleScroll);
-			window.removeEventListener("resize", handleResize);
 		};
 	}, []);
 
