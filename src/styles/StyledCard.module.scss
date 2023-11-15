@@ -47,6 +47,10 @@ $marginsmall: 30px;
 }
 
 .container.betterglow {
+	.glow {
+		mix-blend-mode: unset;
+	}
+
 	&:hover {
 		.glow {
 			opacity: 1;
