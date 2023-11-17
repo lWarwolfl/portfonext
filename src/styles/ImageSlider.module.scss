@@ -9,12 +9,13 @@
 
 	.buttoncontainer {
 		position: absolute;
-		right: 40px;
+		right: 0;
 		bottom: 0;
 		z-index: 10;
 
 		.button {
 			margin-right: 10px;
+			backdrop-filter: blur(2px);
 
 			&:last-child {
 				margin-right: 0;

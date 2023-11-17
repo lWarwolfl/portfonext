@@ -11,4 +11,4 @@ export type Color =
 
 export type AnimationSpeed = "fast" | "medium" | "slow" | "veryslow";
 
-export type SkillType = "code" | "design" | "other";
+export type SkillType = "code" | "uiframework" | "design" | "other";

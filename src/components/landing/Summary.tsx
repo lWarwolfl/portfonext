@@ -26,7 +26,8 @@ export default function Summary() {
 					<div className={styles.splitimage}>
 						<Image
 							src={photo}
-							priority={true}
+							loading="lazy"
+							placeholder="blur"
 							alt="My photo"
 							className={styles.image}
 						/>

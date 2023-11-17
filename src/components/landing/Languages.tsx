@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import styles from "@/styles/landing/Skills.module.scss";
 import StyledCard from "@/components/StyledCard";
 import Title from "@/components/Title";
@@ -11,7 +11,7 @@ import { languages } from "@/data/languages";
 export interface Language {
 	name: string;
 	color: Color;
-	image: string;
+	image: string | StaticImageData;
 	percent: string;
 }
 

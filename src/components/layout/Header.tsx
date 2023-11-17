@@ -25,9 +25,9 @@ export default function Header() {
 	React.useEffect(() => {
 		const handleScroll = () => {
 			if (containerRef.current) {
-				const scrollYPosition = document.body.scrollTop;
+				const scrollXPosition = document.body.scrollTop;
 
-				if (scrollYPosition >= 10) {
+				if (scrollXPosition >= 10) {
 					containerRef.current.classList.add(styles.stick);
 				} else {
 					containerRef.current.classList.remove(styles.stick);

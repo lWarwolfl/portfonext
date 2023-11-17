@@ -111,11 +111,13 @@ export default function ImageSlider({ className, title, accent, images }: Props)
 				<Swiper
 					effect={"coverflow"}
 					autoplay={{
-						delay: 6000,
+						delay: 4000,
 						disableOnInteraction: false,
 					}}
-					slidesPerView={3}
-					spaceBetween={20}
+					slidesPerView={2.7}
+					centeredSlides
+					loop
+					spaceBetween={10}
 					pagination={{
 						clickable: true,
 					}}
