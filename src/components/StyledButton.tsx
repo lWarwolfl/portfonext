@@ -126,11 +126,11 @@ export default function StyledButton({
 					href={externalLink}
 					target="_blank"
 					rel={`${download ? "noopener noreferrer" : ""}`}
-					className={`${className} ${styles.button} ${disabled ? styles.disabled : ""} ${
-						active ? styles.active : ""
-					} ${background === "glass" ? styles.glass : ""} ${
-						iconButton ? styles.iconbutton : ""
-					}`}
+					className={`${className} ${styles.button} ${
+						!IconComponent ? styles.noicon : ""
+					} ${disabled ? styles.disabled : ""} ${active ? styles.active : ""} ${
+						background === "glass" ? styles.glass : ""
+					} ${iconButton ? styles.iconbutton : ""}`}
 					style={{ height: height }}
 				>
 					<Content />
@@ -138,11 +138,11 @@ export default function StyledButton({
 			) : (
 				<Button
 					onClick={customClick ? customClick : handleClick}
-					className={`${className} ${styles.button} ${disabled ? styles.disabled : ""} ${
-						active ? styles.active : ""
-					} ${background === "glass" ? styles.glass : null} ${
-						iconButton ? styles.iconbutton : ""
-					}`}
+					className={`${className} ${styles.button} ${
+						!IconComponent ? styles.noicon : ""
+					} ${disabled ? styles.disabled : ""} ${active ? styles.active : ""} ${
+						background === "glass" ? styles.glass : null
+					} ${iconButton ? styles.iconbutton : ""}`}
 					style={{ height: height }}
 				>
 					<Content />
