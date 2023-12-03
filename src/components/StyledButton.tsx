@@ -1,10 +1,10 @@
-import React from "react";
+import type { Color } from "@/utils/types";
 import styles from "@/styles/StyledButton.module.scss";
+import type { ButtonProps } from "@mui/material";
 import { Button } from "@mui/material";
-import { Color } from "@/utils/types";
 import { useRouter } from "next/navigation";
 
-interface Props {
+export interface StyledButtonProps extends Omit<ButtonProps, "color"> {
 	className?: string;
 	idLink?: string;
 	localLink?: string;
@@ -22,8 +22,8 @@ interface Props {
 	disabled?: boolean;
 	active?: boolean;
 	icon?: React.ElementType;
-	customClick?: () => void;
-	staticIcon: React.ElementType;
+	customClick?: (e: React.MouseEvent<HTMLElement>) => void;
+	staticIcon?: React.ElementType;
 }
 
 export default function StyledButton({
@@ -46,7 +46,8 @@ export default function StyledButton({
 	icon: IconComponent,
 	staticIcon: StaticIconComponent,
 	customClick,
-}: Props) {
+	...props
+}: StyledButtonProps) {
 	const router = useRouter();
 
 	const handleLocalClick = () => {
@@ -76,16 +77,19 @@ export default function StyledButton({
 	const Content = () => {
 		return (
 			<>
-				<StaticIconComponent
-					className={`${styles.icon} ${styles.static} ${
-						IconComponent ? styles.hasicon : ""
-					} ${staticIconSize === "small" ? styles.small : ""} ${
-						staticIconSize === "normal" ? styles.normal : ""
-					} ${staticIconSize === "big" ? styles.big : ""} ${
-						staticIconSize === "large" ? styles.large : ""
-					}`}
-					style={{ color: `var(--${color}-color)` }}
-				/>
+				{StaticIconComponent ? (
+					<StaticIconComponent
+						className={`${styles.icon} ${styles.static} ${
+							IconComponent ? styles.hasicon : ""
+						} ${staticIconSize === "small" ? styles.small : ""} ${
+							staticIconSize === "normal" ? styles.normal : ""
+						} ${staticIconSize === "big" ? styles.big : ""} ${
+							staticIconSize === "large" ? styles.large : ""
+						}`}
+						style={{ color: `var(--${color}-color)`, pointerEvents: "none" }}
+					/>
+				) : null}
+
 				<div
 					className={`${styles.text} ${fontSize === "small" ? styles.small : ""} ${
 						fontSize === "normal" ? styles.normal : ""
@@ -128,7 +132,9 @@ export default function StyledButton({
 					rel={`${download ? "noopener noreferrer" : ""}`}
 					className={`${className} ${styles.button} ${
 						!IconComponent ? styles.noicon : ""
-					} ${disabled ? styles.disabled : ""} ${active ? styles.active : ""} ${
+					} ${!StaticIconComponent ? styles.nostaticicon : ""} ${
+						disabled ? styles.disabled : ""
+					} ${active ? styles.active : ""} ${
 						background === "glass" ? styles.glass : ""
 					} ${iconButton ? styles.iconbutton : ""}`}
 					style={{ height: height }}
@@ -140,10 +146,13 @@ export default function StyledButton({
 					onClick={customClick ? customClick : handleClick}
 					className={`${className} ${styles.button} ${
 						!IconComponent ? styles.noicon : ""
-					} ${disabled ? styles.disabled : ""} ${active ? styles.active : ""} ${
+					} ${!StaticIconComponent ? styles.nostaticicon : ""} ${
+						disabled ? styles.disabled : ""
+					} ${active ? styles.active : ""} ${
 						background === "glass" ? styles.glass : null
 					} ${iconButton ? styles.iconbutton : ""}`}
 					style={{ height: height }}
+					{...props}
 				>
 					<Content />
 				</Button>

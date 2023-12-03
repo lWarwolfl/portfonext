@@ -29,19 +29,19 @@ body {
 		}
 
 		.text.small {
-			font-size: $font-size-r;
+			font-size: $font-size-s;
 		}
 
 		.text.normal {
-			font-size: $font-size-m;
+			font-size: $font-size-r;
 		}
 
 		.text.big {
-			font-size: $font-size-l;
+			font-size: $font-size-m;
 		}
 
 		.text.large {
-			font-size: $font-size-xl;
+			font-size: $font-size-l;
 		}
 
 		.icon {
@@ -101,6 +101,11 @@ body {
 			}
 		}
 
+		&.noicon.nostaticicon {
+			padding-right: 20px;
+			padding-left: 20px;
+		}
+
 		&:hover {
 			padding-right: 35px;
 			padding-left: 20px;
@@ -131,10 +136,20 @@ body {
 			}
 		}
 
+		&.noicon.nostaticicon:hover {
+			padding-right: 20px;
+			padding-left: 20px;
+		}
+
 		&.glass {
 			background-color: var(--more-transparent-background);
 			padding-right: 25px;
 			padding-left: 45px;
+
+			&[dir="rtl"] {
+				padding-right: 45px;
+				padding-left: 25px;
+			}
 
 			.icon {
 				position: absolute;
@@ -151,6 +166,11 @@ body {
 				opacity: 1;
 				z-index: 1;
 			}
+		}
+
+		&.noicon.nostaticicon.glass {
+			padding-left: 25px;
+			padding-right: 25px;
 		}
 
 		&.glass:hover {
@@ -173,13 +193,28 @@ body {
 			padding-right: 25px;
 			padding-left: 45px;
 
+			&[dir="rtl"] {
+				padding-right: 45px;
+				padding-left: 25px;
+			}
+
 			.icon.static {
 				left: 12px;
 				opacity: 1;
 			}
+			&[dir="rtl"] > .icon.static {
+				right: 12px;
+				opacity: 1;
+			}
 		}
 
-		&.iconbutton {
+		&.noicon.nostaticicon.glass:hover {
+			padding-left: 25px;
+			padding-right: 25px;
+		}
+
+		&.iconbutton,
+		&.noicon.iconbutton {
 			padding: 0;
 			justify-content: center;
 			aspect-ratio: 1 / 1;
@@ -214,7 +249,8 @@ body {
 			}
 		}
 
-		&.iconbutton:hover {
+		&.iconbutton:hover,
+		&.noicon.iconbutton:hover {
 			padding: 0;
 
 			.icon {

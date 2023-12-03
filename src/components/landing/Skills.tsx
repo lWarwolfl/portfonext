@@ -31,7 +31,7 @@ export default function Skills() {
 				<div className={styles.skillcontainer}>
 					{skillcategories.map((category, index) => {
 						return (
-							<>
+							<React.Fragment key={index}>
 								{skills
 									.filter((item) => item.category === category.name)
 									.map((skill, skillindex) => {
@@ -99,7 +99,7 @@ export default function Skills() {
 											</StyledCard>
 										);
 									})}
-							</>
+							</React.Fragment>
 						);
 					})}
 				</div>
