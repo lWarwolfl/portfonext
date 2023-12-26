@@ -33,7 +33,7 @@ export default function AnimatedContainer({
 		};
 
 		document.body.addEventListener("scroll", handleScroll);
-		handleScroll(); // Handle initial scroll position
+		handleScroll(); 
 
 		return () => {
 			document.body.removeEventListener("scroll", handleScroll);

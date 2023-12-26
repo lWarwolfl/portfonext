@@ -8,6 +8,7 @@ import Head from "next/head";
 import Languages from "@/components/landing/Languages";
 import Education from "@/components/landing/Education";
 import Projects from "@/components/landing/Projects";
+import Contact from "@/components/landing/Contact";
 
 export default function Home() {
 	return (
@@ -24,6 +25,7 @@ export default function Home() {
 				<Projects />
 				<Education />
 				<Languages />
+				<Contact />
 				<Images />
 			</main>
 		</>
