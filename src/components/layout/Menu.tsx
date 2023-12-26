@@ -8,7 +8,7 @@ import DataObjectRoundedIcon from "@mui/icons-material/DataObjectRounded";
 import LibraryBooksOutlinedIcon from "@mui/icons-material/LibraryBooksOutlined";
 import PublicRoundedIcon from "@mui/icons-material/PublicRounded";
 import Link from "next/link";
-import StyledButton from "@/components/StyledButton";
+import StyledButton from "@/components/utils/StyledButton";
 import useWindowSmallerThan from "@/hooks/useWindowSmallerThan";
 
 interface Link {

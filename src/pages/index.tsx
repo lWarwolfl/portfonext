@@ -1,14 +1,13 @@
-import * as React from "react";
+import Contact from "@/components/landing/Contact";
+import Education from "@/components/landing/Education";
 import Hero from "@/components/landing/Hero";
 import Images from "@/components/landing/Images";
+import Languages from "@/components/landing/Languages";
+import Projects from "@/components/landing/Projects";
 import Skills from "@/components/landing/Skills";
 import Summary from "@/components/landing/Summary";
 import WorkExperience from "@/components/landing/WorkExperience";
 import Head from "next/head";
-import Languages from "@/components/landing/Languages";
-import Education from "@/components/landing/Education";
-import Projects from "@/components/landing/Projects";
-import Contact from "@/components/landing/Contact";
 
 export default function Home() {
 	return (

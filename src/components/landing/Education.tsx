@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "@/styles/landing/Education.module.scss";
-import Title from "@/components/Title";
-import AnimatedContainer from "@/components/AnimatedContainer";
-import SplittedContainer from "@/components/SplittedContainer";
+import Title from "@/components/utils/Title";
+import AnimatedContainer from "@/components/utils/AnimatedContainer";
+import SplittedContainer from "@/components/utils/SplittedContainer";
 import { Color } from "@/utils/types";
 import Institute from "./Institute";
 import { educations } from "@/data/educations";

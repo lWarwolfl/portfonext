@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "@/styles/landing/Projects.module.scss";
-import StyledCard from "@/components/StyledCard";
-import Title from "@/components/Title";
-import AnimatedContainer from "@/components/AnimatedContainer";
+import StyledCard from "@/components/utils/StyledCard";
+import Title from "@/components/utils/Title";
+import AnimatedContainer from "@/components/utils/AnimatedContainer";
 import { Color } from "@/utils/types";
-import ImageSlider from "@/components/ImageSlider";
+import ImageSlider from "@/components/utils/ImageSlider";
 import Image, { StaticImageData } from "next/image";
-import StyledButton from "@/components/StyledButton";
+import StyledButton from "@/components/utils/StyledButton";
 import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 import { Skill } from "@/components/landing/Skills";
 import { Link } from "@/components/landing/Summary";

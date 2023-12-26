@@ -2,8 +2,8 @@ import * as React from "react";
 import "@/styles/index.scss";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
-import Header from "../components/layout/Header";
-import Particle from "../components/Particle";
+import Header from "@/components/layout/Header";
+import Particle from "@/components/utils/Particle";
 
 export const font = localFont({
 	src: [

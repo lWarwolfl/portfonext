@@ -10,7 +10,7 @@ import { Pagination, EffectCoverflow, Autoplay, Navigation } from "swiper/module
 import FullscreenRoundedIcon from "@mui/icons-material/FullscreenRounded";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
-import StyledButton from "@/components/StyledButton";
+import StyledButton from "@/components/utils/StyledButton";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
 

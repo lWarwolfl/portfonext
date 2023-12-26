@@ -1,9 +1,9 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import styles from "@/styles/landing/Skills.module.scss";
-import StyledCard from "@/components/StyledCard";
-import Title from "@/components/Title";
-import AnimatedContainer from "@/components/AnimatedContainer";
+import StyledCard from "@/components/utils/StyledCard";
+import Title from "@/components/utils/Title";
+import AnimatedContainer from "@/components/utils/AnimatedContainer";
 import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
 import DesignServicesRoundedIcon from "@mui/icons-material/DesignServicesRounded";
 import BoltRoundedIcon from "@mui/icons-material/BoltRounded";

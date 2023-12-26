@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "@/styles/landing/WorkExperience.module.scss";
-import StyledCard from "@/components/StyledCard";
+import StyledCard from "@/components/utils/StyledCard";
 import { WorkExperience } from "./WorkExperience";
 
 interface Props {

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "@/styles/landing/Hero.module.scss";
 import PictureAsPdfOutlinedIcon from "@mui/icons-material/PictureAsPdfOutlined";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
-import StyledButton from "@/components/StyledButton";
+import StyledButton from "@/components/utils/StyledButton";
 
 export default function Hero() {
 	return (

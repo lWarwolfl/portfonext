@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import styles from "../styles/StyledCard.module.scss";
+import styles from "@/styles/StyledCard.module.scss";
 import { Color } from "@/utils/types";
 
 type Props = {

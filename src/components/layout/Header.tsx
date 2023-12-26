@@ -5,7 +5,7 @@ import KeyboardDoubleArrowUpRoundedIcon from "@mui/icons-material/KeyboardDouble
 import KeyboardArrowUpRoundedIcon from "@mui/icons-material/KeyboardArrowUpRounded";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import Link from "next/link";
-import StyledButton from "@/components/StyledButton";
+import StyledButton from "@/components/utils/StyledButton";
 import Image from "next/image";
 import logo from "@/public/image/png/logo.png";
 import Menu from "./Menu";

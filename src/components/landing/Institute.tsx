@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "@/styles/landing/Education.module.scss";
-import StyledCard from "@/components/StyledCard";
+import StyledCard from "@/components/utils/StyledCard";
 import { Education } from "./Education";
 
 interface Props {
