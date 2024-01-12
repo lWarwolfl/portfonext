@@ -5,7 +5,6 @@ export default function Document() {
 	return (
 		<Html lang="en">
 			<Head>
-				<meta name="robots" content="noindex"></meta>
 				<meta name="theme-color" content="#0d1117" />
 				<link rel="shortcut icon" href="/favicon.ico" />
 				<style>{loader}</style>
