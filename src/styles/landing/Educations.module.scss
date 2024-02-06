@@ -9,6 +9,7 @@
 
    .education {
       @include flex-row;
+      flex-wrap: nowrap;
       align-items: center;
       margin-bottom: 20px;
       padding: 10px;
@@ -36,19 +37,15 @@
             border-radius: 5px;
          }
       }
-
-      .text {
-         margin-right: 10px;
-      }
    }
 }
 
-@media screen and (max-width: 800px) {
-   .container {
-      .educationcontainer {
-         .education {
-            flex-basis: 100%;
-         }
-      }
-   }
-}
+// @media screen and (max-width: 800px) {
+//    .container {
+//       .educationcontainer {
+//          .education {
+//             flex-basis: 100%;
+//          }
+//       }
+//    }
+// }

@@ -1,5 +1,5 @@
 import Header from '@/components/layout/Header'
-// import Particle from '@/components/utils/Particle'
+import Particle from '@/components/utils/Particle'
 import '@/styles/index.scss'
 import type { AppProps } from 'next/app'
 import localFont from 'next/font/local'
@@ -70,7 +70,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <main id="root" className={font.className}>
          <Header />
          <Component {...pageProps} />
-         {/* <Particle /> */}
+         <Particle />
       </main>
    )
 }

@@ -14,7 +14,7 @@ export default function Home() {
       <>
          <Head>
             <title>Sina Kheiri - React.js developer and UI/UX designer</title>
-            <meta name="viewport" content="initial-scale=1, width=device-width" />
+            <meta name="viewport" content="width=device-width, height=device-height" />
          </Head>
          <main className="width-fix">
             <Hero />

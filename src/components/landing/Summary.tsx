@@ -17,7 +17,7 @@ export default function Summary() {
                <div className={styles.splitimage}>
                   <Image
                      src={photo}
-                     loading="lazy"
+                     quality={85}
                      placeholder="blur"
                      alt="My photo"
                      className={styles.image}
@@ -62,7 +62,7 @@ export default function Summary() {
                   {summmaryLinks.map((item, index) => (
                      <StyledButton
                         key={index}
-                        className={styles.item}
+                        className={styles.link}
                         externalLink={item.link}
                         icon={KeyboardArrowRightRoundedIcon}
                         staticIcon={item.icon}

@@ -61,11 +61,13 @@ export default function ImageSlider({ className, title, accent, images }: Props)
       ? ReactDOM.createPortal(
            <div className={styles.fullslider}>
               <div className={styles.slidercontainer}>
-                 <div className={styles.title}>
-                    {title}
-                    <span className={styles.accent}>{accent}</span>
+                 <div className={styles.header}>
+                    <div className={styles.title}>
+                       {title}
+                       <span className={styles.accent}>{accent}</span>
+                    </div>
+
                     <StyledButton
-                       className={styles.button}
                        customClick={handleButtonClick}
                        staticIcon={CloseRoundedIcon}
                        fontSize="small"
@@ -90,7 +92,13 @@ export default function ImageSlider({ className, title, accent, images }: Props)
                     {images.map((item, index) => {
                        return (
                           <SwiperSlide key={index}>
-                             <Image className="image" alt={`slide-${index}`} src={item} />
+                             <Image
+                                quality={85}
+                                placeholder="blur"
+                                className="image"
+                                alt={`slide-${index}`}
+                                src={item}
+                             />
                           </SwiperSlide>
                        )
                     })}
