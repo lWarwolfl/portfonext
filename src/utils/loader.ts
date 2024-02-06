@@ -1,4 +1,4 @@
-import loadingplanet from '@/public/image/svg/loading/loadingplanet.svg'
+import loadingplanet from '@/public/image/png/loading/loadingplanet.png'
 import loadingring1 from '@/public/image/png/loading/loadingring1.png'
 import loadingring2 from '@/public/image/png/loading/loadingring2.png'
 
@@ -29,7 +29,7 @@ overflow-x: hidden;
 position: absolute !important;
 top: calc(50% - 50px);
 left: calc(50% - 50px);
- animation: spin 14s linear infinite;
+ animation: spin 2s linear infinite;
  width: 100px;
  height: 100px;
  position: relative;
