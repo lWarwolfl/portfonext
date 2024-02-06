@@ -7,15 +7,10 @@ import Languages from '@/components/landing/Languages'
 import Projects from '@/components/landing/Projects'
 import Skills from '@/components/landing/Skills'
 import Summary from '@/components/landing/Summary'
-import Head from 'next/head'
 
 export default function Home() {
    return (
       <>
-         <Head>
-            <title>Sina Kheiri - React.js developer and UI/UX designer</title>
-            <meta name="viewport" content="width=device-width, height=device-height" />
-         </Head>
          <main className="width-fix">
             <Hero />
             <Summary />
