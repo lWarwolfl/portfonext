@@ -1,13 +1,13 @@
-import styles from '@/styles/StyledCard.module.scss'
-import { Color } from '@/utils/types'
+import styles from '@/styles/utils/StyledCard.module.scss'
+import { type ColorType } from '@/utils/types'
 import React, { useRef, useState } from 'react'
 
-type Props = {
+interface Props {
    id?: string
    className?: string
    variant: 'narrowbottom' | 'small' | 'smallfull'
    children: React.ReactNode
-   glow: Color
+   glow: ColorType
    move?: boolean
 }
 

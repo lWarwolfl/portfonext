@@ -1,4 +1,4 @@
-export type Color =
+export type ColorType =
    | 'purple'
    | 'green'
    | 'blue'
@@ -9,6 +9,6 @@ export type Color =
    | 'red'
    | 'orange'
 
-export type AnimationSpeed = 'fast' | 'medium' | 'slow' | 'veryslow'
+export type AnimationSpeedType = 'fast' | 'medium' | 'slow' | 'veryslow'
 
-export type SkillType = 'code' | 'uiframework' | 'design' | 'other'
+export type SkillCategoryType = 'code' | 'uiframework' | 'design' | 'other'

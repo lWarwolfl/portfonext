@@ -1,7 +1,6 @@
-import styles from '@/styles/StyledButton.module.scss'
-import type { Color } from '@/utils/types'
-import type { ButtonProps } from '@mui/material'
-import { Button } from '@mui/material'
+import styles from '@/styles/utils/StyledButton.module.scss'
+import { type ColorType } from '@/utils/types'
+import { Button, type ButtonProps } from '@mui/material'
 import { useRouter } from 'next/navigation'
 
 export interface StyledButtonProps extends Omit<ButtonProps, 'color'> {
@@ -11,7 +10,7 @@ export interface StyledButtonProps extends Omit<ButtonProps, 'color'> {
    externalLink?: string
    download?: boolean
    children?: React.ReactNode
-   color?: Color
+   color?: ColorType
    fontSize?: 'small' | 'normal' | 'big' | 'large'
    staticIconSize?: 'small' | 'normal' | 'big' | 'large'
    iconSize?: 'small' | 'normal' | 'big' | 'large'

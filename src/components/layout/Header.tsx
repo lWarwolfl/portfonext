@@ -11,12 +11,6 @@ import Link from 'next/link'
 import React from 'react'
 import Menu from './Menu'
 
-interface Link {
-   id: string
-   text: string
-   icon: React.ElementType
-}
-
 export default function Header() {
    const containerRef = React.useRef<HTMLDivElement>(null)
    const isMobile = useWindowSmallerThan({ size: 530 })

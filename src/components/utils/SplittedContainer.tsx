@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-type SplittedContainerProps = {
+interface SplittedContainerProps  {
    id?: string
    className?: string
    children: React.ReactNode

@@ -1,5 +1,5 @@
-import styles from '@/styles/Particle.module.scss'
-import { type Container, type ISourceOptions } from '@tsparticles/engine'
+import styles from '@/styles/utils/Particle.module.scss'
+import { type ISourceOptions } from '@tsparticles/engine'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
 import { useEffect, useMemo, useState } from 'react'
@@ -15,35 +15,13 @@ export default function Particle() {
       })
    }, [])
 
-   const particlesLoaded = async (container?: Container): Promise<void> => {
-      console.log(container)
-   }
+   // const particlesLoaded = async (container?: Container): Promise<void> => {
+   //    console.log(container)
+   // }
 
    const options: ISourceOptions = useMemo(
       () => ({
-         fpsLimit: 120,
-         interactivity: {
-            events: {
-               onClick: {
-                  enable: true,
-                  mode: 'push',
-               },
-               onHover: {
-                  enable: true,
-                  mode: 'repulse',
-               },
-            },
-            modes: {
-               push: {
-                  quantity: 4,
-               },
-               repulse: {
-                  distance: 100,
-                  duration: 1,
-               },
-            },
-         },
-         detectRetina: true,
+         fpsLimit: 60,
          autoPlay: true,
          background: {
             color: {
@@ -95,7 +73,7 @@ export default function Particle() {
          <Particles
             className={styles.container}
             id="tsparticles"
-            particlesLoaded={particlesLoaded}
+            // particlesLoaded={particlesLoaded}
             options={options}
          />
       )

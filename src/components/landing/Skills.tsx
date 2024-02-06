@@ -1,27 +1,9 @@
 import AnimatedContainer from '@/components/utils/AnimatedContainer'
-import StyledCard from '@/components/utils/StyledCard'
 import Title from '@/components/utils/Title'
-import { skillcategories, skills } from '@/data/skills'
+import { skillCategories, skills } from '@/data/skills'
 import styles from '@/styles/landing/Skills.module.scss'
-import { Color, SkillType } from '@/utils/types'
-import BoltRoundedIcon from '@mui/icons-material/BoltRounded'
-import CodeRoundedIcon from '@mui/icons-material/CodeRounded'
-import DesignServicesRoundedIcon from '@mui/icons-material/DesignServicesRounded'
-import FormatPaintOutlinedIcon from '@mui/icons-material/FormatPaintOutlined'
-import Image, { StaticImageData } from 'next/image'
 import React from 'react'
-
-export interface SkillCategory {
-   name: SkillType
-   color: Color
-}
-
-export interface Skill {
-   name: string
-   category: SkillType
-   image: string | StaticImageData
-   percent: string
-}
+import Skill from './Skill'
 
 export default function Skills() {
    return (
@@ -29,73 +11,13 @@ export default function Skills() {
          <AnimatedContainer animationDirection="top" animationSpeed="slow">
             <Title title="Skills:" description="Crafting My Arsenal of Abilities" />
             <div className={styles.skillcontainer}>
-               {skillcategories.map((category, index) => {
+               {skillCategories.map((category, index) => {
                   return (
                      <React.Fragment key={index}>
                         {skills
                            .filter((item) => item.category === category.name)
-                           .map((skill, skillindex) => {
-                              return (
-                                 <StyledCard
-                                    key={skillindex}
-                                    glow={category.color}
-                                    className={styles.skill}
-                                    variant="small"
-                                 >
-                                    <div className={styles.data}>
-                                       <Image
-                                          src={skill.image}
-                                          alt={skill.name}
-                                          className={styles.image}
-                                       />
-                                       <div className={styles.name}>{skill.name}</div>
-                                       {category.name === 'code' && (
-                                          <CodeRoundedIcon
-                                             style={{
-                                                color: `var(--${category.color}-color)`,
-                                             }}
-                                             className={styles.icon}
-                                          />
-                                       )}
-                                       {category.name === 'uiframework' && (
-                                          <FormatPaintOutlinedIcon
-                                             style={{
-                                                color: `var(--${category.color}-color)`,
-                                             }}
-                                             className={styles.icon}
-                                          />
-                                       )}
-                                       {category.name === 'design' && (
-                                          <DesignServicesRoundedIcon
-                                             style={{
-                                                color: `var(--${category.color}-color)`,
-                                             }}
-                                             className={styles.icon}
-                                          />
-                                       )}
-                                       {category.name === 'other' && (
-                                          <BoltRoundedIcon
-                                             style={{
-                                                color: `var(--${category.color}-color)`,
-                                             }}
-                                             className={styles.icon}
-                                          />
-                                       )}
-                                    </div>
-                                    <div className={styles.barcontainer}>
-                                       <div className={styles.percent}>{skill.percent}</div>
-                                       <div className={styles.bar}>
-                                          <div
-                                             className={styles.fill}
-                                             style={{
-                                                width: `${skill.percent}`,
-                                                backgroundImage: `var(--gradient-${category.color})`,
-                                             }}
-                                          ></div>
-                                       </div>
-                                    </div>
-                                 </StyledCard>
-                              )
+                           .map((item, i) => {
+                              return <Skill key={i} item={item} category={category} />
                            })}
                      </React.Fragment>
                   )

@@ -1,11 +1,18 @@
 import azad from '@/public/image/svg/education/azad.svg'
 import beheshti from '@/public/image/svg/education/beheshti.svg'
-import styles from '@/styles/landing/Education.module.scss'
+import styles from '@/styles/landing/Educations.module.scss'
+import { type ColorType } from '@/utils/types'
+import { type StaticImageData } from 'next/image'
 import * as React from 'react'
 
-import { Education } from '@/components/landing/Education'
+export interface EducationInterface {
+   name: string | React.ReactNode
+   logo: string | StaticImageData
+   alt: string
+   color: ColorType
+}
 
-export const educations: Education[] = [
+export const educations: EducationInterface[] = [
    {
       name: React.createElement(
          React.Fragment,

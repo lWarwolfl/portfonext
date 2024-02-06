@@ -1,18 +1,8 @@
 import AnimatedContainer from '@/components/utils/AnimatedContainer'
-import StyledCard from '@/components/utils/StyledCard'
 import Title from '@/components/utils/Title'
 import { languages } from '@/data/languages'
 import styles from '@/styles/landing/Skills.module.scss'
-import { Color } from '@/utils/types'
-import LanguageIcon from '@mui/icons-material/Language'
-import Image, { StaticImageData } from 'next/image'
-
-export interface Language {
-   name: string
-   color: Color
-   image: string | StaticImageData
-   percent: string
-}
+import Language from './Language'
 
 export default function Languages() {
    return (
@@ -21,43 +11,8 @@ export default function Languages() {
             <Title title="Languages:" description="The Global Tapestry of My Communication" />
 
             <div className={styles.skillcontainer}>
-               {languages.map((language, i) => {
-                  return (
-                     <StyledCard
-                        glow={language.color}
-                        className={styles.skill}
-                        key={i}
-                        variant="small"
-                     >
-                        <div className={styles.data} key={i}>
-                           <Image
-                              src={language.image}
-                              alt={language.name}
-                              priority={true}
-                              className={styles.image}
-                           />
-                           <div className={styles.name}>{language.name}</div>
-                           <LanguageIcon
-                              style={{
-                                 color: `var(--${language.color}-color)`,
-                              }}
-                              className={styles.icon}
-                           />
-                        </div>
-                        <div className={styles.barcontainer}>
-                           <div className={styles.percent}>{language.percent}</div>
-                           <div className={styles.bar}>
-                              <div
-                                 className={styles.fill}
-                                 style={{
-                                    width: `${language.percent}`,
-                                    backgroundImage: `var(--gradient-${language.color})`,
-                                 }}
-                              ></div>
-                           </div>
-                        </div>
-                     </StyledCard>
-                  )
+               {languages.map((item, index) => {
+                  return <Language key={index} item={item} />
                })}
             </div>
          </AnimatedContainer>

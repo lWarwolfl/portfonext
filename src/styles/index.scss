@@ -57,11 +57,6 @@ a {
    background: var(--transparent-background);
 }
 
-body {
-   scrollbar-width: thin;
-   scrollbar-color: var(--contrast-color) var(--body-color);
-}
-
 @media screen and (max-width: 800px) {
    html body {
       font-size: $font-size-g-mobile;

@@ -1,11 +1,11 @@
 import StyledButton from '@/components/utils/StyledButton'
-import styles from '@/styles/ImageSlider.module.scss'
+import styles from '@/styles/utils/ImageSlider.module.scss'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined'
 import FullscreenRoundedIcon from '@mui/icons-material/FullscreenRounded'
 import { saveAs } from 'file-saver'
 import JSZip from 'jszip'
-import Image, { StaticImageData } from 'next/image'
+import Image, { type StaticImageData } from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
 import 'swiper/css'
@@ -14,7 +14,7 @@ import 'swiper/css/navigation'
 import { Autoplay, EffectCoverflow, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-type Props = {
+interface Props {
    className?: string
    title: string
    accent: string

@@ -1,13 +1,25 @@
-import { WorkExperience } from '@/components/landing/WorkExperience'
 import agahpadidar from '@/public/image/jpg/company/agahpadidar.jpg'
 import exmodules from '@/public/image/png/company/exmodules.png'
 import ponisha from '@/public/image/png/company/ponisha.png'
-import styles from '@/styles/landing/WorkExperience.module.scss'
+import styles from '@/styles/landing/Experiences.module.scss'
+import { type ColorType } from '@/utils/types'
 import LibraryAddCheckOutlinedIcon from '@mui/icons-material/LibraryAddCheckOutlined'
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded'
+import { type StaticImageData } from 'next/image'
 import * as React from 'react'
 
-export const workexperiences: WorkExperience[] = [
+export interface ExperienceInterface {
+   alt: string
+   name: string | React.ReactNode
+   link: string
+   logo: string | StaticImageData
+   icon: React.ElementType
+   listicon: React.ElementType
+   experiences: string[] | React.ReactNode[]
+   color: ColorType
+}
+
+export const experiences: ExperienceInterface[] = [
    {
       alt: 'Exmodules',
       name: React.createElement(
@@ -40,7 +52,7 @@ export const workexperiences: WorkExperience[] = [
             React.Fragment,
             null,
             'Learned and improved skills in ',
-            React.createElement('span', { className: styles.bold }, 'Next.js, TypeScript, '),
+            React.createElement('span', { className: styles.bold }, 'Next.js, InterfaceScript, '),
             'and ',
             React.createElement('span', { className: styles.bold }, 'Tailwind CSS'),
             '.'

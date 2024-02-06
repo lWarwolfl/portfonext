@@ -1,12 +1,12 @@
 import Contact from '@/components/landing/Contact'
-import Education from '@/components/landing/Education'
+import Educations from '@/components/landing/Educations'
+import Experiences from '@/components/landing/Experiences'
 import Hero from '@/components/landing/Hero'
 import Images from '@/components/landing/Images'
 import Languages from '@/components/landing/Languages'
 import Projects from '@/components/landing/Projects'
 import Skills from '@/components/landing/Skills'
 import Summary from '@/components/landing/Summary'
-import WorkExperience from '@/components/landing/WorkExperience'
 import Head from 'next/head'
 
 export default function Home() {
@@ -20,9 +20,9 @@ export default function Home() {
             <Hero />
             <Summary />
             <Skills />
-            <WorkExperience />
+            <Experiences />
             <Projects />
-            <Education />
+            <Educations />
             <Languages />
             <Contact />
             <Images />

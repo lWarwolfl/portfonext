@@ -1,39 +1,38 @@
 import StyledCard from '@/components/utils/StyledCard'
-import styles from '@/styles/landing/WorkExperience.module.scss'
+import { type ExperienceInterface } from '@/data/experiences'
+import styles from '@/styles/landing/Experiences.module.scss'
 import Image from 'next/image'
-import { WorkExperience } from './WorkExperience'
 
 interface Props {
-   company: WorkExperience
-   i: number
+   item: ExperienceInterface
 }
 
-export default function Company({ company, i }: Props) {
+export default function Experience({ item }: Props) {
    return (
       <>
-         <a href={company.link} target="_blank" className={styles.companycontainer} key={i}>
+         <a href={item.link} target="_blank" className={styles.link}>
             <div className={styles.imagecontainer}>
-               <Image src={company.logo} alt={company.alt} className={styles.image} />
+               <Image src={item.logo} alt={item.alt} className={styles.image} />
             </div>
-            <div className={styles.text}>{company.name}</div>
-            <company.icon
+            <div className={styles.text}>{item.name}</div>
+            <item.icon
                style={{
-                  color: `var(--${company.color}-color)`,
+                  color: `var(--${item.color}-color)`,
                }}
                className={styles.icon}
             />
          </a>
-         {company.experiences.map((experience, index) => {
+         {item.experiences.map((experience, index) => {
             return (
                <StyledCard
                   className={styles.experience}
                   key={index}
                   variant="smallfull"
-                  glow={company.color}
+                  glow={item.color}
                >
-                  <company.listicon
+                  <item.listicon
                      style={{
-                        color: `var(--${company.color}-color)`,
+                        color: `var(--${item.color}-color)`,
                      }}
                      className={styles.icon}
                   />

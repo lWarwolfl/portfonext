@@ -1,4 +1,3 @@
-import { Skill, SkillCategory } from '@/components/landing/Skills'
 import adobeillustrator from '@/public/image/svg/skills/adobeillustrator.svg'
 import adobexd from '@/public/image/svg/skills/adobexd.svg'
 import agile from '@/public/image/svg/skills/agile.svg'
@@ -21,8 +20,22 @@ import responsive from '@/public/image/svg/skills/responsive.svg'
 import scss from '@/public/image/svg/skills/scss.svg'
 import tailwind from '@/public/image/svg/skills/tailwind.svg'
 import typescript from '@/public/image/svg/skills/typescript.svg'
+import { type ColorType, type SkillCategoryType } from '@/utils/types'
+import { type StaticImageData } from 'next/image'
 
-export const skillcategories: SkillCategory[] = [
+export interface SkillCategoryInterface {
+   name: SkillCategoryType
+   color: ColorType
+}
+
+export interface SkillInterface {
+   name: string
+   category: SkillCategoryType
+   image: string | StaticImageData
+   percent: string
+}
+
+export const skillCategories: SkillCategoryInterface[] = [
    {
       name: 'code',
       color: 'blue',
@@ -41,7 +54,7 @@ export const skillcategories: SkillCategory[] = [
    },
 ]
 
-export const skills: Skill[] = [
+export const skills: SkillInterface[] = [
    {
       name: 'Next.js Framework',
       category: 'code',
@@ -61,7 +74,7 @@ export const skills: Skill[] = [
       percent: '75%',
    },
    {
-      name: 'Typescript',
+      name: 'Interfacescript',
       category: 'code',
       image: typescript,
       percent: '75%',

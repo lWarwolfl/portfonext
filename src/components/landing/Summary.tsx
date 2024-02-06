@@ -2,20 +2,11 @@ import AnimatedContainer from '@/components/utils/AnimatedContainer'
 import StyledButton from '@/components/utils/StyledButton'
 import StyledCard from '@/components/utils/StyledCard'
 import Title from '@/components/utils/Title'
-import { links } from '@/data/links'
+import { summmaryLinks } from '@/data/links'
 import photo from '@/public/image/jpg/photo.jpg'
 import styles from '@/styles/landing/Summary.module.scss'
-import { Color } from '@/utils/types'
 import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded'
 import Image from 'next/image'
-import React from 'react'
-
-export interface Link {
-   link: string
-   color: Color
-   text: string
-   icon: React.ElementType
-}
 
 export default function Summary() {
    return (
@@ -68,21 +59,21 @@ export default function Summary() {
                </div>
 
                <div className={styles.links}>
-                  {links.map((link, i) => (
+                  {summmaryLinks.map((item, index) => (
                      <StyledButton
-                        key={i}
-                        className={styles.link}
-                        externalLink={link.link}
+                        key={index}
+                        className={styles.item}
+                        externalLink={item.link}
                         icon={KeyboardArrowRightRoundedIcon}
-                        staticIcon={link.icon}
+                        staticIcon={item.icon}
                         iconSize="large"
                         staticIconSize="big"
-                        color={link.color}
+                        color={item.color}
                         background="glass"
                         height="48px"
                         barHeight="5px"
                      >
-                        {link.text}
+                        {item.text}
                      </StyledButton>
                   ))}
                </div>

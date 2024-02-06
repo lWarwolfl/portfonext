@@ -7,7 +7,7 @@
    position: relative;
    width: 100%;
 
-   .companycontainer {
+   .link {
       @include flex-row;
       align-items: center;
       position: relative;
@@ -61,15 +61,17 @@
       }
    }
 
-   .companycontainer:hover {
+   .link:hover {
       background-color: var(--transparent-background);
    }
 
-   .companycontainer:first-child {
+   .link:first-child {
       margin-top: 0;
    }
 
    .experience {
+      display: block;
+
       .icon {
          vertical-align: middle;
          font-size: $font-size-xl;
@@ -93,7 +95,7 @@
 
 @media screen and (max-width: 500px) {
    .container {
-      .companycontainer {
+      .link {
          font-size: $font-size-m;
 
          .text {
@@ -105,7 +107,7 @@
          }
       }
 
-      .companycontainer:hover {
+      .link:hover {
          .icon {
             opacity: 0;
          }

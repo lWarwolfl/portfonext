@@ -24,13 +24,13 @@ dependencies:
     specifier: ^5.15.7
     version: 5.15.7(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@types/react@18.2.55)(react-dom@18.2.0)(react@18.2.0)
   '@tsparticles/engine':
-    specifier: ^3.2.1
+    specifier: ^3.0.3
     version: 3.2.1
   '@tsparticles/react':
     specifier: ^3.0.0
     version: 3.0.0(@tsparticles/engine@3.2.1)(react-dom@18.2.0)(react@18.2.0)
   '@tsparticles/slim':
-    specifier: ^3.2.1
+    specifier: ^3.0.3
     version: 3.2.1
   file-saver:
     specifier: ^2.0.5
@@ -4016,6 +4016,7 @@ packages:
       chokidar: 3.5.3
       immutable: 4.3.5
       source-map-js: 1.0.2
+    dev: false
 
   /scheduler@0.23.0:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}

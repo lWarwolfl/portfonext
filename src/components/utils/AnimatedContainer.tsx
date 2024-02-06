@@ -1,7 +1,7 @@
-import styles from '@/styles/AnimatedContainer.module.scss'
+import styles from '@/styles/utils/AnimatedContainer.module.scss'
 import React, { useEffect, useRef } from 'react'
 
-type AnimatedContainerProps = {
+interface AnimatedContainerProps {
    id?: string
    className?: string
    animationDirection: 'top' | 'right' | 'bottom' | 'left'

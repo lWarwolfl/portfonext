@@ -1,6 +1,6 @@
-import styles from '@/styles/Title.module.scss'
+import styles from '@/styles/utils/Title.module.scss'
 
-type Props = {
+interface Props {
    title: string
    description: string
 }

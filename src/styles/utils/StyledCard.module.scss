@@ -1,6 +1,6 @@
-@import './animations.scss';
-@import './mixins.scss';
-@import './globals.scss';
+@import '../animations.scss';
+@import '../mixins.scss';
+@import '../globals.scss';
 
 $marginsmall: 30px;
 
@@ -80,7 +80,6 @@ $marginsmall: 30px;
    padding: 15px;
    width: 100%;
    margin-bottom: 20px;
-   display: block;
 
    .glow {
       $size: 150px;
