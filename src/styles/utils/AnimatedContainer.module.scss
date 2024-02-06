@@ -1,0 +1,68 @@
+@import './animations.scss';
+@import './mixins.scss';
+@import './globals.scss';
+
+$position: 40px;
+
+.container {
+   opacity: 0;
+   transition-timing-function: $transition-ease;
+   transition-property: opacity, transform;
+   z-index: 0;
+}
+
+.container.show {
+   z-index: 1;
+}
+
+.fast {
+   transition-duration: $transition-f;
+}
+
+.medium {
+   transition-duration: $transition-m;
+}
+
+.slow {
+   transition-duration: $transition-s;
+}
+
+.veryslow {
+   transition-duration: $transition-vs;
+}
+
+.show {
+   opacity: 1;
+}
+
+.top {
+   transform: translate(0, calc(0px - $position));
+}
+
+.top.show {
+   transform: translate(0, 0);
+}
+
+.right {
+   transform: translate($position, 0);
+}
+
+.right.show {
+   transform: translate(0, 0);
+}
+
+.bottom {
+   transform: translate(0, $position);
+}
+
+.bottom.show {
+   transform: translate(0, 0);
+}
+
+.left {
+   transform: translate(calc(0px - $position), 0);
+}
+
+.left.show {
+   transform: translate(0, 0);
+}

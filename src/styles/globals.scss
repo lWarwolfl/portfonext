@@ -1,9 +1,7 @@
-//General styles
 $border-radius-global: 10px;
 $max-width-global: 1300px;
 $padding-global: 20px;
 
-//Font sizes
 $font-size-g-desktop: 16px;
 $font-size-g-mobile: 12px;
 $font-size-es: 0.8rem;
@@ -24,7 +22,6 @@ $font-size-7xl: 2.9rem;
 $font-size-8xl: 3.2rem;
 $font-size-9xl: 3.5rem;
 
-//Font weights
 $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
@@ -33,12 +30,10 @@ $font-weight-bold: 700;
 $font-weight-extrabold: 800;
 $font-weight-black: 900;
 
-//Transition speeds
 $transition-vs: 750ms;
 $transition-s: 500ms;
 $transition-m: 300ms;
 $transition-f: 200ms;
 $transition-vf: 80ms;
 
-//Transition Easing
 $transition-ease: cubic-bezier(0.16, 1, 0.3, 1);

@@ -1,52 +1,50 @@
 @keyframes planet-move {
-  0% {
-    transform: translate(0, 30px) rotate(0deg);
-  }
-  8.33% {
-    transform: translate(15px, 25px) rotate(30deg);
-  }
-  16.67% {
-    transform: translate(25px, 15px) rotate(60deg);
-  }
-  25% {
-    transform: translate(30px, 0) rotate(90deg);
-  }
-  33.33% {
-    transform: translate(25, -15px) rotate(120deg);
-  }
-  41.67% {
-    transform: translate(15px, -25px) rotate(150deg);
-  }
-  50% {
-    transform: translate(0, -30px) rotate(180deg);
-  }
-  58.33% {
-    transform: translate(-15px, -25px) rotate(210deg);
-  }
-  66.67% {
-    transform: translate(-25px, -15px) rotate(240deg);
-  }
-  75% {
-    transform: translate(-30px, 0) rotate(270deg);
-  }
-  83.33% {
-    transform: translate(-25px, 15px) rotate(300deg);
-  }
-  91.67% {
-    transform: translate(-15px, 25px) rotate(330deg);
-  }
-  100% {
-    transform: translate(0, 30px) rotate(360deg);
-  }
+   0% {
+      transform: translate(0, 30px) rotate(0deg);
+   }
+   8.33% {
+      transform: translate(15px, 25px) rotate(30deg);
+   }
+   16.67% {
+      transform: translate(25px, 15px) rotate(60deg);
+   }
+   25% {
+      transform: translate(30px, 0) rotate(90deg);
+   }
+   33.33% {
+      transform: translate(25, -15px) rotate(120deg);
+   }
+   41.67% {
+      transform: translate(15px, -25px) rotate(150deg);
+   }
+   50% {
+      transform: translate(0, -30px) rotate(180deg);
+   }
+   58.33% {
+      transform: translate(-15px, -25px) rotate(210deg);
+   }
+   66.67% {
+      transform: translate(-25px, -15px) rotate(240deg);
+   }
+   75% {
+      transform: translate(-30px, 0) rotate(270deg);
+   }
+   83.33% {
+      transform: translate(-25px, 15px) rotate(300deg);
+   }
+   91.67% {
+      transform: translate(-15px, 25px) rotate(330deg);
+   }
+   100% {
+      transform: translate(0, 30px) rotate(360deg);
+   }
 }
 
-
-
 @keyframes gradient-animation {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: 400% center;
-  }
+   0% {
+      background-position: 0% center;
+   }
+   100% {
+      background-position: 400% center;
+   }
 }
