@@ -10,7 +10,7 @@ export default function Images() {
          <Image
             loading="lazy"
             quality={85}
-            placeholder="blur"
+            placeholder="empty"
             src={hollowplanets}
             alt="Hollow Planets"
             className={styles.hollowplanets}
@@ -18,7 +18,7 @@ export default function Images() {
          <Image
             loading="lazy"
             quality={85}
-            placeholder="blur"
+            placeholder="empty"
             src={planet2}
             alt="Big Planet"
             className={styles.bigplanet}
@@ -26,7 +26,7 @@ export default function Images() {
          <Image
             loading="lazy"
             quality={85}
-            placeholder="blur"
+            placeholder="empty"
             src={planet1}
             alt="Small Planet"
             className={styles.smallplanet}
