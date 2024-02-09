@@ -3,11 +3,11 @@ import CardTravelRoundedIcon from '@mui/icons-material/CardTravelRounded'
 import DataObjectRoundedIcon from '@mui/icons-material/DataObjectRounded'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import HandymanOutlinedIcon from '@mui/icons-material/HandymanOutlined'
-import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import MailOutlineRoundedIcon from '@mui/icons-material/MailOutlineRounded'
 import PublicRoundedIcon from '@mui/icons-material/PublicRounded'
 import RouteOutlinedIcon from '@mui/icons-material/RouteOutlined'
+import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined'
 import TelegramIcon from '@mui/icons-material/Telegram'
 
 export interface SummaryLinkInterface {
@@ -59,6 +59,6 @@ export const menuLinks: MenuLinkInterface[] = [
       icon: CardTravelRoundedIcon,
    },
    { id: 'projects', text: 'Projects', icon: DataObjectRoundedIcon },
-   { id: 'educations', text: 'Educations', icon: LibraryBooksOutlinedIcon },
+   { id: 'educations', text: 'Educations', icon: SchoolOutlinedIcon },
    { id: 'languages', text: 'Languages', icon: PublicRoundedIcon },
 ]

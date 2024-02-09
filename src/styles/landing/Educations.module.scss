@@ -8,19 +8,25 @@
    width: 100%;
 
    .education {
-      @include flex-row;
-      flex-wrap: nowrap;
-      align-items: center;
-      margin-bottom: 20px;
-      padding: 10px;
-      color: var(--font-color-secondary);
-      font-weight: $font-weight-medium;
-      font-size: $font-size-em;
-      line-height: $font-size-2xl;
+      display: block;
 
-      .bold {
-         color: var(--font-color-primary);
-         font-weight: $font-weight-semibold;
+      .icon {
+         vertical-align: middle;
+         font-size: $font-size-3xl;
+         margin-right: 10px;
+         margin-bottom: 5px;
+      }
+
+      .text {
+         color: var(--font-color-secondary);
+         font-weight: $font-weight-medium;
+         font-size: $font-size-em;
+         line-height: $font-size-2xl;
+
+         .bold {
+            color: var(--font-color-primary);
+            font-weight: $font-weight-semibold;
+         }
       }
    }
 }

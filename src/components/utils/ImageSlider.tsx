@@ -132,7 +132,16 @@ export default function ImageSlider({ className, title, accent, images }: Props)
             >
                {images.map((item, index) => {
                   return (
-                     <SwiperSlide key={index} style={{ backgroundImage: `url("${item.src}")` }} />
+                     <SwiperSlide key={index}>
+                        <Image
+                           loading="lazy"
+                           quality={85}
+                           placeholder="blur"
+                           className="image"
+                           alt={`slide-${index}`}
+                           src={item}
+                        />
+                     </SwiperSlide>
                   )
                })}
             </Swiper>
