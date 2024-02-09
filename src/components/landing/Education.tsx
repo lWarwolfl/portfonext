@@ -10,10 +10,7 @@ interface Props {
 export default function Education({ item }: Props) {
    return (
       <StyledCard className={styles.education} variant="smallfull" glow={item.color}>
-         <div className={styles.imagecontainer}>
-            <Image src={item.logo} alt={item.alt} className={styles.image} />
-         </div>
-         <span className={styles.text}>{item.name}</span>
+         {item.content}
       </StyledCard>
    )
 }

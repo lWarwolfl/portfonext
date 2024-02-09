@@ -93,6 +93,7 @@ export default function ImageSlider({ className, title, accent, images }: Props)
                        return (
                           <SwiperSlide key={index}>
                              <Image
+                                loading="lazy"
                                 quality={85}
                                 placeholder="blur"
                                 className="image"

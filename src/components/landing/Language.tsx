@@ -12,7 +12,14 @@ export default function Language({ item }: Props) {
    return (
       <StyledCard glow={item.color} className={styles.skill} variant="small">
          <div className={styles.data}>
-            <Image src={item.image} alt={item.name} priority={true} className={styles.image} />
+            <Image
+               loading="lazy"
+               quality={85}
+               placeholder="blur"
+               src={item.image}
+               alt={item.name}
+               className={styles.image}
+            />
             <div className={styles.name}>{item.name}</div>
             <LanguageIcon
                style={{

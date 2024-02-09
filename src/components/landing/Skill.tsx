@@ -16,7 +16,14 @@ export default function Skill({ item, category }: Props) {
    return (
       <StyledCard glow={category.color} className={styles.skill} variant="small">
          <div className={styles.data}>
-            <Image src={item.image} alt={item.name} className={styles.image} />
+            <Image
+               loading="lazy"
+               quality={85}
+               placeholder="blur"
+               src={item.image}
+               alt={item.name}
+               className={styles.image}
+            />
             <div className={styles.name}>{item.name}</div>
             {category.name === 'code' && (
                <CodeRoundedIcon

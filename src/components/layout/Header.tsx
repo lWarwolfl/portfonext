@@ -42,7 +42,14 @@ export default function Header() {
          <div className={styles.header} ref={containerRef}>
             <div className={styles.fix}>
                <Link className={styles.logo} href="/">
-                  <Image alt="logo" src={logo} className={styles.image}></Image>
+                  <Image
+                     loading="lazy"
+                     quality={85}
+                     placeholder="blur"
+                     alt="logo"
+                     src={logo}
+                     className={styles.image}
+                  ></Image>
                </Link>
 
                {!isMobile ? <Menu /> : null}

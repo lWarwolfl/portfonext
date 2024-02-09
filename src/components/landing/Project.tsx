@@ -39,7 +39,14 @@ export default function Project({ item }: Props) {
                   {item.skills.map((skill, i) => {
                      return (
                         <div key={i} className={styles.skill}>
-                           <Image src={skill.image} alt={skill.name} className={styles.image} />
+                           <Image
+                              loading="lazy"
+                              quality={85}
+                              placeholder="blur"
+                              src={skill.image}
+                              alt={skill.name}
+                              className={styles.image}
+                           />
                            <div className={styles.name}>{skill.name}</div>
                         </div>
                      )

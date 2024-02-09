@@ -12,7 +12,14 @@ export default function Experience({ item }: Props) {
       <>
          <a href={item.link} target="_blank" className={styles.link}>
             <div className={styles.imagecontainer}>
-               <Image src={item.logo} alt={item.alt} className={styles.image} />
+               <Image
+                  loading="lazy"
+                  quality={85}
+                  placeholder="blur"
+                  src={item.logo}
+                  alt={item.alt}
+                  className={styles.image}
+               />
             </div>
             <div className={styles.text}>{item.name}</div>
             <item.icon
