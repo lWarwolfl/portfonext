@@ -17,7 +17,6 @@ export default function Skill({ item, category }: Props) {
       <StyledCard glow={category.color} className={styles.skill} variant="small">
          <div className={styles.data}>
             <Image
-               loading="lazy"
                quality={85}
                placeholder="blur"
                src={item.image}

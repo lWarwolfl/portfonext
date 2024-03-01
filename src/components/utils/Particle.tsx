@@ -33,7 +33,7 @@ export default function Particle() {
          },
          particles: {
             color: {
-               value: ['#B721FF', '#227bff'],
+               value: ['#ffffff'],
             },
             collisions: {
                enable: true,
@@ -55,13 +55,13 @@ export default function Particle() {
                value: 100,
             },
             opacity: {
-               value: 0.9,
+               value: 0.8,
             },
             shape: {
                type: 'circle',
             },
             size: {
-               value: { min: 2, max: 3 },
+               value: { min: 1.5, max: 2.5 },
             },
          },
       }),

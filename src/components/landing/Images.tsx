@@ -8,28 +8,28 @@ export default function Images() {
    return (
       <>
          <Image
-            loading="lazy"
             quality={85}
             placeholder="empty"
             src={hollowplanets}
             alt="Hollow Planets"
             className={styles.hollowplanets}
+            priority
          />
          <Image
-            loading="lazy"
             quality={85}
-            placeholder="empty"
+            placeholder="blur"
             src={planet2}
             alt="Big Planet"
             className={styles.bigplanet}
+            priority
          />
          <Image
-            loading="lazy"
             quality={85}
-            placeholder="empty"
+            placeholder="blur"
             src={planet1}
             alt="Small Planet"
             className={styles.smallplanet}
+            priority
          />
       </>
    )

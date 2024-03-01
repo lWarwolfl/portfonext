@@ -40,7 +40,6 @@ export default function Project({ item }: Props) {
                      return (
                         <div key={i} className={styles.skill}>
                            <Image
-                              loading="lazy"
                               quality={85}
                               placeholder="blur"
                               src={skill.image}

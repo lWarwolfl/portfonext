@@ -69,13 +69,13 @@ export default function App({ Component, pageProps }: AppProps) {
 
    return (
       <main id="root" className={font.className}>
+         <Particle />
          <Head>
             <title>Sina Kheiri - React.js developer and UI/UX designer</title>
             <meta name="viewport" content="width=device-width, height=device-height" />
          </Head>
          <Header />
          <Component {...pageProps} />
-         <Particle />
       </main>
    )
 }

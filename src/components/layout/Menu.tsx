@@ -18,7 +18,6 @@ export default function Menu() {
                   idLink={link.id}
                   icon={!isMobile ? KeyboardArrowRightRoundedIcon : undefined}
                   staticIcon={link.icon}
-                  fontSize="small"
                   iconSize="large"
                   staticIconSize="big"
                   disabled={link.id === ''}

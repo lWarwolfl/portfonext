@@ -19,6 +19,7 @@
    position: absolute;
    width: $size;
    height: $size;
+   border-radius: 100%;
    left: 20px;
    top: -400px;
    opacity: 0.8;
@@ -36,9 +37,9 @@
    aspect-ratio: 1 / 1;
    width: $size;
    height: $size;
+   border-radius: 100%;
    opacity: 0.8;
    z-index: -1;
-
    animation: planet-move 140s linear infinite;
 }
 

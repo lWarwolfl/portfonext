@@ -43,7 +43,6 @@ export default function Header() {
             <div className={styles.fix}>
                <Link className={styles.logo} href="/">
                   <Image
-                     loading="lazy"
                      quality={85}
                      placeholder="blur"
                      alt="logo"
