@@ -1,105 +1,105 @@
 @mixin width-fix {
-   max-width: $max-width-global;
-   padding: $padding-global;
-   margin: 0 auto;
+  max-width: $max-width-global;
+  padding: $padding-global;
+  margin: 0 auto;
 }
 
 @mixin flex-row {
-   display: flex;
-   flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 @mixin flex-row-inline {
-   display: inline-flex;
-   flex-direction: row;
+  display: inline-flex;
+  flex-direction: row;
 }
 
 @mixin flex-column {
-   display: flex;
-   flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 @mixin overflow-ellipsis {
-   white-space: nowrap;
-   overflow: hidden;
-   text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @mixin background-contain {
-   background-size: contain;
-   background-position: center center;
-   background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 @mixin background-cover {
-   background-size: cover;
-   background-position: center center;
-   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 @mixin gradient-animation-effect {
-   background-image: var(--gradient-main);
-   background-size: 200% 200%;
-   background-position: 40% 90%;
+  background-image: var(--gradient-main);
+  background-size: 200% 200%;
+  background-position: 40% 90%;
 }
 
 @mixin gradient-animation-effect-hover {
-   background-position: 99% 90%;
+  background-position: 99% 90%;
 }
 
 @mixin gradient-border {
-   content: '';
-   position: absolute;
-   z-index: 2;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   padding: 1.5px;
-   border-radius: inherit;
-   background: var(--gradient-main);
-   -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-   mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-   -webkit-mask-composite: xor;
-   mask-composite: exclude;
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.5px;
+  border-radius: inherit;
+  background: var(--gradient-main);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 
 @mixin gradient-text {
-   -webkit-background-clip: text;
-   background-clip: text;
-   -webkit-text-fill-color: transparent;
-   text-fill-color: transparent;
-   font-weight: $font-weight-black;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  font-weight: $font-weight-black;
 }
 
 @mixin gradient-text-normal {
-   @include gradient-text;
-   background-image: var(--gradient-main);
+  @include gradient-text;
+  background-image: var(--gradient-main);
 }
 
 @mixin gradient-text-accent {
-   @include gradient-text;
-   background-image: var(--gradient-aqua);
+  @include gradient-text;
+  background-image: var(--gradient-aqua);
 }
 
 @mixin gradient-text-purple {
-   @include gradient-text;
-   background-image: var(--gradient-purple);
+  @include gradient-text;
+  background-image: var(--gradient-purple);
 }
 
 @mixin gradient-text-loop {
-   @include gradient-text;
-   background-image: var(--gradient-main-loop);
-   background-size: 200% 100%;
-   background-position: 0% center;
+  @include gradient-text;
+  background-image: var(--gradient-main-loop);
+  background-size: 200% 100%;
+  background-position: 0% center;
 }
 
 @mixin gradient-loop {
-   background-image: var(--gradient-main-loop);
-   background-size: 200% 100%;
-   background-position: 0% center;
+  background-image: var(--gradient-main-loop);
+  background-size: 200% 100%;
+  background-position: 0% center;
 }

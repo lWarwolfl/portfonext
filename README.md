@@ -4,11 +4,11 @@ Portfonext is a portfolio website created using Next.js (TypeScript) and styled 
 
 ## Features
 
--  Next.js framework for server-side rendering and optimized performance.
--  TypeScript for type safety and enhanced development experience.
--  Modular SCSS for scalable and maintainable styling.
--  Material UI for ready-to-use UI components.
--  Reusable components that can be easily integrated into other projects.
+- Next.js framework for server-side rendering and optimized performance.
+- TypeScript for type safety and enhanced development experience.
+- Modular SCSS for scalable and maintainable styling.
+- Material UI for ready-to-use UI components.
+- Reusable components that can be easily integrated into other projects.
 
 ## Getting Started
 
@@ -75,8 +75,8 @@ The Portfonext project is licensed under the [MIT License](LICENSE).
 
 For any questions or inquiries, please reach out to the project maintainer:
 
--  Name: Mohamad Sina Kheiri
--  Email: sinakheiri.dev@gmail.com
+- Name: Mohamad Sina Kheiri
+- Email: sinakheiri.dev@gmail.com
 
 Feel free to open an issue on GitHub if you encounter any problems or have suggestions for improvement.
 

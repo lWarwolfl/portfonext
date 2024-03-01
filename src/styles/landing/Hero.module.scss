@@ -3,99 +3,99 @@
 @import '../globals.scss';
 
 .container {
-   @include flex-row;
-   align-items: center;
-   justify-content: center;
-   position: relative;
-   width: 100%;
-   height: 100dvh;
+  @include flex-row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100dvh;
 
-   .intro {
-      @include flex-column;
-      align-items: flex-start;
-      justify-content: center;
-      margin: 0 auto;
+  .intro {
+    @include flex-column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0 auto;
 
-      .big {
-         @include gradient-text-loop;
-         width: 100%;
-         font-size: $font-size-9xl;
-         font-weight: $font-weight-black;
-         text-transform: uppercase;
-         animation: gradient-animation 8s linear infinite;
+    .big {
+      @include gradient-text-loop;
+      width: 100%;
+      font-size: $font-size-9xl;
+      font-weight: $font-weight-black;
+      text-transform: uppercase;
+      animation: gradient-animation 8s linear infinite;
+    }
+
+    .small {
+      display: inline-block;
+      color: var(--font-color-primary);
+      font-size: $font-size-2xl;
+      font-weight: $font-weight-black;
+
+      .accent {
+        @include gradient-text-normal;
+        display: inline-block;
       }
 
-      .small {
-         display: inline-block;
-         color: var(--font-color-primary);
-         font-size: $font-size-2xl;
-         font-weight: $font-weight-black;
-
-         .accent {
-            @include gradient-text-normal;
-            display: inline-block;
-         }
-
-         .note {
-            font-weight: $font-weight-bold;
-            font-size: $font-size-xl;
-         }
+      .note {
+        font-weight: $font-weight-bold;
+        font-size: $font-size-xl;
       }
+    }
 
-      .links {
-         @include flex-row;
+    .links {
+      @include flex-row;
 
-         .link {
-            margin-top: 15px;
-            margin-right: 15px;
-         }
+      .link {
+        margin-top: 15px;
+        margin-right: 15px;
       }
-   }
+    }
+  }
 }
 
 @media screen and (max-width: 600px) {
-   .container {
-      align-items: flex-start;
-      padding-top: 80px;
+  .container {
+    align-items: flex-start;
+    padding-top: 80px;
 
-      .intro {
-         width: 100%;
+    .intro {
+      width: 100%;
 
-         .big {
-            font-size: $font-size-6xl;
-         }
-
-         .small {
-            margin-top: 5px;
-            width: 100%;
-            font-size: $font-size-2xl;
-
-            .note {
-               display: block;
-               margin-top: 8px;
-            }
-         }
+      .big {
+        font-size: $font-size-6xl;
       }
-   }
+
+      .small {
+        margin-top: 5px;
+        width: 100%;
+        font-size: $font-size-2xl;
+
+        .note {
+          display: block;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 500px) {
-   .container {
-      .intro {
-         .buttons {
-            flex-wrap: wrap;
-            justify-content: space-between;
+  .container {
+    .intro {
+      .buttons {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+
+        .buttoncontainer {
+          margin-right: 0;
+          flex-basis: 48%;
+
+          .button {
             width: 100%;
-
-            .buttoncontainer {
-               margin-right: 0;
-               flex-basis: 48%;
-
-               .button {
-                  width: 100%;
-               }
-            }
-         }
+          }
+        }
       }
-   }
+    }
+  }
 }

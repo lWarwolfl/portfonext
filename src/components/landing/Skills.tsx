@@ -6,24 +6,24 @@ import React from 'react'
 import Skill from './Skill'
 
 export default function Skills() {
-   return (
-      <div id="skills" className={styles.container}>
-         <AnimatedContainer animationDirection="top" animationSpeed="slow">
-            <Title title="Skills:" description="Crafting My Arsenal of Abilities" />
-            <div className={styles.skillcontainer}>
-               {skillCategories.map((category, index) => {
-                  return (
-                     <React.Fragment key={index}>
-                        {skills
-                           .filter((item) => item.category === category.name)
-                           .map((item, i) => {
-                              return <Skill key={i} item={item} category={category} />
-                           })}
-                     </React.Fragment>
-                  )
-               })}
-            </div>
-         </AnimatedContainer>
-      </div>
-   )
+  return (
+    <div id="skills" className={styles.container}>
+      <AnimatedContainer animationDirection="top" animationSpeed="slow">
+        <Title title="Skills:" description="Crafting My Arsenal of Abilities" />
+        <div className={styles.skillcontainer}>
+          {skillCategories.map((category, index) => {
+            return (
+              <React.Fragment key={index}>
+                {skills
+                  .filter((item) => item.category === category.name)
+                  .map((item, i) => {
+                    return <Skill key={i} item={item} category={category} />
+                  })}
+              </React.Fragment>
+            )
+          })}
+        </div>
+      </AnimatedContainer>
+    </div>
+  )
 }

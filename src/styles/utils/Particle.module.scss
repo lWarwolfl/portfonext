@@ -1,13 +1,13 @@
 .container {
-   position: fixed;
-   top: 0;
-   left: 0;
-   height: 100dvh;
-   width: 100dvw;
-   z-index: -2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100dvw;
+  z-index: -2;
 
-   canvas {
-      position: relative;
-      z-index: -2;
-   }
+  canvas {
+    position: relative;
+    z-index: -2;
+  }
 }

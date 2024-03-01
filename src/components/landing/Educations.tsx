@@ -7,30 +7,30 @@ import React from 'react'
 import Education from './Education'
 
 export default function Educations() {
-   const midpoint = Math.ceil(educations.length / 2)
+  const midpoint = Math.ceil(educations.length / 2)
 
-   const firstHalf = educations.slice(0, midpoint)
-   const secondHalf = educations.slice(midpoint)
+  const firstHalf = educations.slice(0, midpoint)
+  const secondHalf = educations.slice(midpoint)
 
-   return (
-      <div id="educations" className={styles.container}>
-         <AnimatedContainer animationDirection="top" animationSpeed="slow">
-            <Title title="My Academic Odyssey:" description="Learning Beyond the Classroom" />
+  return (
+    <div id="educations" className={styles.container}>
+      <AnimatedContainer animationDirection="top" animationSpeed="slow">
+        <Title title="My Academic Odyssey:" description="Learning Beyond the Classroom" />
 
-            <SplittedContainer>
-               <div className={styles.container}>
-                  {firstHalf.map((item, index) => {
-                     return <Education key={index} item={item} />
-                  })}
-               </div>
+        <SplittedContainer>
+          <div className={styles.container}>
+            {firstHalf.map((item, index) => {
+              return <Education key={index} item={item} />
+            })}
+          </div>
 
-               <div className={styles.container}>
-                  {secondHalf.map((item, index) => {
-                     return <Education key={index} item={item} />
-                  })}
-               </div>
-            </SplittedContainer>
-         </AnimatedContainer>
-      </div>
-   )
+          <div className={styles.container}>
+            {secondHalf.map((item, index) => {
+              return <Education key={index} item={item} />
+            })}
+          </div>
+        </SplittedContainer>
+      </AnimatedContainer>
+    </div>
+  )
 }

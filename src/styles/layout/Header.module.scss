@@ -5,116 +5,116 @@
 $height: 40px;
 
 .header {
-   position: fixed;
-   z-index: 10;
-   width: 100%;
-   transition-property: background-color, top;
-   transition-timing-function: $transition-ease;
-   transition-duration: $transition-m;
-   background-color: transparent;
-   padding: 0 20px;
-   top: 20px;
-   left: -2px;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  transition-property: background-color, top;
+  transition-timing-function: $transition-ease;
+  transition-duration: $transition-m;
+  background-color: transparent;
+  padding: 0 20px;
+  top: 20px;
+  left: -2px;
 
-   .fix {
-      @include flex-row;
-      @include width-fix;
-      padding: 0;
-      align-items: center;
-      justify-content: flex-start;
-      max-width: 1260px;
-      border-radius: $border-radius-global;
-      transition-property: padding;
-      transition-timing-function: $transition-ease;
-      transition-duration: $transition-m;
-   }
+  .fix {
+    @include flex-row;
+    @include width-fix;
+    padding: 0;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1260px;
+    border-radius: $border-radius-global;
+    transition-property: padding;
+    transition-timing-function: $transition-ease;
+    transition-duration: $transition-m;
+  }
 
-   .logo {
-      @include gradient-animation-effect;
-      @include flex-row;
-      cursor: pointer;
-      align-items: center;
-      justify-content: center;
-      height: $height;
-      aspect-ratio: 1 / 1;
-      border-radius: $height/2;
-      padding-top: 5px;
+  .logo {
+    @include gradient-animation-effect;
+    @include flex-row;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    height: $height;
+    aspect-ratio: 1 / 1;
+    border-radius: $height/2;
+    padding-top: 5px;
+    transition-duration: $transition-f;
+    transition-timing-function: $transition-ease;
+    box-shadow: 0 0px 0px var(--primary-color-transparent);
+
+    .image {
+      @include background-contain;
+      height: $height/1.5;
+      width: auto;
       transition-duration: $transition-f;
       transition-timing-function: $transition-ease;
-      box-shadow: 0 0px 0px var(--primary-color-transparent);
+    }
+  }
 
-      .image {
-         @include background-contain;
-         height: $height/1.5;
-         width: auto;
-         transition-duration: $transition-f;
-         transition-timing-function: $transition-ease;
+  .logo:hover {
+    @include gradient-animation-effect-hover;
+    box-shadow: 0 0 30px var(--primary-color-transparent);
+  }
+
+  .navbarcontainer {
+    .navbar {
+      @include flex-row;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      .link:first-child {
+        margin-left: 12px;
       }
-   }
+    }
+  }
 
-   .logo:hover {
-      @include gradient-animation-effect-hover;
-      box-shadow: 0 0 30px var(--primary-color-transparent);
-   }
+  .upbutton {
+    margin-left: 12px;
+    pointer-events: none;
+    opacity: 0;
+  }
 
-   .navbarcontainer {
-      .navbar {
-         @include flex-row;
-         align-items: center;
-         justify-content: center;
-         gap: 8px;
-
-         .link:first-child {
-            margin-left: 12px;
-         }
-      }
-   }
-
-   .upbutton {
-      margin-left: 12px;
-      pointer-events: none;
-      opacity: 0;
-   }
-
-   .button {
-      margin-left: auto;
-      font-size: $font-size-r;
-   }
+  .button {
+    margin-left: auto;
+    font-size: $font-size-r;
+  }
 }
 
 .header.stick {
-   top: 12px;
+  top: 12px;
 
-   .fix {
-      backdrop-filter: blur(5px);
-      background-color: var(--primary-color-more-transparent);
-      padding: 10px;
-   }
+  .fix {
+    backdrop-filter: blur(5px);
+    background-color: var(--primary-color-more-transparent);
+    padding: 10px;
+  }
 
-   .upbutton {
-      pointer-events: unset;
-      opacity: 1;
-   }
+  .upbutton {
+    pointer-events: unset;
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 530px) {
-   .navbarcontainer {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      padding: 10px 20px;
-      z-index: 10;
+  .navbarcontainer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 20px;
+    z-index: 10;
 
-      .navbar {
-         @include flex-row;
-         justify-content: space-between;
-         width: 100%;
-         padding: 10px;
-         backdrop-filter: blur(5px);
-         background-color: var(--primary-color-more-transparent);
-         border-radius: $border-radius-global;
-         gap: 0;
-      }
-   }
+    .navbar {
+      @include flex-row;
+      justify-content: space-between;
+      width: 100%;
+      padding: 10px;
+      backdrop-filter: blur(5px);
+      background-color: var(--primary-color-more-transparent);
+      border-radius: $border-radius-global;
+      gap: 0;
+    }
+  }
 }

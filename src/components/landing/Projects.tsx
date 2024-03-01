@@ -5,20 +5,20 @@ import styles from '@/styles/landing/Projects.module.scss'
 import Project from './Project'
 
 export default function Projects() {
-   return (
-      <div id="projects" className={styles.container}>
-         <AnimatedContainer animationDirection="top" animationSpeed="medium">
-            <Title
-               title="Showcasing My Passion Projects:"
-               description="Where Creativity Takes Flight"
-            />
+  return (
+    <div id="projects" className={styles.container}>
+      <AnimatedContainer animationDirection="top" animationSpeed="medium">
+        <Title
+          title="Showcasing My Passion Projects:"
+          description="Where Creativity Takes Flight"
+        />
 
-            <div className={styles.projectcontainer}>
-               {projects.map((item, index) => {
-                  return <Project key={index} item={item} />
-               })}
-            </div>
-         </AnimatedContainer>
-      </div>
-   )
+        <div className={styles.projectcontainer}>
+          {projects.map((item, index) => {
+            return <Project key={index} item={item} />
+          })}
+        </div>
+      </AnimatedContainer>
+    </div>
+  )
 }

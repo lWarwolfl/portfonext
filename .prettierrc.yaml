@@ -1,5 +1,5 @@
 printWidth: 100
-tabWidth: 3
+tabWidth: 2
 semi: false
 trailingComma: es5
 singleQuote: true

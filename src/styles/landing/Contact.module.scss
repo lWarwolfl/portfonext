@@ -3,30 +3,30 @@
 @import '../globals.scss';
 
 .container {
-   @include flex-row;
-   align-items: center;
-   justify-content: center;
-   position: relative;
-   width: 100%;
-   height: 100dvh;
+  @include flex-row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100dvh;
 
-   .form {
-      @include flex-column;
-      align-items: flex-start;
-      justify-content: center;
-      margin: 0 auto;
-   }
+  .form {
+    @include flex-column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (max-width: 600px) {
-   .container {
-      align-items: flex-start;
-      padding-top: 80px;
+  .container {
+    align-items: flex-start;
+    padding-top: 80px;
 
-      .form {
-         width: 100%;
-      }
-   }
+    .form {
+      width: 100%;
+    }
+  }
 }
 
 @media screen and (max-width: 500px) {

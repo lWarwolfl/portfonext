@@ -3,149 +3,149 @@
 @import '../globals.scss';
 
 .container {
-   @include flex-column;
-   position: relative;
-   width: 100%;
+  @include flex-column;
+  position: relative;
+  width: 100%;
 
-   .splitimage {
-      @include flex-column;
-      align-items: center;
-      justify-content: flex-start;
-      margin-right: 30px;
-      max-width: 200px;
-      min-width: 170px;
+  .splitimage {
+    @include flex-column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 30px;
+    max-width: 200px;
+    min-width: 170px;
 
-      .image {
-         @include background-contain;
-         width: 100%;
-         height: auto;
-         border-radius: 100%;
-      }
-   }
-
-   .splittext {
-      @include flex-column;
-      flex: 1;
-      min-width: 300px;
-      padding-top: 10px;
-
-      .description {
-         width: 100%;
-         color: var(--font-color-secondary);
-         font-size: $font-size-em;
-         font-weight: $font-weight-medium;
-         line-height: $font-size-2xl;
-
-         .bold {
-            font-weight: $font-weight-semibold;
-            color: var(--font-color-primary);
-         }
-
-         .accent {
-            @include gradient-text-accent;
-            font-weight: $font-weight-black;
-            display: inline-block;
-         }
-
-         .break {
-            margin-bottom: 8px;
-         }
-      }
-   }
-
-   .extratext {
+    .image {
+      @include background-contain;
       width: 100%;
-      margin-top: 8px;
-      display: none;
+      height: auto;
+      border-radius: 100%;
+    }
+  }
+
+  .splittext {
+    @include flex-column;
+    flex: 1;
+    min-width: 300px;
+    padding-top: 10px;
+
+    .description {
+      width: 100%;
       color: var(--font-color-secondary);
       font-size: $font-size-em;
       font-weight: $font-weight-medium;
       line-height: $font-size-2xl;
 
       .bold {
-         font-weight: $font-weight-semibold;
-         color: var(--font-color-primary);
+        font-weight: $font-weight-semibold;
+        color: var(--font-color-primary);
       }
 
       .accent {
-         @include gradient-text-accent;
-         font-weight: $font-weight-black;
-         display: inline-block;
+        @include gradient-text-accent;
+        font-weight: $font-weight-black;
+        display: inline-block;
       }
 
       .break {
-         margin-bottom: 8px;
+        margin-bottom: 8px;
       }
-   }
+    }
+  }
 
-   .links {
-      width: 100%;
-      margin-top: 40px;
-      @include flex-row;
-      flex-wrap: wrap;
+  .extratext {
+    width: 100%;
+    margin-top: 8px;
+    display: none;
+    color: var(--font-color-secondary);
+    font-size: $font-size-em;
+    font-weight: $font-weight-medium;
+    line-height: $font-size-2xl;
 
-      .link {
-         margin-right: 15px;
-         margin-bottom: 20px;
-      }
-   }
+    .bold {
+      font-weight: $font-weight-semibold;
+      color: var(--font-color-primary);
+    }
+
+    .accent {
+      @include gradient-text-accent;
+      font-weight: $font-weight-black;
+      display: inline-block;
+    }
+
+    .break {
+      margin-bottom: 8px;
+    }
+  }
+
+  .links {
+    width: 100%;
+    margin-top: 40px;
+    @include flex-row;
+    flex-wrap: wrap;
+
+    .link {
+      margin-right: 15px;
+      margin-bottom: 20px;
+    }
+  }
 }
 
 @media screen and (max-width: 950px) {
-   .container {
-      .splittext {
-         padding-top: 0;
+  .container {
+    .splittext {
+      padding-top: 0;
 
-         .description {
-            .extra {
-               display: none;
-            }
-         }
+      .description {
+        .extra {
+          display: none;
+        }
       }
+    }
 
-      .extratext {
-         display: block;
-      }
+    .extratext {
+      display: block;
+    }
 
-      .splitimage {
-         max-width: 230px;
-         min-width: 200px;
-      }
-   }
+    .splitimage {
+      max-width: 230px;
+      min-width: 200px;
+    }
+  }
 }
 
 @media screen and (max-width: 700px) {
-   .container {
-      .splitimage {
-         margin-right: 0;
-         max-width: unset;
-         width: 100%;
-         margin-bottom: 30px;
-      }
+  .container {
+    .splitimage {
+      margin-right: 0;
+      max-width: unset;
+      width: 100%;
+      margin-bottom: 30px;
+    }
 
-      .extratext {
-         margin-top: 0;
-      }
+    .extratext {
+      margin-top: 0;
+    }
 
-      .links {
-         justify-content: space-between;
+    .links {
+      justify-content: space-between;
 
-         .link {
-            margin-right: 0;
-            width: 48%;
-            max-width: unset;
-         }
+      .link {
+        margin-right: 0;
+        width: 48%;
+        max-width: unset;
       }
-   }
+    }
+  }
 }
 
 @media screen and (max-width: 600px) {
-   .container {
-      .links {
-         .link {
-            width: 100%;
-            margin-right: 0;
-         }
+  .container {
+    .links {
+      .link {
+        width: 100%;
+        margin-right: 0;
       }
-   }
+    }
+  }
 }

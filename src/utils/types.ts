@@ -1,13 +1,13 @@
 export type ColorType =
-   | 'purple'
-   | 'green'
-   | 'blue'
-   | 'aqua'
-   | 'white'
-   | 'pink'
-   | 'yellow'
-   | 'red'
-   | 'orange'
+  | 'purple'
+  | 'green'
+  | 'blue'
+  | 'aqua'
+  | 'white'
+  | 'pink'
+  | 'yellow'
+  | 'red'
+  | 'orange'
 
 export type AnimationSpeedType = 'fast' | 'medium' | 'slow' | 'veryslow'
 

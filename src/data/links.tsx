@@ -11,54 +11,54 @@ import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined'
 import TelegramIcon from '@mui/icons-material/Telegram'
 
 export interface SummaryLinkInterface {
-   link: string
-   color: ColorType
-   text: string
-   icon: React.ElementType
+  link: string
+  color: ColorType
+  text: string
+  icon: React.ElementType
 }
 
 export const summmaryLinks: SummaryLinkInterface[] = [
-   {
-      link: 'mailto:sinakheiri.dev@gmail.com',
-      color: 'purple',
-      text: 'sinakheiri.dev@gmail.com',
-      icon: MailOutlineRoundedIcon,
-   },
-   {
-      link: 'https://www.linkedin.com/in/mohamad-sina-kheiri',
-      color: 'green',
-      text: 'linkedin.com/in/mohamad-sina-kheiri',
-      icon: LinkedInIcon,
-   },
-   {
-      link: 'https://github.com/lWarwolfl',
-      color: 'blue',
-      text: 'github.com/lWarwolfl',
-      icon: GitHubIcon,
-   },
-   {
-      link: 'https://t.me/cnawam',
-      text: 't.me/cnawam',
-      color: 'aqua',
-      icon: TelegramIcon,
-   },
+  {
+    link: 'mailto:sinakheiri.dev@gmail.com',
+    color: 'purple',
+    text: 'sinakheiri.dev@gmail.com',
+    icon: MailOutlineRoundedIcon,
+  },
+  {
+    link: 'https://www.linkedin.com/in/mohamad-sina-kheiri',
+    color: 'green',
+    text: 'linkedin.com/in/mohamad-sina-kheiri',
+    icon: LinkedInIcon,
+  },
+  {
+    link: 'https://github.com/lWarwolfl',
+    color: 'blue',
+    text: 'github.com/lWarwolfl',
+    icon: GitHubIcon,
+  },
+  {
+    link: 'https://t.me/cnawam',
+    text: 't.me/cnawam',
+    color: 'aqua',
+    icon: TelegramIcon,
+  },
 ]
 
 export interface MenuLinkInterface {
-   id: string
-   text: string
-   icon: React.ElementType
+  id: string
+  text: string
+  icon: React.ElementType
 }
 
 export const menuLinks: MenuLinkInterface[] = [
-   { id: 'summary', text: 'Summary', icon: RouteOutlinedIcon },
-   { id: 'skills', text: 'Skills', icon: HandymanOutlinedIcon },
-   {
-      id: 'experiences',
-      text: 'Work Experience',
-      icon: CardTravelRoundedIcon,
-   },
-   { id: 'projects', text: 'Projects', icon: DataObjectRoundedIcon },
-   { id: 'educations', text: 'Educations', icon: SchoolOutlinedIcon },
-   { id: 'languages', text: 'Languages', icon: PublicRoundedIcon },
+  { id: 'summary', text: 'Summary', icon: RouteOutlinedIcon },
+  { id: 'skills', text: 'Skills', icon: HandymanOutlinedIcon },
+  {
+    id: 'experiences',
+    text: 'Work Experience',
+    icon: CardTravelRoundedIcon,
+  },
+  { id: 'projects', text: 'Projects', icon: DataObjectRoundedIcon },
+  { id: 'educations', text: 'Educations', icon: SchoolOutlinedIcon },
+  { id: 'languages', text: 'Languages', icon: PublicRoundedIcon },
 ]

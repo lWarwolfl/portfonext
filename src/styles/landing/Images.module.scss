@@ -3,65 +3,65 @@
 @import '../globals.scss';
 
 .hollowplanets {
-   @include background-contain;
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: auto;
-   opacity: 0.8;
-   z-index: -1;
+  @include background-contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+  z-index: -1;
 }
 
 .bigplanet {
-   @include background-contain;
-   $size: 700px;
-   position: absolute;
-   width: $size;
-   height: $size;
-   border-radius: 100%;
-   left: 20px;
-   top: -400px;
-   opacity: 0.8;
-   filter: hue-rotate(-40deg) brightness(0.9);
-   z-index: -1;
-   animation: planet-move 400s linear infinite;
+  @include background-contain;
+  $size: 700px;
+  position: absolute;
+  width: $size;
+  height: $size;
+  border-radius: 100%;
+  left: 20px;
+  top: -400px;
+  opacity: 0.8;
+  filter: hue-rotate(-40deg) brightness(0.9);
+  z-index: -1;
+  animation: planet-move 400s linear infinite;
 }
 
 .smallplanet {
-   @include background-contain;
-   $size: 250px;
-   position: absolute;
-   top: 400px;
-   right: 120px;
-   aspect-ratio: 1 / 1;
-   width: $size;
-   height: $size;
-   border-radius: 100%;
-   opacity: 0.8;
-   z-index: -1;
-   animation: planet-move 140s linear infinite;
+  @include background-contain;
+  $size: 250px;
+  position: absolute;
+  top: 400px;
+  right: 120px;
+  aspect-ratio: 1 / 1;
+  width: $size;
+  height: $size;
+  border-radius: 100%;
+  opacity: 0.8;
+  z-index: -1;
+  animation: planet-move 140s linear infinite;
 }
 
 @media screen and (max-width: 1200px) {
-   .smallplanet {
-      top: 400px;
-   }
+  .smallplanet {
+    top: 400px;
+  }
 }
 
 @media screen and (max-width: 600px) {
-   .bigplanet {
-      display: none;
-   }
+  .bigplanet {
+    display: none;
+  }
 
-   .smallplanet {
-      $size: 350px;
-      width: $size;
-      height: $size;
-      top: 300px;
-   }
+  .smallplanet {
+    $size: 350px;
+    width: $size;
+    height: $size;
+    top: 300px;
+  }
 
-   .hollowplanets {
-      display: none;
-   }
+  .hollowplanets {
+    display: none;
+  }
 }

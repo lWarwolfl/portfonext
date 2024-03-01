@@ -9,19 +9,19 @@ import Skills from '@/components/landing/Skills'
 import Summary from '@/components/landing/Summary'
 
 export default function Home() {
-   return (
-      <>
-         <main className="width-fix">
-            <Hero />
-            <Summary />
-            <Skills />
-            <Experiences />
-            <Projects />
-            <Educations />
-            <Languages />
-            <Contact />
-            <Images />
-         </main>
-      </>
-   )
+  return (
+    <>
+      <main className="width-fix">
+        <Hero />
+        <Summary />
+        <Skills />
+        <Experiences />
+        <Projects />
+        <Educations />
+        <Languages />
+        <Contact />
+        <Images />
+      </main>
+    </>
+  )
 }

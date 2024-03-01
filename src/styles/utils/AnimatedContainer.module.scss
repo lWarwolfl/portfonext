@@ -5,64 +5,64 @@
 $position: 40px;
 
 .container {
-   opacity: 0;
-   transition-timing-function: $transition-ease;
-   transition-property: opacity, transform;
-   z-index: 0;
+  opacity: 0;
+  transition-timing-function: $transition-ease;
+  transition-property: opacity, transform;
+  z-index: 0;
 }
 
 .container.show {
-   z-index: 1;
+  z-index: 1;
 }
 
 .fast {
-   transition-duration: $transition-f;
+  transition-duration: $transition-f;
 }
 
 .medium {
-   transition-duration: $transition-m;
+  transition-duration: $transition-m;
 }
 
 .slow {
-   transition-duration: $transition-s;
+  transition-duration: $transition-s;
 }
 
 .veryslow {
-   transition-duration: $transition-vs;
+  transition-duration: $transition-vs;
 }
 
 .show {
-   opacity: 1;
+  opacity: 1;
 }
 
 .top {
-   transform: translate(0, calc(0px - $position));
+  transform: translate(0, calc(0px - $position));
 }
 
 .top.show {
-   transform: translate(0, 0);
+  transform: translate(0, 0);
 }
 
 .right {
-   transform: translate($position, 0);
+  transform: translate($position, 0);
 }
 
 .right.show {
-   transform: translate(0, 0);
+  transform: translate(0, 0);
 }
 
 .bottom {
-   transform: translate(0, $position);
+  transform: translate(0, $position);
 }
 
 .bottom.show {
-   transform: translate(0, 0);
+  transform: translate(0, 0);
 }
 
 .left {
-   transform: translate(calc(0px - $position), 0);
+  transform: translate(calc(0px - $position), 0);
 }
 
 .left.show {
-   transform: translate(0, 0);
+  transform: translate(0, 0);
 }

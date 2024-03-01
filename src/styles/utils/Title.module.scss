@@ -3,32 +3,32 @@
 @import '../globals.scss';
 
 .title {
-   width: 100%;
-   margin-top: 50px;
-   margin-bottom: 20px;
-   color: var(--font-color-primary);
-   font-size: $font-size-4xl;
-   font-weight: $font-weight-extrabold;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color: var(--font-color-primary);
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-extrabold;
 
-   .accent {
-      @include gradient-text-normal;
-      display: inline-block;
-      font-weight: $font-weight-black;
-   }
+  .accent {
+    @include gradient-text-normal;
+    display: inline-block;
+    font-weight: $font-weight-black;
+  }
 }
 
 @media screen and (max-width: 800px) {
-   .title {
-      font-size: $font-size-3xl;
-   }
+  .title {
+    font-size: $font-size-3xl;
+  }
 }
 
 @media screen and (max-width: 500px) {
-   .title {
-      font-size: $font-size-exl;
+  .title {
+    font-size: $font-size-exl;
 
-      .accent {
-         font-size: $font-size-2xl;
-      }
-   }
+    .accent {
+      font-size: $font-size-2xl;
+    }
+  }
 }

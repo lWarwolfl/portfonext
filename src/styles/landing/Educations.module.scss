@@ -3,30 +3,30 @@
 @import '../globals.scss';
 
 .container {
-   @include flex-column;
-   position: relative;
-   width: 100%;
+  @include flex-column;
+  position: relative;
+  width: 100%;
 
-   .education {
-      display: block;
+  .education {
+    display: block;
 
-      .icon {
-         vertical-align: middle;
-         font-size: $font-size-3xl;
-         margin-right: 10px;
-         margin-bottom: 5px;
+    .icon {
+      vertical-align: middle;
+      font-size: $font-size-3xl;
+      margin-right: 10px;
+      margin-bottom: 5px;
+    }
+
+    .text {
+      color: var(--font-color-secondary);
+      font-weight: $font-weight-medium;
+      font-size: $font-size-em;
+      line-height: $font-size-2xl;
+
+      .bold {
+        color: var(--font-color-primary);
+        font-weight: $font-weight-semibold;
       }
-
-      .text {
-         color: var(--font-color-secondary);
-         font-weight: $font-weight-medium;
-         font-size: $font-size-em;
-         line-height: $font-size-2xl;
-
-         .bold {
-            color: var(--font-color-primary);
-            font-weight: $font-weight-semibold;
-         }
-      }
-   }
+    }
+  }
 }

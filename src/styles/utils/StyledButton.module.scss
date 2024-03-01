@@ -3,279 +3,279 @@
 @import '../globals.scss';
 
 body {
-   .button {
-      display: inline-flex;
-      align-items: center;
-      position: relative;
-      border-radius: 7px;
-      padding-right: 20px;
-      padding-left: 35px;
-      min-width: unset;
-      width: unset;
-      max-width: 240px;
-      color: var(--font-color-primary);
-      font-weight: $font-weight-medium;
-      text-transform: unset;
+  .button {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    border-radius: 7px;
+    padding-right: 20px;
+    padding-left: 35px;
+    min-width: unset;
+    width: unset;
+    max-width: 240px;
+    color: var(--font-color-primary);
+    font-weight: $font-weight-medium;
+    text-transform: unset;
+    transition-duration: $transition-m;
+    transition-timing-function: $transition-ease;
+    transition-property: padding-right, padding-left, background-color;
+
+    .text {
+      display: inline-block;
+      @include overflow-ellipsis;
+      width: 100%;
+    }
+
+    .text.small {
+      font-size: $font-size-s;
+    }
+
+    .text.normal {
+      font-size: $font-size-r;
+    }
+
+    .text.big {
+      font-size: $font-size-m;
+    }
+
+    .text.large {
+      font-size: $font-size-l;
+    }
+
+    .icon {
+      position: absolute;
+      right: 8px;
+      opacity: 0;
       transition-duration: $transition-m;
       transition-timing-function: $transition-ease;
-      transition-property: padding-right, padding-left, background-color;
+      transition-property: right, opacity;
+      z-index: 1;
+    }
 
-      .text {
-         display: inline-block;
-         @include overflow-ellipsis;
-         width: 100%;
-      }
+    .icon.small {
+      top: calc(50% - calc($font-size-l / 2));
+      font-size: $font-size-l;
+    }
 
-      .text.small {
-         font-size: $font-size-s;
-      }
+    .icon.normal {
+      top: calc(50% - calc($font-size-xl / 2));
+      font-size: $font-size-xl;
+    }
 
-      .text.normal {
-         font-size: $font-size-r;
-      }
+    .icon.big {
+      top: calc(50% - calc($font-size-2xl / 2));
+      font-size: $font-size-2xl;
+    }
 
-      .text.big {
-         font-size: $font-size-m;
-      }
+    .icon.large {
+      top: calc(50% - calc($font-size-3xl / 2));
+      font-size: $font-size-3xl;
+    }
 
-      .text.large {
-         font-size: $font-size-l;
+    .icon.static {
+      left: 4px;
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .bar {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      background-color: var(--gradient-green);
+      transition-duration: $transition-m;
+      transition-timing-function: $transition-ease;
+      transition-property: width;
+      z-index: 2;
+    }
+
+    &.noicon {
+      padding-right: 20px;
+      padding-left: 45px;
+
+      .icon.static {
+        left: 12px;
       }
+    }
+
+    &.noicon.nostaticicon {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    &:hover {
+      padding-right: 35px;
+      padding-left: 20px;
+      background-color: var(--transparent-background);
 
       .icon {
-         position: absolute;
-         right: 8px;
-         opacity: 0;
-         transition-duration: $transition-m;
-         transition-timing-function: $transition-ease;
-         transition-property: right, opacity;
-         z-index: 1;
-      }
-
-      .icon.small {
-         top: calc(50% - calc($font-size-l / 2));
-         font-size: $font-size-l;
-      }
-
-      .icon.normal {
-         top: calc(50% - calc($font-size-xl / 2));
-         font-size: $font-size-xl;
-      }
-
-      .icon.big {
-         top: calc(50% - calc($font-size-2xl / 2));
-         font-size: $font-size-2xl;
-      }
-
-      .icon.large {
-         top: calc(50% - calc($font-size-3xl / 2));
-         font-size: $font-size-3xl;
+        right: 4px;
+        opacity: 1;
       }
 
       .icon.static {
-         left: 4px;
-         opacity: 1;
-         z-index: 1;
+        left: 2px;
+        opacity: 0;
       }
 
       .bar {
-         position: absolute;
-         left: 0;
-         bottom: 0;
-         width: 0%;
-         background-color: var(--gradient-green);
-         transition-duration: $transition-m;
-         transition-timing-function: $transition-ease;
-         transition-property: width;
-         z-index: 2;
+        width: 100%;
+      }
+    }
+
+    &.noicon:hover {
+      padding-right: 20px;
+      padding-left: 45px;
+
+      .icon.static {
+        left: 12px;
+        opacity: 1;
+      }
+    }
+
+    &.noicon.nostaticicon:hover {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    &.glass {
+      background-color: var(--more-transparent-background);
+      padding-right: 25px;
+      padding-left: 45px;
+
+      &[dir='rtl'] {
+        padding-right: 45px;
+        padding-left: 25px;
       }
 
-      &.noicon {
-         padding-right: 20px;
-         padding-left: 45px;
-
-         .icon.static {
-            left: 12px;
-         }
+      .icon {
+        position: absolute;
+        right: 12px;
+        opacity: 0;
+        transition-duration: $transition-m;
+        transition-timing-function: $transition-ease;
+        transition-property: right, opacity;
+        z-index: 1;
       }
 
-      &.noicon.nostaticicon {
-         padding-right: 20px;
-         padding-left: 20px;
+      .icon.static {
+        left: 12px;
+        opacity: 1;
+        z-index: 1;
+      }
+    }
+
+    &.noicon.nostaticicon.glass {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    &.glass:hover {
+      background-color: var(--transparent-background);
+      padding-right: 45px;
+      padding-left: 25px;
+
+      .icon {
+        right: 10px;
+        opacity: 1;
       }
 
-      &:hover {
-         padding-right: 35px;
-         padding-left: 20px;
-         background-color: var(--transparent-background);
+      .icon.static {
+        left: 12px;
+        opacity: 0;
+      }
+    }
 
-         .icon {
-            right: 4px;
-            opacity: 1;
-         }
+    &.noicon.glass:hover {
+      padding-right: 25px;
+      padding-left: 45px;
 
-         .icon.static {
-            left: 2px;
-            opacity: 0;
-         }
-
-         .bar {
-            width: 100%;
-         }
+      &[dir='rtl'] {
+        padding-right: 45px;
+        padding-left: 25px;
       }
 
-      &.noicon:hover {
-         padding-right: 20px;
-         padding-left: 45px;
+      .icon.static {
+        left: 12px;
+        opacity: 1;
+      }
+      &[dir='rtl'] > .icon.static {
+        right: 12px;
+        opacity: 1;
+      }
+    }
 
-         .icon.static {
-            left: 12px;
-            opacity: 1;
-         }
+    &.noicon.nostaticicon.glass:hover {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    &.iconbutton,
+    &.noicon.iconbutton {
+      padding: 0;
+      justify-content: center;
+      aspect-ratio: 1 / 1;
+      max-width: unset;
+
+      .text {
+        display: none;
       }
 
-      &.noicon.nostaticicon:hover {
-         padding-right: 20px;
-         padding-left: 20px;
+      .bar {
+        display: none;
       }
 
-      &.glass {
-         background-color: var(--more-transparent-background);
-         padding-right: 25px;
-         padding-left: 45px;
-
-         &[dir='rtl'] {
-            padding-right: 45px;
-            padding-left: 25px;
-         }
-
-         .icon {
-            position: absolute;
-            right: 12px;
-            opacity: 0;
-            transition-duration: $transition-m;
-            transition-timing-function: $transition-ease;
-            transition-property: right, opacity;
-            z-index: 1;
-         }
-
-         .icon.static {
-            left: 12px;
-            opacity: 1;
-            z-index: 1;
-         }
+      .icon {
+        right: unset;
       }
 
-      &.noicon.nostaticicon.glass {
-         padding-left: 25px;
-         padding-right: 25px;
+      .icon.small {
+        left: calc(50% - calc($font-size-l / 2));
       }
 
-      &.glass:hover {
-         background-color: var(--transparent-background);
-         padding-right: 45px;
-         padding-left: 25px;
-
-         .icon {
-            right: 10px;
-            opacity: 1;
-         }
-
-         .icon.static {
-            left: 12px;
-            opacity: 0;
-         }
+      .icon.normal {
+        left: calc(50% - calc($font-size-xl / 2));
       }
 
-      &.noicon.glass:hover {
-         padding-right: 25px;
-         padding-left: 45px;
-
-         &[dir='rtl'] {
-            padding-right: 45px;
-            padding-left: 25px;
-         }
-
-         .icon.static {
-            left: 12px;
-            opacity: 1;
-         }
-         &[dir='rtl'] > .icon.static {
-            right: 12px;
-            opacity: 1;
-         }
+      .icon.big {
+        left: calc(50% - calc($font-size-2xl / 2));
       }
 
-      &.noicon.nostaticicon.glass:hover {
-         padding-left: 25px;
-         padding-right: 25px;
+      .icon.large {
+        left: calc(50% - calc($font-size-3xl / 2));
+      }
+    }
+
+    &.iconbutton:hover,
+    &.noicon.iconbutton:hover {
+      padding: 0;
+
+      .icon {
+        right: unset;
+        opacity: 1;
       }
 
-      &.iconbutton,
-      &.noicon.iconbutton {
-         padding: 0;
-         justify-content: center;
-         aspect-ratio: 1 / 1;
-         max-width: unset;
-
-         .text {
-            display: none;
-         }
-
-         .bar {
-            display: none;
-         }
-
-         .icon {
-            right: unset;
-         }
-
-         .icon.small {
-            left: calc(50% - calc($font-size-l / 2));
-         }
-
-         .icon.normal {
-            left: calc(50% - calc($font-size-xl / 2));
-         }
-
-         .icon.big {
-            left: calc(50% - calc($font-size-2xl / 2));
-         }
-
-         .icon.large {
-            left: calc(50% - calc($font-size-3xl / 2));
-         }
+      .icon.static {
+        left: unset;
+        opacity: 1;
       }
 
-      &.iconbutton:hover,
-      &.noicon.iconbutton:hover {
-         padding: 0;
-
-         .icon {
-            right: unset;
-            opacity: 1;
-         }
-
-         .icon.static {
-            left: unset;
-            opacity: 1;
-         }
-
-         .icon.static.hasicon {
-            opacity: 0;
-         }
+      .icon.static.hasicon {
+        opacity: 0;
       }
+    }
 
-      &.disabled {
-         pointer-events: none;
-         opacity: 0.6;
-      }
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.6;
+    }
 
-      &.active {
-         pointer-events: none;
-         background-color: var(--transparent-background);
-      }
-   }
+    &.active {
+      pointer-events: none;
+      background-color: var(--transparent-background);
+    }
+  }
 }
 
 @media screen and (max-width: 1050px) {

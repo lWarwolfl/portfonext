@@ -3,210 +3,210 @@
 @import '../globals.scss';
 
 .container {
-   @include flex-column;
-   width: 100%;
-   position: relative;
+  @include flex-column;
+  width: 100%;
+  position: relative;
 
-   .projectcontainer {
-      @include flex-column;
-      width: 100%;
+  .projectcontainer {
+    @include flex-column;
+    width: 100%;
 
-      .project {
-         @include flex-row;
-         justify-content: space-between;
-         position: relative;
+    .project {
+      @include flex-row;
+      justify-content: space-between;
+      position: relative;
 
-         .slider {
-            width: 48%;
-            aspect-ratio: 7/6;
-            margin: 0 0 20px;
-         }
-
-         .content {
-            width: 52%;
-            padding-left: 30px;
-
-            .section {
-               @include flex-column;
-               margin-bottom: 32px;
-               width: 100%;
-
-               .title {
-                  position: relative;
-                  width: fit-content;
-                  padding-top: 10px;
-                  font-weight: $font-weight-semibold;
-                  font-size: $font-size-l;
-                  color: var(--font-color-primary);
-                  margin-bottom: 10px;
-
-                  .accent {
-                     font-weight: $font-weight-medium;
-                     font-size: $font-size-em;
-                     color: var(--font-color-secondary);
-                     margin-left: 4px;
-                  }
-
-                  &::before {
-                     position: absolute;
-                     top: 0;
-                     left: 0;
-                     width: 20%;
-                     height: 5px;
-                     border-radius: 2px;
-                     background-image: var(--gradient-main);
-                     content: '';
-                  }
-               }
-
-               .description {
-                  width: 100%;
-                  font-weight: $font-weight-regular;
-                  font-size: $font-size-em;
-                  color: var(--font-color-secondary);
-
-                  .bold {
-                     font-weight: $font-weight-semibold;
-                     color: var(--font-color-primary);
-                  }
-               }
-
-               .skillcontainer {
-                  @include flex-row;
-                  flex-wrap: wrap;
-
-                  .skill {
-                     @include flex-row;
-                     align-items: center;
-                     height: 40px;
-                     padding: 0 12px 0 8px;
-                     margin-bottom: 20px;
-                     margin-right: 15px;
-                     width: fit-content;
-                     border-radius: 7px;
-                     background-color: var(--more-transparent-background);
-
-                     .name {
-                        @include overflow-ellipsis;
-                        width: 100%;
-                        margin-right: 15px;
-                        color: var(--font-color-primary);
-                        font-weight: $font-weight-medium;
-                        font-size: $font-size-r;
-                     }
-
-                     .image {
-                        @include background-contain;
-                        height: $font-size-2xl;
-                        width: auto;
-                        max-width: 60px;
-                        margin-right: 15px;
-                        border-radius: 5px;
-                     }
-                  }
-               }
-
-               .linkcontainer {
-                  @include flex-row;
-                  flex-wrap: wrap;
-
-                  .link {
-                     margin-right: 15px;
-                     margin-bottom: 20px;
-                  }
-               }
-
-               &:nth-child(2) {
-                  margin-bottom: 12px;
-               }
-
-               &:last-child {
-                  margin-bottom: 0;
-               }
-            }
-         }
-
-         &.reverse {
-            flex-direction: row-reverse;
-
-            .content {
-               padding-left: 0;
-               padding-right: 30px;
-            }
-         }
+      .slider {
+        width: 48%;
+        aspect-ratio: 7/6;
+        margin: 0 0 20px;
       }
-   }
+
+      .content {
+        width: 52%;
+        padding-left: 30px;
+
+        .section {
+          @include flex-column;
+          margin-bottom: 32px;
+          width: 100%;
+
+          .title {
+            position: relative;
+            width: fit-content;
+            padding-top: 10px;
+            font-weight: $font-weight-semibold;
+            font-size: $font-size-l;
+            color: var(--font-color-primary);
+            margin-bottom: 10px;
+
+            .accent {
+              font-weight: $font-weight-medium;
+              font-size: $font-size-em;
+              color: var(--font-color-secondary);
+              margin-left: 4px;
+            }
+
+            &::before {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 20%;
+              height: 5px;
+              border-radius: 2px;
+              background-image: var(--gradient-main);
+              content: '';
+            }
+          }
+
+          .description {
+            width: 100%;
+            font-weight: $font-weight-regular;
+            font-size: $font-size-em;
+            color: var(--font-color-secondary);
+
+            .bold {
+              font-weight: $font-weight-semibold;
+              color: var(--font-color-primary);
+            }
+          }
+
+          .skillcontainer {
+            @include flex-row;
+            flex-wrap: wrap;
+
+            .skill {
+              @include flex-row;
+              align-items: center;
+              height: 40px;
+              padding: 0 12px 0 8px;
+              margin-bottom: 20px;
+              margin-right: 15px;
+              width: fit-content;
+              border-radius: 7px;
+              background-color: var(--more-transparent-background);
+
+              .name {
+                @include overflow-ellipsis;
+                width: 100%;
+                margin-right: 15px;
+                color: var(--font-color-primary);
+                font-weight: $font-weight-medium;
+                font-size: $font-size-r;
+              }
+
+              .image {
+                @include background-contain;
+                height: $font-size-2xl;
+                width: auto;
+                max-width: 60px;
+                margin-right: 15px;
+                border-radius: 5px;
+              }
+            }
+          }
+
+          .linkcontainer {
+            @include flex-row;
+            flex-wrap: wrap;
+
+            .link {
+              margin-right: 15px;
+              margin-bottom: 20px;
+            }
+          }
+
+          &:nth-child(2) {
+            margin-bottom: 12px;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      &.reverse {
+        flex-direction: row-reverse;
+
+        .content {
+          padding-left: 0;
+          padding-right: 30px;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 800px) {
-   .container {
-      .projectcontainer {
-         .project {
-            flex-wrap: wrap;
+  .container {
+    .projectcontainer {
+      .project {
+        flex-wrap: wrap;
 
-            .slider {
-               width: 100%;
+        .slider {
+          width: 100%;
+        }
+
+        .content {
+          width: 100%;
+          padding-left: 0;
+
+          .section {
+            .skillcontainer {
+              justify-content: space-between;
+
+              .skill {
+                width: 46%;
+                margin-right: 0;
+              }
             }
 
-            .content {
-               width: 100%;
-               padding-left: 0;
+            .linkcontainer {
+              justify-content: space-between;
 
-               .section {
-                  .skillcontainer {
-                     justify-content: space-between;
-
-                     .skill {
-                        width: 46%;
-                        margin-right: 0;
-                     }
-                  }
-
-                  .linkcontainer {
-                     justify-content: space-between;
-
-                     .link {
-                        width: 46%;
-                        margin-right: 0;
-                     }
-                  }
-               }
+              .link {
+                width: 46%;
+                margin-right: 0;
+              }
             }
+          }
+        }
 
-            &.reverse {
-               flex-direction: row;
+        &.reverse {
+          flex-direction: row;
 
-               .content {
-                  padding-right: 0;
-               }
-            }
-         }
+          .content {
+            padding-right: 0;
+          }
+        }
       }
-   }
+    }
+  }
 }
 
 @media screen and (max-width: 600px) {
-   .container {
-      .projectcontainer {
-         .project {
-            .content {
-               .section {
-                  .title {
-                     font-size: $font-size-em;
+  .container {
+    .projectcontainer {
+      .project {
+        .content {
+          .section {
+            .title {
+              font-size: $font-size-em;
 
-                     .accent {
-                        font-size: $font-size-m;
-                     }
-                  }
-
-                  .skillcontainer {
-                     .skill {
-                        width: 100%;
-                     }
-                  }
-               }
+              .accent {
+                font-size: $font-size-m;
+              }
             }
-         }
+
+            .skillcontainer {
+              .skill {
+                width: 100%;
+              }
+            }
+          }
+        }
       }
-   }
+    }
+  }
 }
