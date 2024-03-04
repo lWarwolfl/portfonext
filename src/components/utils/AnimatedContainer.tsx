@@ -14,20 +14,21 @@ export default function AnimatedContainer({
   children,
 }: AnimatedContainerProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const elementRef = useRef<HTMLDivElement>(null)
   const lenis = useLenis().lenis
 
   useEffect(() => {
     const handleScroll = () => {
-      if (containerRef.current && lenis) {
+      if (containerRef.current && elementRef.current && lenis) {
         const scroll = lenis.actualScroll
 
         const containerTop = containerRef.current.getBoundingClientRect().top
         const distanceFromTop = scroll + containerTop - window.innerHeight + 200
 
         if (scroll >= distanceFromTop || window.innerWidth < 768) {
-          containerRef.current.classList.add(`${styles.show}`)
+          elementRef.current.classList.add(`${styles.show}`)
         } else {
-          containerRef.current.classList.remove(`${styles.show}`)
+          elementRef.current.classList.remove(`${styles.show}`)
         }
       }
     }
@@ -41,8 +42,10 @@ export default function AnimatedContainer({
   }, [lenis])
 
   return (
-    <div id={id} ref={containerRef} className={`${styles.container} ${className}`}>
-      {children}
+    <div ref={containerRef}>
+      <div id={id} ref={elementRef} className={`${styles.container} ${className}`}>
+        {children}
+      </div>
     </div>
   )
 }
