@@ -23,6 +23,12 @@ dependencies:
   '@mui/material':
     specifier: ^5.15.7
     version: 5.15.9(@emotion/react@11.11.3)(@emotion/styled@11.11.0)(@types/react@18.2.55)(react-dom@18.2.0)(react@18.2.0)
+  '@studio-freight/lenis':
+    specifier: ^1.0.39
+    version: 1.0.39
+  '@types/aos':
+    specifier: ^3.0.7
+    version: 3.0.7
   file-saver:
     specifier: ^2.0.5
     version: 2.0.5
@@ -926,6 +932,10 @@ packages:
     resolution: {integrity: sha512-RbhOOTCNoCrbfkRyoXODZp75MlpiHMgbE5MEBZAnnnLyQNgrigEj4p0lzsMDyc1zVsJDLrivB58tgg3emX0eEA==}
     dev: true
 
+  /@studio-freight/lenis@1.0.39:
+    resolution: {integrity: sha512-63LPZD087kFSiNS3lF6Uve8fFeshQwNCXrl7DUocoeUYiElVTzr9a+dLodNBa0Yn5NZ4umAoQQ6LOosB5I6AAQ==}
+    dev: false
+
   /@swc/helpers@0.5.2:
     resolution: {integrity: sha512-E4KcWTpoLHqwPHLxidpOqQbcrZVgi0rsmmZXUle1jXmJfuIf/UWpczUJ7MZZ5tlxytgJXyp0w4PGkkeLiuIdZw==}
     dependencies:
@@ -936,6 +946,10 @@ packages:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
     dev: true
+
+  /@types/aos@3.0.7:
+    resolution: {integrity: sha512-sEhyFqvKauUJZDbvAB3Pggynrq6g+2PS4XB3tmUr+mDL1gfDJnwslUC4QQ7/l8UD+LWpr3RxZVR/rHoZrLqZVg==}
+    dev: false
 
   /@types/file-saver@2.0.7:
     resolution: {integrity: sha512-dNKVfHd/jk0SkR/exKGj2ggkB45MAkzvWCaqLUUgkyjITkGNzH8H+yUwr+BLJUBjZOe9w8X3wgmXhZDRg1ED6A==}

@@ -16,6 +16,8 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.7",
     "@mui/material": "^5.15.7",
+    "@studio-freight/lenis": "^1.0.39",
+    "@types/aos": "^3.0.7",
     "file-saver": "^2.0.5",
     "jszip": "^3.10.1",
     "next": "^14.1.0",

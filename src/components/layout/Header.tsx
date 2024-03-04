@@ -1,11 +1,12 @@
 import StyledButton from '@/components/utils/StyledButton'
 import useWindowSmallerThan from '@/hooks/useWindowSmallerThan'
-import logo from '@/public/image/png/logo.png'
 import styles from '@/styles/layout/Header.module.scss'
+import { useLenis } from '@/utils/lenis'
 import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded'
 import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded'
 import KeyboardDoubleArrowUpRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowUpRounded'
 import SendRoundedIcon from '@mui/icons-material/SendRounded'
+import logo from '@public/image/png/logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -15,27 +16,28 @@ export default function Header() {
   const containerRef = React.useRef<HTMLDivElement>(null)
   const isMobile = useWindowSmallerThan({ size: 530 })
   const isTablet = useWindowSmallerThan({ size: 1050 })
+  const lenis = useLenis().lenis
 
   React.useEffect(() => {
     const handleScroll = () => {
-      if (containerRef.current) {
-        const scrollXPosition = document.body.scrollTop
+      if (containerRef.current && lenis) {
+        const scroll = lenis.scroll
 
-        if (scrollXPosition >= 10) {
-          containerRef.current.classList.add(styles.stick)
+        if (scroll > 10) {
+          containerRef.current.classList.add(`${styles.stick}`)
         } else {
-          containerRef.current.classList.remove(styles.stick)
+          containerRef.current.classList.remove(`${styles.stick}`)
         }
       }
     }
 
-    document.body.addEventListener('scroll', handleScroll)
+    if (lenis) lenis.on('scroll', handleScroll)
     handleScroll()
 
     return () => {
-      document.body.removeEventListener('scroll', handleScroll)
+      if (lenis) lenis.off('scroll', handleScroll)
     }
-  }, [])
+  }, [lenis])
 
   return (
     <>

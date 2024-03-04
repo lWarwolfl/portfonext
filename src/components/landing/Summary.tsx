@@ -3,15 +3,15 @@ import StyledButton from '@/components/utils/StyledButton'
 import StyledCard from '@/components/utils/StyledCard'
 import Title from '@/components/utils/Title'
 import { summmaryLinks } from '@/data/links'
-import photo from '@/public/image/jpg/photo.jpg'
 import styles from '@/styles/landing/Summary.module.scss'
 import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded'
+import photo from '@public/image/jpg/photo.jpg'
 import Image from 'next/image'
 
 export default function Summary() {
   return (
     <div id="summary" className={styles.container}>
-      <AnimatedContainer animationDirection="top" animationSpeed="slow">
+      <AnimatedContainer>
         <Title title="Unveiling My Story:" description="The Path Less Traveled" />
         <StyledCard move={false} glow="blue" variant="narrowbottom">
           <div className={styles.splitimage}>

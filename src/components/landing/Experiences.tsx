@@ -13,7 +13,7 @@ export default function Experiences() {
 
   return (
     <div id="experiences" className={styles.container}>
-      <AnimatedContainer animationDirection="top" animationSpeed="slow">
+      <AnimatedContainer>
         <Title title="From Novice to Navigator:" description="Navigating My Career Journey" />
 
         <SplittedContainer>

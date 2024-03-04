@@ -7,7 +7,7 @@ import Language from './Language'
 export default function Languages() {
   return (
     <div id="languages" className={styles.container}>
-      <AnimatedContainer animationDirection="top" animationSpeed="slow">
+      <AnimatedContainer>
         <Title title="Languages:" description="The Global Tapestry of My Communication" />
 
         <div className={styles.skillcontainer}>

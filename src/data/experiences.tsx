@@ -1,10 +1,10 @@
-import agahpadidar from '@/public/image/jpg/company/agahpadidar.jpg'
-import exmodules from '@/public/image/png/company/exmodules.png'
-import ponisha from '@/public/image/png/company/ponisha.png'
 import styles from '@/styles/landing/Experiences.module.scss'
 import { type ColorType } from '@/utils/types'
 import LibraryAddCheckOutlinedIcon from '@mui/icons-material/LibraryAddCheckOutlined'
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded'
+import agahpadidar from '@public/image/jpg/company/agahpadidar.jpg'
+import exmodules from '@public/image/png/company/exmodules.png'
+import ponisha from '@public/image/png/company/ponisha.png'
 import { type StaticImageData } from 'next/image'
 import * as React from 'react'
 

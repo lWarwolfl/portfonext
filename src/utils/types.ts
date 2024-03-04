@@ -9,6 +9,4 @@ export type ColorType =
   | 'red'
   | 'orange'
 
-export type AnimationSpeedType = 'fast' | 'medium' | 'slow' | 'veryslow'
-
 export type SkillCategoryType = 'code' | 'uiframework' | 'design' | 'other'

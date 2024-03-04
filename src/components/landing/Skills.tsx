@@ -8,7 +8,7 @@ import Skill from './Skill'
 export default function Skills() {
   return (
     <div id="skills" className={styles.container}>
-      <AnimatedContainer animationDirection="top" animationSpeed="slow">
+      <AnimatedContainer>
         <Title title="Skills:" description="Crafting My Arsenal of Abilities" />
         <div className={styles.skillcontainer}>
           {skillCategories.map((category, index) => {

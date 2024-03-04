@@ -9,6 +9,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 .width-fix {
@@ -26,8 +27,6 @@ body {
 #__next {
   position: relative;
   max-width: 100vw;
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 html body {
@@ -67,4 +66,24 @@ a {
   .width-fix {
     padding-bottom: 80px;
   }
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }

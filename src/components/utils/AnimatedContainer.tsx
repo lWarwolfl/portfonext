@@ -1,51 +1,47 @@
 import styles from '@/styles/utils/AnimatedContainer.module.scss'
+import { useLenis } from '@/utils/lenis'
 import React, { useEffect, useRef } from 'react'
 
 interface AnimatedContainerProps {
   id?: string
   className?: string
-  animationDirection: 'top' | 'right' | 'bottom' | 'left'
-  animationSpeed: 'fast' | 'medium' | 'slow' | 'veryslow'
   children: React.ReactNode
 }
 
 export default function AnimatedContainer({
   id = '',
   className = '',
-  animationDirection,
-  animationSpeed,
   children,
 }: AnimatedContainerProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const lenis = useLenis().lenis
 
   useEffect(() => {
     const handleScroll = () => {
-      if (containerRef.current) {
-        const containerTop = containerRef.current.getBoundingClientRect().top
-        const windowHeight = window.innerHeight
+      if (containerRef.current && lenis) {
+        const scroll = lenis.actualScroll
 
-        if (containerTop - windowHeight <= -200 || window.innerWidth < 768) {
-          containerRef.current.classList.add(styles.show)
+        const containerTop = containerRef.current.getBoundingClientRect().top
+        const distanceFromTop = scroll + containerTop - window.innerHeight + 200
+
+        if (scroll >= distanceFromTop || window.innerWidth < 768) {
+          containerRef.current.classList.add(`${styles.show}`)
         } else {
-          containerRef.current.classList.remove(styles.show)
+          containerRef.current.classList.remove(`${styles.show}`)
         }
       }
     }
 
-    document.body.addEventListener('scroll', handleScroll)
+    if (lenis) lenis.on('scroll', handleScroll)
     handleScroll()
 
     return () => {
-      document.body.removeEventListener('scroll', handleScroll)
+      if (lenis) lenis.off('scroll', handleScroll)
     }
-  }, [])
+  }, [lenis])
 
   return (
-    <div
-      id={id}
-      ref={containerRef}
-      className={`${styles.container} ${styles[animationDirection]} ${styles[animationSpeed]} ${className}`}
-    >
+    <div id={id} ref={containerRef} className={`${styles.container} ${className}`}>
       {children}
     </div>
   )
