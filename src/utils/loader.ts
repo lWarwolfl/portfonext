@@ -28,7 +28,7 @@ body {
   position: absolute;
   top: calc(50% - 50px);
   left: calc(50% - 50px);
-  animation: spin 2s linear infinite;
+  animation: spin 1.5s linear infinite;
   width: 100px;
   height: 100px;
   border-radius: 50px;
