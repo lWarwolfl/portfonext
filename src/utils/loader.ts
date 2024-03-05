@@ -45,44 +45,6 @@ body {
   background-image: linear-gradient(90deg, #b721ff88 0%, #6625ff88 50%, #257cff88 100%);
 }
 
-.loaderring1 {
-  position: absolute !important;
-  top: calc(50% - 58px);
-  left: calc(50% - 58px);
-  animation: spin 2s linear infinite;
-  width: 116px;
-  height: 116px;
-  position: relative;
-  background: conic-gradient(from 90deg at 50% 50%, #b721ff, #b721ff00);
-}
-
-.loaderring2 {
-  position: absolute !important;
-  top: calc(50% - 70px);
-  left: calc(50% - 70px);
-  animation: spin 2s linear infinite;
-  width: 140px;
-  height: 140px;
-  position: relative;
-  background: conic-gradient(from 90deg at 50% 50%, #6625ff, #6625ff00);
-}
-
-.loaderring1, .loaderring2 {
-  position: absolute;
-  border-radius: 50%;
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) padding-box, 
-    linear-gradient(#fff 0 0) border-box;
-  mask: 
-    linear-gradient(#fff 0 0) padding-box, 
-    linear-gradient(#fff 0 0) border-box;
-  mask-composite: exclude;
-}
-
-.loaderring2 {
-  background-image: linear-gradient(90deg, #b721ff88 0%, #6625ff88 50%, #257cff88 100%);
-}
-
 @keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);

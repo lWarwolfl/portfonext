@@ -14,8 +14,6 @@ export default function Document() {
           <div className="loader">
             <div className="loader-inside"></div>
           </div>
-          <div className="loaderring1"></div>
-          <div className="loaderring2"></div>
         </div>
         <Main />
         <NextScript />
