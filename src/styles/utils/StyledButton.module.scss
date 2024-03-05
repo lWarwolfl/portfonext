@@ -234,7 +234,8 @@ body {
     }
 
     &.iconbutton {
-      padding: 5px;
+      padding: 5px 0;
+      min-height: 40px;
       justify-content: center;
       aspect-ratio: 1 / 1;
       max-width: unset;
