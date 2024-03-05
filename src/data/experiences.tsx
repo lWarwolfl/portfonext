@@ -6,7 +6,7 @@ import agahpadidar from '@public/image/jpg/company/agahpadidar.jpg'
 import exmodules from '@public/image/png/company/exmodules.png'
 import ponisha from '@public/image/png/company/ponisha.png'
 import { type StaticImageData } from 'next/image'
-import * as React from 'react'
+import React from 'react'
 
 export interface ExperienceInterface {
   alt: string
@@ -22,149 +22,98 @@ export interface ExperienceInterface {
 export const experiences: ExperienceInterface[] = [
   {
     alt: 'Exmodules',
-    name: React.createElement(
-      React.Fragment,
-      null,
-      React.createElement('span', { className: styles.bold }, 'Exmodules'),
-      ' (Remote)',
-      React.createElement('br'),
-      'Front-end(React.js/Next.js) Developer'
+    name: (
+      <>
+        <span className={styles.bold}>Exmodules</span> (Remote)
+        <br />
+        Front-end(React.js/Next.js) Developer
+      </>
     ),
     link: 'https://exmodules.com/',
     logo: exmodules,
     icon: OpenInNewRoundedIcon,
     listicon: LibraryAddCheckOutlinedIcon,
     experiences: [
-      React.createElement(
-        React.Fragment,
-        null,
-        React.createElement('span', { className: styles.bold }, 'Led a team'),
-        ' of developers and provided guidance on project requirements.'
-      ),
-      React.createElement(
-        React.Fragment,
-        null,
-        'Created seamless user interfaces for various projects',
-        React.createElement('span', { className: styles.bold }, '(+10)'),
-        '.'
-      ),
-      React.createElement(
-        React.Fragment,
-        null,
-        'Learned and improved skills in ',
-        React.createElement('span', { className: styles.bold }, 'Next.js, InterfaceScript, '),
-        'and ',
-        React.createElement('span', { className: styles.bold }, 'Tailwind CSS'),
-        '.'
-      ),
+      <>
+        <span className={styles.bold}>Led a team</span> of developers and provided guidance on
+        project requirements.
+      </>,
+      <>
+        Created seamless user interfaces for various projects
+        <span className={styles.bold}>(+10)</span>.
+      </>,
+      <>
+        Learned and improved skills in{' '}
+        <span className={styles.bold}>Next.js, InterfaceScript,</span> and{' '}
+        <span className={styles.bold}>Tailwind CSS</span>.
+      </>,
     ],
     color: 'yellow',
   },
   {
     alt: 'Ponisha',
-    name: React.createElement(
-      React.Fragment,
-      null,
-      React.createElement('span', { className: styles.bold }, 'Ponisha'),
-      ' (Freelancing)',
-      React.createElement('br'),
-      'Front-end Developer and UI Designer'
+    name: (
+      <>
+        <span className={styles.bold}>Ponisha</span> (Freelancing)
+        <br />
+        Front-end Developer and UI Designer
+      </>
     ),
     link: 'https://ponisha.ir/profile/warwolf',
     logo: ponisha,
     icon: OpenInNewRoundedIcon,
     listicon: LibraryAddCheckOutlinedIcon,
     experiences: [
-      React.createElement(
-        React.Fragment,
-        null,
-        'Designed ',
-        React.createElement('span', { className: styles.bold }, 'User interfaces'),
-        ' for mobile apps and websites.'
-      ),
-      React.createElement(
-        React.Fragment,
-        null,
-        'Created ',
-        React.createElement(
-          'span',
-          { className: styles.bold },
-          'User personas, Wireframes, High fidelity designs'
-        ),
-        ', and integrated ',
-        React.createElement('span', { className: styles.bold }, 'Prototyping'),
-        '.'
-      ),
-      React.createElement(
-        React.Fragment,
-        null,
-        'Developed static web pages and ',
-        React.createElement('span', { className: styles.bold }, 'HTML templates'),
-        '.'
-      ),
+      <>
+        Designed <span className={styles.bold}>User interfaces</span> for mobile apps and websites.
+      </>,
+      <>
+        Created{' '}
+        <span className={styles.bold}>User personas, Wireframes, High fidelity designs</span>, and
+        integrated <span className={styles.bold}>Prototyping</span>.
+      </>,
+      <>
+        Developed static web pages and <span className={styles.bold}>HTML templates</span>.
+      </>,
     ],
     color: 'green',
   },
   {
     alt: 'Agahpadidar',
-    name: React.createElement(
-      React.Fragment,
-      null,
-      React.createElement('span', { className: styles.bold }, 'Agahpadidar'),
-      ' (Full-time)',
-      React.createElement('br'),
-      'Front-end(React.js) Developer'
+    name: (
+      <>
+        <span className={styles.bold}>Agahpadidar</span> (Full-time)
+        <br />
+        Front-end(React.js) Developer
+      </>
     ),
     link: 'https://www.linkedin.com/company/agahpadidar/',
     logo: agahpadidar,
     icon: OpenInNewRoundedIcon,
     listicon: LibraryAddCheckOutlinedIcon,
     experiences: [
-      React.createElement(
-        React.Fragment,
-        null,
-        'Developed complex dynamic features using ',
-        React.createElement('span', { className: styles.bold }, 'React.js'),
-        ' and ',
-        React.createElement('span', { className: styles.bold }, 'Redux Toolit'),
-        '.'
-      ),
-      React.createElement(
-        React.Fragment,
-        null,
-        'Established connections to ',
-        React.createElement('span', { className: styles.bold }, 'Restful APIs '),
-        'using ',
-        React.createElement('span', { className: styles.bold }, 'Async Thunks '),
-        'and ',
-        React.createElement('span', { className: styles.bold }, 'Axios'),
-        '.'
-      ),
-      React.createElement(
-        React.Fragment,
-        null,
-        'Utilized ',
-        React.createElement('span', { className: styles.bold }, 'Github'),
-        ' for version control and collaborated with team members to resolve conflicts.'
-      ),
-      React.createElement(
-        React.Fragment,
-        null,
-        'Established connections to ',
-        React.createElement('span', { className: styles.bold }, 'Restful APIs'),
-        ' using ',
-        React.createElement('span', { className: styles.bold }, 'Redux Toolkit'),
-        ' and axios for ',
-        React.createElement('span', { className: styles.bold }, '20+ features'),
-        '.'
-      ),
-      React.createElement(
-        React.Fragment,
-        null,
-        'Participated in ',
-        React.createElement('span', { className: styles.bold }, 'Agile development methodologies'),
-        ' such as daily stand-ups and sprint planning.'
-      ),
+      <>
+        Developed complex dynamic features using <span className={styles.bold}>React.js</span> and{' '}
+        <span className={styles.bold}>Redux Toolit</span>.
+      </>,
+      <>
+        Established connections to <span className={styles.bold}>Restful APIs</span> using{' '}
+        <span className={styles.bold}>Async Thunks</span> and{' '}
+        <span className={styles.bold}>Axios</span>.
+      </>,
+      <>
+        Utilized <span className={styles.bold}>Github</span> for version control and collaborated
+        with team members to resolve conflicts.
+      </>,
+      <>
+        Established connections to <span className={styles.bold}>Restful APIs</span> using{' '}
+        <span className={styles.bold}>Redux Toolkit</span> and axios for{' '}
+        <span className={styles.bold}>20+ features</span>.
+      </>,
+      <>
+        Participated in <span className={styles.bold}>Agile development methodologies</span> such as
+        daily stand-ups and sprint planning.
+      </>,
     ],
     color: 'aqua',
   },

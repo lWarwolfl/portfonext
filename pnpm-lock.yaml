@@ -17,6 +17,9 @@ dependencies:
   '@emotion/styled':
     specifier: ^11.11.0
     version: 11.11.0(@emotion/react@11.11.3)(@types/react@18.2.55)(react@18.2.0)
+  '@gsap/react':
+    specifier: ^2.1.0
+    version: 2.1.0
   '@mui/icons-material':
     specifier: ^5.15.7
     version: 5.15.9(@mui/material@5.15.9)(@types/react@18.2.55)(react@18.2.0)
@@ -390,6 +393,13 @@ packages:
 
   /@floating-ui/utils@0.2.1:
     resolution: {integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==}
+    dev: false
+
+  /@gsap/react@2.1.0:
+    resolution: {integrity: sha512-pwdFXvOM5IsRZXpWTKkQoEjb3/iUjDCU1BCJDlE6pHgVjG+7Ep/7+sszUgqVZ2Jc0mR8gnhtDWyx5cQAT4kwQw==}
+    dependencies:
+      gsap: 3.12.5
+      react: 18.2.0
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:

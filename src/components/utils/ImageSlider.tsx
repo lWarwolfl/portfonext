@@ -9,9 +9,8 @@ import Image, { type StaticImageData } from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
 import 'swiper/css'
-import 'swiper/css/effect-coverflow'
 import 'swiper/css/navigation'
-import { Autoplay, EffectCoverflow, Navigation, Pagination } from 'swiper/modules'
+import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 interface Props {
@@ -112,37 +111,15 @@ export default function ImageSlider({ className, title, accent, images }: Props)
   return (
     <>
       <div className={`${styles.container} ${className}`}>
-        <Swiper
-          effect={'coverflow'}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
-          slidesPerView={2.7}
-          centeredSlides
-          loop
-          spaceBetween={10}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[EffectCoverflow, Pagination, Autoplay]}
-          coverflowEffect={{ rotate: 10, stretch: 0, depth: 200, slideShadows: true }}
-          className={`swiper image-slider`}
-        >
-          {images.map((item, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <Image
-                  quality={85}
-                  placeholder="blur"
-                  className="image"
-                  alt={`slide-${index}`}
-                  src={item}
-                />
-              </SwiperSlide>
-            )
-          })}
-        </Swiper>
+        {images[0] && (
+          <Image
+            quality={32}
+            placeholder="blur"
+            className={styles.firstimage}
+            alt="first-image"
+            src={images[0]}
+          />
+        )}
 
         <div className={styles.buttoncontainer}>
           <StyledButton

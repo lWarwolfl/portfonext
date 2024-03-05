@@ -1,4 +1,3 @@
-import AnimatedContainer from '@/components/utils/AnimatedContainer'
 import SplittedContainer from '@/components/utils/SplittedContainer'
 import Title from '@/components/utils/Title'
 import { educations } from '@/data/educations'
@@ -12,24 +11,22 @@ export default function Educations() {
   const secondHalf = educations.slice(midpoint)
 
   return (
-    <div id="educations" className={styles.container}>
-      <AnimatedContainer>
-        <Title title="My Academic Odyssey:" description="Learning Beyond the Classroom" />
+    <div id="educations" className={`animated-container ${styles.container}`}>
+      <Title title="My Academic Odyssey:" description="Learning Beyond the Classroom" />
 
-        <SplittedContainer>
-          <div className={styles.container}>
-            {firstHalf.map((item, index) => {
-              return <Education key={index} item={item} />
-            })}
-          </div>
+      <SplittedContainer>
+        <div className={styles.container}>
+          {firstHalf.map((item, index) => {
+            return <Education key={index} item={item} />
+          })}
+        </div>
 
-          <div className={styles.container}>
-            {secondHalf.map((item, index) => {
-              return <Education key={index} item={item} />
-            })}
-          </div>
-        </SplittedContainer>
-      </AnimatedContainer>
+        <div className={styles.container}>
+          {secondHalf.map((item, index) => {
+            return <Education key={index} item={item} />
+          })}
+        </div>
+      </SplittedContainer>
     </div>
   )
 }

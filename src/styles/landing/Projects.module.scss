@@ -17,13 +17,13 @@
       position: relative;
 
       .slider {
-        width: 48%;
+        width: 20%;
         aspect-ratio: 7/6;
         margin: 0 0 20px;
       }
 
       .content {
-        width: 52%;
+        width: 80%;
         padding-left: 30px;
 
         .section {
@@ -34,7 +34,6 @@
           .title {
             position: relative;
             width: fit-content;
-            padding-top: 10px;
             font-weight: $font-weight-semibold;
             font-size: $font-size-l;
             color: var(--font-color-primary);
@@ -45,17 +44,6 @@
               font-size: $font-size-em;
               color: var(--font-color-secondary);
               margin-left: 4px;
-            }
-
-            &::before {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 20%;
-              height: 5px;
-              border-radius: 2px;
-              background-image: var(--gradient-main);
-              content: '';
             }
           }
 

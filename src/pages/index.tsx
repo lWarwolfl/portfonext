@@ -9,8 +9,12 @@ import Skills from '@/components/landing/Skills'
 import Summary from '@/components/landing/Summary'
 import Header from '@/components/layout/Header'
 import Particle from '@/components/utils/Particle'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import localFont from 'next/font/local'
 import Head from 'next/head'
+import { useRef } from 'react'
 
 export const font = localFont({
   src: [
@@ -52,7 +56,36 @@ export const font = localFont({
   ],
 })
 
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger, useGSAP)
+}
+
 export default function Home() {
+  const main = useRef<HTMLDivElement>(null)
+
+  useGSAP(
+    () => {
+      const boxes = gsap.utils.toArray('.animated-container')
+      boxes.forEach((box, index: number) => {
+        //@ts-expect-error there is no support to know the type of this animatable box
+        gsap.set(box, { x: index % 2 === 0 ? -100 : +100, opacity: 0 })
+
+        //@ts-expect-error there is no support to know the type of this animatable box
+        gsap.to(box, {
+          x: 0,
+          opacity: 1,
+          scrollTrigger: {
+            trigger: box,
+            start: '150px bottom',
+            end: '100%+=150px bottom',
+            scrub: true,
+          },
+        })
+      })
+    },
+    { scope: main }
+  )
+
   return (
     <main className={font.className}>
       <div id="full-size-image-slider"></div>
@@ -63,7 +96,7 @@ export default function Home() {
 
       <Particle />
       <Header />
-      <div className="width-fix">
+      <div className="width-fix" ref={main}>
         <Hero />
         <Summary />
         <Skills />
