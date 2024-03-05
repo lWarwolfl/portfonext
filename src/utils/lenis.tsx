@@ -15,7 +15,11 @@ export function LenisProvider(props: LenisProviderProps) {
   const [lenis, setLenis] = useState<Lenis | null>(null)
 
   useEffect(() => {
-    const lenis = new Lenis({ lerp: 0.11 })
+    const lenis = new Lenis({
+      lerp: 0.09,
+      smoothWheel: true,
+      syncTouch: true,
+    })
     setLenis(lenis)
 
     return () => {
