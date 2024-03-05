@@ -7,7 +7,7 @@ import Project from './Project'
 export default function Projects() {
   return (
     <div id="projects" className={styles.container}>
-      <AnimatedContainer animationDirection="top" animationSpeed="medium">
+      <AnimatedContainer>
         <Title
           title="Showcasing My Passion Projects:"
           description="Where Creativity Takes Flight"

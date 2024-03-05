@@ -47,12 +47,12 @@ export default function ImageSlider({ className, title, accent, images }: Props)
   useEffect(() => {
     const portalContainer = document.createElement('div')
     portalContainer.id = 'fullslider-portal-container'
-    document.getElementById('root')?.appendChild(portalContainer)
+    document.getElementById('full-size-image-slider')?.appendChild(portalContainer)
     portalContainerRef.current = portalContainer
 
     return () => {
       if (portalContainerRef.current) {
-        document.getElementById('root')?.removeChild(portalContainerRef.current)
+        document.getElementById('full-size-image-slider')?.removeChild(portalContainerRef.current)
       }
     }
   }, [])

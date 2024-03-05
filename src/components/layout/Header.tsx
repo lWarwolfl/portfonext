@@ -16,7 +16,7 @@ export default function Header() {
   const containerRef = React.useRef<HTMLDivElement>(null)
   const isMobile = useWindowSmallerThan({ size: 530 })
   const isTablet = useWindowSmallerThan({ size: 1050 })
-  const lenis = useLenis().lenis
+  const { lenis } = useLenis()
 
   React.useEffect(() => {
     const handleScroll = () => {

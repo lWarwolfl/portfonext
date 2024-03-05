@@ -37,18 +37,20 @@ export default function Project({ item }: Props) {
           </div>
           <div className={styles.skillcontainer}>
             {item.skills.map((skill, i) => {
-              return (
-                <div key={i} className={styles.skill}>
-                  <Image
-                    quality={85}
-                    placeholder="blur"
-                    src={skill.image}
-                    alt={skill.name}
-                    className={styles.image}
-                  />
-                  <div className={styles.name}>{skill.name}</div>
-                </div>
-              )
+              if(skill) {
+                return (
+                  <div key={i} className={styles.skill}>
+                    <Image
+                      quality={85}
+                      placeholder="blur"
+                      src={skill.image}
+                      alt={skill.name}
+                      className={styles.image}
+                    />
+                    <div className={styles.name}>{skill.name}</div>
+                  </div>
+                )
+              }
             })}
           </div>
         </div>

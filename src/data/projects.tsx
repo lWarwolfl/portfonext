@@ -21,7 +21,7 @@ export interface ProjectInterface {
   direction: 'normal' | 'reverse'
   color: ColorType
   images: StaticImageData[]
-  skills: SkillInterface[]
+  skills: (SkillInterface | undefined)[]
   links: SummaryLinkInterface[]
 }
 
@@ -39,7 +39,9 @@ export const projects: ProjectInterface[] = [
     direction: 'normal',
     color: 'yellow',
     images: [modernist1, modernist2, modernist3, modernist4, modernist5, modernist6, modernist7],
-    skills: [skills[16], skills[15], skills[2], skills[5], skills[19], skills[20]],
+    skills: [skills[16], skills[15], skills[2], skills[5], skills[19], skills[20]].filter(
+      (skill) => skill !== undefined
+    ),
     links: [
       {
         link: 'https://github.com/lWarwolfl/Modernist',

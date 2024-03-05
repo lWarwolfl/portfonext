@@ -55,6 +55,7 @@ export const font = localFont({
 export default function Home() {
   return (
     <main className={font.className}>
+      <div id="full-size-image-slider"></div>
       <Head>
         <title>Sina Kheiri - js developer and UI/UX designer</title>
         <meta name="viewport" content="width=device-width, height=device-height" />

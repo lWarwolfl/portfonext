@@ -1,21 +1,27 @@
-import styles from '@/styles/utils/AnimatedContainer.module.scss'
 import { useLenis } from '@/utils/lenis'
+import gsap from 'gsap'
 import React, { useEffect, useRef } from 'react'
 
 interface AnimatedContainerProps {
   id?: string
   className?: string
   children: React.ReactNode
+  speed?: number
+  transformAmount?: number
+  visibleThreshold?: number
 }
 
 export default function AnimatedContainer({
   id = '',
   className = '',
   children,
+  speed = 0.7,
+  transformAmount = 100,
+  visibleThreshold = 100,
 }: AnimatedContainerProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const elementRef = useRef<HTMLDivElement>(null)
-  const lenis = useLenis().lenis
+  const { lenis } = useLenis()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,12 +29,28 @@ export default function AnimatedContainer({
         const scroll = lenis.actualScroll
 
         const containerTop = containerRef.current.getBoundingClientRect().top
-        const distanceFromTop = scroll + containerTop - window.innerHeight + 200
+        const distanceFromTop = scroll + containerTop - window.innerHeight + visibleThreshold
 
         if (scroll >= distanceFromTop || window.innerWidth < 768) {
-          elementRef.current.classList.add(`${styles.show}`)
+          gsap.to(elementRef.current, {
+            autoAlpha: 1,
+            y: 0,
+            duration: speed,
+            ease: 'power1.out',
+            onComplete: () => {
+              if (elementRef.current) elementRef.current.dataset.animated = 'true'
+            },
+          })
         } else {
-          elementRef.current.classList.remove(`${styles.show}`)
+          gsap.to(elementRef.current, {
+            autoAlpha: 0,
+            y: -transformAmount,
+            duration: speed,
+            ease: 'power1.out',
+            onComplete: () => {
+              if (elementRef.current) delete elementRef.current.dataset.animated
+            },
+          })
         }
       }
     }
@@ -39,11 +61,20 @@ export default function AnimatedContainer({
     return () => {
       if (lenis) lenis.off('scroll', handleScroll)
     }
-  }, [lenis])
+  }, [lenis, speed, transformAmount, visibleThreshold])
+
+  useEffect(() => {
+    if (elementRef.current) {
+      gsap.set(elementRef.current, {
+        autoAlpha: 0,
+        y: -transformAmount,
+      })
+    }
+  }, [transformAmount])
 
   return (
     <div ref={containerRef}>
-      <div id={id} ref={elementRef} className={`${styles.container} ${className}`}>
+      <div id={id} ref={elementRef} className={className}>
         {children}
       </div>
     </div>
