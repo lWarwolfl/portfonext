@@ -11,7 +11,9 @@ export default function Document() {
       </Head>
       <body>
         <div id={'globalLoader'}>
-          <div className="loader"></div>
+          <div className="loader">
+            <div className="loader-inside"></div>
+          </div>
           <div className="loaderring1"></div>
           <div className="loaderring2"></div>
         </div>

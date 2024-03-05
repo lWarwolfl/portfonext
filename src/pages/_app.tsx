@@ -12,15 +12,15 @@ export default function App({ Component, pageProps }: AppProps) {
         document.body.style.overflowY = 'auto'
       }, 100)
 
-      setTimeout(() => {
-        const loader = document.getElementById('globalLoader')
-        if (loader) loader.style.opacity = '0'
-      }, 1300)
+      // setTimeout(() => {
+      //   const loader = document.getElementById('globalLoader')
+      //   if (loader) loader.style.opacity = '0'
+      // }, 1300)
 
-      setTimeout(() => {
-        const loader = document.getElementById('globalLoader')
-        if (loader) loader.style.display = 'none'
-      }, 1600)
+      // setTimeout(() => {
+      //   const loader = document.getElementById('globalLoader')
+      //   if (loader) loader.style.display = 'none'
+      // }, 1600)
     }
   }, [])
 
