@@ -1,8 +1,6 @@
 import { type SummaryLinkInterface } from '@/data/links'
 import styles from '@/styles/landing/Projects.module.scss'
 import { type ColorType } from '@/utils/types'
-import GitHubIcon from '@mui/icons-material/GitHub'
-import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded'
 import modernist1 from '@public/image/jpg/projects/modernist/1.jpg'
 import modernist2 from '@public/image/jpg/projects/modernist/2.jpg'
 import modernist3 from '@public/image/jpg/projects/modernist/3.jpg'
@@ -47,13 +45,13 @@ export const projects: ProjectInterface[] = [
         link: 'https://github.com/lWarwolfl/Modernist',
         color: 'blue',
         text: 'Github',
-        icon: GitHubIcon,
+        icon: 'bxl:github',
       },
       {
         link: 'https://modernist.lazygamer.ir/',
         color: 'green',
         text: 'Project',
-        icon: VisibilityRoundedIcon,
+        icon: 'ci:show',
       },
     ],
   },

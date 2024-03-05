@@ -5,11 +5,12 @@
 body {
   .button {
     display: inline-flex;
+    overflow: hidden;
+    gap: 6px;
     align-items: center;
     position: relative;
-    border-radius: 7px;
-    padding-right: 20px;
-    padding-left: 35px;
+    border-radius: 8px;
+    padding: 8px 12px;
     min-width: unset;
     width: unset;
     max-width: 240px;
@@ -18,7 +19,11 @@ body {
     text-transform: unset;
     transition-duration: $transition-m;
     transition-timing-function: $transition-ease;
-    transition-property: padding-right, padding-left, background-color;
+    transition-property: background-color;
+
+    &.hasbar {
+      padding: 12px 12px;
+    }
 
     .text {
       display: inline-block;
@@ -43,39 +48,65 @@ body {
     }
 
     .icon {
-      position: absolute;
-      right: 8px;
       opacity: 0;
       transition-duration: $transition-m;
       transition-timing-function: $transition-ease;
-      transition-property: right, opacity;
-      z-index: 1;
+      transition-property: margin, opacity;
+
+      &.small {
+        font-size: $font-size-l;
+        margin-right: calc(0px - $font-size-l);
+        min-width: $font-size-l;
+      }
+
+      &.normal {
+        font-size: $font-size-xl;
+        margin-right: calc(0px - $font-size-xl);
+        min-width: $font-size-xl;
+      }
+
+      &.big {
+        font-size: $font-size-2xl;
+        margin-right: calc(0px - $font-size-2xl);
+        min-width: $font-size-2xl;
+      }
+
+      &.large {
+        font-size: $font-size-3xl;
+        margin-right: calc(0px - $font-size-3xl);
+        min-width: $font-size-3xl;
+      }
     }
 
-    .icon.small {
-      top: calc(50% - calc($font-size-l / 2));
-      font-size: $font-size-l;
-    }
-
-    .icon.normal {
-      top: calc(50% - calc($font-size-xl / 2));
-      font-size: $font-size-xl;
-    }
-
-    .icon.big {
-      top: calc(50% - calc($font-size-2xl / 2));
-      font-size: $font-size-2xl;
-    }
-
-    .icon.large {
-      top: calc(50% - calc($font-size-3xl / 2));
-      font-size: $font-size-3xl;
-    }
-
-    .icon.static {
-      left: 4px;
+    .staticicon {
       opacity: 1;
-      z-index: 1;
+      transition-duration: $transition-m;
+      transition-timing-function: $transition-ease;
+      transition-property: margin, opacity;
+
+      &.small {
+        font-size: $font-size-l;
+        margin-left: 0;
+        min-width: $font-size-l;
+      }
+
+      &.normal {
+        font-size: $font-size-xl;
+        margin-left: 0;
+        min-width: $font-size-xl;
+      }
+
+      &.big {
+        font-size: $font-size-2xl;
+        margin-left: 0;
+        min-width: $font-size-2xl;
+      }
+
+      &.large {
+        font-size: $font-size-3xl;
+        margin-left: 0;
+        min-width: $font-size-3xl;
+      }
     }
 
     .bar {
@@ -90,33 +121,47 @@ body {
       z-index: 2;
     }
 
-    &.noicon {
-      padding-right: 20px;
-      padding-left: 45px;
-
-      .icon.static {
-        left: 12px;
-      }
-    }
-
-    &.noicon.nostaticicon {
-      padding-right: 20px;
-      padding-left: 20px;
-    }
-
     &:hover {
-      padding-right: 35px;
-      padding-left: 20px;
       background-color: var(--transparent-background);
 
       .icon {
-        right: 4px;
         opacity: 1;
+
+        &.small {
+          margin-right: 0;
+        }
+
+        &.normal {
+          margin-right: 0;
+        }
+
+        &.big {
+          margin-right: 0;
+        }
+
+        &.large {
+          margin-right: 0;
+        }
       }
 
-      .icon.static {
-        left: 2px;
+      .staticicon {
         opacity: 0;
+
+        &.small {
+          margin-right: calc(0px - $font-size-l);
+        }
+
+        &.normal {
+          margin-right: calc(0px - $font-size-xl);
+        }
+
+        &.big {
+          margin-right: calc(0px - $font-size-2xl);
+        }
+
+        &.large {
+          margin-right: calc(0px - $font-size-3xl);
+        }
       }
 
       .bar {
@@ -124,96 +169,72 @@ body {
       }
     }
 
-    &.noicon:hover {
-      padding-right: 20px;
-      padding-left: 45px;
-
-      .icon.static {
-        left: 12px;
-        opacity: 1;
+    &.singleicon {
+      .icon {
+        display: none;
       }
-    }
 
-    &.noicon.nostaticicon:hover {
-      padding-right: 20px;
-      padding-left: 20px;
+      &:hover {
+        .staticicon {
+          opacity: 1;
+
+          &.small {
+            margin-right: 0;
+          }
+
+          &.normal {
+            margin-right: 0;
+          }
+
+          &.big {
+            margin-right: 0;
+          }
+
+          &.large {
+            margin-right: 0;
+          }
+        }
+      }
+
+      &.iconbutton {
+        &:hover {
+          .icon {
+            display: none;
+          }
+
+          .staticicon {
+            display: block;
+          }
+        }
+      }
     }
 
     &.glass {
       background-color: var(--more-transparent-background);
-      padding-right: 25px;
-      padding-left: 45px;
-
-      &[dir='rtl'] {
-        padding-right: 45px;
-        padding-left: 25px;
-      }
-
-      .icon {
-        position: absolute;
-        right: 12px;
-        opacity: 0;
-        transition-duration: $transition-m;
-        transition-timing-function: $transition-ease;
-        transition-property: right, opacity;
-        z-index: 1;
-      }
-
-      .icon.static {
-        left: 12px;
-        opacity: 1;
-        z-index: 1;
-      }
-    }
-
-    &.noicon.nostaticicon.glass {
-      padding-left: 25px;
-      padding-right: 25px;
     }
 
     &.glass:hover {
       background-color: var(--transparent-background);
-      padding-right: 45px;
-      padding-left: 25px;
-
-      .icon {
-        right: 10px;
-        opacity: 1;
-      }
-
-      .icon.static {
-        left: 12px;
-        opacity: 0;
-      }
     }
 
-    &.noicon.glass:hover {
-      padding-right: 25px;
-      padding-left: 45px;
-
-      &[dir='rtl'] {
-        padding-right: 45px;
-        padding-left: 25px;
-      }
-
-      .icon.static {
-        left: 12px;
-        opacity: 1;
-      }
-      &[dir='rtl'] > .icon.static {
-        right: 12px;
-        opacity: 1;
-      }
+    &.solid {
+      background-color: var(--card-background);
     }
 
-    &.noicon.nostaticicon.glass:hover {
-      padding-left: 25px;
-      padding-right: 25px;
+    &.solid:hover {
+      background-color: var(--dark-card-background);
     }
 
-    &.iconbutton,
-    &.noicon.iconbutton {
-      padding: 0;
+    &.invert {
+      background-color: var(--dark-card-background);
+    }
+
+    &.invert:hover {
+      background-color: var(--card-background);
+    }
+
+    &.iconbutton {
+      padding: 5px;
       justify-content: center;
       aspect-ratio: 1 / 1;
       max-width: unset;
@@ -227,48 +248,28 @@ body {
       }
 
       .icon {
-        right: unset;
+        display: none;
       }
 
-      .icon.small {
-        left: calc(50% - calc($font-size-l / 2));
+      .staticicon {
+        display: block;
       }
 
-      .icon.normal {
-        left: calc(50% - calc($font-size-xl / 2));
-      }
+      &:hover {
+        .icon {
+          display: block;
+        }
 
-      .icon.big {
-        left: calc(50% - calc($font-size-2xl / 2));
-      }
-
-      .icon.large {
-        left: calc(50% - calc($font-size-3xl / 2));
-      }
-    }
-
-    &.iconbutton:hover,
-    &.noicon.iconbutton:hover {
-      padding: 0;
-
-      .icon {
-        right: unset;
-        opacity: 1;
-      }
-
-      .icon.static {
-        left: unset;
-        opacity: 1;
-      }
-
-      .icon.static.hasicon {
-        opacity: 0;
+        .staticicon {
+          display: none;
+        }
       }
     }
 
     &.disabled {
       pointer-events: none;
       opacity: 0.6;
+      color: var(--font-color-primary);
     }
 
     &.active {

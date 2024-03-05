@@ -2,10 +2,6 @@ import StyledButton from '@/components/utils/StyledButton'
 import useWindowSmallerThan from '@/hooks/useWindowSmallerThan'
 import styles from '@/styles/layout/Header.module.scss'
 import { useLenis } from '@/utils/lenis'
-import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded'
-import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded'
-import KeyboardDoubleArrowUpRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowUpRounded'
-import SendRoundedIcon from '@mui/icons-material/SendRounded'
 import logo from '@public/image/png/logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -58,10 +54,9 @@ export default function Header() {
           <StyledButton
             className={styles.upbutton}
             idLink="top"
-            icon={!isMobile ? KeyboardDoubleArrowUpRoundedIcon : undefined}
-            staticIcon={KeyboardArrowUpRoundedIcon}
-            iconSize="big"
-            staticIconSize="big"
+            icon="line-md:chevron-small-double-up"
+            staticIcon="line-md:chevron-small-up"
+            fontSize="large"
             background="glass"
             iconButton
           />
@@ -70,10 +65,8 @@ export default function Header() {
             className={styles.button}
             idLink=""
             background="glass"
-            icon={!isMobile ? KeyboardArrowRightRoundedIcon : undefined}
-            staticIcon={SendRoundedIcon}
-            fontSize="small"
-            iconSize="large"
+            icon={!isMobile ? 'ci:chevron-right' : undefined}
+            staticIcon="ci:paper-plane"
             iconButton={isTablet}
             disabled
           >

@@ -1,32 +1,28 @@
 import styles from '@/styles/utils/StyledButton.module.scss'
-import { type ColorType } from '@/utils/types'
+import { useLenis } from '@/utils/lenis'
+import type { ColorType } from '@/utils/types'
+import { Icon } from '@iconify-icon/react'
 import { Button, type ButtonProps } from '@mui/material'
+import clsx from 'clsx'
 import { useRouter } from 'next/navigation'
 
 export interface StyledButtonProps extends Omit<ButtonProps, 'color'> {
-  className?: string
   idLink?: string
   localLink?: string
   externalLink?: string
   download?: boolean
-  children?: React.ReactNode
   color?: ColorType
   fontSize?: 'small' | 'normal' | 'big' | 'large'
-  staticIconSize?: 'small' | 'normal' | 'big' | 'large'
-  iconSize?: 'small' | 'normal' | 'big' | 'large'
-  height?: string
   barHeight?: string
-  background?: 'transparent' | 'glass'
+  background?: 'transparent' | 'glass' | 'solid' | 'invert'
   iconButton?: boolean
-  disabled?: boolean
+  icon?: string
+  staticIcon?: string
   active?: boolean
-  icon?: React.ElementType
   customClick?: (e: React.MouseEvent<HTMLElement>) => void
-  staticIcon?: React.ElementType
 }
 
 export default function StyledButton({
-  className,
   idLink = '',
   localLink = '',
   externalLink = '',
@@ -34,124 +30,89 @@ export default function StyledButton({
   children,
   color = 'blue',
   fontSize = 'normal',
-  iconSize = 'normal',
-  staticIconSize = 'normal',
-  height = '40px',
   barHeight,
   background = 'transparent',
   iconButton = false,
-  disabled = false,
+  icon,
+  staticIcon,
   active = false,
-  icon: IconComponent,
-  staticIcon: StaticIconComponent,
   customClick,
+  className,
   ...props
 }: StyledButtonProps) {
   const router = useRouter()
+  const { lenis } = useLenis()
 
-  const handleLocalClick = () => {
-    const element = document.getElementById(idLink)
-    if (element) {
-      const scrollPosition = element.offsetTop - 100
-
-      document.body.scrollTo({
-        top: scrollPosition,
-        behavior: 'smooth',
-      })
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    if (customClick) {
+      customClick(e)
+    } else if (idLink) {
+      const element = document.getElementById(idLink)
+      if (element) lenis?.scrollTo(element.offsetTop - 100)
+    } else if (localLink) {
+      router.push(localLink)
     }
   }
 
-  const handleLocalLinkClick = () => {
-    router.push(localLink)
+  const iconClasses = clsx(styles[fontSize])
+  const textClasses = clsx(styles.text, styles[fontSize])
+  const barStyles = {
+    backgroundImage: `var(--gradient-${color})`,
+    height: barHeight,
+    borderRadius: `calc(${barHeight} / 2)`,
   }
 
-  const handleClick = () => {
-    if (idLink !== '') {
-      handleLocalClick()
-    } else if (localLink != '') {
-      handleLocalLinkClick()
-    }
-  }
+  const renderContent = () => (
+    <>
+      {staticIcon && (
+        <Icon
+          icon={staticIcon}
+          className={clsx(iconClasses, styles.staticicon)}
+          style={{ color: `var(--${color}-color)` }}
+        />
+      )}
+      <div className={textClasses}>{children}</div>
+      {icon && (
+        <Icon
+          icon={icon}
+          style={{ color: `var(--${color}-color)` }}
+          className={clsx(iconClasses, styles.icon)}
+        />
+      )}
+      {barHeight && <div className={styles.bar} style={barStyles}></div>}
+    </>
+  )
 
-  const Content = () => {
+  const buttonClass = clsx(className, styles.button, {
+    [`${styles.glass}`]: background === 'glass',
+    [`${styles.solid}`]: background === 'solid',
+    [`${styles.invert}`]: background === 'invert',
+    [`${styles.iconbutton}`]: iconButton,
+    [`${styles.disabled}`]: props.disabled,
+    [`${styles.active}`]: active,
+    [`${styles.hasbar}`]: barHeight,
+  })
+
+  if (externalLink) {
     return (
-      <>
-        {StaticIconComponent ? (
-          <StaticIconComponent
-            className={`${styles.icon} ${styles.static} ${
-              IconComponent ? styles.hasicon : ''
-            } ${staticIconSize === 'small' ? styles.small : ''} ${
-              staticIconSize === 'normal' ? styles.normal : ''
-            } ${staticIconSize === 'big' ? styles.big : ''} ${
-              staticIconSize === 'large' ? styles.large : ''
-            }`}
-            style={{ color: `var(--${color}-color)`, pointerEvents: 'none' }}
-          />
-        ) : null}
-
-        <div
-          className={`${styles.text} ${fontSize === 'small' ? styles.small : ''} ${
-            fontSize === 'normal' ? styles.normal : ''
-          } ${fontSize === 'big' ? styles.big : ''} ${fontSize === 'large' ? styles.large : ''}`}
-        >
-          {children}
-        </div>
-        {IconComponent ? (
-          <IconComponent
-            className={`${styles.icon} ${iconSize === 'small' ? styles.small : ''} ${
-              iconSize === 'normal' ? styles.normal : ''
-            } ${iconSize === 'big' ? styles.big : ''} ${iconSize === 'large' ? styles.large : ''}`}
-            style={{ color: `var(--${color}-color)` }}
-          />
-        ) : null}
-        {barHeight ? (
-          <div
-            className={styles.bar}
-            style={{
-              backgroundImage: `var(--gradient-${color})`,
-              height: barHeight,
-              borderRadius: `calc(${barHeight} / 2)`,
-            }}
-          ></div>
-        ) : null}
-      </>
+      <a
+        href={externalLink}
+        target="_blank"
+        rel={download ? 'noopener noreferrer' : undefined}
+        className={clsx(buttonClass, { [`${styles['singleicon']}`]: !icon })}
+      >
+        {renderContent()}
+      </a>
     )
   }
 
   return (
-    <>
-      {externalLink !== '' ? (
-        <a
-          href={externalLink}
-          target="_blank"
-          rel={`${download ? 'noopener noreferrer' : ''}`}
-          className={`${className} ${styles.button} ${
-            !IconComponent ? styles.noicon : ''
-          } ${!StaticIconComponent ? styles.nostaticicon : ''} ${
-            disabled ? styles.disabled : ''
-          } ${active ? styles.active : ''} ${
-            background === 'glass' ? styles.glass : ''
-          } ${iconButton ? styles.iconbutton : ''}`}
-          style={{ height: height }}
-        >
-          <Content />
-        </a>
-      ) : (
-        <Button
-          onClick={customClick ? customClick : handleClick}
-          className={`${className} ${styles.button} ${
-            !IconComponent ? styles.noicon : ''
-          } ${!StaticIconComponent ? styles.nostaticicon : ''} ${
-            disabled ? styles.disabled : ''
-          } ${active ? styles.active : ''} ${
-            background === 'glass' ? styles.glass : null
-          } ${iconButton ? styles.iconbutton : ''}`}
-          style={{ height: height }}
-          {...props}
-        >
-          <Content />
-        </Button>
-      )}
-    </>
+    <Button
+      onClick={handleClick}
+      className={clsx(buttonClass, { [`${styles['singleicon']}`]: !icon })}
+      {...props}
+    >
+      {renderContent()}
+    </Button>
   )
 }

@@ -1,7 +1,5 @@
 import styles from '@/styles/landing/Experiences.module.scss'
 import { type ColorType } from '@/utils/types'
-import LibraryAddCheckOutlinedIcon from '@mui/icons-material/LibraryAddCheckOutlined'
-import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded'
 import agahpadidar from '@public/image/jpg/company/agahpadidar.jpg'
 import exmodules from '@public/image/png/company/exmodules.png'
 import ponisha from '@public/image/png/company/ponisha.png'
@@ -13,8 +11,8 @@ export interface ExperienceInterface {
   name: string | React.ReactNode
   link: string
   logo: string | StaticImageData
-  icon: React.ElementType
-  listicon: React.ElementType
+  icon: string
+  listicon: string
   experiences: string[] | React.ReactNode[]
   color: ColorType
 }
@@ -31,8 +29,8 @@ export const experiences: ExperienceInterface[] = [
     ),
     link: 'https://exmodules.com/',
     logo: exmodules,
-    icon: OpenInNewRoundedIcon,
-    listicon: LibraryAddCheckOutlinedIcon,
+    icon: 'ci:external-link',
+    listicon: 'ci:checkbox-check',
     experiences: [
       <>
         <span className={styles.bold}>Led a team</span> of developers and provided guidance on
@@ -61,8 +59,8 @@ export const experiences: ExperienceInterface[] = [
     ),
     link: 'https://ponisha.ir/profile/warwolf',
     logo: ponisha,
-    icon: OpenInNewRoundedIcon,
-    listicon: LibraryAddCheckOutlinedIcon,
+    icon: 'ci:external-link',
+    listicon: 'ci:checkbox-check',
     experiences: [
       <>
         Designed <span className={styles.bold}>User interfaces</span> for mobile apps and websites.
@@ -89,8 +87,8 @@ export const experiences: ExperienceInterface[] = [
     ),
     link: 'https://www.linkedin.com/company/agahpadidar/',
     logo: agahpadidar,
-    icon: OpenInNewRoundedIcon,
-    listicon: LibraryAddCheckOutlinedIcon,
+    icon: 'ci:external-link',
+    listicon: 'ci:checkbox-check',
     experiences: [
       <>
         Developed complex dynamic features using <span className={styles.bold}>React.js</span> and{' '}

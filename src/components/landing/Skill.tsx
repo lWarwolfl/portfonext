@@ -1,10 +1,7 @@
 import StyledCard from '@/components/utils/StyledCard'
 import { type SkillCategoryInterface, type SkillInterface } from '@/data/skills'
 import styles from '@/styles/landing/Skills.module.scss'
-import BoltRoundedIcon from '@mui/icons-material/BoltRounded'
-import CodeRoundedIcon from '@mui/icons-material/CodeRounded'
-import DesignServicesRoundedIcon from '@mui/icons-material/DesignServicesRounded'
-import FormatPaintOutlinedIcon from '@mui/icons-material/FormatPaintOutlined'
+import { Icon } from '@iconify-icon/react'
 import Image from 'next/image'
 
 interface Props {
@@ -24,38 +21,13 @@ export default function Skill({ item, category }: Props) {
           className={styles.image}
         />
         <div className={styles.name}>{item.name}</div>
-        {category.name === 'code' && (
-          <CodeRoundedIcon
-            style={{
-              color: `var(--${category.color}-color)`,
-            }}
-            className={styles.icon}
-          />
-        )}
-        {category.name === 'uiframework' && (
-          <FormatPaintOutlinedIcon
-            style={{
-              color: `var(--${category.color}-color)`,
-            }}
-            className={styles.icon}
-          />
-        )}
-        {category.name === 'design' && (
-          <DesignServicesRoundedIcon
-            style={{
-              color: `var(--${category.color}-color)`,
-            }}
-            className={styles.icon}
-          />
-        )}
-        {category.name === 'other' && (
-          <BoltRoundedIcon
-            style={{
-              color: `var(--${category.color}-color)`,
-            }}
-            className={styles.icon}
-          />
-        )}
+        <Icon
+          icon={category.icon}
+          style={{
+            color: `var(--${category.color}-color)`,
+          }}
+          className={styles.icon}
+        />
       </div>
       <div className={styles.barcontainer}>
         <div className={styles.percent}>{item.percent}</div>

@@ -26,6 +26,7 @@ import { type StaticImageData } from 'next/image'
 export interface SkillCategoryInterface {
   name: SkillCategoryType
   color: ColorType
+  icon: string
 }
 
 export interface SkillInterface {
@@ -39,18 +40,22 @@ export const skillCategories: SkillCategoryInterface[] = [
   {
     name: 'code',
     color: 'blue',
+    icon: 'ci:code',
   },
   {
     name: 'design',
     color: 'purple',
+    icon: 'ci:swatches-palette',
   },
   {
     name: 'uiframework',
     color: 'pink',
+    icon: 'ci:puzzle',
   },
   {
     name: 'other',
     color: 'green',
+    icon: 'ci:single-quotes-l',
   },
 ]
 

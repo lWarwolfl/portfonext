@@ -3,7 +3,6 @@ import StyledCard from '@/components/utils/StyledCard'
 import Title from '@/components/utils/Title'
 import { summmaryLinks } from '@/data/links'
 import styles from '@/styles/landing/Summary.module.scss'
-import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded'
 import photo from '@public/image/jpg/photo.jpg'
 import Image from 'next/image'
 
@@ -58,13 +57,10 @@ export default function Summary() {
               key={index}
               className={styles.link}
               externalLink={item.link}
-              icon={KeyboardArrowRightRoundedIcon}
+              icon="ci:chevron-right"
               staticIcon={item.icon}
-              iconSize="large"
-              staticIconSize="big"
               color={item.color}
               background="glass"
-              height="48px"
               barHeight="5px"
             >
               {item.text}

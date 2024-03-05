@@ -10,7 +10,7 @@ $height: 40px;
   width: 100%;
   transition-property: background-color, top;
   transition-timing-function: $transition-ease;
-  transition-duration: $transition-m;
+  transition-duration: $transition-s;
   background-color: transparent;
   padding: 0 20px;
   top: 20px;
@@ -26,7 +26,7 @@ $height: 40px;
     border-radius: $border-radius-global;
     transition-property: padding;
     transition-timing-function: $transition-ease;
-    transition-duration: $transition-m;
+    transition-duration: $transition-s;
   }
 
   .logo {
@@ -62,10 +62,10 @@ $height: 40px;
       @include flex-row;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 2px;
 
       .link:first-child {
-        margin-left: 12px;
+        margin-left: 16px;
       }
     }
   }
@@ -78,7 +78,6 @@ $height: 40px;
 
   .button {
     margin-left: auto;
-    font-size: $font-size-r;
   }
 }
 

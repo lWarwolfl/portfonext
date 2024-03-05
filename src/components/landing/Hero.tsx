@@ -1,7 +1,5 @@
 import StyledButton from '@/components/utils/StyledButton'
 import styles from '@/styles/landing/Hero.module.scss'
-import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined'
-import PictureAsPdfOutlinedIcon from '@mui/icons-material/PictureAsPdfOutlined'
 
 export default function Hero() {
   return (
@@ -20,10 +18,10 @@ export default function Hero() {
             externalLink="/files/resume/en/Resume.pdf"
             download
             background="glass"
-            icon={FileDownloadOutlinedIcon}
-            staticIcon={PictureAsPdfOutlinedIcon}
-            fontSize="small"
+            icon="ci:file-download"
+            staticIcon="ci:file-document"
             color="blue"
+            fontSize="big"
           >
             My resume
           </StyledButton>

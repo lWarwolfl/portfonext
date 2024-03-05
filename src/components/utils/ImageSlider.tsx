@@ -1,8 +1,5 @@
 import StyledButton from '@/components/utils/StyledButton'
 import styles from '@/styles/utils/ImageSlider.module.scss'
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
-import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined'
-import FullscreenRoundedIcon from '@mui/icons-material/FullscreenRounded'
 import { saveAs } from 'file-saver'
 import JSZip from 'jszip'
 import Image, { type StaticImageData } from 'next/image'
@@ -68,10 +65,7 @@ export default function ImageSlider({ className, title, accent, images }: Props)
 
               <StyledButton
                 customClick={handleButtonClick}
-                staticIcon={CloseRoundedIcon}
-                fontSize="small"
-                iconSize="large"
-                staticIconSize="big"
+                staticIcon="ci:close-md"
                 background="glass"
                 iconButton
               />
@@ -113,7 +107,7 @@ export default function ImageSlider({ className, title, accent, images }: Props)
       <div className={`${styles.container} ${className}`}>
         {images[0] && (
           <Image
-            quality={32}
+            quality={20}
             placeholder="blur"
             className={styles.firstimage}
             alt="first-image"
@@ -122,28 +116,26 @@ export default function ImageSlider({ className, title, accent, images }: Props)
         )}
 
         <div className={styles.buttoncontainer}>
-          <StyledButton
-            className={styles.button}
-            customClick={handleDownloadImages}
-            staticIcon={FileDownloadOutlinedIcon}
-            fontSize="small"
-            iconSize="large"
-            staticIconSize="big"
-            background="glass"
-            color="green"
-            iconButton
-          />
+          <div className={styles.buttonwrapper}>
+            <StyledButton
+              className={styles.button}
+              customClick={handleDownloadImages}
+              staticIcon="ci:folder-download"
+              background="solid"
+              fontSize="large"
+              color="green"
+              iconButton
+            />
 
-          <StyledButton
-            className={styles.button}
-            customClick={handleButtonClick}
-            staticIcon={FullscreenRoundedIcon}
-            fontSize="small"
-            iconSize="large"
-            staticIconSize="big"
-            background="glass"
-            iconButton
-          />
+            <StyledButton
+              className={styles.button}
+              customClick={handleButtonClick}
+              staticIcon="ci:expand"
+              background="solid"
+              fontSize="large"
+              iconButton
+            />
+          </div>
         </div>
       </div>
 

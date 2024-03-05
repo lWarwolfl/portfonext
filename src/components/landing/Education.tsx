@@ -1,7 +1,7 @@
 import StyledCard from '@/components/utils/StyledCard'
 import { type EducationInterface } from '@/data/educations'
 import styles from '@/styles/landing/Educations.module.scss'
-import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined'
+import { Icon } from '@iconify-icon/react'
 
 interface Props {
   item: EducationInterface
@@ -10,7 +10,8 @@ interface Props {
 export default function Education({ item }: Props) {
   return (
     <StyledCard className={styles.education} variant="smallfull" glow={item.color}>
-      <SchoolOutlinedIcon
+      <Icon
+        icon="ci:book-open"
         style={{
           color: `var(--${item.color}-color)`,
         }}

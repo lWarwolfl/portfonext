@@ -1,6 +1,7 @@
 import StyledCard from '@/components/utils/StyledCard'
 import { type ExperienceInterface } from '@/data/experiences'
 import styles from '@/styles/landing/Experiences.module.scss'
+import { Icon } from '@iconify-icon/react'
 import Image from 'next/image'
 
 interface Props {
@@ -21,7 +22,8 @@ export default function Experience({ item }: Props) {
           />
         </div>
         <div className={styles.text}>{item.name}</div>
-        <item.icon
+        <Icon
+          icon={item.icon}
           style={{
             color: `var(--${item.color}-color)`,
           }}
@@ -36,7 +38,8 @@ export default function Experience({ item }: Props) {
             variant="smallfull"
             glow={item.color}
           >
-            <item.listicon
+            <Icon
+              icon={item.listicon}
               style={{
                 color: `var(--${item.color}-color)`,
               }}

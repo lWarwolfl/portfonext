@@ -3,7 +3,6 @@ import StyledButton from '@/components/utils/StyledButton'
 import StyledCard from '@/components/utils/StyledCard'
 import { type ProjectInterface } from '@/data/projects'
 import styles from '@/styles/landing/Projects.module.scss'
-import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded'
 import Image from 'next/image'
 
 interface Props {
@@ -37,7 +36,7 @@ export default function Project({ item }: Props) {
           </div>
           <div className={styles.skillcontainer}>
             {item.skills.map((skill, i) => {
-              if(skill) {
+              if (skill) {
                 return (
                   <div key={i} className={styles.skill}>
                     <Image
@@ -64,14 +63,10 @@ export default function Project({ item }: Props) {
                 key={i}
                 className={styles.link}
                 externalLink={link.link}
-                icon={KeyboardArrowRightRoundedIcon}
+                icon="ci:chevron-right"
                 staticIcon={link.icon}
-                iconSize="big"
-                staticIconSize="normal"
-                fontSize="normal"
                 color={link.color}
                 background="glass"
-                height="40px"
                 barHeight="4px"
               >
                 {link.text}

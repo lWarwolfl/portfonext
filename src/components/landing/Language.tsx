@@ -1,7 +1,7 @@
 import StyledCard from '@/components/utils/StyledCard'
 import { type LanguageInterface } from '@/data/languages'
 import styles from '@/styles/landing/Skills.module.scss'
-import LanguageIcon from '@mui/icons-material/Language'
+import { Icon } from '@iconify-icon/react'
 import Image from 'next/image'
 
 interface Props {
@@ -20,7 +20,8 @@ export default function Language({ item }: Props) {
           className={styles.image}
         />
         <div className={styles.name}>{item.name}</div>
-        <LanguageIcon
+        <Icon
+          icon="ci:planet"
           style={{
             color: `var(--${item.color}-color)`,
           }}

@@ -21,10 +21,10 @@
         width: 100%;
 
         .image {
-          @include background-contain;
-          height: $font-size-2xl;
-          width: auto;
-          max-width: 60px;
+          width: $font-size-3xl;
+          height: $font-size-3xl;
+          object-fit: contain;
+          object-position: center;
           margin-right: 15px;
           border-radius: 5px;
         }

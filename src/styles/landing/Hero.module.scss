@@ -19,7 +19,7 @@
     .big {
       @include gradient-text-loop;
       width: 100%;
-      font-size: $font-size-9xl;
+      font-size: $font-size-10xl;
       font-weight: $font-weight-black;
       text-transform: uppercase;
       animation: gradient-animation 8s linear infinite;

@@ -2,7 +2,6 @@ import StyledButton from '@/components/utils/StyledButton'
 import { menuLinks } from '@/data/links'
 import useWindowSmallerThan from '@/hooks/useWindowSmallerThan'
 import styles from '@/styles/layout/Header.module.scss'
-import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded'
 
 export default function Menu() {
   const isMobile = useWindowSmallerThan({ size: 530 })
@@ -16,10 +15,8 @@ export default function Menu() {
             key={i}
             className={styles.link}
             idLink={link.id}
-            icon={!isMobile ? KeyboardArrowRightRoundedIcon : undefined}
+            icon={!isMobile ? 'ci:chevron-right' : undefined}
             staticIcon={link.icon}
-            iconSize="large"
-            staticIconSize="big"
             disabled={link.id === ''}
             iconButton={isTablet}
             background={isTablet ? 'glass' : 'transparent'}

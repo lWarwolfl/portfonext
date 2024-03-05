@@ -15,17 +15,24 @@
 
   .buttoncontainer {
     position: absolute;
-    right: 10px;
-    bottom: 10px;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
     z-index: 10;
 
-    .button {
-      margin-right: 10px;
+    .buttonwrapper {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px;
+      border-radius: 6px;
+      background-color: var(--transparent-background);
       backdrop-filter: blur(2px);
-
-      &:last-child {
-        margin-right: 0;
-      }
     }
   }
 }
