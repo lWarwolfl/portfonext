@@ -48,3 +48,12 @@
     background-position: 400% center;
   }
 }
+
+@keyframes visibility-animation {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}

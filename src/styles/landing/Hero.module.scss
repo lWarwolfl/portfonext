@@ -15,17 +15,29 @@
     align-items: flex-start;
     justify-content: center;
     margin: 0 auto;
+    width: 500px;
 
-    .big {
-      @include gradient-text-loop;
-      width: 100%;
-      font-size: $font-size-10xl;
-      font-weight: $font-weight-black;
-      text-transform: uppercase;
-      animation: gradient-animation 8s linear infinite;
+    .animatedtext {
+      @include flex-row;
+
+      .text {
+        @include gradient-text-loop;
+        width: fit-content;
+        font-size: $font-size-10xl;
+        font-weight: $font-weight-black;
+        text-transform: uppercase;
+        animation: gradient-animation 8s linear infinite;
+      }
+
+      .caret {
+        color: var(--blue-color);
+        font-size: $font-size-10xl;
+        transform: scaleX(0.4);
+        animation: visibility-animation 1s step-end infinite;
+      }
     }
 
-    .small {
+    .description {
       display: inline-block;
       color: var(--font-color-primary);
       font-size: $font-size-2xl;
@@ -61,11 +73,18 @@
     .intro {
       width: 100%;
 
-      .big {
-        font-size: $font-size-6xl;
+      .animatedtext {
+        .text {
+          font-size: $font-size-6xl;
+        }
+
+        .caret {
+          font-size: $font-size-6xl;
+          transform: scaleX(0.6);
+        }
       }
 
-      .small {
+      .description {
         margin-top: 5px;
         width: 100%;
         font-size: $font-size-2xl;
