@@ -16,7 +16,7 @@ export default function Hero() {
     () => {
       const tl = gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 1 })
       tl.to('.text', {
-        duration: 2,
+        duration: 1,
         text: {
           type: 'diff',
           value: 'professional',
@@ -24,7 +24,6 @@ export default function Hero() {
         },
       }).to('.text', {
         duration: 1,
-        delay: 2,
         text: { type: 'diff', value: 'proficient', delimiter: '' },
       })
     },
