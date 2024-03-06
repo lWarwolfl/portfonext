@@ -1,11 +1,11 @@
 import StyledButton from '@/components/utils/StyledButton'
 import { menuLinks } from '@/data/links'
-import useWindowSmallerThan from '@/hooks/useWindowSmallerThan'
+import useWindowSize from '@/hooks/useWindowSize'
 import styles from '@/styles/layout/Header.module.scss'
 
 export default function Menu() {
-  const isMobile = useWindowSmallerThan({ size: 530 })
-  const isTablet = useWindowSmallerThan({ size: 1050 })
+  const isMobile = useWindowSize(530)
+  const isTablet = useWindowSize(1050)
 
   return (
     <div className={styles.navbarcontainer}>

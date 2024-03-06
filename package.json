@@ -17,20 +17,20 @@
     "@gsap/react": "^2.1.0",
     "@iconify-icon/react": "^2.0.1",
     "@mui/material": "^5.15.7",
+    "@react-three/fiber": "^8.15.19",
+    "@studio-freight/hamo": "^0.6.28",
     "@studio-freight/lenis": "^1.0.39",
-    "@types/aos": "^3.0.7",
     "clsx": "^2.1.0",
     "file-saver": "^2.0.5",
     "gsap": "^3.12.5",
     "jszip": "^3.10.1",
+    "leva": "^0.9.35",
     "next": "^14.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-tsparticles": "^2.12.2",
     "sharp": "^0.33.2",
     "swiper": "^11.0.6",
-    "tsparticles-engine": "^2.12.0",
-    "tsparticles-slim": "^2.12.0"
+    "three": "^0.162.0"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "14.1.0",
@@ -39,6 +39,7 @@
     "@types/react": "18.2.55",
     "@types/react-dom": "18.2.18",
     "@types/stylis": "4.2.5",
+    "@types/three": "^0.162.0",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
     "autoprefixer": "10.4.17",
@@ -52,6 +53,7 @@
     "postcss": "8.4.34",
     "postcss-import": "16.0.0",
     "prettier": "3.2.5",
+    "raw-loader": "^4.0.2",
     "sass": "^1.70.0",
     "typescript": "^5.3.3"
   }

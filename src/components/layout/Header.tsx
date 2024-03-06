@@ -1,5 +1,5 @@
 import StyledButton from '@/components/utils/StyledButton'
-import useWindowSmallerThan from '@/hooks/useWindowSmallerThan'
+import useWindowSize from '@/hooks/useWindowSize'
 import styles from '@/styles/layout/Header.module.scss'
 import { useLenis } from '@/utils/lenis'
 import logo from '@public/image/png/logo.png'
@@ -10,8 +10,8 @@ import Menu from './Menu'
 
 export default function Header() {
   const containerRef = React.useRef<HTMLDivElement>(null)
-  const isMobile = useWindowSmallerThan({ size: 530 })
-  const isTablet = useWindowSmallerThan({ size: 1050 })
+  const isMobile = useWindowSize(530)
+  const isTablet = useWindowSize(1050)
   const { lenis } = useLenis()
 
   React.useEffect(() => {

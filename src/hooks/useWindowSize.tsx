@@ -1,10 +1,6 @@
 import React from 'react'
 
-interface Props {
-  size?: number
-}
-
-export default function useWindowSmallerThan({ size = 550 }: Props) {
+export default function useWindowSize(size: number = 550) {
   const [value, setValue] = React.useState(false)
 
   React.useEffect(() => {

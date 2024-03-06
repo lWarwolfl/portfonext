@@ -49,3 +49,20 @@ export function LenisProvider(props: LenisProviderProps) {
 export function useLenis() {
   return useContext(LenisContext)
 }
+
+interface ScrollProps {
+  scroll: number
+}
+
+export function useScroll(callback: ({ scroll }: ScrollProps) => void) {
+  const { lenis } = useContext(LenisContext)
+
+  useEffect(() => {
+    if (!lenis) return
+    lenis.on('scroll', callback)
+
+    return () => {
+      lenis.off('scroll', callback)
+    }
+  }, [lenis, callback])
+}

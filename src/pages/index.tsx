@@ -8,7 +8,7 @@ import Projects from '@/components/landing/Projects'
 import Skills from '@/components/landing/Skills'
 import Summary from '@/components/landing/Summary'
 import Header from '@/components/layout/Header'
-import Particle from '@/components/utils/Particle'
+import { WebGL } from '@/components/utils/Particles'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -60,7 +60,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, height=device-height" />
       </Head>
 
-      <Particle />
+      <WebGL />
       <Header />
       <div className="width-fix" ref={main}>
         <Hero />

@@ -81,9 +81,10 @@ body {
     height: 90%;
 
     .swiper-slide {
-      overflow-x: auto;
+      overflow: hidden;
       height: 100%;
       width: 100%;
+      border-radius: $border-radius-global;
 
       .image {
         @include background-contain;
