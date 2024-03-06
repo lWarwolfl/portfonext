@@ -1,4 +1,4 @@
-import Contact from '@/components/landing/Contact'
+// import Contact from '@/components/landing/Contact'
 import Educations from '@/components/landing/Educations'
 import Experiences from '@/components/landing/Experiences'
 import Hero from '@/components/landing/Hero'
@@ -34,7 +34,7 @@ export default function Home() {
   useGSAP(
     () => {
       const boxes = gsap.utils.toArray('.animated-container')
-      boxes.forEach((box) => {
+      boxes.forEach((box, index: number) => {
         //@ts-expect-error there is no support to know the type of this animatable box
         gsap.set(box, { x: -100, opacity: 0 })
 
@@ -45,7 +45,12 @@ export default function Home() {
           scrollTrigger: {
             trigger: box,
             start: isMobile ? '350px bottom' : '150px bottom',
-            end: isMobile ? '700px bottom' : '500px bottom',
+            end:
+              boxes.length - 1 === index
+                ? 'bottom bottom'
+                : isMobile
+                  ? '700px bottom'
+                  : '500px bottom',
             scrub: true,
           },
         })
@@ -72,7 +77,7 @@ export default function Home() {
         <Projects />
         <Educations />
         <Languages />
-        <Contact />
+        {/* <Contact /> */}
         <Images />
       </div>
     </main>

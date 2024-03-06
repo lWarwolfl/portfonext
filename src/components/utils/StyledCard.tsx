@@ -1,6 +1,7 @@
 import styles from '@/styles/utils/StyledCard.module.scss'
 import { type ColorType } from '@/utils/types'
-import React, { useRef, useState } from 'react'
+import clsx from 'clsx' // Ensure you've installed the 'clsx' package
+import React, { useMemo, useRef, useState } from 'react'
 
 interface Props {
   id?: string
@@ -11,38 +12,51 @@ interface Props {
   move?: boolean
 }
 
+const variantStyles = {
+  narrowbottom: styles.narrowbottom,
+  small: styles.small,
+  smallfull: styles.smallfull,
+}
+
 export default function StyledCard({ id, glow, className, variant, children, move = true }: Props) {
-  const [glowPosition, setGlowPosition] = useState({ x: 0, y: 0 })
+  const [glowPosition, setGlowPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 })
   const containerRef = useRef<HTMLDivElement>(null)
 
-  function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
-    if (containerRef.current && window.innerWidth > 768) {
+  const handleMouseMove = useMemo(() => {
+    function throttle<T extends unknown[]>(
+      callback: (...args: T) => void,
+      delay: number
+    ): (...args: T) => void {
+      let shouldWait = false
+      const throttledFunction = (...args: T) => {
+        if (!shouldWait) {
+          callback(...args)
+          shouldWait = true
+          setTimeout(() => {
+            shouldWait = false
+          }, delay)
+        }
+      }
+      return throttledFunction
+    }
+
+    return throttle((event: React.MouseEvent<HTMLDivElement>) => {
+      if (!containerRef.current || window.innerWidth <= 768 || !move) return
+
       const containerRect = containerRef.current.getBoundingClientRect()
       const mouseX = event.clientX - containerRect.left
       const mouseY = event.clientY - containerRect.top
 
-      let multiplier = 2
-      let offset = 125
+      const multiplier = variant === 'small' ? 8 : variant === 'smallfull' ? 4 : 2
+      const offset = variant === 'narrowbottom' ? 125 : 75
 
-      if (variant === 'small') {
-        multiplier = 8
-        offset = 75
-      }
+      const xSkew = ((mouseX - containerRect.width / 2) / (containerRect.width / 2)) * multiplier
+      const ySkew = ((mouseY - containerRect.height / 2) / (containerRect.height / 2)) * multiplier
 
-      if (variant === 'smallfull') {
-        multiplier = 4
-        offset = 75
-      }
-
-      if (move) {
-        const xSkew = ((mouseX - containerRect.width / 2) / (containerRect.width / 2)) * multiplier
-        const ySkew =
-          ((mouseY - containerRect.height / 2) / (containerRect.height / 2)) * multiplier
-        containerRef.current.style.transform = `perspective(1000px) rotateX(${ySkew}deg) rotateY(${-xSkew}deg)`
-        setGlowPosition({ x: mouseX - offset, y: mouseY - offset })
-      }
-    }
-  }
+      containerRef.current.style.transform = `perspective(1000px) rotateX(${ySkew}deg) rotateY(${-xSkew}deg)`
+      setGlowPosition({ x: mouseX - offset, y: mouseY - offset })
+    }, 50)
+  }, [move, variant])
 
   function handleMouseLeave() {
     if (containerRef.current) {
@@ -53,11 +67,9 @@ export default function StyledCard({ id, glow, className, variant, children, mov
   return (
     <div
       id={id}
-      className={`${className} ${styles.container} ${
-        variant === 'narrowbottom' && styles.narrowbottom
-      } ${variant === 'small' && styles.small} ${
-        variant === 'smallfull' && styles.smallfull
-      } ${!move ? styles.betterglow : ''}`}
+      className={clsx(className, styles.container, variantStyles[variant], {
+        [`${styles.betterglow}`]: !move,
+      })}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       ref={containerRef}
@@ -69,7 +81,7 @@ export default function StyledCard({ id, glow, className, variant, children, mov
           left: `${glowPosition.x}px`,
           backgroundColor: `var(--${glow}-color)`,
         }}
-      ></div>
+      />
       {children}
     </div>
   )
