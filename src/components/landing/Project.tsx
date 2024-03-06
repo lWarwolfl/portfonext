@@ -1,4 +1,4 @@
-import ImageSlider from '@/components/utils/ImageSlider'
+import ImageSlider from '@/components/utils/ImagePackContainer'
 import StyledButton from '@/components/utils/StyledButton'
 import StyledCard from '@/components/utils/StyledCard'
 import { type ProjectInterface } from '@/data/projects'

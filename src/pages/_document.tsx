@@ -14,6 +14,37 @@ export default function Document() {
           <div className="loader">
             <div className="loader-inside"></div>
           </div>
+          <svg
+            width="110"
+            height="110"
+            viewBox="0 0 110 110"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="loaderring"
+          >
+            <g style={{ mixBlendMode: 'screen' }} opacity="0.5">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M110 55C110 85.3757 85.3757 110 55 110C24.6243 110 0 85.3757 0 55C0 24.6243 24.6243 0 55 0C85.3757 0 110 24.6243 110 55ZM100 55C100 79.8528 79.8528 100 55 100C30.1472 100 10 79.8528 10 55C10 30.1472 30.1472 10 55 10C79.8528 10 100 30.1472 100 55Z"
+                fill="url(#paint0_linear_479_7)"
+              />
+            </g>
+            <defs>
+              <linearGradient
+                id="paint0_linear_479_7"
+                x1="0"
+                y1="0"
+                x2="110"
+                y2="110"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#B721FF" />
+                <stop offset="0.554" stop-color="#B721FF" stop-opacity="0" />
+                <stop offset="1" stop-color="#B721FF" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
         <Main />
         <NextScript />

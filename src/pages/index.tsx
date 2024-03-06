@@ -9,6 +9,7 @@ import Skills from '@/components/landing/Skills'
 import Summary from '@/components/landing/Summary'
 import Header from '@/components/layout/Header'
 import { WebGL } from '@/components/utils/Particles'
+import useWindowSize from '@/hooks/useWindowSize'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -28,6 +29,7 @@ if (typeof window !== 'undefined') {
 
 export default function Home() {
   const main = useRef<HTMLDivElement>(null)
+  const isMobile = useWindowSize()
 
   useGSAP(
     () => {
@@ -42,8 +44,8 @@ export default function Home() {
           opacity: 1,
           scrollTrigger: {
             trigger: box,
-            start: '150px bottom',
-            end: '500px bottom',
+            start: isMobile ? '350px bottom' : '150px bottom',
+            end: isMobile ? '700px bottom' : '500px bottom',
             scrub: true,
           },
         })

@@ -32,7 +32,8 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50px;
-  background-image: linear-gradient(90deg, #b721ff44 0%, #6625ff44 50%, #257cff44 100%);
+  opacity: 0.5;
+  background-image: linear-gradient(90deg, #b721ff88 0%, #6625ff88 50%, #257cff88 100%);
 }
 
 .loader .loader-inside {
@@ -42,7 +43,18 @@ body {
   width: 86px;
   height: 86px;
   border-radius: 45px;
-  background-image: linear-gradient(90deg, #b721ff88 0%, #6625ff88 50%, #257cff88 100%);
+  background-image: linear-gradient(90deg, #b721ff 0%, #6625ff 50%, #257cff88 100%);
+}
+
+.loaderring {
+  position: absolute !important;
+  top: calc(50% - 70px);
+  left: calc(50% - 70px);
+  border-radius: 50%;
+  animation: spin 1.6s linear infinite;
+  animation-direction: reverse;
+  width: 140px;
+  height: 140px;
 }
 
 @keyframes spin {
