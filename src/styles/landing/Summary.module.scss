@@ -42,7 +42,7 @@
       }
 
       .accent {
-        @include gradient-text-accent;
+        @include gradient-text-normal;
         font-weight: $font-weight-black;
         display: inline-block;
       }

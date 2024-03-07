@@ -10,13 +10,13 @@ export interface SummaryLinkInterface {
 export const summmaryLinks: SummaryLinkInterface[] = [
   {
     link: 'mailto:sinakheiri.dev@gmail.com',
-    color: 'purple',
+    color: 'blue',
     text: 'sinakheiri.dev@gmail.com',
     icon: 'ci:mail',
   },
   {
     link: 'https://www.linkedin.com/in/mohamad-sina-kheiri',
-    color: 'green',
+    color: 'blue',
     text: 'linkedin.com/in/mohamad-sina-kheiri',
     icon: 'bxl:linkedin-square',
   },
@@ -27,9 +27,15 @@ export const summmaryLinks: SummaryLinkInterface[] = [
     icon: 'bxl:github',
   },
   {
+    link: 'https://gitlab.com/cnawam',
+    color: 'blue',
+    text: 'gitlab.com/cnawam',
+    icon: 'bxl:gitlab',
+  },
+  {
     link: 'https://t.me/cnawam',
     text: 't.me/cnawam',
-    color: 'aqua',
+    color: 'blue',
     icon: 'bxl:telegram',
   },
 ]
@@ -49,6 +55,6 @@ export const menuLinks: MenuLinkInterface[] = [
     icon: 'ci:suitcase',
   },
   { id: 'projects', text: 'Projects', icon: 'ci:window-code-block' },
-  { id: 'educations', text: 'Education', icon: 'ci:double-quotes-l' },
+  { id: 'educations', text: 'Education', icon: 'ci:book-open' },
   { id: 'languages', text: 'Languages', icon: 'ci:planet' },
 ]

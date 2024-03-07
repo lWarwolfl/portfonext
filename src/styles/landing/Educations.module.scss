@@ -10,18 +10,39 @@
   .education {
     display: block;
 
-    .icon {
-      vertical-align: middle;
-      font-size: $font-size-3xl;
-      margin-right: 10px;
-      margin-bottom: 5px;
+    .header {
+      @include flex-row;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+
+      .chip {
+        @include flex-row;
+        align-items: center;
+        padding: 4px 8px;
+        border-radius: 8px;
+        margin-right: 8px;
+        font-size: $font-size-m;
+        background-color: var(--primary-color-transparent);
+        color: var(--font-color-secondary);
+
+        .icon {
+          vertical-align: middle;
+          font-size: $font-size-xl;
+          margin-right: 8px;
+        }
+      }
+
+      .time {
+        font-size: $font-size-m;
+        color: var(--blue-color);
+      }
     }
 
     .text {
       color: var(--font-color-secondary);
       font-weight: $font-weight-medium;
       font-size: $font-size-em;
-      line-height: $font-size-2xl;
 
       .bold {
         color: var(--font-color-primary);

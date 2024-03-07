@@ -4,6 +4,7 @@ import StyledCard from '@/components/utils/StyledCard'
 import { type ProjectInterface } from '@/data/projects'
 import styles from '@/styles/landing/Projects.module.scss'
 import Image from 'next/image'
+import { Icon } from '@iconify-icon/react'
 
 interface Props {
   item: ProjectInterface
@@ -39,12 +40,9 @@ export default function Project({ item }: Props) {
               if (skill) {
                 return (
                   <div key={i} className={styles.skill}>
-                    <Image
-                      quality={85}
-                      placeholder="blur"
-                      src={skill.image}
-                      alt={skill.name}
-                      className={styles.image}
+                    <Icon
+                      icon={skill.logo}
+                      className={styles.logo}
                     />
                     <div className={styles.name}>{skill.name}</div>
                   </div>

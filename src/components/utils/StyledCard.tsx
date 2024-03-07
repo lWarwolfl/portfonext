@@ -1,7 +1,7 @@
 import styles from '@/styles/utils/StyledCard.module.scss'
 import { type ColorType } from '@/utils/types'
 import clsx from 'clsx' // Ensure you've installed the 'clsx' package
-import React, { useMemo, useRef, useState } from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 
 interface Props {
   id?: string
@@ -22,25 +22,8 @@ export default function StyledCard({ id, glow, className, variant, children, mov
   const [glowPosition, setGlowPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 })
   const containerRef = useRef<HTMLDivElement>(null)
 
-  const handleMouseMove = useMemo(() => {
-    function throttle<T extends unknown[]>(
-      callback: (...args: T) => void,
-      delay: number
-    ): (...args: T) => void {
-      let shouldWait = false
-      const throttledFunction = (...args: T) => {
-        if (!shouldWait) {
-          callback(...args)
-          shouldWait = true
-          setTimeout(() => {
-            shouldWait = false
-          }, delay)
-        }
-      }
-      return throttledFunction
-    }
-
-    return throttle((event: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = useCallback(
+    (event: React.MouseEvent<HTMLDivElement>) => {
       if (!containerRef.current || window.innerWidth <= 768 || !move) return
 
       const containerRect = containerRef.current.getBoundingClientRect()
@@ -55,8 +38,9 @@ export default function StyledCard({ id, glow, className, variant, children, mov
 
       containerRef.current.style.transform = `perspective(1000px) rotateX(${ySkew}deg) rotateY(${-xSkew}deg)`
       setGlowPosition({ x: mouseX - offset, y: mouseY - offset })
-    }, 50)
-  }, [move, variant])
+    },
+    [move, variant]
+  )
 
   function handleMouseLeave() {
     if (containerRef.current) {

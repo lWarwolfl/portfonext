@@ -29,6 +29,12 @@
           border-radius: 5px;
         }
 
+        .logo {
+          font-size: $font-size-3xl;
+          margin-right: 15px;
+          color: var(--blue-color);
+        }
+
         .name {
           @include overflow-ellipsis;
           width: 100%;
@@ -71,6 +77,7 @@
             left: 0;
             height: $height;
             border-radius: calc($height / 2);
+            background-color: var(--font-color-secondary);
           }
         }
       }

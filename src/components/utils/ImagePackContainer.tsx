@@ -31,7 +31,7 @@ export default function ImagePackContainer({ className, title, accent, images }:
       <div className={`${styles.container} ${className}`}>
         {images[0] && (
           <Image
-            quality={20}
+            quality={10}
             placeholder="blur"
             className={styles.firstimage}
             alt="first-image"
@@ -46,7 +46,7 @@ export default function ImagePackContainer({ className, title, accent, images }:
               customClick={handleDownloadImages}
               staticIcon="ci:folder-download"
               background="solid"
-              color="green"
+              color="blue"
             >
               Download
             </StyledButton>

@@ -82,13 +82,10 @@
                 font-size: $font-size-r;
               }
 
-              .image {
-                @include background-contain;
-                height: $font-size-2xl;
-                width: auto;
-                max-width: 60px;
+              .logo {
+                font-size: $font-size-2xl;
+                color: var(--blue-color);
                 margin-right: 15px;
-                border-radius: 5px;
               }
             }
           }

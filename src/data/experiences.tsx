@@ -46,7 +46,7 @@ export const experiences: ExperienceInterface[] = [
         <span className={styles.bold}>Tailwind CSS</span>.
       </>,
     ],
-    color: 'yellow',
+    color: 'blue',
   },
   {
     alt: 'Ponisha',
@@ -74,7 +74,7 @@ export const experiences: ExperienceInterface[] = [
         Developed static web pages and <span className={styles.bold}>HTML templates</span>.
       </>,
     ],
-    color: 'green',
+    color: 'blue',
   },
   {
     alt: 'Agahpadidar',
@@ -113,6 +113,6 @@ export const experiences: ExperienceInterface[] = [
         daily stand-ups and sprint planning.
       </>,
     ],
-    color: 'aqua',
+    color: 'blue',
   },
 ]

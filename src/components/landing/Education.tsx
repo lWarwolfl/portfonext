@@ -10,14 +10,23 @@ interface Props {
 export default function Education({ item }: Props) {
   return (
     <StyledCard className={styles.education} variant="smallfull" glow={item.color}>
-      <Icon
-        icon="ci:book-open"
-        style={{
-          color: `var(--${item.color}-color)`,
-        }}
-        className={styles.icon}
-      />
-      <span className={styles.text}>{item.content}</span>
+      <div className={styles.header}>
+        <span className={styles.chip}>
+          {' '}
+          <Icon
+            icon="ci:book-open"
+            style={{
+              color: `var(--${item.color}-color)`,
+            }}
+            className={styles.icon}
+          />
+          {item.type}
+        </span>
+        <span className={styles.time}>{item.time}</span>
+      </div>
+      <div className={styles.text}>
+        <span className={styles.bold}>{item.name}</span> in {item.university}
+      </div>
     </StyledCard>
   )
 }
