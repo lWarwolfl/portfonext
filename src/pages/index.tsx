@@ -7,6 +7,7 @@ import Languages from '@/components/landing/Languages'
 import Projects from '@/components/landing/Projects'
 import Skills from '@/components/landing/Skills'
 import Summary from '@/components/landing/Summary'
+import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
 import { WebGL } from '@/components/utils/Particles'
 import useWindowSize from '@/hooks/useWindowSize'
@@ -78,6 +79,7 @@ export default function Home() {
         <Educations />
         <Languages />
         {/* <Contact /> */}
+        <Footer />
         <Images />
       </div>
     </main>
