@@ -2,11 +2,10 @@ import styles from '@/styles/utils/StyledButton.module.scss'
 import { useLenis } from '@/utils/lenis'
 import type { ColorType } from '@/utils/types'
 import { Icon } from '@iconify-icon/react'
-import { Button, type ButtonProps } from '@mui/material'
 import clsx from 'clsx'
 import { useRouter } from 'next/navigation'
 
-export interface StyledButtonProps extends Omit<ButtonProps, 'color'> {
+export interface StyledButtonProps {
   idLink?: string
   localLink?: string
   externalLink?: string
@@ -19,7 +18,11 @@ export interface StyledButtonProps extends Omit<ButtonProps, 'color'> {
   icon?: string
   staticIcon?: string
   active?: boolean
-  customClick?: (e: React.MouseEvent<HTMLElement>) => void
+  customClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
+  className?: string
+  disabled?: boolean
+  type?: 'button' | 'submit' | 'reset'
+  children: React.ReactNode
 }
 
 export default function StyledButton({
@@ -38,12 +41,14 @@ export default function StyledButton({
   active = false,
   customClick,
   className,
+  disabled,
+  type = 'button',
   ...props
 }: StyledButtonProps) {
   const router = useRouter()
   const { lenis } = useLenis()
 
-  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (customClick) {
       customClick(e)
     } else if (idLink) {
@@ -88,7 +93,7 @@ export default function StyledButton({
     [`${styles.solid}`]: background === 'solid',
     [`${styles.invert}`]: background === 'invert',
     [`${styles.iconbutton}`]: iconButton,
-    [`${styles.disabled}`]: props.disabled,
+    [`${styles.disabled}`]: disabled,
     [`${styles.active}`]: active,
     [`${styles.hasbar}`]: barHeight,
   })
@@ -98,7 +103,7 @@ export default function StyledButton({
       <a
         href={externalLink}
         target="_blank"
-        rel={download ? 'noopener noreferrer' : undefined}
+        rel={download ? 'noopener noreferrer' : 'noreferrer'}
         className={clsx(buttonClass, { [`${styles['singleicon']}`]: !icon })}
       >
         {renderContent()}
@@ -107,12 +112,14 @@ export default function StyledButton({
   }
 
   return (
-    <Button
+    <button
       onClick={handleClick}
-      className={clsx(buttonClass, { [`${styles['singleicon']}`]: !icon })}
+      className={buttonClass}
+      disabled={disabled}
+      type={type}
       {...props}
     >
       {renderContent()}
-    </Button>
+    </button>
   )
 }

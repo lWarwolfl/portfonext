@@ -44,19 +44,6 @@ $marginsmall: 30px;
   }
 }
 
-.container.betterglow {
-  .glow {
-    mix-blend-mode: unset;
-  }
-
-  &:hover {
-    .glow {
-      opacity: 1;
-      filter: blur(150px) !important;
-    }
-  }
-}
-
 .container.narrowbottom {
   padding: 34px 34px 14px;
 }

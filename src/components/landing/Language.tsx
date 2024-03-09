@@ -2,15 +2,17 @@ import StyledCard from '@/components/utils/StyledCard'
 import { type LanguageInterface } from '@/data/languages'
 import styles from '@/styles/landing/Skills.module.scss'
 import { Icon } from '@iconify-icon/react'
+import clsx from 'clsx'
 import Image from 'next/image'
 
 interface Props {
   item: LanguageInterface
+  className?: string
 }
 
-export default function Language({ item }: Props) {
+export default function Language({ item, className }: Props) {
   return (
-    <StyledCard glow={item.color} className={styles.skill} variant="small">
+    <StyledCard glow={item.color} className={clsx(className, styles.skill)} variant="small">
       <div className={styles.data}>
         <Image
           quality={85}

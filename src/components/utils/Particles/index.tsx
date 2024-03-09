@@ -99,7 +99,7 @@ function Particles({
   })
 
   useScroll(({ scroll }) => {
-    uniforms.uScroll.value = scroll
+    uniforms.uScroll.value = scroll * 2
   })
 
   return (
@@ -131,9 +131,9 @@ function Content() {
         width={viewport.width}
         height={viewport.height}
         depth={500}
-        count={160}
+        count={100}
         scale={500}
-        size={200}
+        size={250}
       />
     </>
   )
@@ -142,6 +142,7 @@ function Content() {
 export function WebGL({ render = true }) {
   return (
     <Canvas
+      id="webgl-particles"
       gl={{
         powerPreference: 'high-performance',
         antialias: true,
@@ -151,10 +152,16 @@ export function WebGL({ render = true }) {
       frameloop="never"
       orthographic
       camera={{ near: 0.01, far: 10000, position: [0, 0, 1000] }}
-      style={{ width: '100%', height: '100%', position: 'fixed', zIndex: -1 }}
+      style={{
+        opacity: '0',
+        width: '100dvw',
+        height: '100dvh',
+        position: 'fixed',
+        zIndex: -1,
+      }}
     >
-      <Raf render={render} />
       <Suspense>
+        <Raf render={render} />
         <Content />
       </Suspense>
     </Canvas>

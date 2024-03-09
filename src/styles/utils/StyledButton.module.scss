@@ -2,129 +2,183 @@
 @import '../mixins.scss';
 @import '../globals.scss';
 
-body {
-  .button {
-    display: inline-flex;
-    overflow: hidden;
-    gap: 6px;
-    align-items: center;
-    position: relative;
-    border-radius: 8px;
-    padding: 8px 12px;
-    min-width: unset;
-    width: unset;
-    max-width: 240px;
-    color: var(--font-color-primary);
-    font-weight: $font-weight-medium;
-    text-transform: unset;
+.button {
+  cursor: pointer;
+  display: inline-flex;
+  overflow: hidden;
+  gap: 6px;
+  align-items: center;
+  position: relative;
+  border-radius: 8px;
+  padding: 8px 12px;
+  min-width: unset;
+  width: unset;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  max-width: 240px;
+  color: var(--font-color-primary);
+  font-weight: $font-weight-medium;
+  text-transform: unset;
+  transition-duration: $transition-m;
+  transition-timing-function: $transition-ease;
+  transition-property: background-color;
+
+  &.hasbar {
+    padding: 12px 12px;
+  }
+
+  .text {
+    display: inline-block;
+    @include overflow-ellipsis;
+    width: 100%;
+  }
+
+  .text.small {
+    font-size: $font-size-s;
+  }
+
+  .text.normal {
+    font-size: $font-size-r;
+  }
+
+  .text.big {
+    font-size: $font-size-m;
+  }
+
+  .text.large {
+    font-size: $font-size-l;
+  }
+
+  .icon {
+    opacity: 0;
     transition-duration: $transition-m;
     transition-timing-function: $transition-ease;
-    transition-property: background-color;
+    transition-property: margin, opacity;
 
-    &.hasbar {
-      padding: 12px 12px;
-    }
-
-    .text {
-      display: inline-block;
-      @include overflow-ellipsis;
-      width: 100%;
-    }
-
-    .text.small {
-      font-size: $font-size-s;
-    }
-
-    .text.normal {
-      font-size: $font-size-r;
-    }
-
-    .text.big {
-      font-size: $font-size-m;
-    }
-
-    .text.large {
+    &.small {
       font-size: $font-size-l;
+      margin-right: calc(0px - $font-size-l);
+      min-width: $font-size-l;
     }
+
+    &.normal {
+      font-size: $font-size-xl;
+      margin-right: calc(0px - $font-size-xl);
+      min-width: $font-size-xl;
+    }
+
+    &.big {
+      font-size: $font-size-2xl;
+      margin-right: calc(0px - $font-size-2xl);
+      min-width: $font-size-2xl;
+    }
+
+    &.large {
+      font-size: $font-size-3xl;
+      margin-right: calc(0px - $font-size-3xl);
+      min-width: $font-size-3xl;
+    }
+  }
+
+  .staticicon {
+    opacity: 1;
+    transition-duration: $transition-m;
+    transition-timing-function: $transition-ease;
+    transition-property: margin, opacity;
+
+    &.small {
+      font-size: $font-size-l;
+      margin-left: 0;
+      min-width: $font-size-l;
+    }
+
+    &.normal {
+      font-size: $font-size-xl;
+      margin-left: 0;
+      min-width: $font-size-xl;
+    }
+
+    &.big {
+      font-size: $font-size-2xl;
+      margin-left: 0;
+      min-width: $font-size-2xl;
+    }
+
+    &.large {
+      font-size: $font-size-3xl;
+      margin-left: 0;
+      min-width: $font-size-3xl;
+    }
+  }
+
+  .bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    background-color: var(--gradient-green);
+    transition-duration: $transition-m;
+    transition-timing-function: $transition-ease;
+    transition-property: width;
+    z-index: 2;
+  }
+
+  &:hover {
+    background-color: var(--transparent-background);
 
     .icon {
-      opacity: 0;
-      transition-duration: $transition-m;
-      transition-timing-function: $transition-ease;
-      transition-property: margin, opacity;
+      opacity: 1;
 
       &.small {
-        font-size: $font-size-l;
-        margin-right: calc(0px - $font-size-l);
-        min-width: $font-size-l;
+        margin-right: 0;
       }
 
       &.normal {
-        font-size: $font-size-xl;
-        margin-right: calc(0px - $font-size-xl);
-        min-width: $font-size-xl;
+        margin-right: 0;
       }
 
       &.big {
-        font-size: $font-size-2xl;
-        margin-right: calc(0px - $font-size-2xl);
-        min-width: $font-size-2xl;
+        margin-right: 0;
       }
 
       &.large {
-        font-size: $font-size-3xl;
-        margin-right: calc(0px - $font-size-3xl);
-        min-width: $font-size-3xl;
+        margin-right: 0;
       }
     }
 
     .staticicon {
-      opacity: 1;
-      transition-duration: $transition-m;
-      transition-timing-function: $transition-ease;
-      transition-property: margin, opacity;
+      opacity: 0;
 
       &.small {
-        font-size: $font-size-l;
-        margin-left: 0;
-        min-width: $font-size-l;
+        margin-right: calc(0px - $font-size-l);
       }
 
       &.normal {
-        font-size: $font-size-xl;
-        margin-left: 0;
-        min-width: $font-size-xl;
+        margin-right: calc(0px - $font-size-xl);
       }
 
       &.big {
-        font-size: $font-size-2xl;
-        margin-left: 0;
-        min-width: $font-size-2xl;
+        margin-right: calc(0px - $font-size-2xl);
       }
 
       &.large {
-        font-size: $font-size-3xl;
-        margin-left: 0;
-        min-width: $font-size-3xl;
+        margin-right: calc(0px - $font-size-3xl);
       }
     }
 
     .bar {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0%;
-      background-color: var(--gradient-green);
-      transition-duration: $transition-m;
-      transition-timing-function: $transition-ease;
-      transition-property: width;
-      z-index: 2;
+      width: 100%;
+    }
+  }
+
+  &.singleicon {
+    .icon {
+      display: none;
     }
 
     &:hover {
-      background-color: var(--transparent-background);
-
-      .icon {
+      .staticicon {
         opacity: 1;
 
         &.small {
@@ -143,140 +197,88 @@ body {
           margin-right: 0;
         }
       }
-
-      .staticicon {
-        opacity: 0;
-
-        &.small {
-          margin-right: calc(0px - $font-size-l);
-        }
-
-        &.normal {
-          margin-right: calc(0px - $font-size-xl);
-        }
-
-        &.big {
-          margin-right: calc(0px - $font-size-2xl);
-        }
-
-        &.large {
-          margin-right: calc(0px - $font-size-3xl);
-        }
-      }
-
-      .bar {
-        width: 100%;
-      }
-    }
-
-    &.singleicon {
-      .icon {
-        display: none;
-      }
-
-      &:hover {
-        .staticicon {
-          opacity: 1;
-
-          &.small {
-            margin-right: 0;
-          }
-
-          &.normal {
-            margin-right: 0;
-          }
-
-          &.big {
-            margin-right: 0;
-          }
-
-          &.large {
-            margin-right: 0;
-          }
-        }
-      }
-
-      &.iconbutton {
-        &:hover {
-          .icon {
-            display: none;
-          }
-
-          .staticicon {
-            display: block;
-          }
-        }
-      }
-    }
-
-    &.glass {
-      background-color: var(--more-transparent-background);
-    }
-
-    &.glass:hover {
-      background-color: var(--transparent-background);
-    }
-
-    &.solid {
-      background-color: var(--card-background);
-    }
-
-    &.solid:hover {
-      background-color: var(--dark-card-background);
-    }
-
-    &.invert {
-      background-color: var(--dark-card-background);
-    }
-
-    &.invert:hover {
-      background-color: var(--card-background);
     }
 
     &.iconbutton {
-      padding: 5px 0;
-      min-height: 40px;
-      justify-content: center;
-      aspect-ratio: 1 / 1;
-      max-width: unset;
-
-      .text {
-        display: none;
-      }
-
-      .bar {
-        display: none;
-      }
-
-      .icon {
-        display: none;
-      }
-
-      .staticicon {
-        display: block;
-      }
-
       &:hover {
         .icon {
-          display: block;
+          display: none;
         }
 
         .staticicon {
-          display: none;
+          display: block;
         }
       }
     }
+  }
 
-    &.disabled {
-      pointer-events: none;
-      opacity: 0.6;
-      color: var(--font-color-primary);
+  &.glass {
+    background-color: var(--more-transparent-background);
+  }
+
+  &.glass:hover {
+    background-color: var(--transparent-background);
+  }
+
+  &.solid {
+    background-color: var(--card-background);
+  }
+
+  &.solid:hover {
+    background-color: var(--dark-card-background);
+  }
+
+  &.invert {
+    background-color: var(--dark-card-background);
+  }
+
+  &.invert:hover {
+    background-color: var(--card-background);
+  }
+
+  &.iconbutton {
+    padding: 5px 0;
+    min-height: 40px;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    max-width: unset;
+
+    .text {
+      display: none;
     }
 
-    &.active {
-      pointer-events: none;
-      background-color: var(--transparent-background);
+    .bar {
+      display: none;
     }
+
+    .icon {
+      display: none;
+    }
+
+    .staticicon {
+      display: block;
+    }
+
+    &:hover {
+      .icon {
+        display: block;
+      }
+
+      .staticicon {
+        display: none;
+      }
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+    color: var(--font-color-primary);
+  }
+
+  &.active {
+    pointer-events: none;
+    background-color: var(--transparent-background);
   }
 }
 

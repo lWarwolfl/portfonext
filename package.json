@@ -10,16 +10,12 @@
     "format": "prettier . --ignore-unknown --write"
   },
   "dependencies": {
-    "@emotion/cache": "^11.11.0",
-    "@emotion/react": "^11.11.3",
-    "@emotion/server": "^11.11.0",
-    "@emotion/styled": "^11.11.0",
     "@gsap/react": "^2.1.0",
     "@iconify-icon/react": "^2.0.1",
-    "@mui/material": "^5.15.7",
     "@react-three/fiber": "^8.15.19",
     "@studio-freight/hamo": "^0.6.28",
     "@studio-freight/lenis": "^1.0.39",
+    "@studio-freight/tempus": "^0.0.44",
     "clsx": "^2.1.0",
     "file-saver": "^2.0.5",
     "gsap": "^3.12.5",

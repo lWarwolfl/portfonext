@@ -5,12 +5,16 @@ import Project from './Project'
 
 export default function Projects() {
   return (
-    <div id="projects" className={`animated-container ${styles.container}`}>
-      <Title title="Showcasing My Passion Projects:" description="Where Creativity Takes Flight" />
+    <div id="projects" className={styles.container}>
+      <Title
+        title="Showcasing My Passion Projects:"
+        description="Where Creativity Takes Flight"
+        className="animated-container"
+      />
 
       <div className={styles.projectcontainer}>
         {projects.map((item, index) => {
-          return <Project key={index} item={item} />
+          return <Project key={index} item={item} className="animated-container" />
         })}
       </div>
     </div>

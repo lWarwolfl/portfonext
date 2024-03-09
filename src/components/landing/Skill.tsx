@@ -2,15 +2,17 @@ import StyledCard from '@/components/utils/StyledCard'
 import { type SkillCategoryInterface, type SkillInterface } from '@/data/skills'
 import styles from '@/styles/landing/Skills.module.scss'
 import { Icon } from '@iconify-icon/react'
+import clsx from 'clsx'
 
 interface Props {
   item: SkillInterface
   category: SkillCategoryInterface
+  className: string
 }
 
-export default function Skill({ item, category }: Props) {
+export default function Skill({ item, category, className }: Props) {
   return (
-    <StyledCard glow={category.color} className={styles.skill} variant="small">
+    <StyledCard glow={category.color} className={clsx(className, styles.skill)} variant="small">
       <div className={styles.data}>
         <Icon
           icon={item.logo}

@@ -51,9 +51,7 @@ export default function StyledCard({ id, glow, className, variant, children, mov
   return (
     <div
       id={id}
-      className={clsx(className, styles.container, variantStyles[variant], {
-        [`${styles.betterglow}`]: !move,
-      })}
+      className={clsx(className, styles.container, variantStyles[variant])}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       ref={containerRef}

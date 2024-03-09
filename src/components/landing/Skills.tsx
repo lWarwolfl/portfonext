@@ -6,8 +6,12 @@ import Skill from './Skill'
 
 export default function Skills() {
   return (
-    <div id="skills" className={`animated-container ${styles.container}`}>
-      <Title title="Skills:" description="Crafting My Arsenal of Abilities" />
+    <div id="skills" className={styles.container}>
+      <Title
+        title="Skills:"
+        description="Crafting My Arsenal of Abilities"
+        className="animated-container"
+      />
       <div className={styles.skillcontainer}>
         {skillCategories.map((category, index) => {
           return (
@@ -15,7 +19,9 @@ export default function Skills() {
               {skills
                 .filter((item) => item.category === category.name)
                 .map((item, i) => {
-                  return <Skill key={i} item={item} category={category} />
+                  return (
+                    <Skill key={i} item={item} category={category} className="animated-container" />
+                  )
                 })}
             </React.Fragment>
           )

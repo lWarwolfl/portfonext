@@ -9,14 +9,18 @@ import Skills from '@/components/landing/Skills'
 import Summary from '@/components/landing/Summary'
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
-import { WebGL } from '@/components/utils/Particles'
 import useWindowSize from '@/hooks/useWindowSize'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import dynamic from 'next/dynamic'
 import { Poppins } from 'next/font/google'
 import Head from 'next/head'
 import { useRef } from 'react'
+
+const WebGL = dynamic(() => import('@/components/utils/Particles').then(({ WebGL }) => WebGL), {
+  ssr: false,
+})
 
 const font = Poppins({
   subsets: ['latin'],
@@ -34,24 +38,19 @@ export default function Home() {
 
   useGSAP(
     () => {
-      const boxes = gsap.utils.toArray('.animated-container')
-      boxes.forEach((box, index: number) => {
-        //@ts-expect-error there is no support to know the type of this animatable box
-        gsap.set(box, { x: -100, opacity: 0 })
+      const boxes: Element[] = gsap.utils.toArray('.animated-container')
+      boxes.forEach((box) => {
+        const element = box as HTMLElement
 
-        //@ts-expect-error there is no support to know the type of this animatable box
-        gsap.to(box, {
+        gsap.set(element, { x: -100, opacity: 0 })
+
+        gsap.to(element, {
           x: 0,
           opacity: 1,
           scrollTrigger: {
-            trigger: box,
-            start: isMobile ? '350px bottom' : '150px bottom',
-            end:
-              boxes.length - 1 === index
-                ? 'bottom bottom'
-                : isMobile
-                  ? '700px bottom'
-                  : '500px bottom',
+            trigger: element,
+            start: isMobile ? '250px bottom' : '150px bottom',
+            end: isMobile ? 'bottom+=350px bottom' : 'bottom+=250px bottom',
             scrub: true,
           },
         })

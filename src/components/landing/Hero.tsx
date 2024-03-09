@@ -52,7 +52,7 @@ export default function Hero() {
             icon="ci:file-download"
             staticIcon="ci:file-document"
             color="blue"
-            fontSize="big"
+            barHeight="5px"
           >
             My resume
           </StyledButton>
