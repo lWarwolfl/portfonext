@@ -38,19 +38,24 @@ export default function Home() {
 
   useGSAP(
     () => {
-      const boxes: Element[] = gsap.utils.toArray('.animated-container')
-      boxes.forEach((box) => {
-        const element = box as HTMLElement
+      const boxes = gsap.utils.toArray('.animated-container')
+      boxes.forEach((box, index: number) => {
+        //@ts-expect-error there is no support to know the type of this animatable box
+        gsap.set(box, { x: -100, opacity: 0 })
 
-        gsap.set(element, { x: -100, opacity: 0 })
-
-        gsap.to(element, {
+        //@ts-expect-error there is no support to know the type of this animatable box
+        gsap.to(box, {
           x: 0,
           opacity: 1,
           scrollTrigger: {
-            trigger: element,
-            start: isMobile ? '250px bottom' : '150px bottom',
-            end: isMobile ? 'bottom+=350px bottom' : 'bottom+=250px bottom',
+            trigger: box,
+            start: isMobile ? '350px bottom' : '150px bottom',
+            end:
+              boxes.length - 1 === index
+                ? 'bottom bottom'
+                : isMobile
+                  ? '700px bottom'
+                  : '500px bottom',
             scrub: true,
           },
         })

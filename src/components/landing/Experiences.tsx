@@ -2,7 +2,6 @@ import SplittedContainer from '@/components/utils/SplittedContainer'
 import Title from '@/components/utils/Title'
 import { experiences } from '@/data/experiences'
 import styles from '@/styles/landing/Experiences.module.scss'
-import clsx from 'clsx'
 import Experience from './Experience'
 
 export default function Experiences() {
@@ -12,21 +11,17 @@ export default function Experiences() {
   const secondHalf = experiences.slice(midpoint)
 
   return (
-    <div id="experiences" className={styles.container}>
-      <Title
-        title="From Novice to Navigator:"
-        description="Navigating My Career Journey"
-        className="animated-container"
-      />
+    <div id="experiences" className={`animated-container ${styles.container}`}>
+      <Title title="From Novice to Navigator:" description="Navigating My Career Journey" />
 
       <SplittedContainer>
-        <div className={clsx('animated-container', styles.container)}>
+        <div className={styles.container}>
           {firstHalf.map((item, index) => {
             return <Experience key={index} item={item} />
           })}
         </div>
 
-        <div className={clsx('animated-container', styles.container)}>
+        <div className={styles.container}>
           {secondHalf.map((item, index) => {
             return <Experience key={index} item={item} />
           })}
