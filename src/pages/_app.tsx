@@ -24,8 +24,6 @@ export default function App({ Component, pageProps }: AppProps) {
         const loader = document.getElementById('globalLoader')
         if (loader) loader.style.backgroundColor = '#0d1117bb'
         document.body.style.overflowY = 'auto'
-        const particles = document.getElementById('webgl-particles')
-        if (particles) particles.style.opacity = "1"
       }, 150)
 
       setTimeout(() => {

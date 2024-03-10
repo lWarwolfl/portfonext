@@ -22,7 +22,7 @@ export interface StyledButtonProps {
   className?: string
   disabled?: boolean
   type?: 'button' | 'submit' | 'reset'
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 export default function StyledButton({

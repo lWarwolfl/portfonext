@@ -142,7 +142,6 @@ function Content() {
 export function WebGL({ render = true }) {
   return (
     <Canvas
-      id="webgl-particles"
       gl={{
         powerPreference: 'high-performance',
         antialias: true,
@@ -153,15 +152,14 @@ export function WebGL({ render = true }) {
       orthographic
       camera={{ near: 0.01, far: 10000, position: [0, 0, 1000] }}
       style={{
-        opacity: '0',
         width: '100dvw',
         height: '100dvh',
         position: 'fixed',
         zIndex: -1,
       }}
     >
+      <Raf render={render} />
       <Suspense>
-        <Raf render={render} />
         <Content />
       </Suspense>
     </Canvas>

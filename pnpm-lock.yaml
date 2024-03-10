@@ -67,9 +67,6 @@ devDependencies:
   '@types/react-dom':
     specifier: 18.2.18
     version: 18.2.18
-  '@types/stylis':
-    specifier: 4.2.5
-    version: 4.2.5
   '@types/three':
     specifier: ^0.162.0
     version: 0.162.0
@@ -761,10 +758,6 @@ packages:
 
   /@types/stats.js@0.17.3:
     resolution: {integrity: sha512-pXNfAD3KHOdif9EQXZ9deK82HVNaXP5ZIF5RP2QG6OQFNTaY2YIetfrE9t528vEreGQvEPRDDc8muaoYeK0SxQ==}
-    dev: true
-
-  /@types/stylis@4.2.5:
-    resolution: {integrity: sha512-1Xve+NMN7FWjY14vLoY5tL3BVEQ/n42YLwaqJIPYhotZ9uBHt87VceMwWQpzmdEt2TNXIorIFG+YeCUUW7RInw==}
     dev: true
 
   /@types/three@0.162.0:
