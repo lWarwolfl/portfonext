@@ -14,7 +14,7 @@ export interface LanguageInterface {
 export const languages: LanguageInterface[] = [
   {
     name: 'Persian (Mothers tongue)',
-    color: 'green',
+    color: 'blue',
     image: fa,
     percent: '100%',
   },

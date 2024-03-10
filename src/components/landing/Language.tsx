@@ -35,7 +35,6 @@ export default function Language({ item }: Props) {
             className={styles.fill}
             style={{
               width: `${item.percent}`,
-              backgroundImage: `var(--gradient-${item.color})`,
             }}
           ></div>
         </div>
