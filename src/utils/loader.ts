@@ -13,6 +13,9 @@ body {
 
 #globalLoader {
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 100;
   background-color: #0d1117;
   left: 0;

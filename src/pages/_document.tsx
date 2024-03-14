@@ -10,10 +10,7 @@ export default function Document() {
         <style>{loader}</style>
       </Head>
       <body>
-        <div id={'globalLoader'}>
-          <div className="loader">
-            <div className="loader-inside"></div>
-          </div>
+        <div id="globalLoader">
           <svg
             width="110"
             height="110"
@@ -45,6 +42,9 @@ export default function Document() {
               </linearGradient>
             </defs>
           </svg>
+          <div className="loader">
+            <div className="loader-inside"></div>
+          </div>
         </div>
         <Main />
         <NextScript />

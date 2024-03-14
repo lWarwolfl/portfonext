@@ -1,5 +1,6 @@
 import '@/styles/index.scss'
 import { LenisProvider } from '@/utils/lenis'
+import useLoadingStore from '@/utils/loading/useLoadingStore'
 import raf from '@studio-freight/tempus'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -18,25 +19,23 @@ if (typeof window !== 'undefined') {
 }
 
 export default function App({ Component, pageProps }: AppProps) {
+  const { progress } = useLoadingStore()
+
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setTimeout(() => {
-        const loader = document.getElementById('globalLoader')
-        if (loader) loader.style.backgroundColor = '#0d1117bb'
-        document.body.style.overflowY = 'auto'
-      }, 150)
+    if (typeof window !== 'undefined' && progress === 100) {
+      const loader = document.getElementById('globalLoader')
+      if (loader) loader.style.backgroundColor = '#0d1117bb'
+      document.body.style.overflowY = 'auto'
 
       setTimeout(() => {
-        const loader = document.getElementById('globalLoader')
         if (loader) loader.style.opacity = '0'
-      }, 1300)
+      }, 1100)
 
       setTimeout(() => {
-        const loader = document.getElementById('globalLoader')
         if (loader) loader.style.display = 'none'
-      }, 1600)
+      }, 1400)
     }
-  }, [])
+  }, [progress])
 
   return (
     <LenisProvider>

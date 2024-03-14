@@ -63,14 +63,14 @@ export default function Header() {
 
           <StyledButton
             className={styles.button}
-            idLink=""
+            externalLink="/files/resume/en/Resume.pdf"
+            download
             background="glass"
-            icon={!isMobile ? 'ci:chevron-right' : undefined}
-            staticIcon="ci:paper-plane"
-            iconButton={isTablet}
-            disabled
+            icon={!isMobile ? 'ci:file-download' : undefined}
+            staticIcon="ci:file-document"
+            color="blue"
           >
-            Contact Me
+            My resume
           </StyledButton>
         </div>
       </div>

@@ -31,7 +31,7 @@ export default function ImagePackContainer({ className, title, accent, images }:
       <div className={`${styles.container} ${className}`}>
         {images[0] && (
           <Image
-            quality={10}
+            quality={1}
             placeholder="blur"
             className={styles.firstimage}
             alt="first-image"

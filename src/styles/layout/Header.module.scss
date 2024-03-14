@@ -14,7 +14,7 @@ $height: 40px;
   background-color: transparent;
   padding: 0 20px;
   top: 20px;
-  left: -2px;
+  left: 0;
 
   .fix {
     @include flex-row;

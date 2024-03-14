@@ -13,7 +13,7 @@ export default function Summary() {
       <StyledCard move={false} glow="blue" variant="narrowbottom">
         <div className={styles.splitimage}>
           <Image
-            quality={85}
+            quality={20}
             placeholder="blur"
             src={photo}
             alt="My photo"
