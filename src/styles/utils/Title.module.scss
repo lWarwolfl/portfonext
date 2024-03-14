@@ -2,33 +2,46 @@
 @import '../mixins.scss';
 @import '../globals.scss';
 
-.title {
+.container {
+  @include flex-column;
   width: 100%;
   margin-top: 50px;
   margin-bottom: 20px;
-  color: var(--font-color-primary);
   font-size: $font-size-4xl;
-  font-weight: $font-weight-extrabold;
 
-  .accent {
+  .icon {
+    @include flex-row;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    color: var(--font-color-primary);
+    font-size: $font-size-3xl;
+    background-color: var(--blue-color);
+  }
+
+  .title {
+    color: var(--font-color-primary);
+    font-weight: $font-weight-extrabold;
+    margin-bottom: -4px;
+  }
+
+  .description {
     @include gradient-text-normal;
-    display: inline-block;
     font-weight: $font-weight-black;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .title {
+  .container {
     font-size: $font-size-3xl;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .title {
-    font-size: $font-size-exl;
-
-    .accent {
-      font-size: $font-size-2xl;
-    }
+  .container {
+    font-size: $font-size-2xl;
   }
 }

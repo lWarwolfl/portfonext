@@ -2,16 +2,14 @@ import StyledButton from '@/components/utils/StyledButton'
 import useWindowSize from '@/hooks/useWindowSize'
 import styles from '@/styles/layout/Header.module.scss'
 import { useLenis } from '@/utils/lenis'
-import logo from '@public/image/png/logo.png'
+import logo from '@public/image/jpg/face.jpg'
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 import Menu from './Menu'
 
 export default function Header() {
   const containerRef = React.useRef<HTMLDivElement>(null)
   const isMobile = useWindowSize(530)
-  const isTablet = useWindowSize(1050)
   const { lenis } = useLenis()
 
   React.useEffect(() => {
@@ -39,15 +37,13 @@ export default function Header() {
     <>
       <div className={styles.header} ref={containerRef}>
         <div className={styles.fix}>
-          <Link className={styles.logo} href="/">
-            <Image
-              quality={85}
-              placeholder="blur"
-              alt="logo"
-              src={logo}
-              className={styles.image}
-            ></Image>
-          </Link>
+          <Image
+            quality={30}
+            placeholder="blur"
+            alt="logo"
+            src={logo}
+            className={styles.logo}
+          ></Image>
 
           {!isMobile ? <Menu /> : null}
 

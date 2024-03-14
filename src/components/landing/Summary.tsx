@@ -8,12 +8,12 @@ import Image from 'next/image'
 
 export default function Summary() {
   return (
-    <div id="summary" className={`animated-container ${styles.container}`}>
-      <Title title="Unveiling My Story:" description="The Path Less Traveled" />
-      <StyledCard move={false} glow="blue" variant="narrowbottom">
+    <div id="summary" className={styles.container}>
+      <Title className="animated-title" title="My Story" description="An Eventful Path" />
+      <StyledCard className="animated-container" move={false} glow="blue" variant="narrowbottom">
         <div className={styles.splitimage}>
           <Image
-            quality={20}
+            quality={8}
             placeholder="blur"
             src={photo}
             alt="My photo"

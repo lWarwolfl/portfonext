@@ -11,10 +11,10 @@ export default function Educations() {
   const secondHalf = educations.slice(midpoint)
 
   return (
-    <div id="educations" className={`animated-container ${styles.container}`}>
-      <Title title="My Academic Odyssey:" description="Learning Beyond the Classroom" />
+    <div id="educations" className={styles.container}>
+      <Title className="animated-title" title="Education" description="Academic Background" />
 
-      <SplittedContainer>
+      <SplittedContainer className="animated-container">
         <div className={styles.container}>
           {firstHalf.map((item, index) => {
             return <Education key={index} item={item} />

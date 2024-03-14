@@ -56,14 +56,16 @@ export default function StyledCard({ id, glow, className, variant, children, mov
       onMouseLeave={handleMouseLeave}
       ref={containerRef}
     >
-      <div
-        className={styles.glow}
-        style={{
-          top: `${glowPosition.y}px`,
-          left: `${glowPosition.x}px`,
-          backgroundColor: `var(--${glow}-color)`,
-        }}
-      />
+      {move && (
+        <div
+          className={styles.glow}
+          style={{
+            top: `${glowPosition.y}px`,
+            left: `${glowPosition.x}px`,
+            backgroundColor: `var(--${glow}-color)`,
+          }}
+        />
+      )}
       {children}
     </div>
   )

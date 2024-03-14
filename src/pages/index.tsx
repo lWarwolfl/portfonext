@@ -1,4 +1,3 @@
-// import Contact from '@/components/landing/Contact'
 import Educations from '@/components/landing/Educations'
 import Experiences from '@/components/landing/Experiences'
 import Hero from '@/components/landing/Hero'
@@ -9,13 +8,13 @@ import Skills from '@/components/landing/Skills'
 import Summary from '@/components/landing/Summary'
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
+import CustomHead from '@/components/utils/CustomHead'
 import useWindowSize from '@/hooks/useWindowSize'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import dynamic from 'next/dynamic'
 import { Poppins } from 'next/font/google'
-import Head from 'next/head'
 import { useRef } from 'react'
 
 const WebGL = dynamic(() => import('@/components/utils/Particles').then(({ WebGL }) => WebGL), {
@@ -38,12 +37,27 @@ export default function Home() {
 
   useGSAP(
     () => {
-      const boxes = gsap.utils.toArray('.animated-container')
-      boxes.forEach((box, index: number) => {
-        //@ts-expect-error there is no support to know the type of this animatable box
+      const titles = gsap.utils.toArray('.animated-title') as HTMLElement[]
+      const boxes = gsap.utils.toArray('.animated-container') as HTMLElement[]
+
+      titles.forEach((box) => {
         gsap.set(box, { x: -100, opacity: 0 })
 
-        //@ts-expect-error there is no support to know the type of this animatable box
+        gsap.to(box, {
+          x: 0,
+          opacity: 1,
+          scrollTrigger: {
+            trigger: box,
+            start: isMobile ? '300px bottom' : '100px bottom',
+            end: isMobile ? '650px bottom' : '450px bottom',
+            scrub: true,
+          },
+        })
+      })
+
+      boxes.forEach((box, index: number) => {
+        gsap.set(box, { x: -100, opacity: 0 })
+
         gsap.to(box, {
           x: 0,
           opacity: 1,
@@ -66,12 +80,7 @@ export default function Home() {
 
   return (
     <main className={font.className}>
-      <div id="full-size-image-slider"></div>
-      <Head>
-        <title>Sina Kheiri - js developer and UI/UX designer</title>
-        <meta name="viewport" content="width=device-width, height=device-height" />
-      </Head>
-
+      <CustomHead />
       <WebGL />
       <Header />
       <div className="width-fix" ref={main}>
@@ -82,7 +91,6 @@ export default function Home() {
         <Projects />
         <Educations />
         <Languages />
-        {/* <Contact /> */}
         <Footer />
         <Images />
       </div>

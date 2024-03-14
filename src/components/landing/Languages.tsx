@@ -6,7 +6,7 @@ import Language from './Language'
 export default function Languages() {
   return (
     <div id="languages" className={`animated-container ${styles.container}`}>
-      <Title title="Languages:" description="The Global Tapestry of My Communication" />
+      <Title title="Languages" description="Communication Skills" />
 
       <div className={styles.skillcontainer}>
         {languages.map((item, index) => {

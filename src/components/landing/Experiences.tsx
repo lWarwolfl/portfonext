@@ -11,10 +11,10 @@ export default function Experiences() {
   const secondHalf = experiences.slice(midpoint)
 
   return (
-    <div id="experiences" className={`animated-container ${styles.container}`}>
-      <Title title="From Novice to Navigator:" description="Navigating My Career Journey" />
+    <div id="experiences" className={styles.container}>
+      <Title className="animated-title" title="Career Journey" description="Becoming A Pro" />
 
-      <SplittedContainer>
+      <SplittedContainer className="animated-container">
         <div className={styles.container}>
           {firstHalf.map((item, index) => {
             return <Experience key={index} item={item} />

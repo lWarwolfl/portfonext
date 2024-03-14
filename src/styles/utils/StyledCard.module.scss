@@ -32,14 +32,12 @@ $marginsmall: 30px;
     transition-timing-function: $transition-ease;
     transition-property: opacity;
     mix-blend-mode: soft-light;
-    will-change: transform;
-    opacity: 0;
     z-index: -2;
   }
 
   &:hover {
     .glow {
-      opacity: 0.75;
+      opacity: 1;
     }
   }
 }

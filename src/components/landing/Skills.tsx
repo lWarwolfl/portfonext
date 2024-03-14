@@ -1,14 +1,15 @@
 import Title from '@/components/utils/Title'
 import { skillCategories, skills } from '@/data/skills'
 import styles from '@/styles/landing/Skills.module.scss'
+import clsx from 'clsx'
 import React from 'react'
 import Skill from './Skill'
 
 export default function Skills() {
   return (
-    <div id="skills" className={`animated-container ${styles.container}`}>
-      <Title title="Skills:" description="Crafting My Arsenal of Abilities" />
-      <div className={styles.skillcontainer}>
+    <div id="skills" className={styles.container}>
+      <Title className="animated-title" title="Skills" description="Key Abilities" />
+      <div className={clsx('animated-container', styles.skillcontainer)}>
         {skillCategories.map((category, index) => {
           return (
             <React.Fragment key={index}>

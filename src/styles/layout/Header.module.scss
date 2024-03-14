@@ -30,30 +30,20 @@ $height: 40px;
   }
 
   .logo {
-    @include gradient-animation-effect;
-    @include flex-row;
+    @include background-contain;
     cursor: pointer;
     align-items: center;
     justify-content: center;
     height: $height;
-    aspect-ratio: 1 / 1;
-    border-radius: $height/2;
-    padding-top: 5px;
+    width: auto;
+    border-radius: 50%;
     transition-duration: $transition-f;
     transition-timing-function: $transition-ease;
+    transition-property: box-shadow;
     box-shadow: 0 0px 0px var(--primary-color-transparent);
-
-    .image {
-      @include background-contain;
-      height: $height/1.5;
-      width: auto;
-      transition-duration: $transition-f;
-      transition-timing-function: $transition-ease;
-    }
   }
 
   .logo:hover {
-    @include gradient-animation-effect-hover;
     box-shadow: 0 0 30px var(--primary-color-transparent);
   }
 
