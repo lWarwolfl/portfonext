@@ -114,7 +114,7 @@ export default function StyledButton({
   return (
     <button
       onClick={handleClick}
-      className={buttonClass}
+      className={clsx(buttonClass, { [`${styles['singleicon']}`]: !icon })}
       disabled={disabled}
       type={type}
       {...props}
