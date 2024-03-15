@@ -1,5 +1,5 @@
 import StyledButton from '@/components/utils/StyledButton'
-import { menuLinks } from '@/data/links'
+import { links } from '@/data/links'
 import useWindowSize from '@/hooks/useWindowSize'
 import styles from '@/styles/layout/Header.module.scss'
 
@@ -10,7 +10,7 @@ export default function Menu() {
   return (
     <div className={styles.navbarcontainer}>
       <div className={styles.navbar}>
-        {menuLinks.map((link, i) => (
+        {links.map((link, i) => (
           <StyledButton
             key={i}
             className={styles.link}

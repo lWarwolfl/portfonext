@@ -1,21 +1,23 @@
 import StyledButton from '@/components/utils/StyledButton'
 import StyledCard from '@/components/utils/StyledCard'
 import Title from '@/components/utils/Title'
-import { summmaryLinks } from '@/data/links'
+import { summary } from '@/data/summary'
+import useWindowSize from '@/hooks/useWindowSize'
 import styles from '@/styles/landing/Summary.module.scss'
-import photo from '@public/image/jpg/photo.jpg'
 import Image from 'next/image'
 
 export default function Summary() {
+  const isTablet = useWindowSize(930)
+
   return (
     <div id="summary" className={styles.container}>
       <Title className="animated-title" title="My Story" description="A Pleasant Path" />
-      <StyledCard className="animated-container" move={false} glow="blue" variant="narrowbottom">
+      <StyledCard className="animated-container" move={false} variant="narrowbottom">
         <div className={styles.splitimage}>
           <Image
             quality={8}
             placeholder="blur"
-            src={photo}
+            src={summary.image}
             alt="My photo"
             className={styles.image}
           />
@@ -23,36 +25,15 @@ export default function Summary() {
 
         <div className={styles.splittext}>
           <div className={styles.description}>
-            I am <span className={styles.accent}>Sina Kheiri</span> and As a{' '}
-            <span className={styles.bold}>Next.js/React.js developer</span> with{' '}
-            <span className={styles.bold}>4 years of experience</span> in{' '}
-            <span className={styles.bold}>frontend development</span> I possess a diverse skill set
-            of <span className={styles.bold}>25+ technical abilities</span>.{' '}
-            <div className={styles.break}></div> With a strong focus on delivering{' '}
-            <span className={styles.bold}>high-quality code</span> and{' '}
-            <span className={styles.bold}>exceptional user interfaces</span>, I am committed to
-            staying <span className={styles.bold}>up-to-date</span> with the latest industry trends
-            and best practices.
-            <span className={styles.extra}>
-              <div className={styles.break}></div>I also have the knowledge and skills for UI Design
-              and I have created{' '}
-              <span className={styles.bold}>User personas, Wireframes, High fidelity projects</span>{' '}
-              and <span className={styles.bold}>Prototypes</span> using{' '}
-              <span className={styles.bold}>Figma and Adobe XD</span>.
-            </span>
+            {summary.content}
+            <span className={styles.extra}>{!isTablet && summary.extra}</span>
           </div>
         </div>
 
-        <div className={styles.extratext}>
-          <div className={styles.break}></div>I also have the knowledge and skills for UI Design and
-          I have created{' '}
-          <span className={styles.bold}>User personas, Wireframes, High fidelity projects</span> and{' '}
-          <span className={styles.bold}>Prototypes</span> using{' '}
-          <span className={styles.bold}>Figma and Adobe XD</span>.
-        </div>
+        <div className={styles.extratext}>{isTablet && summary.extra}</div>
 
         <div className={styles.links}>
-          {summmaryLinks.map((item, index) => (
+          {summary.links.map((item, index) => (
             <StyledButton
               key={index}
               className={styles.link}

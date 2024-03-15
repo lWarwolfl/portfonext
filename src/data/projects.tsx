@@ -1,4 +1,3 @@
-import { type SummaryLinkInterface } from '@/data/links'
 import styles from '@/styles/landing/Projects.module.scss'
 import bluetek1 from '@public/image/jpg/projects/bluetek/1.jpg'
 import bluetek2 from '@public/image/jpg/projects/bluetek/2.jpg'
@@ -17,10 +16,10 @@ import modernist4 from '@public/image/jpg/projects/modernist/4.jpg'
 import modernist5 from '@public/image/jpg/projects/modernist/5.jpg'
 import modernist6 from '@public/image/jpg/projects/modernist/6.jpg'
 import modernist7 from '@public/image/jpg/projects/modernist/7.jpg'
-
 import { type StaticImageData } from 'next/image'
 import * as React from 'react'
 import { skills, type SkillInterface } from './skills'
+import type { SummaryLinkInterface } from './summary'
 
 export interface ProjectInterface {
   title: string

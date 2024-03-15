@@ -1,4 +1,5 @@
 import StyledButton from '@/components/utils/StyledButton'
+import { hero } from '@/data/hero'
 import styles from '@/styles/landing/Hero.module.scss'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
@@ -15,6 +16,7 @@ export default function Hero() {
   useGSAP(
     () => {
       const tl = gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 1 })
+      
       tl.to('.text', {
         duration: 1,
         text: {
@@ -38,10 +40,7 @@ export default function Hero() {
           <span className={styles.caret}>|</span>
         </div>
 
-        <div className={styles.description}>
-          Front-end <span className={styles.accent}>Developer</span>{' '}
-          <span className={styles.note}>(Next.js/React.js)</span>
-        </div>
+        <div className={styles.description}>{hero.content}</div>
 
         <div className={styles.links}>
           <StyledButton
