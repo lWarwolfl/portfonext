@@ -15,82 +15,15 @@
 
   .buttoncontainer {
     position: absolute;
-    display: flex;
-    height: 100%;
-    width: 100%;
+    bottom: 0;
+    right: 0;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    top: 0;
-    left: 0;
+    gap: 6px;
     z-index: 10;
-
-    .buttonwrapper {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 6px;
-      border-radius: 6px;
-      background-color: var(--transparent-background);
-      backdrop-filter: blur(2px);
-    }
-  }
-}
-
-.fullslider {
-  @include flex-column;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100dvw;
-  height: 100dvh;
-  background-color: rgba(13, 17, 23, 0.85);
-  backdrop-filter: blur(2px);
-  z-index: 10000;
-
-  .slidercontainer {
-    @include width-fix;
-    max-width: 1000px;
-    width: 100%;
-    height: 100%;
-
-    .header {
-      position: relative;
-      @include flex-row;
-      width: 100%;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 20px;
-
-      .title {
-        font-weight: $font-weight-bold;
-        font-size: $font-size-xl;
-        color: var(--font-color-primary);
-        letter-spacing: 0.5px;
-
-        .accent {
-          font-size: $font-size-l;
-          color: var(--font-color-secondary);
-          margin-left: 8px;
-        }
-      }
-    }
   }
 }
 
 @media screen and (max-width: 600px) {
-  .fullslider {
-    .slidercontainer {
-      .header {
-        .title {
-          font-size: $font-size-l;
-
-          .accent {
-            font-size: $font-size-m;
-          }
-        }
-      }
-    }
-  }
 }

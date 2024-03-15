@@ -13,17 +13,18 @@
 
     .project {
       @include flex-row;
+      align-items: center;
       justify-content: space-between;
       position: relative;
 
       .slider {
-        width: 20%;
+        width: 38%;
         aspect-ratio: 7/6;
         margin: 0 0 20px;
       }
 
       .content {
-        width: 80%;
+        width: 62%;
         padding-left: 30px;
 
         .section {

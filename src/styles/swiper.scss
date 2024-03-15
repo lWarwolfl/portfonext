@@ -1,0 +1,94 @@
+body {
+  .swiper {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+
+    .swiper-pagination {
+      @include flex-row;
+      justify-content: center;
+      gap: 4px;
+      margin-top: 10px;
+      top: unset;
+      bottom: 5px;
+
+      .swiper-pagination-bullet {
+        cursor: pointer;
+        width: 24px;
+        height: 6px;
+        border-radius: 3px;
+        background-color: var(--contrast-color);
+        transition-duration: $transition-f;
+        transition-timing-function: $transition-ease;
+        transition-property: padding-right, padding-left, background-color;
+
+        &:hover {
+          background-color: var(--card-color);
+        }
+      }
+
+      .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        background-image: var(--gradient-main);
+      }
+    }
+
+    .swiper-scrollbar {
+      background-color: var(--contrast-color);
+      height: 5px;
+
+      .swiper-scrollbar-drag {
+        background-image: var(--gradient-main);
+      }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      @include flex-row;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
+      border-radius: 7px;
+      transition-duration: $transition-m;
+      transition-timing-function: $transition-ease;
+      transition-property: padding-right, padding-left, background-color;
+      background-color: var(--more-transparent-background);
+      backdrop-filter: blur(5px);
+    }
+
+    .swiper-button-next {
+      padding-left: 2px;
+    }
+
+    .swiper-button-prev {
+      padding-right: 2px;
+    }
+
+    .swiper-button-prev:hover,
+    .swiper-button-next:hover {
+      background-color: var(--transparent-background);
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      font-size: $font-size-l;
+      font-weight: $font-weight-black;
+    }
+  }
+
+  .swiper.image-slider {
+    .swiper-slide {
+      @include background-cover;
+      background-position: top center;
+      border-radius: 8px;
+
+      .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        border-radius: $border-radius-global;
+      }
+    }
+  }
+}
