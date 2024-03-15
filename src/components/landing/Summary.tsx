@@ -9,7 +9,7 @@ import Image from 'next/image'
 export default function Summary() {
   return (
     <div id="summary" className={styles.container}>
-      <Title className="animated-title" title="My Story" description="An Eventful Path" />
+      <Title className="animated-title" title="My Story" description="A Pleasant Path" />
       <StyledCard className="animated-container" move={false} glow="blue" variant="narrowbottom">
         <div className={styles.splitimage}>
           <Image

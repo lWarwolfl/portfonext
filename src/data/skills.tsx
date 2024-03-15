@@ -38,13 +38,13 @@ export const skillCategories: SkillCategoryInterface[] = [
 
 export const skills: SkillInterface[] = [
   {
-    name: 'Next.js Framework',
+    name: 'Next.js',
     category: 'code',
     logo: 'simple-icons:nextdotjs',
     percent: '100%',
   },
   {
-    name: 'React.js Framework',
+    name: 'React.js',
     category: 'code',
     logo: 'simple-icons:react',
     percent: '100%',

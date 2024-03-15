@@ -8,7 +8,7 @@ interface Props {
   className?: string
   variant: 'narrowbottom' | 'small' | 'smallfull'
   children: React.ReactNode
-  glow: ColorType
+  glow?: ColorType
   move?: boolean
 }
 
@@ -18,7 +18,14 @@ const variantStyles = {
   smallfull: styles.smallfull,
 }
 
-export default function StyledCard({ id, glow, className, variant, children, move = true }: Props) {
+export default function StyledCard({
+  id,
+  glow = 'blue',
+  className,
+  variant,
+  children,
+  move = true,
+}: Props) {
   const [glowPosition, setGlowPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 })
   const containerRef = useRef<HTMLDivElement>(null)
 

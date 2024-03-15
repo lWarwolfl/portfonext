@@ -1,6 +1,7 @@
 import Title from '@/components/utils/Title'
 import { projects } from '@/data/projects'
 import styles from '@/styles/landing/Projects.module.scss'
+import clsx from 'clsx'
 import Project from './Project'
 
 export default function Projects() {
@@ -15,9 +16,14 @@ export default function Projects() {
       <div className={styles.projectcontainer}>
         {projects.map((item, index) => {
           return (
-            <div key={index} className="animated-container">
-              <Project item={item} />
-            </div>
+            <Project
+              key={index}
+              className={clsx({
+                ['animated-container']: item.direction === 'normal',
+                ['animated-container-reverse']: item.direction === 'reverse',
+              })}
+              item={item}
+            />
           )
         })}
       </div>

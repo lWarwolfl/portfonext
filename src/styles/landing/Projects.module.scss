@@ -16,6 +16,11 @@
       align-items: center;
       justify-content: space-between;
       position: relative;
+      margin-bottom: 50px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
 
       .slider {
         width: 38%;

@@ -39,6 +39,7 @@ export default function Home() {
     () => {
       const titles = gsap.utils.toArray('.animated-title') as HTMLElement[]
       const boxes = gsap.utils.toArray('.animated-container') as HTMLElement[]
+      const reverseboxes = gsap.utils.toArray('.animated-container-reverse') as HTMLElement[]
 
       titles.forEach((box) => {
         gsap.set(box, { x: -100, opacity: 0 })
@@ -57,6 +58,26 @@ export default function Home() {
 
       boxes.forEach((box, index: number) => {
         gsap.set(box, { x: -100, opacity: 0 })
+
+        gsap.to(box, {
+          x: 0,
+          opacity: 1,
+          scrollTrigger: {
+            trigger: box,
+            start: isMobile ? '350px bottom' : '150px bottom',
+            end:
+              boxes.length - 1 === index
+                ? 'bottom bottom'
+                : isMobile
+                  ? '700px bottom'
+                  : '500px bottom',
+            scrub: true,
+          },
+        })
+      })
+
+      reverseboxes.forEach((box, index: number) => {
+        gsap.set(box, { x: 100, opacity: 0 })
 
         gsap.to(box, {
           x: 0,

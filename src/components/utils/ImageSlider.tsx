@@ -40,7 +40,7 @@ export default function ImageSlider({ className, title, accent, images }: Props)
             delay: 4000,
             disableOnInteraction: false,
           }}
-          slidesPerView={2.7}
+          slidesPerView={2.4}
           centeredSlides
           loop
           spaceBetween={10}
@@ -72,6 +72,7 @@ export default function ImageSlider({ className, title, accent, images }: Props)
             customClick={handleDownloadImages}
             staticIcon="ci:file-download"
             background="glass"
+            iconButton
           />
         </div>
       </div>

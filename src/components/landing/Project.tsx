@@ -4,17 +4,20 @@ import StyledCard from '@/components/utils/StyledCard'
 import { type ProjectInterface } from '@/data/projects'
 import styles from '@/styles/landing/Projects.module.scss'
 import { Icon } from '@iconify-icon/react'
+import clsx from 'clsx'
 
 interface Props {
   item: ProjectInterface
+  className?: string
 }
 
-export default function Project({ item }: Props) {
+export default function Project({ item, className }: Props) {
   return (
     <StyledCard
       move={false}
-      glow={item.color}
-      className={`${styles.project} ${item.direction === 'reverse' ? styles.reverse : ''}`}
+      className={clsx(className, styles.project, {
+        [`${styles.reverse}`]: item.direction === 'reverse',
+      })}
       variant="narrowbottom"
     >
       <ImageSlider
