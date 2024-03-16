@@ -19,6 +19,7 @@
 .DS_Store
 *.pem
 .vscode
+liara.json
 
 # debug
 npm-debug.log*
