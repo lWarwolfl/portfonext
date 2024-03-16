@@ -25,7 +25,6 @@ export default function App({ Component, pageProps }: AppProps) {
     if (typeof window !== 'undefined' && progress === 100) {
       const loader = document.getElementById('globalLoader')
       if (loader) loader.style.backgroundColor = '#0d1117bb'
-      document.body.style.overflowY = 'auto'
 
       setTimeout(() => {
         if (loader) loader.style.opacity = '0'
@@ -33,6 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
       setTimeout(() => {
         if (loader) loader.style.display = 'none'
+        document.body.style.overflowY = 'auto'
       }, 1400)
     }
   }, [progress])

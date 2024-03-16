@@ -101,8 +101,9 @@ export default function Home() {
 
   return (
     <main className={font.className}>
+      <div id="full-size-image-slider"></div>
       <CustomHead />
-      <WebGL />
+      {!isMobile && <WebGL />}
       <Header />
       <div className="width-fix" ref={main}>
         <Hero />

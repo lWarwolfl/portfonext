@@ -45,15 +45,14 @@ export default function Hero() {
         <div className={styles.links}>
           <StyledButton
             className={styles.link}
-            externalLink="/files/resume/en/Resume.pdf"
-            download
+            externalLink="https://github.com/lWarwolfl/portfonext"
             background="glass"
-            icon="ci:file-download"
-            staticIcon="ci:file-document"
+            staticIcon="bxl:github"
+            icon="ci:chevron-right"
             color="blue"
             barHeight="5px"
           >
-            My resume
+            View project on Github
           </StyledButton>
         </div>
       </div>
