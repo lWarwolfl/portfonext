@@ -146,6 +146,12 @@ export const skills: SkillInterface[] = [
     percent: '100%',
   },
   {
+    name: 'UI Design',
+    category: 'design',
+    logo: 'mdi:design',
+    percent: '75%',
+  },
+  {
     name: 'Figma',
     category: 'design',
     logo: 'simple-icons:figma',
