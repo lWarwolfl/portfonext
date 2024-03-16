@@ -56,7 +56,6 @@
   .extratext {
     width: 100%;
     margin-top: 8px;
-    display: none;
     color: var(--font-color-secondary);
     font-size: $font-size-em;
     font-weight: $font-weight-medium;
@@ -95,16 +94,6 @@
   .container {
     .splittext {
       padding-top: 0;
-
-      .description {
-        .extra {
-          display: none;
-        }
-      }
-    }
-
-    .extratext {
-      display: block;
     }
 
     .splitimage {

@@ -26,11 +26,11 @@ export default function Summary() {
         <div className={styles.splittext}>
           <div className={styles.description}>
             {summary.content}
-            <span className={styles.extra}>{!isTablet && summary.extra}</span>
+            {!isTablet && summary.extra}
           </div>
         </div>
 
-        <div className={styles.extratext}>{isTablet && summary.extra}</div>
+        {isTablet && summary.extra && <div className={styles.extratext}>{summary.extra}</div>}
 
         <div className={styles.links}>
           {summary.links.map((item, index) => (

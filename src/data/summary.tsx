@@ -6,7 +6,7 @@ import type { StaticImageData } from 'next/image'
 export interface SummaryInterface {
   image: StaticImageData
   content: React.ReactNode
-  extra: React.ReactNode
+  extra?: React.ReactNode
   links: SummaryLinkInterface[]
 }
 
