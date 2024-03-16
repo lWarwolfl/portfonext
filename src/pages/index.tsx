@@ -17,9 +17,12 @@ import dynamic from 'next/dynamic'
 import { Poppins } from 'next/font/google'
 import { useRef } from 'react'
 
-const WebGL = dynamic(() => import('@/components/utils/Particles').then(({ WebGL }) => WebGL), {
-  ssr: false,
-})
+const WebGLParticles = dynamic(
+  () => import('@/components/utils/Particles').then(({ WebGLParticles }) => WebGLParticles),
+  {
+    ssr: false,
+  }
+)
 
 const font = Poppins({
   subsets: ['latin'],
@@ -103,7 +106,7 @@ export default function Home() {
     <main className={font.className}>
       <div id="full-size-image-slider"></div>
       <CustomHead />
-      {!isMobile && <WebGL />}
+      {!isMobile && <WebGLParticles />}
       <Header />
       <div className="width-fix" ref={main}>
         <Hero />

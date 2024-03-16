@@ -20,20 +20,21 @@ function Raf({ render = true }) {
 }
 
 interface ParticlesProps {
-  width: number
-  height: number
-  depth: number
-  count: number
-  scale: number
-  size: number
+  width?: number
+  height?: number
+  depth?: number
+  count?: number
+  size?: number
+  color?: string
 }
 
 function Particles({
-  width = 250,
-  height = 250,
-  depth = 250,
-  count = 1000,
-  size = 100,
+  width = 1536,
+  height = 706,
+  depth = 500,
+  count = 100,
+  size = 250,
+  color = 'rgb(228, 225, 255)',
 }: ParticlesProps) {
   const positions = useMemo(() => {
     const array = new Array(count * 3)
@@ -76,9 +77,7 @@ function Particles({
         value: 0,
       },
       uColor: {
-        // value: new Color('rgb(255, 152, 162)'),
-        value: new Color('rgb(228, 225, 255)'),
-        // value: new Color('rgb(255, 236, 234)'),
+        value: new Color(color),
       },
       uScroll: {
         value: 0,
@@ -87,7 +86,7 @@ function Particles({
         value: new Vector2(width, height),
       },
     }),
-    [height, width]
+    [height, width, color]
   )
 
   useEffect(() => {
@@ -122,24 +121,17 @@ function Particles({
   )
 }
 
-function Content() {
+function Content(props: ParticlesProps) {
   const { viewport } = useThree()
 
-  return (
-    <>
-      <Particles
-        width={viewport.width}
-        height={viewport.height}
-        depth={500}
-        count={100}
-        scale={500}
-        size={250}
-      />
-    </>
-  )
+  return <Particles {...props} width={viewport.width} height={viewport.height} />
 }
 
-export function WebGL({ render = true }) {
+interface WebGLParticlesProps extends ParticlesProps {
+  render?: boolean
+}
+
+export function WebGLParticles({ render = true, ...props }: WebGLParticlesProps) {
   return (
     <Canvas
       gl={{
@@ -160,7 +152,7 @@ export function WebGL({ render = true }) {
     >
       <Raf render={render} />
       <Suspense>
-        <Content />
+        <Content {...props} />
       </Suspense>
     </Canvas>
   )
