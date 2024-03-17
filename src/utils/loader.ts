@@ -29,11 +29,11 @@ body {
 
 .loader {
   position: absolute;
-  top: calc(50% - 50px);
-  left: calc(50% - 50px);
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
   animation: spin 1.5s linear infinite;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50px;
   opacity: 0.5;
   background-image: linear-gradient(90deg, #b721ff88 0%, #6625ff88 50%, #257cff88 100%);
@@ -41,23 +41,23 @@ body {
 
 .loader .loader-inside {
   position: absolute;
-  top: 7px;
-  left: 7px;
-  width: 86px;
-  height: 86px;
+  top: 6px;
+  left: 6px;
+  width: 68px;
+  height: 68px;
   border-radius: 45px;
   background-image: linear-gradient(90deg, #b721ff 0%, #6625ff 50%, #257cff88 100%);
 }
 
 .loaderring {
   position: absolute !important;
-  top: calc(50% - 70px);
-  left: calc(50% - 70px);
+  top: calc(50% - 60px);
+  left: calc(50% - 60px);
   border-radius: 50%;
   animation: spin 1.6s linear infinite;
   animation-direction: reverse;
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
 }
 
 @keyframes spin {
