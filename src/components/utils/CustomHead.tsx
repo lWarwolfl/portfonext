@@ -17,20 +17,21 @@ export default function CustomHead(props: CustomHeadProps) {
   const seo = {
     title: 'Sina Kheiri - Front-end developer(Next.js/React.js)',
     description:
-      'As a Next.js/React.js developer with 4 years of experience in frontend development, I possess a diverse skill set of 25+ technical abilities. I also have the knowledge and skills for UI Design and I have created User personas, Wireframes, High fidelity projects and Prototypes using Figma',
+      'As a Next.js/React.js developer with 4 years of experience in frontend development, I possess a diverse skill set of 25+ technical abilities. I also have the knowledge and skills for UI Design and I have created User personas, Wireframes, High fidelity projects and Prototypes using Figma.',
     url: router.asPath,
     image: preview.src,
     twitterCardType: 'summary',
     keywords: [
-      'front-end',
-      'sina',
-      'kheiri',
-      'next.js',
-      'react.js',
-      'typescript',
-      'web3',
-      'development',
-      'software engineer',
+      'Sina',
+      'Kheiri',
+      'Portfonext',
+      'Front-end',
+      'Next.js',
+      'React.js',
+      'Typescript',
+      'Web3',
+      'Development',
+      'Software',
     ],
     ...props,
   } satisfies CustomHeadProps
@@ -43,6 +44,7 @@ export default function CustomHead(props: CustomHeadProps) {
       <meta name="title" content={seo.title} />
       <meta name="description" content={seo.description} />
       <meta name="keywords" content={seo.keywords.join(', ')} />
+      <meta name="author" content="Sina Kheiri" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
