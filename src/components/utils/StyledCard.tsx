@@ -31,7 +31,7 @@ export default function StyledCard({
 
   const handleMouseMove = useCallback(
     (event: React.MouseEvent<HTMLDivElement>) => {
-      if (!containerRef.current || window.innerWidth <= 768 || !move) return
+      if (!containerRef.current || window.innerWidth <= 768) return
 
       const containerRect = containerRef.current.getBoundingClientRect()
       const mouseX = event.clientX - containerRect.left
@@ -46,7 +46,7 @@ export default function StyledCard({
       containerRef.current.style.transform = `perspective(1000px) rotateX(${ySkew}deg) rotateY(${-xSkew}deg)`
       setGlowPosition({ x: mouseX - offset, y: mouseY - offset })
     },
-    [move, variant]
+    [variant]
   )
 
   function handleMouseLeave() {
@@ -59,11 +59,11 @@ export default function StyledCard({
     <div
       id={id}
       className={clsx(className, styles.container, variantStyles[variant])}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+      onMouseMove={move ? handleMouseMove : () => {}}
+      onMouseLeave={move ? handleMouseLeave : () => {}}
       ref={containerRef}
     >
-      {move && (
+      {move ? (
         <div
           className={styles.glow}
           style={{
@@ -72,7 +72,7 @@ export default function StyledCard({
             backgroundColor: `var(--${glow}-color)`,
           }}
         />
-      )}
+      ) : null}
       {children}
     </div>
   )

@@ -11,117 +11,120 @@
     @include flex-column;
     width: 100%;
 
-    .project {
-      @include flex-row;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
+    .animatedcontainer {
       margin-bottom: 50px;
 
       &:last-child {
         margin-bottom: 0;
       }
 
-      .slider {
-        width: 38%;
-        aspect-ratio: 7/6;
-        margin: 0 0 20px;
-      }
+      .project {
+        @include flex-row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
 
-      .content {
-        width: 62%;
-        padding-left: 30px;
-
-        .section {
-          @include flex-column;
-          margin-bottom: 32px;
-          width: 100%;
-
-          .title {
-            position: relative;
-            width: fit-content;
-            font-weight: $font-weight-semibold;
-            font-size: $font-size-l;
-            color: var(--font-color-primary);
-            margin-bottom: 10px;
-
-            .accent {
-              font-weight: $font-weight-medium;
-              font-size: $font-size-em;
-              color: var(--font-color-secondary);
-              margin-left: 4px;
-            }
-          }
-
-          .description {
-            width: 100%;
-            font-weight: $font-weight-regular;
-            font-size: $font-size-em;
-            color: var(--font-color-secondary);
-
-            .bold {
-              font-weight: $font-weight-semibold;
-              color: var(--font-color-primary);
-            }
-          }
-
-          .skillcontainer {
-            @include flex-row;
-            flex-wrap: wrap;
-
-            .skill {
-              @include flex-row;
-              align-items: center;
-              height: 40px;
-              padding: 0 16px 0 8px;
-              margin-bottom: 20px;
-              margin-right: 15px;
-              width: fit-content;
-              border-radius: 7px;
-              background-color: var(--more-transparent-background);
-
-              .name {
-                @include overflow-ellipsis;
-                width: 100%;
-                color: var(--font-color-primary);
-                font-weight: $font-weight-medium;
-                font-size: $font-size-r;
-              }
-
-              .logo {
-                font-size: $font-size-xl;
-                color: var(--blue-color);
-                margin-right: 15px;
-              }
-            }
-          }
-
-          .linkcontainer {
-            @include flex-row;
-            flex-wrap: wrap;
-
-            .link {
-              margin-right: 15px;
-              margin-bottom: 20px;
-            }
-          }
-
-          &:nth-child(2) {
-            margin-bottom: 12px;
-          }
-
-          &:last-child {
-            margin-bottom: 0;
-          }
+        .slider {
+          width: 38%;
+          aspect-ratio: 7/6;
+          margin: 0 0 20px;
         }
-      }
-
-      &.reverse {
-        flex-direction: row-reverse;
 
         .content {
-          padding-left: 0;
-          padding-right: 30px;
+          width: 62%;
+          padding-left: 30px;
+
+          .section {
+            @include flex-column;
+            margin-bottom: 32px;
+            width: 100%;
+
+            .title {
+              position: relative;
+              width: fit-content;
+              font-weight: $font-weight-semibold;
+              font-size: $font-size-l;
+              color: var(--font-color-primary);
+              margin-bottom: 10px;
+
+              .accent {
+                font-weight: $font-weight-medium;
+                font-size: $font-size-em;
+                color: var(--font-color-secondary);
+                margin-left: 4px;
+              }
+            }
+
+            .description {
+              width: 100%;
+              font-weight: $font-weight-regular;
+              font-size: $font-size-em;
+              color: var(--font-color-secondary);
+
+              .bold {
+                font-weight: $font-weight-semibold;
+                color: var(--font-color-primary);
+              }
+            }
+
+            .skillcontainer {
+              @include flex-row;
+              flex-wrap: wrap;
+
+              .skill {
+                @include flex-row;
+                align-items: center;
+                height: 40px;
+                padding: 0 16px 0 8px;
+                margin-bottom: 20px;
+                margin-right: 15px;
+                width: fit-content;
+                border-radius: 7px;
+                background-color: var(--more-transparent-background);
+
+                .name {
+                  @include overflow-ellipsis;
+                  width: 100%;
+                  color: var(--font-color-primary);
+                  font-weight: $font-weight-medium;
+                  font-size: $font-size-r;
+                }
+
+                .logo {
+                  font-size: $font-size-xl;
+                  color: var(--blue-color);
+                  margin-right: 15px;
+                }
+              }
+            }
+
+            .linkcontainer {
+              @include flex-row;
+              flex-wrap: wrap;
+
+              .link {
+                margin-right: 15px;
+                margin-bottom: 20px;
+              }
+            }
+
+            &:nth-child(2) {
+              margin-bottom: 12px;
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        &.reverse {
+          flex-direction: row-reverse;
+
+          .content {
+            padding-left: 0;
+            padding-right: 30px;
+          }
         }
       }
     }
@@ -131,43 +134,45 @@
 @media screen and (max-width: 800px) {
   .container {
     .projectcontainer {
-      .project {
-        flex-wrap: wrap;
+      .animatedcontainer {
+        .project {
+          flex-wrap: wrap;
 
-        .slider {
-          width: 100%;
-        }
+          .slider {
+            width: 100%;
+          }
 
-        .content {
-          width: 100%;
-          padding-left: 0;
+          .content {
+            width: 100%;
+            padding-left: 0;
 
-          .section {
-            .skillcontainer {
-              justify-content: space-between;
+            .section {
+              .skillcontainer {
+                justify-content: space-between;
 
-              .skill {
-                width: 46%;
-                margin-right: 0;
+                .skill {
+                  width: 46%;
+                  margin-right: 0;
+                }
               }
-            }
 
-            .linkcontainer {
-              justify-content: space-between;
+              .linkcontainer {
+                justify-content: space-between;
 
-              .link {
-                width: 46%;
-                margin-right: 0;
+                .link {
+                  width: 46%;
+                  margin-right: 0;
+                }
               }
             }
           }
-        }
 
-        &.reverse {
-          flex-direction: row;
+          &.reverse {
+            flex-direction: row;
 
-          .content {
-            padding-right: 0;
+            .content {
+              padding-right: 0;
+            }
           }
         }
       }
@@ -178,20 +183,22 @@
 @media screen and (max-width: 600px) {
   .container {
     .projectcontainer {
-      .project {
-        .content {
-          .section {
-            .title {
-              font-size: $font-size-em;
+      .animatedcontainer {
+        .project {
+          .content {
+            .section {
+              .title {
+                font-size: $font-size-em;
 
-              .accent {
-                font-size: $font-size-m;
+                .accent {
+                  font-size: $font-size-m;
+                }
               }
-            }
 
-            .skillcontainer {
-              .skill {
-                width: 100%;
+              .skillcontainer {
+                .skill {
+                  width: 100%;
+                }
               }
             }
           }

@@ -16,14 +16,15 @@ export default function Projects() {
       <div className={styles.projectcontainer}>
         {projects.map((item, index) => {
           return (
-            <Project
+            <div
               key={index}
-              className={clsx({
+              className={clsx(styles.animatedcontainer, {
                 ['animated-container']: item.direction === 'normal',
                 ['animated-container-reverse']: item.direction === 'reverse',
               })}
-              item={item}
-            />
+            >
+              <Project item={item} />
+            </div>
           )
         })}
       </div>

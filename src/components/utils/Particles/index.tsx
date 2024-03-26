@@ -32,8 +32,8 @@ function Particles({
   width = 1536,
   height = 706,
   depth = 500,
-  count = 100,
-  size = 250,
+  count = 80,
+  size = 200,
   color = 'rgb(228, 225, 255)',
 }: ParticlesProps) {
   const positions = useMemo(() => {

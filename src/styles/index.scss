@@ -18,6 +18,14 @@
   margin: 0 auto;
 }
 
+.animated-container {
+  will-change: transform, opacity;
+}
+
+.animated-container-reverse {
+  will-change: transform, opacity;
+}
+
 html,
 body {
   overflow-x: hidden;
