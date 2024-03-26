@@ -73,14 +73,14 @@ export default function StyledButton({
         <Icon
           icon={staticIcon}
           className={clsx(iconClasses, styles.staticicon)}
-          style={{ color: `var(--${color}-color)` }}
+          style={active ? { color: 'var(--white-color)' } : { color: `var(--${color}-color)` }}
         />
       )}
       <div className={textClasses}>{children}</div>
       {icon && (
         <Icon
           icon={icon}
-          style={{ color: `var(--${color}-color)` }}
+          style={active ? { color: 'var(--white-color)' } : { color: `var(--${color}-color)` }}
           className={clsx(iconClasses, styles.icon)}
         />
       )}
@@ -104,7 +104,8 @@ export default function StyledButton({
         href={externalLink}
         target="_blank"
         rel={download ? 'noopener noreferrer' : 'noreferrer'}
-        className={clsx(buttonClass, { [`${styles['singleicon']}`]: !icon })}
+        style={active ? { backgroundColor: `var(--${color}-color)` } : {}}
+        className={clsx(buttonClass, { [`${styles.singleicon}`]: !icon })}
       >
         {renderContent()}
       </a>
@@ -114,7 +115,8 @@ export default function StyledButton({
   return (
     <button
       onClick={handleClick}
-      className={clsx(buttonClass, { [`${styles['singleicon']}`]: !icon })}
+      style={active ? { backgroundColor: `var(--${color}-color)` } : {}}
+      className={clsx(buttonClass, { [`${styles.singleicon}`]: !icon })}
       disabled={disabled}
       type={type}
       {...props}

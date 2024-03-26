@@ -52,7 +52,7 @@ $height: 40px;
       @include flex-row;
       align-items: center;
       justify-content: center;
-      gap: 2px;
+      gap: 4px;
 
       .link:first-child {
         margin-left: 16px;
