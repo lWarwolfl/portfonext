@@ -1,7 +1,7 @@
 import StyledButton from '@/components/utils/StyledButton'
-import useWindowSize from '@/hooks/useWindowSize'
 import styles from '@/styles/layout/Header.module.scss'
 import { useLenis } from '@/utils/lenis'
+import useWindowSize from '@/utils/useWindowSize'
 import logo from '@public/image/jpg/face.jpg'
 import Image from 'next/image'
 import React from 'react'

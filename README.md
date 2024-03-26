@@ -1,13 +1,12 @@
 # Portfonext
 
-Portfonext is a portfolio website created using Next.js (TypeScript) and styled with modular SCSS and Material UI. It contains reusable components that can be utilized in other projects as well.
+Portfonext is a portfolio website created using Next.js (TypeScript) and styled with modular SCSS. It contains reusable components that can be utilized in other projects as well.
 
 ## Features
 
 - Next.js framework for server-side rendering and optimized performance.
 - TypeScript for type safety and enhanced development experience.
 - Modular SCSS for scalable and maintainable styling.
-- Material UI for ready-to-use UI components.
 - Reusable components that can be easily integrated into other projects.
 
 ## Getting Started
@@ -46,14 +45,12 @@ The project's directory structure is as follows:
 
 ```
 portfonext/
-  ├── components/      # Reusable components
-  ├── pages/           # Next.js pages
-  ├── public/          # Public assets
-  ├── styles/          # SCSS stylesheets
-  ├── .gitignore       # Git ignore file
-  ├── next.config.js   # Next.js configuration
-  ├── package.json     # Node.js dependencies and scripts
-  └── README.md        # Project README file
+  ├── src/
+    ├── components/      # Reusable components
+    ├── data/            # Constant Data For Each Section
+    ├── pages/           # Next.js pages
+    ├── styles/          # SCSS stylesheets
+    ├── utils/           # Reusable Scripts And Hooks
 ```
 
 ## Contributing
@@ -79,5 +76,9 @@ For any questions or inquiries, please reach out to the project maintainer:
 - Email: sinakheiri.dev@gmail.com
 
 Feel free to open an issue on GitHub if you encounter any problems or have suggestions for improvement.
+
+## Special Thanks
+
+A heartfelt thanks to Studio Freight, the creators of [Lenis](https://lenis.darkroom.engineering/), for their outstanding work. Utilizing their WebGL particle effect and smooth scrolling functionality has significantly improved the Portfonext user experience.
 
 Happy coding!

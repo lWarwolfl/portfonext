@@ -1,7 +1,7 @@
 import StyledButton from '@/components/utils/StyledButton'
 import { links } from '@/data/links'
-import useWindowSize from '@/hooks/useWindowSize'
 import styles from '@/styles/layout/Header.module.scss'
+import useWindowSize from '@/utils/useWindowSize'
 import { useEffect, useState } from 'react'
 
 export default function Menu() {
