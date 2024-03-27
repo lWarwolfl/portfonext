@@ -45,6 +45,11 @@ export const experiences: ExperienceInterface[] = [
         <span className={styles.bold}>Next.js, InterfaceScript,</span> and{' '}
         <span className={styles.bold}>Tailwind CSS</span>.
       </>,
+      <>
+        Delved into <span className={styles.bold}>Web3</span> world and worked with{' '}
+        <span className={styles.bold}>MetaMask</span> and
+        <span className={styles.bold}>Smart Contracts</span> to develop crypto based websites.
+      </>,
     ],
     color: 'blue',
   },
@@ -100,13 +105,7 @@ export const experiences: ExperienceInterface[] = [
         <span className={styles.bold}>Axios</span>.
       </>,
       <>
-        Utilized <span className={styles.bold}>Github</span> for version control and collaborated
-        with team members to resolve conflicts.
-      </>,
-      <>
-        Established connections to <span className={styles.bold}>Restful APIs</span> using{' '}
-        <span className={styles.bold}>Redux Toolkit</span> and axios for{' '}
-        <span className={styles.bold}>20+ features</span>.
+        Utilized <span className={styles.bold}>Redux toolit</span> for state management.
       </>,
       <>
         Participated in <span className={styles.bold}>Agile development methodologies</span> such as
