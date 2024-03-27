@@ -1,5 +1,5 @@
-import styles from '@/styles/landing/Summary.module.scss'
 import { type ColorType } from '@/lib/types'
+import styles from '@/styles/landing/Summary.module.scss'
 import photo from '@public/image/jpg/photo.jpg'
 import type { StaticImageData } from 'next/image'
 
@@ -22,15 +22,17 @@ export const summary: SummaryInterface = {
   content: (
     <>
       I am <span className={styles.accent}>Sina Kheiri</span> and As a{' '}
-      <span className={styles.bold}>Next.js/React.js developer</span> with{' '}
-      <span className={styles.bold}>4 years of experience</span> in{' '}
-      <span className={styles.bold}>frontend development</span> I possess a diverse skill set of{' '}
-      <span className={styles.bold}>25+ technical abilities</span>.{' '}
+      <span className={styles.bold}>Front-end developer </span> with{' '}
+      <span className={styles.bold}>4 years of experience</span>, I possess a{' '}
+      <span className={styles.bold}>diverse skill set</span> in my field of work.
       <div className={styles.break}></div> With a strong focus on delivering{' '}
-      <span className={styles.bold}>high-quality code</span> and{' '}
-      <span className={styles.bold}>exceptional user interfaces</span>, I am committed to staying{' '}
-      <span className={styles.bold}>up-to-date</span> with the latest industry trends and best
-      practices.
+      <span className={styles.bold}>
+        clean code
+        <span />, <span className={styles.bold}></span> high-quality projects{' '}
+      </span>{' '}
+      and <span className={styles.bold}>exceptional user interfaces</span>, I am committed to
+      staying <span className={styles.bold}>up-to-date</span> with the latest industry trends and
+      best practices.
     </>
   ),
   extra: (
