@@ -7,16 +7,17 @@ import { Icon } from '@iconify-icon/react'
 import clsx from 'clsx'
 
 interface Props {
+  index: number
   item: ProjectInterface
   className?: string
 }
 
-export default function Project({ item, className }: Props) {
+export default function Project({ index, item, className }: Props) {
   return (
     <StyledCard
       move={false}
       className={clsx(className, styles.project, {
-        [`${styles.reverse}`]: item.direction === 'reverse',
+        [`${styles.reverse}`]: index % 2 !== 0,
       })}
       variant="narrowbottom"
     >

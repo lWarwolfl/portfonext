@@ -23,7 +23,7 @@ export default function Projects() {
                 ['animated-container-reverse']: index % 2 !== 0,
               })}
             >
-              <Project item={item} />
+              <Project index={index} item={item} />
             </div>
           )
         })}
