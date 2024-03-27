@@ -28,13 +28,13 @@ To get started with Portfonext, follow these steps:
 3. Install the dependencies:
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 4. Start the development server:
 
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 5. Open your browser and visit [http://localhost:3000](http://localhost:3000) to see the Portfonext portfolio website.
