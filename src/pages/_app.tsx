@@ -1,6 +1,6 @@
+import { LenisProvider } from '@/lib/lenis'
+import useLoadingStore from '@/lib/loading/useLoadingStore'
 import '@/styles/index.scss'
-import { LenisProvider } from '@/utils/lenis'
-import useLoadingStore from '@/utils/loading/useLoadingStore'
 import raf from '@studio-freight/tempus'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'

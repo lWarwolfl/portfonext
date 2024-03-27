@@ -1,6 +1,6 @@
+import { useLenis } from '@/lib/lenis'
+import type { ColorType } from '@/lib/types'
 import styles from '@/styles/utils/StyledButton.module.scss'
-import { useLenis } from '@/utils/lenis'
-import type { ColorType } from '@/utils/types'
 import { Icon } from '@iconify-icon/react'
 import clsx from 'clsx'
 import { useRouter } from 'next/navigation'

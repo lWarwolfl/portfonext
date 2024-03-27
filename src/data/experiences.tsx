@@ -1,5 +1,5 @@
+import { type ColorType } from '@/lib/types'
 import styles from '@/styles/landing/Experiences.module.scss'
-import { type ColorType } from '@/utils/types'
 import agahpadidar from '@public/image/jpg/company/agahpadidar.jpg'
 import exmodules from '@public/image/png/company/exmodules.png'
 import ponisha from '@public/image/png/company/ponisha.png'

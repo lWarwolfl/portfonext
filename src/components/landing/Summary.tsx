@@ -2,8 +2,8 @@ import StyledButton from '@/components/utils/StyledButton'
 import StyledCard from '@/components/utils/StyledCard'
 import Title from '@/components/utils/Title'
 import { summary } from '@/data/summary'
+import useWindowSize from '@/lib/useWindowSize'
 import styles from '@/styles/landing/Summary.module.scss'
-import useWindowSize from '@/utils/useWindowSize'
 import Image from 'next/image'
 
 export default function Summary() {

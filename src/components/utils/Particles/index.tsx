@@ -1,4 +1,4 @@
-import { useScroll } from '@/utils/lenis'
+import { useScroll } from '@/lib/lenis'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useFrame as useRaf } from '@studio-freight/hamo'
 import { Suspense, useEffect, useMemo, useRef } from 'react'

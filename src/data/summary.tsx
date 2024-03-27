@@ -1,5 +1,5 @@
 import styles from '@/styles/landing/Summary.module.scss'
-import { type ColorType } from '@/utils/types'
+import { type ColorType } from '@/lib/types'
 import photo from '@public/image/jpg/photo.jpg'
 import type { StaticImageData } from 'next/image'
 

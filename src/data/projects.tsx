@@ -1,4 +1,8 @@
 import styles from '@/styles/landing/Projects.module.scss'
+import blockt1 from '@public/image/jpg/projects/blockt/1.jpg'
+import blockt2 from '@public/image/jpg/projects/blockt/2.jpg'
+import blockt3 from '@public/image/jpg/projects/blockt/3.jpg'
+import blockt4 from '@public/image/jpg/projects/blockt/4.jpg'
 import bluetek1 from '@public/image/jpg/projects/bluetek/1.jpg'
 import bluetek2 from '@public/image/jpg/projects/bluetek/2.jpg'
 import bluetek3 from '@public/image/jpg/projects/bluetek/3.jpg'
@@ -37,13 +41,50 @@ export interface ProjectInterface {
   title: string
   accent: string
   description: string | React.ReactNode
-  direction: 'normal' | 'reverse'
   images: StaticImageData[]
   skills: (SkillInterface | undefined)[]
   links: SummaryLinkInterface[]
 }
 
 export const projects: ProjectInterface[] = [
+  {
+    title: 'BlockT',
+    accent: '(Front-end Development - Next.js - Web3)',
+    description: (
+      <>
+        BlockT is my personal Web3 project and My goal was to work with{' '}
+        <span className={styles.bold}>Web3</span> to connect to{' '}
+        <span className={styles.bold}>Smart contracts</span> and send transactions on Ethereum
+        Sepolia testnet in this project.
+      </>
+    ),
+    images: [blockt1, blockt2, blockt3, blockt4],
+    skills: [
+      skills[0],
+      skills[3],
+      skills[23],
+      skills[12],
+      skills[13],
+      skills[7],
+      skills[9],
+      skills[22],
+      skills[10],
+    ].filter((skill) => skill !== undefined),
+    links: [
+      {
+        link: 'https://github.com/lWarwolfl/blockt',
+        color: 'blue',
+        text: 'Github',
+        icon: 'bxl:github',
+      },
+      {
+        link: 'https://nextdev.iran.liara.run/',
+        color: 'blue',
+        text: 'View',
+        icon: 'ci:show',
+      },
+    ],
+  },
   {
     title: 'Farzam.at',
     accent: '(Front-end Development - Next.js)',
@@ -52,9 +93,8 @@ export const projects: ProjectInterface[] = [
         Farzam.at is a startup project for design and coding services that I have collaborated on.
       </>
     ),
-    direction: 'normal',
     images: [farzam1, farzam2, farzam3, farzam4],
-    skills: [skills[0], skills[1], skills[2], skills[3], skills[9], skills[22], skills[10]].filter(
+    skills: [skills[0], skills[3], skills[9], skills[22], skills[10]].filter(
       (skill) => skill !== undefined
     ),
     links: [
@@ -75,7 +115,6 @@ export const projects: ProjectInterface[] = [
         <span className={styles.bold}>Customizable HTML Template</span>.
       </>
     ),
-    direction: 'reverse',
     images: [modernist1, modernist2, modernist3, modernist4, modernist5, modernist6, modernist7],
     skills: [
       skills[17],
@@ -113,7 +152,6 @@ export const projects: ProjectInterface[] = [
         website.
       </>
     ),
-    direction: 'normal',
     images: [bluetek1, bluetek2, bluetek3, bluetek4, bluetek5, bluetek6],
     skills: [
       skills[17],
@@ -148,7 +186,6 @@ export const projects: ProjectInterface[] = [
         Blue Wallet is a crypto wallet UI/UX design in Adobe XD which is related to Bluetek project.
       </>
     ),
-    direction: 'normal',
     images: [
       bluewallet1,
       bluewallet2,
@@ -179,7 +216,6 @@ export const projects: ProjectInterface[] = [
         parking space issues.
       </>
     ),
-    direction: 'normal',
     images: [parkspeedy1, parkspeedy2, parkspeedy3, parkspeedy4],
     skills: [skills[18], skills[19]].filter((skill) => skill !== undefined),
     links: [

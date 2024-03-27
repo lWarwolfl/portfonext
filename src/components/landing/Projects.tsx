@@ -19,8 +19,8 @@ export default function Projects() {
             <div
               key={index}
               className={clsx(styles.animatedcontainer, {
-                ['animated-container']: item.direction === 'normal',
-                ['animated-container-reverse']: item.direction === 'reverse',
+                ['animated-container']: index % 2 === 0,
+                ['animated-container-reverse']: index % 2 !== 0,
               })}
             >
               <Project item={item} />

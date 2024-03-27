@@ -1,4 +1,4 @@
-import { loader } from '@/utils/loader'
+import { loader } from '@/lib/loader'
 import { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Document() {

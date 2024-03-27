@@ -1,4 +1,4 @@
-import { type ColorType, type SkillCategoryType } from '@/utils/types'
+import { type ColorType, type SkillCategoryType } from '@/lib/types'
 
 export interface SkillCategoryInterface {
   name: SkillCategoryType
@@ -173,6 +173,12 @@ export const skills: SkillInterface[] = [
     name: 'Responsive Web Design',
     category: 'design',
     logo: 'mdi:responsive',
+    percent: '100%',
+  },
+  {
+    name: 'Web3',
+    category: 'code',
+    logo: 'icon-park-outline:blockchain',
     percent: '100%',
   },
 ]

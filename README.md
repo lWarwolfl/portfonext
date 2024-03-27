@@ -60,7 +60,7 @@ If you would like to use Portfonext as your own portfolio, you can use these fea
 
 1. Utilize the `colors.scss` file to define your custom colors. Then, incorporate these custom colors into the `src/lib/types.ts` file to ensure they are accessible across all utility components.
 2. For displaying your personalized data, populate the data files located within the `src/data/` directory with your specific content.
-3. Store your customized logo, favicon, preview images, loading indicators, and other relevant images in the `/public` directory to personalize the appearance of your project.
+3. Store your customized logo, favicon, preview images, loading indicators, and other relevant images in the `/public` directory to personalize the appearance of your project and use your own ```Resume.pdf``` as well.
 4. Provide the necessary properties to the WebGL particle effect on the homepage to tailor its behavior and appearance to your preferences.
 5. Modify the GSAP animations on the homepage to achieve your desired visual effects. For comprehensive guidance on GSAP, refer to the official documentation at [GSAP Documentation](https://gsap.com/docs/v3/). This resource will provide you with detailed instructions and examples for customizing animations to enhance your project's interactivity and visual appeal.
 

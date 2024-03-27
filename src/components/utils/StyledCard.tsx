@@ -1,5 +1,5 @@
+import { type ColorType } from '@/lib/types'
 import styles from '@/styles/utils/StyledCard.module.scss'
-import { type ColorType } from '@/utils/types'
 import clsx from 'clsx' // Ensure you've installed the 'clsx' package
 import React, { useCallback, useRef, useState } from 'react'
 

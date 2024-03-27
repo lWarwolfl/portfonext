@@ -1,7 +1,7 @@
 import StyledButton from '@/components/utils/StyledButton'
+import { useLenis } from '@/lib/lenis'
+import useWindowSize from '@/lib/useWindowSize'
 import styles from '@/styles/layout/Header.module.scss'
-import { useLenis } from '@/utils/lenis'
-import useWindowSize from '@/utils/useWindowSize'
 import logo from '@public/image/jpg/face.jpg'
 import Image from 'next/image'
 import React from 'react'
@@ -59,7 +59,7 @@ export default function Header() {
 
           <StyledButton
             className={styles.button}
-            externalLink="/files/resume/en/Resume.pdf"
+            externalLink="/files/Resume.pdf"
             download
             background="glass"
             icon={!isMobile ? 'ci:file-download' : undefined}

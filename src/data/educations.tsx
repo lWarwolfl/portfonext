@@ -1,4 +1,4 @@
-import { type ColorType } from '@/utils/types'
+import { type ColorType } from '@/lib/types'
 
 export interface EducationInterface {
   name: string
