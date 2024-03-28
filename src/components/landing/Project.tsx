@@ -26,6 +26,7 @@ export default function Project({ index, item, className }: Props) {
         title={item.title}
         accent={item.accent}
         images={item.images}
+        thumbnails={item.thumbnails}
       />
       <div className={styles.content}>
         <div className={styles.section}>

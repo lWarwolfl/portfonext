@@ -16,9 +16,10 @@ interface Props {
   title: string
   accent: string
   images: StaticImageData[]
+  thumbnails?: StaticImageData[]
 }
 
-export default function ImageSlider({ className, title, accent, images }: Props) {
+export default function ImageSlider({ className, title, accent, images, thumbnails }: Props) {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleButtonClick = () => {
@@ -124,19 +125,39 @@ export default function ImageSlider({ className, title, accent, images }: Props)
           coverflowEffect={{ rotate: 10, stretch: 0, depth: 200, slideShadows: true }}
           className={`swiper image-slider`}
         >
-          {images.map((item, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <Image
-                  quality={40}
-                  placeholder="blur"
-                  className="image"
-                  alt={`slide-${index}`}
-                  src={item}
-                />
-              </SwiperSlide>
-            )
-          })}
+          {thumbnails && thumbnails.length > 0 ? (
+            <>
+              {thumbnails.map((item, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <Image
+                      quality={80}
+                      placeholder="blur"
+                      className="image"
+                      alt={`slide-${index}`}
+                      src={item}
+                    />
+                  </SwiperSlide>
+                )
+              })}
+            </>
+          ) : (
+            <>
+              {images.map((item, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <Image
+                      quality={80}
+                      placeholder="blur"
+                      className="image"
+                      alt={`slide-${index}`}
+                      src={item}
+                    />
+                  </SwiperSlide>
+                )
+              })}
+            </>
+          )}
         </Swiper>
 
         <div className={styles.buttoncontainer}>
