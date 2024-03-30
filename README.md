@@ -16,7 +16,7 @@ To get started with Portfonext, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/portfonext.git
+   git clone https://github.com/lWarwolfl/portfonext.git
    ```
 
 2. Navigate to the project directory:
