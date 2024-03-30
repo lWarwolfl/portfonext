@@ -93,7 +93,7 @@ export const projects: ProjectInterface[] = [
         icon: 'bxl:github',
       },
       {
-        link: 'https://nextdev.iran.liara.run/',
+        link: 'https://blockt.liara.run/',
         color: 'blue',
         text: 'View',
         icon: 'ci:show',
