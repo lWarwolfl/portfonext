@@ -1,3 +1,4 @@
+import Menu from '@/components/layout/Menu'
 import StyledButton from '@/components/utils/StyledButton'
 import { useLenis } from '@/lib/lenis'
 import useWindowSize from '@/lib/useWindowSize'
@@ -5,7 +6,6 @@ import styles from '@/styles/layout/Header.module.scss'
 import logo from '@public/image/jpg/face.jpg'
 import Image from 'next/image'
 import React from 'react'
-import Menu from './Menu'
 
 export default function Header() {
   const containerRef = React.useRef<HTMLDivElement>(null)
@@ -37,13 +37,7 @@ export default function Header() {
     <>
       <div className={styles.header} ref={containerRef}>
         <div className={styles.fix}>
-          <Image
-            quality={30}
-            placeholder="blur"
-            alt="logo"
-            src={logo}
-            className={styles.logo}
-          ></Image>
+          <Image quality={40} placeholder="blur" alt="logo" src={logo} className={styles.logo} />
 
           {!isMobile ? <Menu /> : null}
 

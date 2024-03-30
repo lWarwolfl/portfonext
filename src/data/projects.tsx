@@ -48,8 +48,8 @@ import parkspeedy3 from '@public/image/jpg/projects/parkspeedy/3.jpg'
 import parkspeedy4 from '@public/image/jpg/projects/parkspeedy/4.jpg'
 import { type StaticImageData } from 'next/image'
 import * as React from 'react'
-import { skills, type SkillInterface } from './skills'
-import type { SummaryLinkInterface } from './summary'
+import { skills, type SkillInterface } from '@/data/skills'
+import type { SummaryLinkInterface } from '@/data/summary'
 
 export interface ProjectInterface {
   title: string

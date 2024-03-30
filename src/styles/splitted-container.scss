@@ -1,13 +1,11 @@
-$margin: 50px;
-
 .splitted-container {
   @include flex-row;
   width: 100%;
   flex-wrap: wrap;
 
   & > div {
-    width: calc(50% - calc($margin / 2));
-    margin-right: $margin;
+    width: calc(50% - calc(50px / 2));
+    margin-right: 50px;
   }
 
   & > div:nth-child(2n) {

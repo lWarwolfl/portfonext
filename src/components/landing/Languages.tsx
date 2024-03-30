@@ -1,7 +1,7 @@
+import Language from '@/components/landing/Language'
 import Title from '@/components/utils/Title'
 import { languages } from '@/data/languages'
 import styles from '@/styles/landing/Skills.module.scss'
-import Language from './Language'
 
 export default function Languages() {
   return (

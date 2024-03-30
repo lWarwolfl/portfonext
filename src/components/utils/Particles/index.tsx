@@ -4,8 +4,8 @@ import { useFrame as useRaf } from '@studio-freight/hamo'
 import { Suspense, useEffect, useMemo, useRef } from 'react'
 import type THREE from 'three'
 import { Color, MathUtils, Vector2 } from 'three'
-import fragmentShader from './shaders/fragment.glsl'
-import vertexShader from './shaders/vertex.glsl'
+import fragmentShader from '@/components/utils/Particles/shaders/fragment.glsl'
+import vertexShader from '@/components/utils/Particles/shaders/vertex.glsl'
 
 function Raf({ render = true }) {
   const { advance } = useThree()

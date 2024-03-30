@@ -1,9 +1,9 @@
+import Skill from '@/components/landing/Skill'
 import Title from '@/components/utils/Title'
 import { skillCategories, skills } from '@/data/skills'
 import styles from '@/styles/landing/Skills.module.scss'
 import clsx from 'clsx'
 import React from 'react'
-import Skill from './Skill'
 
 export default function Skills() {
   return (

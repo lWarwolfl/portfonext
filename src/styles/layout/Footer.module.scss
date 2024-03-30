@@ -1,6 +1,6 @@
-@import '../animations.scss';
-@import '../mixins.scss';
-@import '../globals.scss';
+@import '@/styles/animations.scss';
+@import '@/styles/mixins.scss';
+@import '@/styles/globals.scss';
 
 .footer {
   width: 100%;
@@ -15,17 +15,40 @@
     @include flex-row;
     align-items: center;
     justify-content: center;
+    gap: 12px;
     color: var(--font-color-primary);
     font-size: $font-size-m;
 
-    .link {
-      @include flex-row;
+    .name {
+      @include flex-row-inline;
+      gap: 10px;
       align-items: center;
-      color: var(--blue-color);
+      font-weight: $font-weight-medium;
 
-      .icon {
-        font-size: $font-size-xl;
-        margin: 0 3px 0 6px;
+      .logo {
+        @include background-contain;
+        align-items: center;
+        justify-content: center;
+        height: 32px;
+        width: auto;
+        border-radius: 50%;
+      }
+    }
+
+    .container {
+      @include flex-row-inline;
+      gap: 6px;
+      align-items: center;
+
+      .link {
+        @include flex-row;
+        align-items: center;
+        color: var(--blue-color);
+
+        .icon {
+          font-size: $font-size-xl;
+          margin-right: 3px;
+        }
       }
     }
   }

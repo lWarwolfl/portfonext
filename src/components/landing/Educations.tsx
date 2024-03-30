@@ -1,8 +1,8 @@
+import Education from '@/components/landing/Education'
 import SplittedContainer from '@/components/utils/SplittedContainer'
 import Title from '@/components/utils/Title'
 import { educations } from '@/data/educations'
 import styles from '@/styles/landing/Educations.module.scss'
-import Education from './Education'
 
 export default function Educations() {
   const midpoint = Math.ceil(educations.length / 2)

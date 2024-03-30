@@ -1,8 +1,8 @@
+import Experience from '@/components/landing/Experience'
 import SplittedContainer from '@/components/utils/SplittedContainer'
 import Title from '@/components/utils/Title'
 import { experiences } from '@/data/experiences'
 import styles from '@/styles/landing/Experiences.module.scss'
-import Experience from './Experience'
 
 export default function Experiences() {
   const midpoint = Math.ceil(experiences.length / 2)

@@ -7,7 +7,7 @@ export interface FooterInterface {
 
 export const footer: FooterInterface = {
   text: 'Developed by',
-  link: 'https://github.com/lWarwolfl',
+  link: 'https://github.com/lWarwolfl/portfonext',
   icon: 'bxl:github',
   name: 'lWarwolfl',
 }

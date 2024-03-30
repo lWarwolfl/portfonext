@@ -1,8 +1,8 @@
+import Project from '@/components/landing/Project'
 import Title from '@/components/utils/Title'
 import { projects } from '@/data/projects'
 import styles from '@/styles/landing/Projects.module.scss'
 import clsx from 'clsx'
-import Project from './Project'
 
 export default function Projects() {
   return (
