@@ -127,6 +127,7 @@ export default function ImageSlider({ className, title, accent, images, thumbnai
           modules={[EffectCoverflow, Pagination, Autoplay]}
           coverflowEffect={{ rotate: 10, stretch: 0, depth: 200, slideShadows: true }}
           className={`swiper image-slider`}
+          data-lenis-prevent
         >
           {slides.map((item, index) => {
             return (

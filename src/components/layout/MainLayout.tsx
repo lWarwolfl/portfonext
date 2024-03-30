@@ -93,10 +93,10 @@ export default function MainLayout({ children }: Props) {
 
   return (
     <>
-      <div id="full-size-image-slider"></div>
       <CustomHead />
       <WebGLParticles size={isMobile ? 260 : 200} />
       <main className={font.className}>
+        <div id="full-size-image-slider"></div>
         <Header />
         <div className="width-fix" ref={main}>
           {children}

@@ -49,6 +49,7 @@
       margin-bottom: 20px;
 
       .title {
+        width: calc(100% - 50px);
         font-weight: $font-weight-bold;
         font-size: $font-size-xl;
         color: var(--font-color-primary);
