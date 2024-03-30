@@ -23,6 +23,7 @@ interface Props {
 export default function ImageSlider({ className, title, accent, images, thumbnails }: Props) {
   const [isOpen, setIsOpen] = useState(false)
   const isMobile = useWindowSize()
+  const slides = thumbnails && thumbnails.length > 0 ? thumbnails : images
 
   const handleButtonClick = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen)
@@ -127,39 +128,19 @@ export default function ImageSlider({ className, title, accent, images, thumbnai
           coverflowEffect={{ rotate: 10, stretch: 0, depth: 200, slideShadows: true }}
           className={`swiper image-slider`}
         >
-          {thumbnails && thumbnails.length > 0 ? (
-            <>
-              {thumbnails.map((item, index) => {
-                return (
-                  <SwiperSlide key={index}>
-                    <Image
-                      quality={80}
-                      placeholder="blur"
-                      className="image"
-                      alt={`slide-${index}`}
-                      src={item}
-                    />
-                  </SwiperSlide>
-                )
-              })}
-            </>
-          ) : (
-            <>
-              {images.map((item, index) => {
-                return (
-                  <SwiperSlide key={index}>
-                    <Image
-                      quality={80}
-                      placeholder="blur"
-                      className="image"
-                      alt={`slide-${index}`}
-                      src={item}
-                    />
-                  </SwiperSlide>
-                )
-              })}
-            </>
-          )}
+          {slides.map((item, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <Image
+                  quality={68}
+                  placeholder="blur"
+                  className="image"
+                  alt={`slide-${index}`}
+                  src={item}
+                />
+              </SwiperSlide>
+            )
+          })}
         </Swiper>
 
         <div className={styles.buttoncontainer}>
