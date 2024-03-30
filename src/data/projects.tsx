@@ -1,3 +1,5 @@
+import { skills, type SkillInterface } from '@/data/skills'
+import type { SummaryLinkInterface } from '@/data/summary'
 import styles from '@/styles/landing/Projects.module.scss'
 import blockt1 from '@public/image/jpg/projects/blockt/1.jpg'
 import blockt2 from '@public/image/jpg/projects/blockt/2.jpg'
@@ -48,8 +50,6 @@ import parkspeedy3 from '@public/image/jpg/projects/parkspeedy/3.jpg'
 import parkspeedy4 from '@public/image/jpg/projects/parkspeedy/4.jpg'
 import { type StaticImageData } from 'next/image'
 import * as React from 'react'
-import { skills, type SkillInterface } from '@/data/skills'
-import type { SummaryLinkInterface } from '@/data/summary'
 
 export interface ProjectInterface {
   title: string
@@ -127,7 +127,7 @@ export const projects: ProjectInterface[] = [
     accent: '(Front-end Development - Vanilla)',
     description: (
       <>
-        Modernist which is a personal project that showcases my expertise in designing a{' '}
+        Modernist is a personal project that showcases my expertise in designing a{' '}
         <span className={styles.bold}>Customizable HTML Template</span>.
       </>
     ),
