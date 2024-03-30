@@ -144,8 +144,8 @@ export function WebGLParticles({ render = true, ...props }: WebGLParticlesProps)
       orthographic
       camera={{ near: 0.01, far: 10000, position: [0, 0, 1000] }}
       style={{
-        width: '100dvw',
-        height: '100dvh',
+        width: '100vw',
+        height: '100vh',
         position: 'fixed',
         zIndex: -1,
       }}
