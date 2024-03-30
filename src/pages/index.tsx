@@ -6,11 +6,10 @@ import Languages from '@/components/landing/Languages'
 import Projects from '@/components/landing/Projects'
 import Skills from '@/components/landing/Skills'
 import Summary from '@/components/landing/Summary'
-import MainLayout from '@/components/layout/MainLayout'
 
 export default function Home() {
   return (
-    <MainLayout>
+    <>
       <Hero />
       <Summary />
       <Skills />
@@ -19,6 +18,6 @@ export default function Home() {
       <Educations />
       <Languages />
       <Images />
-    </MainLayout>
+    </>
   )
 }

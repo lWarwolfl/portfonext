@@ -1,4 +1,5 @@
 import StyledButton from '@/components/utils/StyledButton'
+import useWindowSize from '@/lib/useWindowSize'
 import styles from '@/styles/utils/ImageSlider.module.scss'
 import { saveAs } from 'file-saver'
 import JSZip from 'jszip'
@@ -21,6 +22,7 @@ interface Props {
 
 export default function ImageSlider({ className, title, accent, images, thumbnails }: Props) {
   const [isOpen, setIsOpen] = useState(false)
+  const isMobile = useWindowSize()
 
   const handleButtonClick = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen)
@@ -114,7 +116,7 @@ export default function ImageSlider({ className, title, accent, images, thumbnai
             delay: 4000,
             disableOnInteraction: false,
           }}
-          slidesPerView={2.4}
+          slidesPerView={isMobile ? 1.6 : 2.4}
           centeredSlides
           loop
           spaceBetween={10}

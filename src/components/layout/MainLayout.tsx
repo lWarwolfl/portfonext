@@ -1,20 +1,13 @@
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
 import CustomHead from '@/components/utils/CustomHead'
+import { WebGLParticles } from '@/components/utils/Particles'
 import useWindowSize from '@/lib/useWindowSize'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import dynamic from 'next/dynamic'
 import { Poppins } from 'next/font/google'
 import { useRef } from 'react'
-
-const WebGLParticles = dynamic(
-  () => import('@/components/utils/Particles').then(({ WebGLParticles }) => WebGLParticles),
-  {
-    ssr: false,
-  }
-)
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP)
@@ -102,8 +95,8 @@ export default function MainLayout({ children }: Props) {
     <>
       <div id="full-size-image-slider"></div>
       <CustomHead />
+      <WebGLParticles size={isMobile ? 260 : 200} />
       <main className={font.className}>
-        <WebGLParticles />
         <Header />
         <div className="width-fix" ref={main}>
           {children}
