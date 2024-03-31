@@ -15,7 +15,7 @@
     align-items: flex-start;
     justify-content: center;
     margin: 0 auto;
-    width: 500px;
+    width: 550px;
 
     .animatedtext {
       @include flex-row;
@@ -40,18 +40,9 @@
     .description {
       display: inline-block;
       color: var(--font-color-primary);
-      font-size: $font-size-2xl;
-      font-weight: $font-weight-black;
-
-      .accent {
-        @include gradient-text-normal;
-        display: inline-block;
-      }
-
-      .note {
-        font-weight: $font-weight-bold;
-        font-size: $font-size-xl;
-      }
+      font-size: $font-size-em;
+      font-weight: $font-weight-bold;
+      margin-bottom: 8px;
     }
 
     .links {
@@ -85,14 +76,8 @@
       }
 
       .description {
-        margin-top: 5px;
         width: 100%;
-        font-size: $font-size-2xl;
-
-        .note {
-          display: block;
-          margin-top: 8px;
-        }
+        font-weight: $font-weight-medium;
       }
     }
   }

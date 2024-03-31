@@ -69,7 +69,7 @@ export const projects: ProjectInterface[] = [
       <>
         BlockT is a personal seamless <span className={styles.bold}>Dapp</span> that utilizes{' '}
         <span className={styles.bold}>Web3</span>, connects to{' '}
-        <span className={styles.bold}>Smart contracts</span> and sends transactions on Polygon
+        <span className={styles.bold}>Smart contracts</span> and sends transactions on Polygon{' '}
         Mumbai testnet.
       </>
     ),
@@ -105,12 +105,14 @@ export const projects: ProjectInterface[] = [
     accent: '(Front-end Development - Next.js)',
     description: (
       <>
-        Farzam.at is a startup project for design and coding services that I have collaborated on.
+        Farzam.at is a startup project for delivering services in various fields such as software{' '}
+        development, mobile applications, web development, and IT consulting that I have{' '}
+        collaborated on.
       </>
     ),
     images: [farzam1, farzam2, farzam3, farzam4],
     thumbnails: [farzam1_thumb, farzam2_thumb, farzam3_thumb, farzam4_thumb],
-    skills: [skills[0], skills[3], skills[9], skills[22], skills[10]].filter(
+    skills: [skills[0], skills[3], skills[16], skills[9], skills[22], skills[10]].filter(
       (skill) => skill !== undefined
     ),
     links: [
@@ -170,10 +172,9 @@ export const projects: ProjectInterface[] = [
     accent: '(Front-end Development - Vanilla)',
     description: (
       <>
-        As a key contributor to the Bluetek project, I developed 5 unique landings and profiles that
-        were both <span className={styles.bold}>visually appealing and user-friendly</span> and met
-        the requirements of a <span className={styles.bold}>crypto-based</span>
-        website.
+        As a key contributor to the Bluetek project, I developed 5 unique landings and profiles that{' '}
+        were both <span className={styles.bold}>visually appealing and user-friendly</span> and met{' '}
+        the requirements of a <span className={styles.bold}>crypto-based</span> website.
       </>
     ),
     images: [bluetek1, bluetek2, bluetek3, bluetek4, bluetek5, bluetek6],

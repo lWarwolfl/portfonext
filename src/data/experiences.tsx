@@ -24,10 +24,10 @@ export const experiences: ExperienceInterface[] = [
       <>
         <span className={styles.bold}>Exmodules</span> (Remote)
         <br />
-        Front-end(React.js/Next.js) Developer
+        Senior Front-end Developer
       </>
     ),
-    link: 'https://exmodules.com/',
+    link: 'https://twitter.com/exmodules',
     logo: exmodules,
     icon: 'ci:external-link',
     listicon: 'ci:checkbox-check',
@@ -87,7 +87,7 @@ export const experiences: ExperienceInterface[] = [
       <>
         <span className={styles.bold}>Agahpadidar</span> (Full-time)
         <br />
-        Front-end(React.js) Developer
+        Front-end Developer
       </>
     ),
     link: 'https://www.linkedin.com/company/agahpadidar/',

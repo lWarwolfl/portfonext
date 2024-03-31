@@ -52,9 +52,9 @@ export const summary: SummaryInterface = {
       icon: 'ci:mail',
     },
     {
-      link: 'https://www.linkedin.com/in/mohamad-sina-kheiri',
+      link: 'https://www.linkedin.com/in/sinakheiri-dev',
       color: 'blue',
-      text: 'linkedin.com/in/mohamad-sina-kheiri',
+      text: 'linkedin.com/in/sinakheiri-dev',
       icon: 'bxl:linkedin-square',
     },
     {
