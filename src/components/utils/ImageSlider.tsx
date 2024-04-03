@@ -52,8 +52,9 @@ export default function ImageSlider({ className, title, accent, images, thumbnai
     portalContainerRef.current = portalContainer
 
     return () => {
-      if (portalContainerRef.current) {
-        document.getElementById('full-size-image-slider')?.removeChild(portalContainerRef.current)
+      const slider = document.getElementById('full-size-image-slider')
+      if (slider) {
+        slider.innerHTML = ''
       }
     }
   }, [])
