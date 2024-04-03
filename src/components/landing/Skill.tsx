@@ -28,7 +28,7 @@ export default function Skill({ item, category }: Props) {
           className={styles.icon}
         />
       </div>
-      <div className={styles.barcontainer}>
+      {/* <div className={styles.barcontainer}>
         <div className={styles.percent}>{item.percent}</div>
         <div className={styles.bar}>
           <div
@@ -38,7 +38,7 @@ export default function Skill({ item, category }: Props) {
             }}
           ></div>
         </div>
-      </div>
+      </div> */}
     </StyledCard>
   )
 }
