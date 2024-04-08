@@ -50,6 +50,13 @@
         }
       }
 
+      .description {
+        margin-top: 12px;
+        color: var(--font-color-primary);
+        font-weight: $font-weight-regular;
+        font-size: $font-size-r;
+      }
+
       .barcontainer {
         @include flex-row;
         align-items: center;

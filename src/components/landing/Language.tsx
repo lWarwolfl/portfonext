@@ -28,17 +28,7 @@ export default function Language({ item }: Props) {
           className={styles.icon}
         />
       </div>
-      <div className={styles.barcontainer}>
-        <div className={styles.percent}>{item.percent}</div>
-        <div className={styles.bar}>
-          <div
-            className={styles.fill}
-            style={{
-              width: `${item.percent}`,
-            }}
-          ></div>
-        </div>
-      </div>
+      <div className={styles.description}>{item.description}</div>
     </StyledCard>
   )
 }

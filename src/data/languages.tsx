@@ -8,26 +8,25 @@ export interface LanguageInterface {
   name: string
   color: ColorType
   image: string | StaticImageData
-  percent: string
+  description: string
 }
 
 export const languages: LanguageInterface[] = [
   {
-    name: 'Persian (Mothers tongue)',
+    name: 'Persian',
     color: 'blue',
     image: fa,
-    percent: '100%',
+    description: 'Native or bilingual proficiency',
   },
   {
-    name: 'English (Fluent)',
+    name: 'English',
     color: 'blue',
     image: en,
-    percent: '90%',
+    description: 'Professional working proficiency',
   },
   // {
-  // 	name: "Dutch (Beginner)",
+  // 	name: "Dutch",
   // 	color: "aqua",
   // 	image: de,
-  // 	percent: "15%",
   // },
 ]
