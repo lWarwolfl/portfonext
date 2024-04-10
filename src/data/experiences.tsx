@@ -105,7 +105,7 @@ export const experiences: ExperienceInterface[] = [
         <span className={styles.bold}>Axios</span>.
       </>,
       <>
-        Utilized <span className={styles.bold}>Redux toolit</span> for state management.
+        Utilized <span className={styles.bold}>Redux toolkit</span> for state management.
       </>,
       <>
         Participated in <span className={styles.bold}>Agile development methodologies</span> such as
