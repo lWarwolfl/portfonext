@@ -8,7 +8,7 @@ import React from 'react'
 export default function Skills() {
   return (
     <div id="skills" className={styles.container}>
-      <Title className="animated-title" title="Skills" description="Key Abilities" />
+      <Title className="animated-title" title="Skills" description="And Tools" />
       <div className={clsx('animated-container', styles.skillcontainer)}>
         {skillCategories.map((category, index) => {
           return (
