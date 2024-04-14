@@ -24,7 +24,7 @@ export const experiences: ExperienceInterface[] = [
       <>
         <span className={styles.bold}>Exmodules</span> (Remote)
         <br />
-        Senior Front-end Developer
+        Front-end Developer
       </>
     ),
     link: 'https://twitter.com/exmodules',
