@@ -105,9 +105,8 @@ export const projects: ProjectInterface[] = [
     accent: '(Front-end Development - Next.js)',
     description: (
       <>
-        Farzam.at is a startup project for delivering services in various fields such as software{' '}
-        development, mobile applications, web development, and IT consulting that I have{' '}
-        collaborated on.
+        Farzam.at is a <span className={styles.bold}>startup</span> project for delivering IT
+        services that I have <span className={styles.bold}>collaborated</span> on.
       </>
     ),
     images: [farzam1, farzam2, farzam3, farzam4],
