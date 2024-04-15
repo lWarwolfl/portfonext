@@ -30,9 +30,10 @@ export const summary: SummaryInterface = {
         clean code
         <span />, <span className={styles.bold}></span> high-quality projects{' '}
       </span>{' '}
-      and <span className={styles.bold}>exceptional user interfaces</span>, I am committed to
-      staying <span className={styles.bold}>up-to-date</span> with the latest industry trends and
-      best practices.
+      and <span className={styles.bold}>exceptional user interfaces</span>, I am committed to{' '}
+      staying <span className={styles.bold}>up-to-date</span> with the latest industry trends and{' '}
+      best practices and I am always trying to <span className={styles.bold}>learn</span> and{' '}
+      <span className={styles.bold}>improve</span> my skills.
     </>
   ),
   extra: (
