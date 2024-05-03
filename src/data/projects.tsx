@@ -69,8 +69,8 @@ export const projects: ProjectInterface[] = [
       <>
         BlockT is a personal seamless <span className={styles.bold}>Dapp</span> that utilizes{' '}
         <span className={styles.bold}>Web3</span>, connects to{' '}
-        <span className={styles.bold}>Smart contracts</span> and sends transactions on Polygon{' '}
-        Mumbai testnet.
+        <span className={styles.bold}>Smart contracts</span> and sends transactions on a Polygon{' '}
+        testnet.
       </>
     ),
     images: [blockt1, blockt2, blockt3, blockt4],
