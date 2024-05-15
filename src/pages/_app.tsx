@@ -3,6 +3,7 @@ import { LenisProvider } from '@/lib/lenis'
 import useLoadingStore from '@/lib/loading/useLoadingStore'
 import '@/styles/index.scss'
 import raf from '@studio-freight/tempus'
+import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -42,6 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <LenisProvider>
       <SpeedInsights />
+      <Analytics />
       <MainLayout>
         <Component {...pageProps} />
       </MainLayout>
