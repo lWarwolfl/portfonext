@@ -56,38 +56,6 @@
         font-weight: $font-weight-regular;
         font-size: $font-size-r;
       }
-
-      .barcontainer {
-        @include flex-row;
-        align-items: center;
-        margin-top: 20px;
-
-        .percent {
-          width: 40px;
-          margin-right: 8px;
-          color: var(--font-color-primary);
-          font-weight: $font-weight-semibold;
-          font-size: $font-size-s;
-        }
-
-        .bar {
-          $height: 8px;
-          position: relative;
-          width: 100%;
-          height: $height;
-          border-radius: calc($height / 2);
-          background-color: var(--transparent-background);
-
-          .fill {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: $height;
-            border-radius: calc($height / 2);
-            background-color: var(--font-color-secondary);
-          }
-        }
-      }
     }
   }
 }

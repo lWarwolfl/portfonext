@@ -24,9 +24,4 @@ export const languages: LanguageInterface[] = [
     image: en,
     description: 'Professional working proficiency',
   },
-  // {
-  // 	name: "Dutch",
-  // 	color: "aqua",
-  // 	image: de,
-  // },
 ]

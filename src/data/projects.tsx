@@ -48,6 +48,10 @@ import parkspeedy1 from '@public/image/jpg/projects/parkspeedy/1.jpg'
 import parkspeedy2 from '@public/image/jpg/projects/parkspeedy/2.jpg'
 import parkspeedy3 from '@public/image/jpg/projects/parkspeedy/3.jpg'
 import parkspeedy4 from '@public/image/jpg/projects/parkspeedy/4.jpg'
+import tmarket1 from '@public/image/jpg/projects/tmarket/1.jpg'
+import tmarket2 from '@public/image/jpg/projects/tmarket/2.jpg'
+import tmarket3 from '@public/image/jpg/projects/tmarket/3.jpg'
+import tmarket4 from '@public/image/jpg/projects/tmarket/4.jpg'
 import { type StaticImageData } from 'next/image'
 import * as React from 'react'
 
@@ -93,7 +97,45 @@ export const projects: ProjectInterface[] = [
         icon: 'bxl:github',
       },
       {
-        link: 'https://blockt.liara.run/',
+        link: 'https://blockt.sinakheiri.dev/',
+        color: 'blue',
+        text: 'View',
+        icon: 'ci:show',
+      },
+    ],
+  },
+  {
+    title: 'TMarket',
+    accent: '(Front-end Development - Next.js)',
+    description: (
+      <>
+        TMarket is a sample project to utilize <span className={styles.bold}>SSR</span>,{' '}
+        <span className={styles.bold}>React query</span> and{' '}
+        <span className={styles.bold}>Zustand</span> to handle{' '}
+        <span className={styles.bold}>Rest APIs</span>.
+      </>
+    ),
+    images: [tmarket1, tmarket2, tmarket3, tmarket4],
+    skills: [
+      skills[0],
+      skills[3],
+      skills[12],
+      skills[13],
+      skills[7],
+      skills[8],
+      skills[9],
+      skills[22],
+      skills[10],
+    ].filter((skill) => skill !== undefined),
+    links: [
+      {
+        link: 'https://github.com/lWarwolfl/blockt',
+        color: 'blue',
+        text: 'Github',
+        icon: 'bxl:github',
+      },
+      {
+        link: 'https://tmarket.sinakheiri.dev/',
         color: 'blue',
         text: 'View',
         icon: 'ci:show',

@@ -4,7 +4,6 @@ import useLoadingStore from '@/lib/loading/useLoadingStore'
 import '@/styles/index.scss'
 import raf from '@studio-freight/tempus'
 import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import type { AppProps } from 'next/app'
@@ -14,7 +13,7 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
   ScrollTrigger.defaults({})
 
-  gsap.ticker.lagSmoothing(0)
+  gsap.ticker.lagSmoothing(1)
   gsap.ticker.remove(gsap.updateRoot)
   raf.add((time: number) => {
     gsap.updateRoot(time / 1000)
@@ -42,7 +41,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <LenisProvider>
-      <SpeedInsights />
       <Analytics />
       <MainLayout>
         <Component {...pageProps} />
