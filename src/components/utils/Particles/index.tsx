@@ -1,11 +1,11 @@
+import fragmentShader from '@/components/utils/Particles/shaders/fragment.glsl'
+import vertexShader from '@/components/utils/Particles/shaders/vertex.glsl'
 import { useScroll } from '@/lib/lenis'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useFrame as useRaf } from '@studio-freight/hamo'
 import { Suspense, useEffect, useMemo, useRef } from 'react'
 import type THREE from 'three'
 import { Color, MathUtils, Vector2 } from 'three'
-import fragmentShader from '@/components/utils/Particles/shaders/fragment.glsl'
-import vertexShader from '@/components/utils/Particles/shaders/vertex.glsl'
 
 function Raf({ render = true }) {
   const { advance } = useThree()
@@ -31,8 +31,8 @@ interface ParticlesProps {
 function Particles({
   width = 1536,
   height = 706,
-  depth = 500,
-  count = 80,
+  depth = 400,
+  count = 40,
   size = 200,
   color = 'rgb(228, 225, 255)',
 }: ParticlesProps) {

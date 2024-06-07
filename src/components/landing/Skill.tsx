@@ -20,13 +20,6 @@ export default function Skill({ item, category }: Props) {
           className={styles.logo}
         />
         <div className={styles.name}>{item.name}</div>
-        <Icon
-          icon={category.icon}
-          style={{
-            color: `var(--${category.color}-color)`,
-          }}
-          className={styles.icon}
-        />
       </div>
     </StyledCard>
   )

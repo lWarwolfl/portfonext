@@ -134,7 +134,7 @@ export default function ImageSlider({ className, title, accent, images, thumbnai
             return (
               <SwiperSlide key={index}>
                 <Image
-                  quality={68}
+                  quality={60}
                   placeholder="blur"
                   className="image"
                   alt={`slide-${index}`}

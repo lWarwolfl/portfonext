@@ -48,7 +48,7 @@
               margin-bottom: 10px;
 
               .accent {
-                font-weight: $font-weight-medium;
+                font-weight: $font-weight-regular;
                 font-size: $font-size-em;
                 color: var(--font-color-secondary);
                 margin-left: 4px;
@@ -88,7 +88,7 @@
                   @include overflow-ellipsis;
                   width: 100%;
                   color: var(--font-color-primary);
-                  font-weight: $font-weight-medium;
+                  font-weight: $font-weight-regular;
                   font-size: $font-size-r;
                 }
 

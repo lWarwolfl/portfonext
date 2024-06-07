@@ -37,18 +37,16 @@ export const experiences: ExperienceInterface[] = [
         project requirements.
       </>,
       <>
-        Created seamless user interfaces for various projects
-        <span className={styles.bold}>(+10)</span>.
+        Applied Next.js rendering strategies (<span className={styles.bold}>SSR, SSG, RSC</span>) to
+        create performant web apps.
       </>,
       <>
-        Learned and improved skills in{' '}
-        <span className={styles.bold}>Next.js, InterfaceScript,</span> and{' '}
-        <span className={styles.bold}>Tailwind CSS</span>.
+        Improved code maintainability by utilizing <span className={styles.bold}>Typescript</span>{' '}
+        and its advanced features (Generics, Decorators, ...).
       </>,
       <>
-        Delved into <span className={styles.bold}>Web3</span> world and worked with{' '}
-        <span className={styles.bold}>MetaMask</span> and
-        <span className={styles.bold}>Smart Contracts</span> to develop crypto based websites.
+        Worked with <span className={styles.bold}>MetaMask provider, Web3</span> and{' '}
+        <span className={styles.bold}>Smart Contracts</span> to develop Dapps.
       </>,
     ],
     color: 'blue',
@@ -68,15 +66,12 @@ export const experiences: ExperienceInterface[] = [
     listicon: 'ci:checkbox-check',
     experiences: [
       <>
-        Designed <span className={styles.bold}>User interfaces</span> for mobile apps and websites.
+        Developed static web pages and <span className={styles.bold}>HTML templates</span>.
       </>,
       <>
         Created{' '}
         <span className={styles.bold}>User personas, Wireframes, High fidelity designs</span>, and
         integrated <span className={styles.bold}>Prototyping</span>.
-      </>,
-      <>
-        Developed static web pages and <span className={styles.bold}>HTML templates</span>.
       </>,
     ],
     color: 'blue',
@@ -85,7 +80,7 @@ export const experiences: ExperienceInterface[] = [
     alt: 'Agahpadidar',
     name: (
       <>
-        <span className={styles.bold}>Agahpadidar</span> (Full-time)
+        <span className={styles.bold}>Agahpadidar</span> (Hybrid)
         <br />
         Front-end Developer
       </>
@@ -96,20 +91,16 @@ export const experiences: ExperienceInterface[] = [
     listicon: 'ci:checkbox-check',
     experiences: [
       <>
-        Developed complex dynamic features using <span className={styles.bold}>React.js</span> and{' '}
-        <span className={styles.bold}>Redux Toolit</span>.
-      </>,
-      <>
         Established connections to <span className={styles.bold}>Restful APIs</span> using{' '}
         <span className={styles.bold}>Async Thunks</span> and{' '}
         <span className={styles.bold}>Axios</span>.
       </>,
       <>
-        Utilized <span className={styles.bold}>Redux toolkit</span> for state management.
+        Utilized <span className={styles.bold}>Redux toolkit</span> for state management and handled
+        data for complex features.
       </>,
       <>
-        Participated in <span className={styles.bold}>Agile development methodologies</span> such as
-        daily stand-ups and sprint planning.
+        Gained experience in <span className={styles.bold}>Agile development</span>.
       </>,
     ],
     color: 'blue',

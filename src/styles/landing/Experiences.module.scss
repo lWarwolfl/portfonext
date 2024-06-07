@@ -19,7 +19,7 @@
     border: 1px solid var(--contrast-color);
     background-color: var(--more-transparent-background);
     color: var(--font-color-secondary);
-    font-weight: $font-weight-medium;
+    font-weight: $font-weight-regular;
     font-size: $font-size-em;
     line-height: $font-size-2xl;
     transition-duration: $transition-m;
@@ -81,7 +81,7 @@
 
     .text {
       color: var(--font-color-secondary);
-      font-weight: $font-weight-medium;
+      font-weight: $font-weight-regular;
       font-size: $font-size-em;
       line-height: $font-size-2xl;
 
