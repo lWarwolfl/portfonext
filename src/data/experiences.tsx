@@ -28,7 +28,7 @@ export const experiences: ExperienceInterface[] = [
         Senior Front-end Developer
       </>
     ),
-    link: 'https://linkedin.com',
+    link: 'https://www.linkedin.com/company/sugimotovisa/mycompany/',
     logo: sugimotovisa,
     icon: 'ci:external-link',
     listicon: 'ci:checkbox-check',
