@@ -23,7 +23,7 @@ export const summary: SummaryInterface = {
     <>
       I am <span className={styles.accent}>Sina Kheiri</span> and As a{' '}
       <span className={styles.bold}>Front-end developer </span> with{' '}
-      <span className={styles.bold}>4 years of experience</span>, I possess a{' '}
+      <span className={styles.bold}>5 years of experience</span>, I possess a{' '}
       <span className={styles.bold}>diverse skill set</span> in my field of work.
       <div className={styles.break}></div> With a strong focus on delivering{' '}
       <span className={styles.bold}>
