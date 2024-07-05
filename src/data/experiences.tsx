@@ -1,6 +1,7 @@
 import { type ColorType } from '@/lib/types'
 import styles from '@/styles/landing/Experiences.module.scss'
 import agahpadidar from '@public/image/jpg/company/agahpadidar.jpg'
+import sugimotovisa from '@public/image/jpg/company/sugimotovisa.jpg'
 import exmodules from '@public/image/png/company/exmodules.png'
 import ponisha from '@public/image/png/company/ponisha.png'
 import { type StaticImageData } from 'next/image'
@@ -19,34 +20,50 @@ export interface ExperienceInterface {
 
 export const experiences: ExperienceInterface[] = [
   {
-    alt: 'Exmodules',
+    alt: 'Sugimoto Visa',
     name: (
       <>
-        <span className={styles.bold}>Exmodules</span> (Remote)
+        <span className={styles.bold}>Sugimoto Visa</span> (Hybrid)
         <br />
-        Front-end Developer
+        Senior Front-end Developer
       </>
     ),
-    link: 'https://twitter.com/exmodules',
-    logo: exmodules,
+    link: 'https://linkedin.com',
+    logo: sugimotovisa,
     icon: 'ci:external-link',
     listicon: 'ci:checkbox-check',
     experiences: [
       <>
-        <span className={styles.bold}>Led a team</span> of developers and provided guidance on
-        project requirements.
+        <span className={styles.bold}>Managed projects</span> and{' '}
+        <span className={styles.bold}>Reviewed code</span> for efficiency and reliability and
+        provided feedback to teammates.
       </>,
       <>
-        Applied Next.js rendering strategies (<span className={styles.bold}>SSR, SSG, RSC</span>) to
-        create performant web apps.
+        Developed a <span className={styles.bold}>Boilerplate repo</span> and defined{' '}
+        <span className={styles.bold}>Project structure</span>,{' '}
+        <span className={styles.bold}>Naming conventions</span> and{' '}
+        <span className={styles.bold}>Tools</span> for all future projects.
       </>,
       <>
-        Improved code maintainability by utilizing <span className={styles.bold}>Typescript</span>{' '}
-        and its advanced features (Generics, Decorators, ...).
+        Implemented <span className={styles.bold}>Next.js app router</span> and{' '}
+        <span className={styles.bold}>Server components</span> to increase performance.
       </>,
       <>
-        Worked with <span className={styles.bold}>MetaMask provider, Web3</span> and{' '}
-        <span className={styles.bold}>Smart Contracts</span> to develop Dapps.
+        Harnessed the power of <span className={styles.bold}>Supabase Authentication</span> by using{' '}
+        <span className={styles.bold}>Form actions</span>.
+      </>,
+      <>
+        Designed <span className={styles.bold}>Database tables</span> for various features and
+        handled data by combining React query and{' '}
+        <span className={styles.bold}>Supabase cache helpers</span>.
+      </>,
+      <>
+        Improved <span className={styles.bold}>code maintainability</span> by utilizing{' '}
+        <span className={styles.bold}>Typescript</span> and its advanced features (Generics,
+        Decorators, ...).
+      </>,
+      <>
+        Created responsive <span className={styles.bold}>Progressive Web Apps</span>.
       </>,
     ],
     color: 'blue',
@@ -101,6 +118,36 @@ export const experiences: ExperienceInterface[] = [
       </>,
       <>
         Gained experience in <span className={styles.bold}>Agile development</span>.
+      </>,
+    ],
+    color: 'blue',
+  },
+  {
+    alt: 'Exmodules',
+    name: (
+      <>
+        <span className={styles.bold}>Exmodules</span> (Remote)
+        <br />
+        Front-end Developer
+      </>
+    ),
+    link: 'https://twitter.com/exmodules',
+    logo: exmodules,
+    icon: 'ci:external-link',
+    listicon: 'ci:checkbox-check',
+    experiences: [
+      <>
+        <span className={styles.bold}>Led a team</span> of developers and provided guidance on
+        project requirements.
+      </>,
+      <>
+        Applied <span className={styles.bold}>Next.js rendering strategies</span> (SSR, SSG) to
+        create performant web apps.
+      </>,
+      <>
+        Worked with <span className={styles.bold}>MetaMask provider</span>,{' '}
+        <span className={styles.bold}>Web3</span> and{' '}
+        <span className={styles.bold}>Smart Contracts</span> to develop Dapps.
       </>,
     ],
     color: 'blue',
