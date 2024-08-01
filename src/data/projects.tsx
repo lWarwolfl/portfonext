@@ -129,7 +129,7 @@ export const projects: ProjectInterface[] = [
     ].filter((skill) => skill !== undefined),
     links: [
       {
-        link: 'https://github.com/lWarwolfl/blockt',
+        link: 'https://github.com/lWarwolfl/tmarket',
         color: 'blue',
         text: 'Github',
         icon: 'bxl:github',
