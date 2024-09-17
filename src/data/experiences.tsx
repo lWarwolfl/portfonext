@@ -20,10 +20,10 @@ export interface ExperienceInterface {
 
 export const experiences: ExperienceInterface[] = [
   {
-    alt: 'Sugimoto Visa',
+    alt: 'Sparkbridge',
     name: (
       <>
-        <span className={styles.bold}>Sugimoto Visa</span> (Hybrid)
+        <span className={styles.bold}>Sparkbridge</span> (Remote)
         <br />
         Senior Front-end Developer
       </>
@@ -49,18 +49,19 @@ export const experiences: ExperienceInterface[] = [
         <span className={styles.bold}>Server components</span> to increase performance.
       </>,
       <>
-        Harnessed the power of <span className={styles.bold}>Supabase Authentication</span> by using{' '}
-        <span className={styles.bold}>Form actions</span>.
-      </>,
-      <>
-        Designed <span className={styles.bold}>Database tables</span> for various features and
-        handled data by combining React query and{' '}
-        <span className={styles.bold}>Supabase cache helpers</span>.
+        Designed <span className={styles.bold}>Database tables</span> for various features and{' '}
+        handled data by combining <span className={styles.bold}>React query</span> and{' '}
+        <span className={styles.bold}>Supabase</span>.
       </>,
       <>
         Improved <span className={styles.bold}>code maintainability</span> by utilizing{' '}
         <span className={styles.bold}>Typescript</span> and its advanced features (Generics,
         Decorators, ...).
+      </>,
+      <>
+        Maintained a clean repo using <span className={styles.bold}>Commitizen</span> and{' '}
+        <span className={styles.bold}>Husky</span> and documented projects with the help of{' '}
+        <span className={styles.bold}>Story Book</span>.
       </>,
       <>
         Created responsive <span className={styles.bold}>Progressive Web Apps</span>.
