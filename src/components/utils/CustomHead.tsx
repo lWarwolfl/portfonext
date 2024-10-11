@@ -17,7 +17,7 @@ export default function CustomHead(props: CustomHeadProps) {
   const seo = {
     title: 'Sina Kheiri - Front-end Developer | Next.js/React.js | Typescript | Web3',
     description:
-      'As a Front-end  developer with 4 years of experience, I possess a diverse skill set in my field of work. With a strong focus on delivering clean code, high-quality projects and exceptional user interfaces, I am committed to staying up-to-date with the latest industry trends and best practices.',
+      'As a Front-end developer with 5 years of experience, I possess a diverse skill set in my field of work. With a strong focus on delivering clean code, high-quality projects and exceptional user interfaces, I am committed to staying up-to-date with the latest industry trends and best practices.',
     url: router.asPath,
     image: preview.src,
     twitterCardType: 'summary',
