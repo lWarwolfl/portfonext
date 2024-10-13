@@ -4,7 +4,7 @@ import Hero from '@/components/landing/Hero'
 import Images from '@/components/landing/Images'
 import Languages from '@/components/landing/Languages'
 import Projects from '@/components/landing/Projects'
-// import Skills from '@/components/landing/Skills'
+import Skills from '@/components/landing/Skills'
 import Summary from '@/components/landing/Summary'
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Hero />
       <Summary />
-      {/* <Skills /> */}
+      <Skills />
       <Experiences />
       <Projects />
       <Educations />

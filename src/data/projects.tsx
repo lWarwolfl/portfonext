@@ -79,15 +79,14 @@ export const projects: ProjectInterface[] = [
     ),
     images: [blockt1, blockt2, blockt3, blockt4],
     skills: [
-      skills[0],
-      skills[3],
-      skills[23],
-      skills[12],
-      skills[13],
-      skills[7],
-      skills[9],
-      skills[22],
-      skills[10],
+      skills.find((skill) => skill.name === 'Next.js'),
+      skills.find((skill) => skill.name === 'Typescript'),
+      skills.find((skill) => skill.name === 'Web3'),
+      skills.find((skill) => skill.name === 'Tailwind CSS'),
+      skills.find((skill) => skill.name === 'Shadcn UI'),
+      skills.find((skill) => skill.name === 'Zustand'),
+      skills.find((skill) => skill.name === 'Clean code principles'),
+      skills.find((skill) => skill.name === 'Github'),
     ].filter((skill) => skill !== undefined),
     links: [
       {
@@ -117,15 +116,14 @@ export const projects: ProjectInterface[] = [
     ),
     images: [tmarket1, tmarket2, tmarket3, tmarket4],
     skills: [
-      skills[0],
-      skills[3],
-      skills[12],
-      skills[13],
-      skills[7],
-      skills[8],
-      skills[9],
-      skills[22],
-      skills[10],
+      skills.find((skill) => skill.name === 'Next.js'),
+      skills.find((skill) => skill.name === 'Typescript'),
+      skills.find((skill) => skill.name === 'Tailwind CSS'),
+      skills.find((skill) => skill.name === 'Shadcn UI'),
+      skills.find((skill) => skill.name === 'Zustand'),
+      skills.find((skill) => skill.name === 'React Query'),
+      skills.find((skill) => skill.name === 'Clean code principles'),
+      skills.find((skill) => skill.name === 'Github'),
     ].filter((skill) => skill !== undefined),
     links: [
       {
@@ -153,9 +151,13 @@ export const projects: ProjectInterface[] = [
     ),
     images: [farzam1, farzam2, farzam3, farzam4],
     thumbnails: [farzam1_thumb, farzam2_thumb, farzam3_thumb, farzam4_thumb],
-    skills: [skills[0], skills[3], skills[16], skills[9], skills[22], skills[10]].filter(
-      (skill) => skill !== undefined
-    ),
+    skills: [
+      skills.find((skill) => skill.name === 'Next.js'),
+      skills.find((skill) => skill.name === 'Typescript'),
+      skills.find((skill) => skill.name === 'CSS 3'),
+      skills.find((skill) => skill.name === 'Clean code principles'),
+      skills.find((skill) => skill.name === 'Github'),
+    ].filter((skill) => skill !== undefined),
     links: [
       {
         link: 'https://farzam.at//',
@@ -184,14 +186,14 @@ export const projects: ProjectInterface[] = [
       modernist6_thumb,
     ],
     skills: [
-      skills[17],
-      skills[15],
-      skills[2],
-      skills[5],
-      skills[20],
-      skills[21],
-      skills[22],
-      skills[10],
+      skills.find((skill) => skill.name === 'HTML 5'),
+      skills.find((skill) => skill.name === 'CSS 3'),
+      skills.find((skill) => skill.name === 'Javascript'),
+      skills.find((skill) => skill.name === 'jQuery'),
+      skills.find((skill) => skill.name === 'UI Design'),
+      skills.find((skill) => skill.name === 'Adobe Illustrator'),
+      skills.find((skill) => skill.name === 'Responsive Web Design'),
+      skills.find((skill) => skill.name === 'Github'),
     ].filter((skill) => skill !== undefined),
     links: [
       {
@@ -221,14 +223,14 @@ export const projects: ProjectInterface[] = [
     images: [bluetek1, bluetek2, bluetek3, bluetek4, bluetek5, bluetek6],
     thumbnails: [bluetek1_thumb, bluetek2_thumb, bluetek3_thumb, bluetek4_thumb],
     skills: [
-      skills[17],
-      skills[15],
-      skills[2],
-      skills[5],
-      skills[20],
-      skills[21],
-      skills[22],
-      skills[10],
+      skills.find((skill) => skill.name === 'HTML 5'),
+      skills.find((skill) => skill.name === 'CSS 3'),
+      skills.find((skill) => skill.name === 'Javascript'),
+      skills.find((skill) => skill.name === 'jQuery'),
+      skills.find((skill) => skill.name === 'UI Design'),
+      skills.find((skill) => skill.name === 'Adobe Illustrator'),
+      skills.find((skill) => skill.name === 'Responsive Web Design'),
+      skills.find((skill) => skill.name === 'Github'),
     ].filter((skill) => skill !== undefined),
     links: [
       {
@@ -263,7 +265,10 @@ export const projects: ProjectInterface[] = [
       bluewallet7,
       bluewallet8,
     ],
-    skills: [skills[18], skills[20]].filter((skill) => skill !== undefined),
+    skills: [
+      skills.find((skill) => skill.name === 'UI Design'),
+      skills.find((skill) => skill.name === 'Adobe XD'),
+    ].filter((skill) => skill !== undefined),
     links: [
       {
         link: 'https://xd.adobe.com/view/1666f955-e067-4bde-bd19-ced57a51a89c-4335/?fullscreen',
@@ -284,7 +289,10 @@ export const projects: ProjectInterface[] = [
       </>
     ),
     images: [parkspeedy1, parkspeedy2, parkspeedy3, parkspeedy4],
-    skills: [skills[18], skills[19]].filter((skill) => skill !== undefined),
+    skills: [
+      skills.find((skill) => skill.name === 'UI Design'),
+      skills.find((skill) => skill.name === 'Figma'),
+    ].filter((skill) => skill !== undefined),
     links: [
       {
         link: 'https://www.figma.com/file/bKZwjhaF1BdM1Gf0hJfjWN/Park-Speedy---High-Fidelity?node-id=0%3A1&t=1CZn3zTE5UlIsY6A-1',

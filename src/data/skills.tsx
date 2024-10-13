@@ -57,6 +57,21 @@ export const skills: SkillInterface[] = [
     logo: 'simple-icons:typescript',
   },
   {
+    name: 'Three.js',
+    category: 'code',
+    logo: 'tabler:brand-threejs',
+  },
+  {
+    name: 'WebGL',
+    category: 'code',
+    logo: 'simple-icons:webgl',
+  },
+  {
+    name: 'Web3',
+    category: 'code',
+    logo: 'icon-park-outline:blockchain',
+  },
+  {
     name: 'Jest',
     category: 'code',
     logo: 'simple-icons:jest',
@@ -92,7 +107,22 @@ export const skills: SkillInterface[] = [
     logo: 'simple-icons:github',
   },
   {
-    name: 'Agile Methodologies',
+    name: 'Husky',
+    category: 'other',
+    logo: 'file-icons:husky',
+  },
+  {
+    name: 'Commitizen',
+    category: 'other',
+    logo: 'file-icons:commitizen',
+  },
+  {
+    name: 'Story Book',
+    category: 'other',
+    logo: 'devicon-plain:storybook',
+  },
+  {
+    name: 'Agile And Scrum',
     category: 'other',
     logo: 'iconoir:agile',
   },
@@ -152,8 +182,8 @@ export const skills: SkillInterface[] = [
     logo: 'mdi:responsive',
   },
   {
-    name: 'Web3',
-    category: 'code',
-    logo: 'icon-park-outline:blockchain',
+    name: 'Jira',
+    category: 'other',
+    logo: 'mdi:jira',
   },
 ]

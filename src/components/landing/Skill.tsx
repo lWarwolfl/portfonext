@@ -20,6 +20,11 @@ export default function Skill({ item, category }: Props) {
           className={styles.logo}
         />
         <div className={styles.name}>{item.name}</div>
+
+        <div
+          className={styles.indicator}
+          style={{ backgroundColor: `var(--${category.color}-color)` }}
+        />
       </div>
     </StyledCard>
   )
