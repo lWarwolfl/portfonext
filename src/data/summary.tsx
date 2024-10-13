@@ -38,8 +38,9 @@ export const summary: SummaryInterface = {
   ),
   extra: (
     <>
-      <div className={styles.break}></div>I also have the knowledge and skills for UI Design and I
-      have created{' '}
+      <div className={styles.break}></div>I am a begginner but enthusiast in{' '}
+      <span className={styles.bold}>Three.js</span> and I also have the knowledge and skills for UI
+      Design and I have created{' '}
       <span className={styles.bold}>User personas, Wireframes, High fidelity projects</span> and{' '}
       <span className={styles.bold}>Prototypes</span> using{' '}
       <span className={styles.bold}>Figma and Adobe XD</span>.
