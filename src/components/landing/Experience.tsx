@@ -21,7 +21,9 @@ export default function Experience({ item }: Props) {
             className={styles.image}
           />
         </div>
+
         <div className={styles.text}>{item.name}</div>
+
         <Icon
           icon={item.icon}
           style={{
@@ -30,6 +32,7 @@ export default function Experience({ item }: Props) {
           className={styles.icon}
         />
       </a>
+
       {item.experiences.map((experience, index) => {
         return (
           <StyledCard
@@ -45,6 +48,7 @@ export default function Experience({ item }: Props) {
               }}
               className={styles.icon}
             />
+            
             <span className={styles.text}>{experience}</span>
           </StyledCard>
         )

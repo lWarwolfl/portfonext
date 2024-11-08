@@ -5,16 +5,6 @@ import blockt1 from '@public/image/jpg/projects/blockt/1.jpg'
 import blockt2 from '@public/image/jpg/projects/blockt/2.jpg'
 import blockt3 from '@public/image/jpg/projects/blockt/3.jpg'
 import blockt4 from '@public/image/jpg/projects/blockt/4.jpg'
-import bluetek1 from '@public/image/jpg/projects/bluetek/1.jpg'
-import bluetek1_thumb from '@public/image/jpg/projects/bluetek/1_thumb.jpg'
-import bluetek2 from '@public/image/jpg/projects/bluetek/2.jpg'
-import bluetek2_thumb from '@public/image/jpg/projects/bluetek/2_thumb.jpg'
-import bluetek3 from '@public/image/jpg/projects/bluetek/3.jpg'
-import bluetek3_thumb from '@public/image/jpg/projects/bluetek/3_thumb.jpg'
-import bluetek4 from '@public/image/jpg/projects/bluetek/4.jpg'
-import bluetek4_thumb from '@public/image/jpg/projects/bluetek/4_thumb.jpg'
-import bluetek5 from '@public/image/jpg/projects/bluetek/5.jpg'
-import bluetek6 from '@public/image/jpg/projects/bluetek/6.jpg'
 import bluewallet1 from '@public/image/jpg/projects/bluewallet/1.jpg'
 import bluewallet2 from '@public/image/jpg/projects/bluewallet/2.jpg'
 import bluewallet3 from '@public/image/jpg/projects/bluewallet/3.jpg'
@@ -211,48 +201,12 @@ export const projects: ProjectInterface[] = [
     ],
   },
   {
-    title: 'Bluetek',
-    accent: '(Front-end Development - Vanilla)',
-    description: (
-      <>
-        As a key contributor to the Bluetek project, I developed 5 unique landings and profiles that{' '}
-        were both <span className={styles.bold}>visually appealing and user-friendly</span> and met{' '}
-        the requirements of a <span className={styles.bold}>crypto-based</span> website.
-      </>
-    ),
-    images: [bluetek1, bluetek2, bluetek3, bluetek4, bluetek5, bluetek6],
-    thumbnails: [bluetek1_thumb, bluetek2_thumb, bluetek3_thumb, bluetek4_thumb],
-    skills: [
-      skills.find((skill) => skill.name === 'HTML 5'),
-      skills.find((skill) => skill.name === 'CSS 3'),
-      skills.find((skill) => skill.name === 'Javascript'),
-      skills.find((skill) => skill.name === 'jQuery'),
-      skills.find((skill) => skill.name === 'UI Design'),
-      skills.find((skill) => skill.name === 'Adobe Illustrator'),
-      skills.find((skill) => skill.name === 'Responsive Web Design'),
-      skills.find((skill) => skill.name === 'Github'),
-    ].filter((skill) => skill !== undefined),
-    links: [
-      {
-        link: 'https://github.com/lWarwolfl/Bluetek',
-        color: 'blue',
-        text: 'Github',
-        icon: 'bxl:github',
-      },
-      {
-        link: 'https://bluetek.lazygamer.ir/home/',
-        color: 'blue',
-        text: 'View',
-        icon: 'ci:show',
-      },
-    ],
-  },
-  {
     title: 'Blue Wallet',
     accent: '(UI/UX Design)',
     description: (
       <>
-        Blue Wallet is a crypto wallet UI/UX design in Adobe XD which is related to Bluetek project.
+        Blue Wallet is a crypto wallet and DAPP <span className={styles.bold}>UI/UX design</span> in
+        <span className={styles.bold}>Adobe XD</span>.
       </>
     ),
     images: [

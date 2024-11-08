@@ -5,10 +5,8 @@ import { experiences } from '@/data/experiences'
 import styles from '@/styles/landing/Experiences.module.scss'
 
 export default function Experiences() {
-  const midpoint = Math.ceil(experiences.length / 2)
-
-  const firstHalf = experiences.slice(0, midpoint)
-  const secondHalf = experiences.slice(midpoint)
+  const left = experiences.filter((item) => item.position === 'left')
+  const right = experiences.filter((item) => item.position === 'right')
 
   return (
     <div id="experiences" className={styles.container}>
@@ -16,13 +14,13 @@ export default function Experiences() {
 
       <SplittedContainer className="animated-container">
         <div className={styles.container}>
-          {firstHalf.map((item, index) => {
+          {left.map((item, index) => {
             return <Experience key={index} item={item} />
           })}
         </div>
 
         <div className={styles.container}>
-          {secondHalf.map((item, index) => {
+          {right.map((item, index) => {
             return <Experience key={index} item={item} />
           })}
         </div>

@@ -21,31 +21,30 @@ export const summary: SummaryInterface = {
   image: photo,
   content: (
     <>
-      I am <span className={styles.accent}>Sina Kheiri</span> and As a{' '}
-      <span className={styles.bold}>Front-end developer </span> with{' '}
-      <span className={styles.bold}>5 years of experience</span>, I possess a{' '}
-      <span className={styles.bold}>diverse skill set</span> in my field of work.
-      <div className={styles.break}></div> With a strong focus on delivering{' '}
-      <span className={styles.bold}>
-        clean code
-        <span />, <span className={styles.bold}></span> high-quality projects{' '}
-      </span>{' '}
-      and <span className={styles.bold}>exceptional user interfaces</span>, I am committed to{' '}
-      staying <span className={styles.bold}>up-to-date</span> with the latest industry trends and{' '}
-      best practices and I am always trying to <span className={styles.bold}>learn</span> and{' '}
-      <span className={styles.bold}>improve</span> my skills.
+      I am <span className={styles.accent}>Sina Kheiri</span> and with 5 years of experience, I have
+      a strong background in front-end development. I am skilled in{' '}
+      <span className={styles.bold}>Next.js</span>, <span className={styles.bold}>React</span>, and{' '}
+      <span className={styles.bold}>TypeScript</span>, and I have worked with{' '}
+      <span className={styles.bold}>Supabase</span> for back-end projects. I also have experience in{' '}
+      <span className={styles.bold}>Web3</span> and am an enthusiastic beginner in{' '}
+      <span className={styles.bold}>3D web apps</span> using{' '}
+      <span className={styles.bold}>Three.js</span>. Additionally, I am familiar with{' '}
+      <span className={styles.bold}>UI/UX design</span> and have created designs in{' '}
+      <span className={styles.bold}>Figma</span> and <span className={styles.bold}>Adobe XD</span>.
     </>
   ),
   extra: (
     <>
-      <div className={styles.break}></div>I am a begginner but enthusiast in{' '}
-      <span className={styles.bold}>Three.js</span> and I also have the knowledge and skills for UI
-      Design and I have created{' '}
-      <span className={styles.bold}>User personas, Wireframes, High fidelity projects</span> and{' '}
-      <span className={styles.bold}>Prototypes</span> using{' '}
-      <span className={styles.bold}>Figma and Adobe XD</span>.
+      <div className={styles.break}></div>I am dedicated to writing{' '}
+      <span className={styles.bold}>clean code</span> and delivering{' '}
+      <span className={styles.bold}>high-quality projects</span> with excellent{' '}
+      <span className={styles.bold}>user interfaces</span> while ensuring good{' '}
+      <span className={styles.bold}>performance</span>. I prioritize staying up-to-date with{' '}
+      technology and continuously learning to keep improving and also align with my team&apos;s tech{' '}
+      stack.
     </>
   ),
+
   links: [
     {
       link: 'mailto:sinakheiri.dev@gmail.com',
