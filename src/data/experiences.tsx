@@ -35,16 +35,13 @@ export const experiences: ExperienceInterface[] = [
     listicon: 'ci:checkbox-check',
     experiences: [
       <>
-        <span className={styles.bold}>Managed projects</span>,{' '}
-        <span className={styles.bold}>Led developers</span>, and{' '}
-        <span className={styles.bold}>Reviewed code</span> for efficiency and reliability, and
-        provided feedback to teammates.
+        <span className={styles.bold}>Oversaw projects</span> development and performed{' '}
+        <span className={styles.bold}>code reviews</span> to enhance efficiency.
       </>,
       <>
-        Developed a <span className={styles.bold}>Boilerplate repo</span> and defined{' '}
-        <span className={styles.bold}>Project structure</span>,{' '}
-        <span className={styles.bold}>Naming conventions</span>, and{' '}
-        <span className={styles.bold}>Tools</span> for all future projects.
+        Engineered a <span className={styles.bold}>standardized boilerplate</span> repository using{' '}
+        TypeScript to <span className={styles.bold}>streamline onboarding</span> and ensure{' '}
+        <span className={styles.bold}>project consistency</span>.
       </>,
       <>
         Implemented <span className={styles.bold}>Next.js app router</span> and{' '}
