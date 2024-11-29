@@ -39,8 +39,8 @@ export const experiences: ExperienceInterface[] = [
         <span className={styles.bold}>code reviews</span> to enhance efficiency.
       </>,
       <>
-        Engineered a <span className={styles.bold}>standardized boilerplate</span> repository using{' '}
-        TypeScript to <span className={styles.bold}>streamline onboarding</span> and ensure{' '}
+        Engineered a <span className={styles.bold}>standardized boilerplate</span> repository to{' '}
+        <span className={styles.bold}>streamline onboarding</span> and ensure{' '}
         <span className={styles.bold}>project consistency</span>.
       </>,
       <>
