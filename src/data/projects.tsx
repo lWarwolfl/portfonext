@@ -75,8 +75,6 @@ export const projects: ProjectInterface[] = [
       skills.find((skill) => skill.name === 'Tailwind CSS'),
       skills.find((skill) => skill.name === 'Shadcn UI'),
       skills.find((skill) => skill.name === 'Zustand'),
-      skills.find((skill) => skill.name === 'Clean code principles'),
-      skills.find((skill) => skill.name === 'Github'),
     ].filter((skill) => skill !== undefined),
     links: [
       {
@@ -112,8 +110,6 @@ export const projects: ProjectInterface[] = [
       skills.find((skill) => skill.name === 'Shadcn UI'),
       skills.find((skill) => skill.name === 'Zustand'),
       skills.find((skill) => skill.name === 'React Query'),
-      skills.find((skill) => skill.name === 'Clean code principles'),
-      skills.find((skill) => skill.name === 'Github'),
     ].filter((skill) => skill !== undefined),
     links: [
       {
@@ -144,9 +140,7 @@ export const projects: ProjectInterface[] = [
     skills: [
       skills.find((skill) => skill.name === 'Next.js'),
       skills.find((skill) => skill.name === 'Typescript'),
-      skills.find((skill) => skill.name === 'CSS 3'),
-      skills.find((skill) => skill.name === 'Clean code principles'),
-      skills.find((skill) => skill.name === 'Github'),
+      skills.find((skill) => skill.name === 'SCSS'),
     ].filter((skill) => skill !== undefined),
     links: [
       {
@@ -179,11 +173,7 @@ export const projects: ProjectInterface[] = [
       skills.find((skill) => skill.name === 'HTML 5'),
       skills.find((skill) => skill.name === 'CSS 3'),
       skills.find((skill) => skill.name === 'Javascript'),
-      skills.find((skill) => skill.name === 'jQuery'),
       skills.find((skill) => skill.name === 'UI Design'),
-      skills.find((skill) => skill.name === 'Adobe Illustrator'),
-      skills.find((skill) => skill.name === 'Responsive Web Design'),
-      skills.find((skill) => skill.name === 'Github'),
     ].filter((skill) => skill !== undefined),
     links: [
       {

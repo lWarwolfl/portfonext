@@ -77,12 +77,7 @@ export const skills: SkillInterface[] = [
     logo: 'simple-icons:jest',
   },
   {
-    name: 'Jquery',
-    category: 'code',
-    logo: 'simple-icons:jquery',
-  },
-  {
-    name: 'Redux Toolkit(Redux.js)',
+    name: 'Redux',
     category: 'code',
     logo: 'simple-icons:redux',
   },
@@ -97,14 +92,14 @@ export const skills: SkillInterface[] = [
     logo: 'simple-icons:reactquery',
   },
   {
-    name: 'Clean code principles',
+    name: 'Clean Code Principles(SOLID, DRY, …)',
     category: 'other',
     logo: 'mdi:monitor-clean',
   },
   {
-    name: 'Github',
+    name: 'Git',
     category: 'other',
-    logo: 'simple-icons:github',
+    logo: 'simple-icons:git',
   },
   {
     name: 'Husky',
@@ -122,9 +117,14 @@ export const skills: SkillInterface[] = [
     logo: 'devicon-plain:storybook',
   },
   {
-    name: 'Agile And Scrum',
+    name: 'Agile/Scrum Methodologies',
     category: 'other',
     logo: 'iconoir:agile',
+  },
+  {
+    name: 'Design Patterns',
+    category: 'other',
+    logo: 'hugeicons:web-design-02',
   },
   {
     name: 'Tailwind CSS',
@@ -170,20 +170,5 @@ export const skills: SkillInterface[] = [
     name: 'Adobe XD',
     category: 'design',
     logo: 'simple-icons:adobexd',
-  },
-  {
-    name: 'Adobe Illustrator',
-    category: 'design',
-    logo: 'simple-icons:adobeillustrator',
-  },
-  {
-    name: 'Responsive Web Design',
-    category: 'design',
-    logo: 'mdi:responsive',
-  },
-  {
-    name: 'Jira',
-    category: 'other',
-    logo: 'mdi:jira',
   },
 ]
