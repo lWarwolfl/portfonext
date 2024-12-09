@@ -44,7 +44,6 @@ export const summary: SummaryInterface = {
       stack.
     </>
   ),
-
   links: [
     {
       link: 'mailto:sinakheiri.dev@gmail.com',
@@ -65,9 +64,9 @@ export const summary: SummaryInterface = {
       icon: 'bxl:github',
     },
     {
-      link: 'https://gitlab.com/cnawam',
+      link: 'https://gitlab.com/lWarwolfl',
       color: 'blue',
-      text: 'gitlab.com/cnawam',
+      text: 'gitlab.com/lWarwolfl',
       icon: 'bxl:gitlab',
     },
     {
