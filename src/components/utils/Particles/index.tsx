@@ -2,9 +2,9 @@ import fragmentShader from '@/components/utils/Particles/shaders/fragment.glsl'
 import vertexShader from '@/components/utils/Particles/shaders/vertex.glsl'
 import { useScroll } from '@/lib/lenis'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { useFrame as useRaf } from '@studio-freight/hamo'
+import { useFrame as useRaf } from '@darkroom.engineering/hamo'
 import { Suspense, useEffect, useMemo, useRef } from 'react'
-import type THREE from 'three'
+import type * as THREE from 'three'
 import { Color, MathUtils, Vector2 } from 'three'
 
 function Raf({ render = true }) {
@@ -151,9 +151,10 @@ export function WebGLParticles({ render = true, ...props }: WebGLParticlesProps)
       }}
     >
       <Raf render={render} />
-      <Suspense>
+      <Suspense fallback={null}>
         <Content {...props} />
       </Suspense>
     </Canvas>
   )
 }
+
