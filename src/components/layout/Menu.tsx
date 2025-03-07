@@ -17,7 +17,7 @@ export default function Menu() {
         const element = document.getElementById(link.id)
         if (element) {
           const bounding = element.getBoundingClientRect()
-          if (bounding.top < 300) {
+          if (bounding.top < 350) {
             setActiveLink(link.id)
             foundActive = true
           }

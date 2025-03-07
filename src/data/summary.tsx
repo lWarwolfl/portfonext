@@ -21,27 +21,27 @@ export const summary: SummaryInterface = {
   image: photo,
   content: (
     <>
-      I am <span className={styles.accent}>Sina Kheiri</span> and with 5 years of experience, I have
-      a strong background in front-end development. I am skilled in{' '}
+      I am <span className={styles.accent}>Sina Kheiri</span>, a front-end developer with 5 years of
+      experience. I possess a diverse skill set in my field of work. I am proficient in{' '}
       <span className={styles.bold}>Next.js</span>, <span className={styles.bold}>React</span>, and{' '}
-      <span className={styles.bold}>TypeScript</span>, and I have worked with{' '}
-      <span className={styles.bold}>Supabase</span> for back-end projects. I also have experience in{' '}
-      <span className={styles.bold}>Web3</span> and am an enthusiastic beginner in{' '}
+      <span className={styles.bold}>TypeScript</span>, with experience in{' '}
+      <span className={styles.bold}>Supabase</span> and <span className={styles.bold}>Web3</span>.{' '}
+      <div className={styles.break} />A beginner but an enthusiast in{' '}
       <span className={styles.bold}>3D web apps</span> using{' '}
-      <span className={styles.bold}>Three.js</span>. Additionally, I am familiar with{' '}
-      <span className={styles.bold}>UI/UX design</span> and have created designs in{' '}
+      <span className={styles.bold}>Three.js</span> and also familiar with{' '}
+      <span className={styles.bold}>UI design</span>, including the creation of user personas,
+      wireframes, prototypes, and high-fidelity designs using{' '}
       <span className={styles.bold}>Figma</span> and <span className={styles.bold}>Adobe XD</span>.
     </>
   ),
   extra: (
     <>
-      <div className={styles.break}></div>I am dedicated to writing{' '}
-      <span className={styles.bold}>clean code</span> and delivering{' '}
-      <span className={styles.bold}>high-quality projects</span> with excellent{' '}
-      <span className={styles.bold}>user interfaces</span> while ensuring good{' '}
-      <span className={styles.bold}>performance</span>. I prioritize staying up-to-date with{' '}
-      technology and continuously learning to keep improving and also align with my team&apos;s tech{' '}
-      stack.
+      <div className={styles.break}></div>Committed to delivering{' '}
+      <span className={styles.bold}>clean code</span>,{' '}
+      <span className={styles.bold}>high-quality projects</span>, and{' '}
+      <span className={styles.bold}>exceptional user interfaces</span>, all while maintaining{' '}
+      <span className={styles.bold}>performance</span> and always staying up-to-date to align with{' '}
+      <span className={styles.bold}>best practices</span>.
     </>
   ),
   links: [

@@ -1,9 +1,9 @@
 import { type ColorType } from '@/lib/types'
 import styles from '@/styles/landing/Experiences.module.scss'
 import agahpadidar from '@public/image/jpg/company/agahpadidar.jpg'
-import sugimotovisa from '@public/image/jpg/company/sugimotovisa.jpg'
 import exmodules from '@public/image/png/company/exmodules.png'
 import ponisha from '@public/image/png/company/ponisha.png'
+import sparkbridge from '@public/image/png/company/sparkbridge.png'
 import { type StaticImageData } from 'next/image'
 import React from 'react'
 
@@ -24,47 +24,32 @@ export const experiences: ExperienceInterface[] = [
     alt: 'Sparkbridge',
     name: (
       <>
-        <span className={styles.bold}>Sparkbridge</span> (Remote)
+        <span className={styles.bold}>Sparkbridge Incubator Ltd.</span> (Remote)
         <br />
-        Senior Front-end Developer
+        Front-end Developer
       </>
     ),
-    link: 'https://www.linkedin.com/company/sparkbridge',
-    logo: sugimotovisa,
+    link: 'https://www.sparkbridge.ca/about',
+    logo: sparkbridge,
     icon: 'ci:external-link',
     listicon: 'ci:checkbox-check',
     experiences: [
       <>
-        <span className={styles.bold}>Oversaw projects</span> development and performed{' '}
-        <span className={styles.bold}>code reviews</span> to enhance efficiency.
+        Provided <span className={styles.bold}>guidance</span> to less experienced teammates,
+        performed <span className={styles.bold}>code reviews</span>, and{' '}
+        <span className={styles.bold}>maintained</span> 2 products with{' '}
+        <span className={styles.bold}>2000 users</span>.
       </>,
       <>
-        Engineered a <span className={styles.bold}>standardized boilerplate</span> repository to{' '}
-        <span className={styles.bold}>streamline onboarding</span> and ensure{' '}
-        <span className={styles.bold}>project consistency</span>.
+        <span className={styles.bold}>Reduced</span> developer onboarding and{' '}
+        <span className={styles.bold}>project setup time</span> by{' '}
+        <span className={styles.bold}>20%</span> and improved{' '}
+        <span className={styles.bold}>code consistency</span> using boilerplate repos.
       </>,
       <>
-        Implemented <span className={styles.bold}>Next.js app router</span> and{' '}
-        <span className={styles.bold}>Server components</span> to increase performance.
-      </>,
-      <>
-        Designed <span className={styles.bold}>Database tables</span> using{' '}
-        <span className={styles.bold}>Supabase</span> and developed various features by combining{' '}
-        <span className={styles.bold}>React query</span> and{' '}
-        <span className={styles.bold}>Cache helpers</span>.
-      </>,
-      <>
-        Improved <span className={styles.bold}>code maintainability</span> by utilizing{' '}
-        <span className={styles.bold}>TypeScript</span> and its advanced features (
-        <span className={styles.bold}>Generics, Decorators</span>, etc.).
-      </>,
-      <>
-        Maintained a clean repo using <span className={styles.bold}>Commitizen</span> and{' '}
-        <span className={styles.bold}>Husky</span>, and documented projects with the help of{' '}
-        <span className={styles.bold}>Storybook</span>.
-      </>,
-      <>
-        Created responsive <span className={styles.bold}>Progressive Web Apps (PWA)</span>.
+        <span className={styles.bold}>Built</span> 10 MVPs in 12 months using{' '}
+        <span className={styles.bold}>Supabase</span> serverless tools along with{' '}
+        <span className={styles.bold}>Next.js</span> while handling tight deadlines.
       </>,
     ],
     color: 'blue',
@@ -74,7 +59,7 @@ export const experiences: ExperienceInterface[] = [
     alt: 'Agahpadidar',
     name: (
       <>
-        <span className={styles.bold}>Agahpadidar</span> (Hybrid)
+        <span className={styles.bold}>AgahPadidar</span> (Hybrid)
         <br />
         Front-end Developer
       </>
@@ -87,11 +72,11 @@ export const experiences: ExperienceInterface[] = [
       <>
         Established connections to <span className={styles.bold}>RESTful APIs</span> using{' '}
         <span className={styles.bold}>Async Thunks</span> and{' '}
-        <span className={styles.bold}>Axios</span>.
+        <span className={styles.bold}>Redux toolkit</span> for state management.
       </>,
       <>
-        Utilized <span className={styles.bold}>Redux toolkit</span> for state management and handled
-        data for complex features.
+        Handled data for <span className={styles.bold}>complex features</span> and created a{' '}
+        <span className={styles.bold}>role-based panel</span>.
       </>,
     ],
     color: 'blue',
@@ -112,17 +97,12 @@ export const experiences: ExperienceInterface[] = [
     listicon: 'ci:checkbox-check',
     experiences: [
       <>
-        Developed static web pages and <span className={styles.bold}>HTML templates</span>.
-      </>,
-      <>
-        Created <span className={styles.bold}>User personas</span>,{' '}
-        <span className={styles.bold}>Wireframes</span>,{' '}
-        <span className={styles.bold}>High fidelity designs</span>, and integrated{' '}
-        <span className={styles.bold}>Prototyping</span>.
+        Developed static web pages and <span className={styles.bold}>HTML templates</span> and{' '}
+        Participated in projects involving <span className={styles.bold}>UI/UX design</span>.
       </>,
     ],
     color: 'blue',
-    position: 'right',
+    position: 'left',
   },
   {
     alt: 'Exmodules',
