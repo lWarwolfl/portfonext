@@ -58,11 +58,13 @@ export default function MainLayout({ children }: Props) {
             trigger: box,
             start: isMobile ? '350px bottom' : '150px bottom',
             end:
-              boxes.length - 1 === index
-                ? 'bottom bottom'
-                : isMobile
-                  ? '700px bottom'
-                  : '500px bottom',
+              boxes.length - 2 === index
+                ? '300px bottom'
+                : boxes.length - 1 === index
+                  ? 'bottom bottom'
+                  : isMobile
+                    ? '700px bottom'
+                    : '500px bottom',
             scrub: true,
           },
         })
