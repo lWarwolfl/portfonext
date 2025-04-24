@@ -21,8 +21,8 @@ export const summary: SummaryInterface = {
   image: photo,
   content: (
     <>
-      I am <span className={styles.accent}>Sina Kheiri</span>, a front-end developer with 5 years of
-      experience. I possess a diverse skill set in my field of work. I am proficient in{' '}
+      I am <span className={styles.accent}>Sina Kheiri</span>, a front-end developer more than 4{' '}
+      years of experience. I possess a diverse skill set in my field of work. I am proficient in{' '}
       <span className={styles.bold}>Next.js</span>, <span className={styles.bold}>React</span>, and{' '}
       <span className={styles.bold}>TypeScript</span>, with experience in{' '}
       <span className={styles.bold}>Supabase</span> and <span className={styles.bold}>Web3</span>.{' '}
