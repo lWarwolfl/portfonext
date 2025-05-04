@@ -64,12 +64,6 @@ export const summary: SummaryInterface = {
       icon: 'bxl:github',
     },
     {
-      link: 'https://gitlab.com/lWarwolfl',
-      color: 'blue',
-      text: 'gitlab.com/lWarwolfl',
-      icon: 'bxl:gitlab',
-    },
-    {
       link: 'https://t.me/cnawam',
       text: 't.me/cnawam',
       color: 'blue',
