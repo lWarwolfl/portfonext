@@ -4,7 +4,7 @@ import { useScroll } from '@/lib/lenis'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useFrame as useRaf } from '@studio-freight/hamo'
 import { Suspense, useEffect, useMemo, useRef } from 'react'
-import type THREE from 'three'
+import type * as THREE from 'three'
 import { Color, MathUtils, Vector2 } from 'three'
 
 function Raf({ render = true }) {
