@@ -4,6 +4,7 @@ import agahpadidar from '@public/image/jpg/company/agahpadidar.jpg'
 import ponisha from '@public/image/png/company/ponisha.png'
 import sparkbridge from '@public/image/png/company/sparkbridge.png'
 import { type StaticImageData } from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export interface ExperienceInterface {
@@ -23,7 +24,7 @@ export const experiences: ExperienceInterface[] = [
     alt: 'Sparkbridge',
     name: (
       <>
-        <span className={styles.bold}>Sparkbridge Incubator Ltd.</span>, Front-end Developer
+        <span className={styles.bold}>Sparkbridge Incubator Ltd.</span>, Full-stack Developer
       </>
     ),
     link: 'https://www.sparkbridge.ca/about',
@@ -32,25 +33,35 @@ export const experiences: ExperienceInterface[] = [
     listicon: 'ci:checkbox-check',
     experiences: [
       <>
-        Provided <span className={styles.bold}>guidance</span> to less experienced teammates,
-        performed <span className={styles.bold}>code reviews</span> and{' '}
-        <span className={styles.bold}>maintained</span> 2 products with more than{' '}
-        <span className={styles.bold}>2000 users</span>.
+        Maintained{' '}
+        <span className={styles.bold}>
+          <Link
+            href="https://mocko.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.externallink}
+          >
+            Mocko.ai
+          </Link>
+        </span>{' '}
+        app with more than <span className={styles.bold}>2000 users</span>.
       </>,
       <>
-        <span className={styles.bold}>Reduced</span> developer{' '}
-        <span className={styles.bold}>onboarding</span> and{' '}
-        <span className={styles.bold}>project setup time</span> by{' '}
-        <span className={styles.bold}>20%</span> and improved{' '}
-        <span className={styles.bold}>code consistency</span> through developing boilerplate
-        repositories.
+        Provided <span className={styles.bold}>guidance</span> to less experienced teammates and
+        participated in <span className={styles.bold}>code reviews</span>.
       </>,
       <>
         <span className={styles.bold}>Built</span> 10 <span className={styles.bold}>MVPs</span> in
-        12 months using <span className={styles.bold}>Supabase</span> serverless tools along with{' '}
-        <span className={styles.bold}>Next.js</span> while handling a tight deadline.
+        12 months while handling a tight deadline.
+      </>,
+      <>
+        <span className={styles.bold}>Reduced</span> project{' '}
+        <span className={styles.bold}>setup time</span> by <span className={styles.bold}>20%</span>{' '}
+        and improved <span className={styles.bold}>code consistency</span> by creating template
+        repositories.
       </>,
     ],
+
     color: 'blue',
     position: 'left',
   },

@@ -57,6 +57,16 @@ export const skills: SkillInterface[] = [
     logo: 'simple-icons:typescript',
   },
   {
+    name: 'Postgres',
+    category: 'code',
+    logo: 'akar-icons:postgresql-fill',
+  },
+  {
+    name: 'Drizzle ORM',
+    category: 'code',
+    logo: 'catppuccin:drizzle-orm',
+  },
+  {
     name: 'Three.js',
     category: 'code',
     logo: 'tabler:brand-threejs',

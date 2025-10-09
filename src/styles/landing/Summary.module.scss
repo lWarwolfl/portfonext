@@ -12,8 +12,8 @@
     align-items: center;
     justify-content: flex-start;
     margin-right: 30px;
-    max-width: 200px;
-    min-width: 170px;
+    max-width: 140px;
+    min-width: 100px;
 
     .image {
       @include background-contain;
@@ -106,8 +106,9 @@
 @media screen and (max-width: 700px) {
   .container {
     .splitimage {
-      margin-right: 0;
-      max-width: unset;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 150px;
       width: 100%;
       margin-bottom: 30px;
     }

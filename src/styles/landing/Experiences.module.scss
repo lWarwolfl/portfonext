@@ -72,6 +72,12 @@
   .experience {
     display: block;
 
+    .externallink {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      cursor: pointer;
+    }
+
     .icon {
       vertical-align: middle;
       font-size: $font-size-xl;
