@@ -15,9 +15,9 @@ export default function CustomHead(props: CustomHeadProps) {
   const router = useRouter()
 
   const seo = {
-    title: 'Sina Kheiri - Front-end Developer | Next.js/React.js | Typescript | Three.js | Web3',
+    title: 'Full-stack Developer | Next.js | Typescript | Postgres | Drizlle',
     description:
-      'As a Front-end developer with 5 years of experience, I possess a diverse skill set in my field of work. - Proficient in Next.js, React, and TypeScript, with experience in Supabase And Web3. - Committed to delivering clean code, high-quality projects, and exceptional user interfaces, all while maintaining performance and Always staying up-to-date to align with best practices. - Beginner but enthusiast in 3d web apps using Three.js. Familiar with UI design, including the creation of user personas, wireframes, prototypes, and high-fidelity designs using Figma and Adobe XD.',
+      'Full-stack developer with 5 years of experience in building performant applications. Skilled in Next.js and TypeScript with more focus on front-end. Experienced in back-end projects using Postgres paired with Drizzle. Committed to staying up-to-date and having an eye for detail while operating in fast paced and Agile environments.',
     url: router.asPath,
     image: preview.src,
     twitterCardType: 'summary',
@@ -25,11 +25,15 @@ export default function CustomHead(props: CustomHeadProps) {
       'Sina',
       'Kheiri',
       'Portfonext',
+      'Full-stack',
       'Front-end',
+      'Back-end',
       'Next.js',
       'React.js',
       'Typescript',
       'Three.js',
+      'Postgres',
+      'Drizzle',
       'Web3',
       'Development',
       'Software',
