@@ -138,11 +138,11 @@ export const projects: ProjectInterface[] = [
     ),
     images: [mythreejsjourney1, mythreejsjourney2, mythreejsjourney3, mythreejsjourney4],
     skills: [
+      skills.find((skill) => skill.name === 'Three.js'),
+      skills.find((skill) => skill.name === 'WebGL'),
       skills.find((skill) => skill.name === 'Vite'),
       skills.find((skill) => skill.name === 'Html 5'),
       skills.find((skill) => skill.name === 'CSS 3'),
-      skills.find((skill) => skill.name === 'Three.js'),
-      skills.find((skill) => skill.name === 'WebGL'),
     ].filter((skill) => skill !== undefined),
     links: [
       {
