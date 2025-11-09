@@ -13,6 +13,6 @@ export const links: LinkInterface[] = [
     icon: 'ci:suitcase',
   },
   { id: 'projects', text: 'Projects', icon: 'ci:window-code-block' },
-  { id: 'educations', text: 'Education', icon: 'ci:book-open' },
-  { id: 'languages', text: 'Languages', icon: 'ci:planet' },
+  // { id: 'educations', text: 'Education', icon: 'ci:book-open' },
+  // { id: 'languages', text: 'Languages', icon: 'ci:planet' },
 ]
