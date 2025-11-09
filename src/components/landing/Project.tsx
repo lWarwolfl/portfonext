@@ -27,6 +27,7 @@ export default function Project({ index, item, className }: Props) {
         accent={item.accent}
         images={item.images}
         thumbnails={item.thumbnails}
+        fullSlide={item.fullSlide}
       />
       <div className={styles.content}>
         <div className={styles.section}>

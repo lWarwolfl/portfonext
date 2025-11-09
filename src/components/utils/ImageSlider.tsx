@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/navigation'
-import { Autoplay, EffectCoverflow, Navigation, Pagination } from 'swiper/modules'
+import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 interface Props {
@@ -18,9 +18,17 @@ interface Props {
   accent: string
   images: StaticImageData[]
   thumbnails?: StaticImageData[]
+  fullSlide?: boolean
 }
 
-export default function ImageSlider({ className, title, accent, images, thumbnails }: Props) {
+export default function ImageSlider({
+  className,
+  title,
+  accent,
+  images,
+  thumbnails,
+  fullSlide,
+}: Props) {
   const [isOpen, setIsOpen] = useState(false)
   const isMobile = useWindowSize()
   const slides = thumbnails && thumbnails.length > 0 ? thumbnails : images
@@ -114,19 +122,17 @@ export default function ImageSlider({ className, title, accent, images, thumbnai
       <div className={`${styles.container} ${className}`}>
         <Swiper
           effect={'coverflow'}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
-          slidesPerView={isMobile ? 1.6 : 2.4}
-          centeredSlides
-          loop
+          slidesPerView={fullSlide ? 1 : isMobile ? 1.6 : 2.4}
+          centeredSlides={!fullSlide}
+          loop={!fullSlide}
           spaceBetween={10}
           pagination={{
             clickable: true,
           }}
-          modules={[EffectCoverflow, Pagination, Autoplay]}
-          coverflowEffect={{ rotate: 10, stretch: 0, depth: 200, slideShadows: true }}
+          modules={fullSlide ? [Pagination] : [EffectCoverflow, Pagination]}
+          coverflowEffect={
+            !fullSlide ? { rotate: 10, stretch: 0, depth: 200, slideShadows: true } : undefined
+          }
           className={`swiper image-slider`}
           data-lenis-prevent-touch
         >

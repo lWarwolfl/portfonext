@@ -47,6 +47,11 @@ export const skills: SkillInterface[] = [
     logo: 'simple-icons:react',
   },
   {
+    name: 'Vite',
+    category: 'code',
+    logo: 'simple-icons:vite',
+  },
+  {
     name: 'Javascript',
     category: 'code',
     logo: 'simple-icons:javascript',
@@ -65,6 +70,11 @@ export const skills: SkillInterface[] = [
     name: 'Drizzle ORM',
     category: 'code',
     logo: 'catppuccin:drizzle-orm',
+  },
+  {
+    name: 'Supabase',
+    category: 'code',
+    logo: 'simple-icons:supabase',
   },
   {
     name: 'Three.js',
@@ -175,10 +185,5 @@ export const skills: SkillInterface[] = [
     name: 'Figma',
     category: 'design',
     logo: 'simple-icons:figma',
-  },
-  {
-    name: 'Adobe XD',
-    category: 'design',
-    logo: 'simple-icons:adobexd',
   },
 ]

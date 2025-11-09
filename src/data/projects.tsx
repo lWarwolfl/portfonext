@@ -5,14 +5,6 @@ import blockt1 from '@public/image/jpg/projects/blockt/1.jpg'
 import blockt2 from '@public/image/jpg/projects/blockt/2.jpg'
 import blockt3 from '@public/image/jpg/projects/blockt/3.jpg'
 import blockt4 from '@public/image/jpg/projects/blockt/4.jpg'
-import bluewallet1 from '@public/image/jpg/projects/bluewallet/1.jpg'
-import bluewallet2 from '@public/image/jpg/projects/bluewallet/2.jpg'
-import bluewallet3 from '@public/image/jpg/projects/bluewallet/3.jpg'
-import bluewallet4 from '@public/image/jpg/projects/bluewallet/4.jpg'
-import bluewallet5 from '@public/image/jpg/projects/bluewallet/5.jpg'
-import bluewallet6 from '@public/image/jpg/projects/bluewallet/6.jpg'
-import bluewallet7 from '@public/image/jpg/projects/bluewallet/7.jpg'
-import bluewallet8 from '@public/image/jpg/projects/bluewallet/8.jpg'
 import farzam1 from '@public/image/jpg/projects/farzam/1.jpg'
 import farzam1_thumb from '@public/image/jpg/projects/farzam/1_thumb.jpg'
 import farzam2 from '@public/image/jpg/projects/farzam/2.jpg'
@@ -21,6 +13,11 @@ import farzam3 from '@public/image/jpg/projects/farzam/3.jpg'
 import farzam3_thumb from '@public/image/jpg/projects/farzam/3_thumb.jpg'
 import farzam4 from '@public/image/jpg/projects/farzam/4.jpg'
 import farzam4_thumb from '@public/image/jpg/projects/farzam/4_thumb.jpg'
+import gamerhaven1 from '@public/image/jpg/projects/gamerhaven/1.png'
+import gamerhaven1_thumb from '@public/image/jpg/projects/gamerhaven/1_thumb.png'
+import gamerhaven2 from '@public/image/jpg/projects/gamerhaven/2.png'
+import gamerhaven3 from '@public/image/jpg/projects/gamerhaven/3.png'
+import gamerhaven3_thumb from '@public/image/jpg/projects/gamerhaven/3_thumb.png'
 import modernist1 from '@public/image/jpg/projects/modernist/1.jpg'
 import modernist1_thumb from '@public/image/jpg/projects/modernist/1_thumb.jpg'
 import modernist2 from '@public/image/jpg/projects/modernist/2.jpg'
@@ -34,6 +31,10 @@ import modernist5_thumb from '@public/image/jpg/projects/modernist/5_thumb.jpg'
 import modernist6 from '@public/image/jpg/projects/modernist/6.jpg'
 import modernist6_thumb from '@public/image/jpg/projects/modernist/6_thumb.jpg'
 import modernist7 from '@public/image/jpg/projects/modernist/7.jpg'
+import mythreejsjourney1 from '@public/image/jpg/projects/mythreejsjourney/1.png'
+import mythreejsjourney2 from '@public/image/jpg/projects/mythreejsjourney/2.png'
+import mythreejsjourney3 from '@public/image/jpg/projects/mythreejsjourney/3.png'
+import mythreejsjourney4 from '@public/image/jpg/projects/mythreejsjourney/4.png'
 import parkspeedy1 from '@public/image/jpg/projects/parkspeedy/1.jpg'
 import parkspeedy2 from '@public/image/jpg/projects/parkspeedy/2.jpg'
 import parkspeedy3 from '@public/image/jpg/projects/parkspeedy/3.jpg'
@@ -42,7 +43,11 @@ import tmarket1 from '@public/image/jpg/projects/tmarket/1.jpg'
 import tmarket2 from '@public/image/jpg/projects/tmarket/2.jpg'
 import tmarket3 from '@public/image/jpg/projects/tmarket/3.jpg'
 import tmarket4 from '@public/image/jpg/projects/tmarket/4.jpg'
+import voicingmap1 from '@public/image/jpg/projects/voicingmap/1.png'
+import voicingmap2 from '@public/image/jpg/projects/voicingmap/2.png'
+import voicingmap3 from '@public/image/jpg/projects/voicingmap/3.png'
 import { type StaticImageData } from 'next/image'
+import Link from 'next/link'
 import * as React from 'react'
 
 export interface ProjectInterface {
@@ -51,11 +56,109 @@ export interface ProjectInterface {
   description: string | React.ReactNode
   images: StaticImageData[]
   thumbnails?: StaticImageData[]
+  fullSlide?: boolean
   skills: (SkillInterface | undefined)[]
   links: SummaryLinkInterface[]
 }
 
 export const projects: ProjectInterface[] = [
+  {
+    title: 'Gamer Haven',
+    accent: '(Full-stack Development - Next.js - Drizzle ORM)',
+    description: (
+      <>
+        A platform for game mods consisting of a <span className={styles.bold}>ssr rendered</span>{' '}
+        landing and a <span className={styles.bold}>dynamic panel</span>.
+      </>
+    ),
+    images: [gamerhaven1, gamerhaven2, gamerhaven3],
+    thumbnails: [gamerhaven1_thumb, gamerhaven2, gamerhaven3_thumb],
+    skills: [
+      skills.find((skill) => skill.name === 'Next.js'),
+      skills.find((skill) => skill.name === 'Typescript'),
+      skills.find((skill) => skill.name === 'Postgres'),
+      skills.find((skill) => skill.name === 'Drizzle ORM'),
+      skills.find((skill) => skill.name === 'Tailwind CSS'),
+      skills.find((skill) => skill.name === 'Shadcn UI'),
+    ].filter((skill) => skill !== undefined),
+    links: [
+      {
+        link: 'https://github.com/lWarwolfl/gamer-haven',
+        color: 'blue',
+        text: 'Github',
+        icon: 'bxl:github',
+      },
+      {
+        link: 'https://gamer-haven.sinakheiri.dev/',
+        color: 'blue',
+        text: 'View',
+        icon: 'ci:show',
+      },
+    ],
+    fullSlide: true,
+  },
+  {
+    title: 'Voicingmap',
+    accent: '(Full-stack Development - Next.js - Supabase)',
+    description: (
+      <>
+        My personal statup project in development.{' '}
+        <span className={styles.bold}>Connecting the World Through Voice</span>.
+      </>
+    ),
+    images: [voicingmap1, voicingmap2, voicingmap3],
+    skills: [
+      skills.find((skill) => skill.name === 'Next.js'),
+      skills.find((skill) => skill.name === 'Typescript'),
+      skills.find((skill) => skill.name === 'Supabase'),
+      skills.find((skill) => skill.name === 'Tailwind CSS'),
+      skills.find((skill) => skill.name === 'Shadcn UI'),
+    ].filter((skill) => skill !== undefined),
+    links: [
+      {
+        link: 'https://voicingmap.com/',
+        color: 'blue',
+        text: 'View',
+        icon: 'ci:show',
+      },
+    ],
+    fullSlide: true,
+  },
+  {
+    title: 'My Three.js Journey',
+    accent: '(3D Web Development - Three.js - Vite)',
+    description: (
+      <>
+        Shows my progress and finished result of each lesson in the{' '}
+        <Link href="https://threejs-journey.com/lessons/introduction#" className={styles.bold}>
+          Three.js Journey
+        </Link>{' '}
+        course.
+      </>
+    ),
+    images: [mythreejsjourney1, mythreejsjourney2, mythreejsjourney3, mythreejsjourney4],
+    skills: [
+      skills.find((skill) => skill.name === 'Html 5'),
+      skills.find((skill) => skill.name === 'CSS 3'),
+      skills.find((skill) => skill.name === 'Three.js'),
+      skills.find((skill) => skill.name === 'WebGL'),
+    ].filter((skill) => skill !== undefined),
+    links: [
+      {
+        link: 'https://github.com/lWarwolfl/three-js',
+        color: 'blue',
+        text: 'Github',
+        icon: 'bxl:github',
+      },
+      {
+        link: 'https://three-js.sinakheiri.dev/',
+        color: 'blue',
+        text: 'View',
+        icon: 'ci:show',
+      },
+    ],
+    fullSlide: true,
+  },
   {
     title: 'BlockT',
     accent: '(Front-end Development - Next.js - Web3)',
@@ -187,38 +290,6 @@ export const projects: ProjectInterface[] = [
         color: 'blue',
         text: 'View',
         icon: 'ci:show',
-      },
-    ],
-  },
-  {
-    title: 'Blue Wallet',
-    accent: '(UI/UX Design)',
-    description: (
-      <>
-        Blue Wallet is a crypto wallet and DAPP <span className={styles.bold}>UI/UX design</span> in
-        <span className={styles.bold}>Adobe XD</span>.
-      </>
-    ),
-    images: [
-      bluewallet1,
-      bluewallet2,
-      bluewallet3,
-      bluewallet4,
-      bluewallet5,
-      bluewallet6,
-      bluewallet7,
-      bluewallet8,
-    ],
-    skills: [
-      skills.find((skill) => skill.name === 'UI Design'),
-      skills.find((skill) => skill.name === 'Adobe XD'),
-    ].filter((skill) => skill !== undefined),
-    links: [
-      {
-        link: 'https://xd.adobe.com/view/1666f955-e067-4bde-bd19-ced57a51a89c-4335/?fullscreen',
-        color: 'blue',
-        text: 'Adobe XD',
-        icon: 'simple-icons:adobexd',
       },
     ],
   },
