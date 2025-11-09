@@ -11,27 +11,15 @@ interface Props {
 export default function Experience({ item }: Props) {
   return (
     <>
-      <a href={item.link} target="_blank" className={styles.link}>
-        <div className={styles.imagecontainer}>
-          <Image
-            quality={85}
-            placeholder="blur"
-            src={item.logo}
-            alt={item.alt}
-            className={styles.image}
-          />
+      {item.link ? (
+        <a href={item.link} target="_blank" className={styles.link}>
+          <Experience.Link item={item} />
+        </a>
+      ) : (
+        <div className={styles.link}>
+          <Experience.Link item={item} />
         </div>
-
-        <div className={styles.text}>{item.name}</div>
-
-        <Icon
-          icon={item.icon}
-          style={{
-            color: `var(--${item.color}-color)`,
-          }}
-          className={styles.icon}
-        />
-      </a>
+      )}
 
       {item.experiences.map((experience, index) => {
         return (
@@ -48,11 +36,39 @@ export default function Experience({ item }: Props) {
               }}
               className={styles.icon}
             />
-            
+
             <span className={styles.text}>{experience}</span>
           </StyledCard>
         )
       })}
+    </>
+  )
+}
+
+Experience.Link = function Link({ item }: Props) {
+  return (
+    <>
+      <div className={styles.imagecontainer}>
+        <Image
+          quality={85}
+          placeholder="blur"
+          src={item.logo}
+          alt={item.alt}
+          className={styles.image}
+        />
+      </div>
+
+      <div className={styles.text}>{item.name}</div>
+
+      {item.link ? (
+        <Icon
+          icon={item.icon}
+          style={{
+            color: `var(--${item.color}-color)`,
+          }}
+          className={styles.icon}
+        />
+      ) : null}
     </>
   )
 }

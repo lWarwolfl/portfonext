@@ -10,7 +10,7 @@ import React from 'react'
 export interface ExperienceInterface {
   alt: string
   name: string | React.ReactNode
-  link: string
+  link?: string
   logo: string | StaticImageData
   icon: string
   listicon: string
@@ -72,7 +72,6 @@ export const experiences: ExperienceInterface[] = [
         <span className={styles.bold}>Ponisha</span>, Freelancer
       </>
     ),
-    link: 'https://ponisha.ir/profile/warwolf',
     logo: ponisha,
     icon: 'ci:external-link',
     listicon: 'ci:checkbox-check',
