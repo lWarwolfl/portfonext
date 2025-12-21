@@ -248,7 +248,7 @@ export const projects: ProjectInterface[] = [
     ].filter((skill) => skill !== undefined),
     links: [
       {
-        link: 'https://farzam.at//',
+        link: 'https://farzam.sinakheiri.dev/',
         color: 'blue',
         text: 'View',
         icon: 'ci:show',
