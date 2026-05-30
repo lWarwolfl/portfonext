@@ -1,0 +1,40 @@
+.tickerContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &:not(.isOverflowing) {
+    @media (min-width: 640px) {
+      text-align: center;
+    }
+  }
+}
+
+.tickerTrack {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.spacer {
+  display: inline-block;
+  width: 1rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1.5rem;
+  pointer-events: none;
+
+  &.start {
+    left: 0;
+    // background-image: linear-gradient(to right, var(--muted, #f3f4f6), transparent);
+  }
+
+  &.end {
+    right: 0;
+    // background-image: linear-gradient(to left, var(--muted, #f3f4f6), transparent);
+  }
+}

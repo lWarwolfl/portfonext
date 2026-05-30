@@ -1,3 +1,4 @@
+import NewsTicker from '@/components/landing/NewsTicker'
 import StyledCard from '@/components/utils/StyledCard'
 import { type SkillCategoryInterface, type SkillInterface } from '@/data/skills'
 import styles from '@/styles/landing/Skills.module.scss'
@@ -19,7 +20,7 @@ export default function Skill({ item, category }: Props) {
           }}
           className={styles.logo}
         />
-        <div className={styles.name}>{item.name}</div>
+        <NewsTicker className={styles.name} text={item.name} />
 
         <div
           className={styles.indicator}

@@ -44,7 +44,7 @@ export const experiences: ExperienceInterface[] = [
             Mocko.ai
           </Link>
         </span>{' '}
-        app with more than <span className={styles.bold}>2000 users</span>.
+        app with more than <span className={styles.bold}>10k users</span>.
       </>,
       <>
         Provided <span className={styles.bold}>guidance</span> to less experienced teammates and
@@ -55,10 +55,10 @@ export const experiences: ExperienceInterface[] = [
         12 months while handling a tight deadline.
       </>,
       <>
-        <span className={styles.bold}>Reduced</span> project{' '}
+        <span className={styles.bold}>Reduced</span> startup projects{' '}
         <span className={styles.bold}>setup time</span> by <span className={styles.bold}>20%</span>{' '}
         and improved <span className={styles.bold}>code consistency</span> by creating template
-        repositories.
+        repos.
       </>,
     ],
 

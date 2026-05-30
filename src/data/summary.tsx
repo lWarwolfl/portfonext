@@ -21,12 +21,15 @@ export const summary: SummaryInterface = {
   image: photo,
   content: (
     <>
-      I am <span className={styles.accent}>Sina Kheiri</span>, a front-end developer with{' '}
-      <span className={styles.bold}>5 years of experience</span> building performant and seamless{' '}
-      applications. Skilled in <span className={styles.bold}>Next.js</span> and{' '}
-      <span className={styles.bold}>TypeScript</span>, with experience in fast-paced and{' '}
-      <span className={styles.bold}>Agile</span> environments. Committed to always staying{' '}
-      up-to-date and having an eye for detail.
+      I am <span className={styles.accent}>Sina Kheiri</span>, A Software engineer with{' '}
+      <span className={styles.bold}>5 years of experience</span> in building performant{' '}
+      applications. Skilled in front-end focused development using{' '}
+      <span className={styles.bold}>Next.js</span> and{' '}
+      <span className={styles.bold}>TypeScript</span>. Experienced in back-end/full-stack projects{' '}
+      using <span className={styles.bold}>ASP.NET</span> and{' '}
+      <span className={styles.bold}>Node.js</span>. Committed to staying up-to-date and having an{' '}
+      eye for detail while operating in fast paced and <span className={styles.bold}>Agile</span>{' '}
+      environments.
     </>
   ),
   links: [
