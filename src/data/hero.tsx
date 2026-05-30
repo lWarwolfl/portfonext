@@ -3,5 +3,5 @@ export interface HeroInterface {
 }
 
 export const hero: HeroInterface = {
-  content: <>Front-end Developer | Next.js/React.js | Typescript | Three.js | Web3</>,
+  content: <>Software Engineer | Node.js | ASP.NET | Next.js/React.js | Typescript</>,
 }
