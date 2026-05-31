@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function useWindowSize(size: number = 550) {
-  const [value, setValue] = React.useState(false)
+  const [value, setValue] = React.useState<boolean | undefined>(undefined)
 
   React.useEffect(() => {
     setValue(window.innerWidth <= size)
