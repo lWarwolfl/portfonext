@@ -46,7 +46,8 @@
     @include flex-column;
     gap: 2px;
     padding: 14px 16px;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
     font-family: $font-mono;
     font-size: $font-size-r;
     line-height: 1.7;
