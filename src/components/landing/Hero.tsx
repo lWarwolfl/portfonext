@@ -17,10 +17,12 @@ export default function Hero() {
             <StyledButton
               externalLink="https://github.com/lWarwolfl/portfonext"
               background="glass"
-              staticIcon="ci:code"
-              icon="ci:chevron-right"
+              staticIcon="bxl:github"
             >
               Source of this site
+            </StyledButton>
+            <StyledButton externalLink="/files/Resume.pdf" download staticIcon="ci:file-document">
+              Download resume
             </StyledButton>
           </div>
         </div>

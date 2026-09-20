@@ -5,7 +5,6 @@ import styles from '@/styles/layout/Header.module.scss'
 import { useEffect, useState } from 'react'
 
 export default function Menu() {
-  const isMobile = useWindowSize(530)
   const isTablet = useWindowSize(1050)
   const [activeLink, setActiveLink] = useState('')
 
@@ -46,7 +45,6 @@ export default function Menu() {
             key={i}
             className={`${styles.link} ${activeLink === link.id ? styles.active : ''}`}
             idLink={link.id}
-            icon={!isMobile ? 'ci:chevron-right' : undefined}
             staticIcon={link.icon}
             disabled={link.id === ''}
             iconButton={isTablet}

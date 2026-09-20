@@ -5,25 +5,20 @@ export interface HeroMetaInterface {
 
 export interface HeroInterface {
   name: string
-  content: React.ReactNode
-  lead: React.ReactNode
+  content: string
+  lead: string
   meta: HeroMetaInterface[]
 }
 
 export const hero: HeroInterface = {
   name: 'Sina Kheiri',
-  content: <>Software Engineer | Node.js | ASP.NET | Next.js/React.js | Typescript</>,
-  lead: (
-    <>
-      Five years of building performant, detail-driven web applications. Mostly front-end with
-      Next.js and TypeScript, with back-end and full-stack work in ASP.NET and Node.js.
-    </>
-  ),
+  content: 'Software Engineer | Node.js | ASP.NET | Next.js/React.js | TypeScript',
+  lead: 'Software engineer with 5+ years of experience building performant applications. Skilled in frontend-focused development using Next.js and TypeScript, and experienced in back-end and full-stack projects with Node.js and ASP.NET. Committed to staying up-to-date and having an eye for detail while operating in fast-paced and Agile environments.',
   meta: [
     { label: 'Role', value: 'Software Engineer' },
     { label: 'Focus', value: 'Front-end / Full-stack' },
-    { label: 'Stack', value: 'Next.js - React - TypeScript - ASP.NET - Node.js' },
-    { label: 'Experience', value: '5 years' },
+    { label: 'Experience', value: '5+ years' },
+    { label: 'Stack', value: 'Next.js, TypeScript, Node.js, ASP.NET' },
     { label: 'Contact', value: 'sinakheiri.dev@gmail.com' },
   ],
 }

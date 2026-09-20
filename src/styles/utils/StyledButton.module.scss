@@ -6,157 +6,92 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  position: relative;
-  overflow: hidden;
-  max-width: 260px;
-  padding: 10px 14px;
+  gap: 7px;
+  max-width: 100%;
+  padding: 7px 11px;
   border: 1px solid var(--hairline);
   border-radius: $border-radius-global;
   background-color: transparent;
   color: var(--font-color-primary);
-  font-family: $font-mono;
-  font-size: $font-size-s;
+  font-family: $font-sans;
+  font-size: $font-size-r;
   font-weight: $font-weight-medium;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-align: left;
+  line-height: 1.25;
+  white-space: nowrap;
   transition:
     background-color $transition-f $transition-ease,
     border-color $transition-f $transition-ease,
     color $transition-f $transition-ease;
 
-  &.hasbar {
-    padding-bottom: 14px;
-  }
-
   .text {
     @include overflow-ellipsis;
-    display: inline-block;
-    width: 100%;
-  }
-
-  .text.small {
-    font-size: $font-size-es;
-  }
-
-  .text.big {
-    font-size: $font-size-r;
-  }
-
-  .text.large {
-    font-size: $font-size-m;
+    min-width: 0;
   }
 
   .staticicon,
   .icon {
     flex-shrink: 0;
-    color: currentColor;
-  }
-
-  .small {
-    font-size: $font-size-m;
-  }
-
-  .normal {
-    font-size: 18px;
-  }
-
-  .big {
-    font-size: $font-size-l;
-  }
-
-  .large {
-    font-size: $font-size-xl;
-  }
-
-  .icon {
-    display: none;
-  }
-
-  .bar {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    background-color: var(--accent);
-    transition: width $transition-m $transition-ease;
-    z-index: 2;
-  }
-
-  &:hover {
-    background-color: var(--accent);
-    border-color: var(--accent);
-    color: var(--body-color);
-
-    .icon {
-      display: block;
-    }
-
-    .staticicon {
-      display: none;
-    }
-
-    .bar {
-      width: 100%;
-      background-color: var(--body-color);
-    }
-  }
-
-  &.singleicon {
-    .icon {
-      display: none;
-    }
-
-    &:hover {
-      .staticicon {
-        display: block;
-      }
-
-      .icon {
-        display: none;
-      }
-    }
+    font-size: $font-size-em;
   }
 
   &.glass {
-    background-color: var(--transparent-background);
+    background-color: var(--surface-2);
   }
 
   &.solid {
-    background-color: var(--surface-2);
+    background-color: var(--surface-3);
   }
 
   &.invert {
     background-color: var(--ink);
     border-color: var(--ink);
-    color: var(--body-color);
+    color: var(--bg);
+  }
+
+  &:hover {
+    background-color: var(--surface-2);
+    border-color: var(--hairline-strong);
+    color: var(--font-color-primary);
+  }
+
+  &.glass:hover {
+    background-color: var(--surface-3);
+  }
+
+  &.solid:hover {
+    background-color: var(--surface-2);
+  }
+
+  &.invert:hover {
+    background-color: var(--white-color);
+    border-color: var(--white-color);
+    color: var(--bg);
   }
 
   &.iconbutton {
-    padding: 6px;
-    min-width: 40px;
-    min-height: 40px;
+    padding: 7px;
+    min-width: 32px;
+    min-height: 32px;
     justify-content: center;
 
     .text {
-      display: none;
-    }
-
-    .bar {
       display: none;
     }
   }
 
   &.disabled {
     pointer-events: none;
-    opacity: 0.5;
+    opacity: 0.45;
   }
 
   &.active {
-    background-color: var(--accent);
-    border-color: var(--accent);
-    color: var(--body-color);
-    pointer-events: none;
+    background-color: var(--accent-soft);
+    border-color: rgba(76, 141, 255, 0.35);
+    color: var(--font-color-primary);
+  }
+
+  &.active:hover {
+    background-color: var(--accent-soft);
+    border-color: rgba(76, 141, 255, 0.35);
   }
 }

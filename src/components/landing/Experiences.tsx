@@ -15,7 +15,7 @@ export default function Experiences() {
 
       <div className={`animated-container ${styles.list}`}>
         {experiences.map((item) => (
-          <Experience key={item.alt} item={item} />
+          <Experience key={item.employer} item={item} />
         ))}
       </div>
     </div>

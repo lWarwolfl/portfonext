@@ -2,7 +2,7 @@ import StyledButton from '@/components/utils/StyledButton'
 import { footer } from '@/data/footer'
 import styles from '@/styles/layout/Footer.module.scss'
 import { Icon } from '@iconify-icon/react'
-import logo from '@public/image/jpg/face.jpg'
+import logo from '@public/image/svg/logo.svg'
 import Image from 'next/image'
 
 export default function Footer() {
@@ -11,7 +11,7 @@ export default function Footer() {
       <div className={styles.row}>
         <div className={styles.copyrights}>
           <span className={styles.name}>
-            <Image quality={40} placeholder="blur" alt="logo" src={logo} className={styles.logo} />
+            <Image src={logo} alt="Portfonext" className={styles.logo} width={22} height={22} />
             Portfonext
           </span>
 
@@ -24,7 +24,7 @@ export default function Footer() {
           </span>
         </div>
 
-        <StyledButton idLink="top" staticIcon="ci:arrow-up" background="glass" iconButton />
+        <StyledButton idLink="top" staticIcon="mdi:arrow-up" background="glass" iconButton />
       </div>
     </footer>
   )

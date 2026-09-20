@@ -1,4 +1,4 @@
-import { skills, type SkillInterface } from '@/data/skills'
+import { pickSkills, type SkillInterface } from '@/data/skills'
 import type { SummaryLinkInterface } from '@/data/summary'
 import styles from '@/styles/landing/Projects.module.scss'
 import Link from 'next/link'
@@ -14,44 +14,38 @@ export interface ProjectInterface {
   links: SummaryLinkInterface[]
 }
 
-function stack(...names: string[]): SkillInterface[] {
-  return names
-    .map((name) => skills.find((skill) => skill.name === name))
-    .filter((skill): skill is SkillInterface => skill !== undefined)
-}
-
 export const projects: ProjectInterface[] = [
   {
     title: 'GamerHaven',
     accent: 'Next.js - TypeScript - Tailwind CSS - Shadcn - Drizzle - Postgres - Server Actions',
     description: (
       <>
-        A platform for game mods consisting of a <span className={styles.bold}>ssr rendered</span>{' '}
+        A platform for game mods consisting of an <span className={styles.bold}>SSR-rendered</span>{' '}
         landing and a <span className={styles.bold}>dynamic panel</span>.
       </>
     ),
     link: 'https://gamer-haven.sinakheiri.dev/',
     embeddable: true,
-    skills: stack(
-      'Next.js (SSR - PWA - React.js)',
+    skills: pickSkills([
+      'Next.js (Vercel - PWA - React.js)',
       'TypeScript (JavaScript)',
       'Tailwind CSS (Shadcn UI)',
-      'Drizzle ORM',
-      'Postgres',
-      'Server Actions'
-    ),
+      'ORM (Drizzle, Prisma)',
+      'SQL (PostgreSQL)',
+      'Server Actions',
+    ]),
     links: [
       {
         link: 'https://github.com/lWarwolfl/gamer-haven',
         color: 'blue',
-        text: 'Github',
+        text: 'GitHub',
         icon: 'bxl:github',
       },
       {
         link: 'https://gamer-haven.sinakheiri.dev/',
         color: 'blue',
-        text: 'View',
-        icon: 'ci:show',
+        text: 'Live site',
+        icon: 'ci:external-link',
       },
     ],
   },
@@ -61,18 +55,18 @@ export const projects: ProjectInterface[] = [
     description: (
       <>
         A <span className={styles.bold}>Shopify app</span> that tracks user behavior and enhances
-        loyalty through generating <span className={styles.bold}>discount codes</span>.
+        loyalty by generating <span className={styles.bold}>discount codes</span>.
       </>
     ),
     link: 'https://apps.shopify.com/greenward',
     embeddable: false,
-    skills: stack('Shopify (GraphQL - Remix)', 'GraphQL', 'Remix'),
+    skills: pickSkills(['Shopify (GraphQL - Remix)', 'GraphQL', 'Remix']),
     links: [
       {
         link: 'https://apps.shopify.com/greenward',
         color: 'blue',
-        text: 'View',
-        icon: 'ci:show',
+        text: 'Shopify App Store',
+        icon: 'ci:external-link',
       },
     ],
   },
@@ -91,13 +85,17 @@ export const projects: ProjectInterface[] = [
     ),
     link: 'https://mocko.ai',
     embeddable: true,
-    skills: stack('Next.js (SSR - PWA - React.js)', 'Tailwind CSS (Shadcn UI)', 'REST APIs'),
+    skills: pickSkills([
+      'Next.js (Vercel - PWA - React.js)',
+      'Tailwind CSS (Shadcn UI)',
+      'REST APIs (React Query)',
+    ]),
     links: [
       {
         link: 'https://mocko.ai',
         color: 'blue',
-        text: 'View',
-        icon: 'ci:show',
+        text: 'Live site',
+        icon: 'ci:external-link',
       },
     ],
   },
@@ -112,19 +110,19 @@ export const projects: ProjectInterface[] = [
     ),
     link: 'https://voicingmap.com/',
     embeddable: true,
-    skills: stack(
-      'Next.js (SSR - PWA - React.js)',
+    skills: pickSkills([
+      'Next.js (Vercel - PWA - React.js)',
       'Tailwind CSS (Shadcn UI)',
-      'Supabase (Supabase Auth)',
+      'Supabase',
       'Mapbox',
-      'Stripe'
-    ),
+      'Stripe',
+    ]),
     links: [
       {
         link: 'https://voicingmap.com/',
         color: 'blue',
-        text: 'View',
-        icon: 'ci:show',
+        text: 'Live site',
+        icon: 'ci:external-link',
       },
     ],
   },
@@ -133,7 +131,7 @@ export const projects: ProjectInterface[] = [
     accent: 'Three.js - Vite - CSS',
     description: (
       <>
-        Shows my progress and finished result of each lesson in the{' '}
+        Progress and finished result of each lesson in the{' '}
         <Link href="https://threejs-journey.com/lessons/introduction#" className={styles.bold}>
           Three.js Journey
         </Link>{' '}
@@ -142,19 +140,19 @@ export const projects: ProjectInterface[] = [
     ),
     link: 'https://three-js.sinakheiri.dev/',
     embeddable: true,
-    skills: stack('Three.js (WebGL - GSAP)', 'Vite', 'CSS 3'),
+    skills: pickSkills(['Three.js (WebGL - GSAP)', 'Vite', 'CSS 3']),
     links: [
       {
         link: 'https://github.com/lWarwolfl/three-js',
         color: 'blue',
-        text: 'Github',
+        text: 'GitHub',
         icon: 'bxl:github',
       },
       {
         link: 'https://three-js.sinakheiri.dev/',
         color: 'blue',
-        text: 'View',
-        icon: 'ci:show',
+        text: 'Live site',
+        icon: 'ci:external-link',
       },
     ],
   },
@@ -164,29 +162,29 @@ export const projects: ProjectInterface[] = [
     description: (
       <>
         Utilizes a contract I deployed on <span className={styles.bold}>Polygon Amoy testnet</span>{' '}
-        and makes calls to it using a <span className={styles.bold}>MetaMask provider</span>.
+        and calls it through a <span className={styles.bold}>MetaMask provider</span>.
       </>
     ),
     link: 'https://blockt.sinakheiri.dev/',
     embeddable: true,
-    skills: stack(
-      'Next.js (SSR - PWA - React.js)',
+    skills: pickSkills([
+      'Next.js (Vercel - PWA - React.js)',
       'Tailwind CSS (Shadcn UI)',
       'Web3 (Wagmi - Hardhat)',
-      'MetaMask'
-    ),
+      'MetaMask',
+    ]),
     links: [
       {
         link: 'https://github.com/lWarwolfl/blockt',
         color: 'blue',
-        text: 'Github',
+        text: 'GitHub',
         icon: 'bxl:github',
       },
       {
         link: 'https://blockt.sinakheiri.dev/',
         color: 'blue',
-        text: 'View',
-        icon: 'ci:show',
+        text: 'Live site',
+        icon: 'ci:external-link',
       },
     ],
   },
@@ -201,17 +199,17 @@ export const projects: ProjectInterface[] = [
     ),
     link: 'https://farzam.sinakheiri.dev/',
     embeddable: true,
-    skills: stack(
-      'Next.js (SSR - PWA - React.js)',
+    skills: pickSkills([
+      'Next.js (Vercel - PWA - React.js)',
       'TypeScript (JavaScript)',
-      'SASS (SCSS - Material UI)'
-    ),
+      'SASS (SCSS - Material UI)',
+    ]),
     links: [
       {
         link: 'https://farzam.sinakheiri.dev/',
         color: 'blue',
-        text: 'View',
-        icon: 'ci:show',
+        text: 'Live site',
+        icon: 'ci:external-link',
       },
     ],
   },
@@ -226,23 +224,23 @@ export const projects: ProjectInterface[] = [
     ),
     link: 'https://sinakheiri.dev/',
     embeddable: true,
-    skills: stack(
-      'Next.js (SSR - PWA - React.js)',
+    skills: pickSkills([
+      'Next.js (Vercel - PWA - React.js)',
       'TypeScript (JavaScript)',
-      'SASS (SCSS - Material UI)'
-    ),
+      'SASS (SCSS - Material UI)',
+    ]),
     links: [
       {
         link: 'https://github.com/lWarwolfl/portfonext',
         color: 'blue',
-        text: 'Github',
+        text: 'GitHub',
         icon: 'bxl:github',
       },
       {
         link: 'https://sinakheiri.dev/',
         color: 'blue',
-        text: 'View',
-        icon: 'ci:show',
+        text: 'Live site',
+        icon: 'ci:external-link',
       },
     ],
   },
@@ -252,30 +250,30 @@ export const projects: ProjectInterface[] = [
     description: (
       <>
         A personal project that showcases my expertise in designing a{' '}
-        <span className={styles.bold}>Customizable HTML Template</span> for a blog.
+        <span className={styles.bold}>customizable HTML template</span> for a blog.
       </>
     ),
     link: 'https://modernist.sinakheiri.dev/',
     embeddable: true,
-    skills: stack('HTML 5', 'CSS 3', 'JavaScript'),
+    skills: pickSkills(['HTML 5', 'CSS 3', 'JavaScript']),
     links: [
       {
         link: 'https://github.com/lWarwolfl/modernist',
         color: 'blue',
-        text: 'Github',
+        text: 'GitHub',
         icon: 'bxl:github',
       },
       {
         link: 'https://modernist.sinakheiri.dev/',
         color: 'blue',
-        text: 'View',
-        icon: 'ci:show',
+        text: 'Live site',
+        icon: 'ci:external-link',
       },
     ],
   },
   {
     title: 'Park Speedy',
-    accent: 'Figma',
+    accent: 'UI Design - Figma',
     description: (
       <>
         A <span className={styles.bold}>UI design</span> for a startup app aimed at solving parking
@@ -284,12 +282,12 @@ export const projects: ProjectInterface[] = [
     ),
     link: 'https://www.figma.com/file/bKZwjhaF1BdM1Gf0hJfjWN/Park-Speedy---High-Fidelity',
     embeddable: false,
-    skills: stack('Figma'),
+    skills: pickSkills(['UI Design (Figma)']),
     links: [
       {
         link: 'https://www.figma.com/file/bKZwjhaF1BdM1Gf0hJfjWN/Park-Speedy---High-Fidelity',
         color: 'blue',
-        text: 'Figma',
+        text: 'Figma file',
         icon: 'simple-icons:figma',
       },
     ],

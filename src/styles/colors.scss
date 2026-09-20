@@ -1,21 +1,23 @@
 :root {
-  --bg: #0a0b0d;
-  --surface: #0e1013;
-  --surface-2: #14171b;
+  --bg: #0a0a0b;
+  --surface: #111113;
+  --surface-2: #17171a;
+  --surface-3: #1d1d21;
 
-  --hairline: #22252a;
-  --hairline-strong: #3a3f47;
+  --hairline: #232327;
+  --hairline-strong: #33333a;
 
-  --ink: #f4f5f6;
-  --ink-2: #a3a8b0;
-  --ink-3: #6a6f77;
+  --ink: #f2f3f5;
+  --ink-2: #9ba1a9;
+  --ink-3: #6e747c;
 
-  --accent: #d4ff3f;
+  --accent: #4c8dff;
+  --accent-soft: rgba(76, 141, 255, 0.12);
 
   --body-color: var(--bg);
   --contrast-color: var(--hairline);
-  --transparent-background: rgba(244, 245, 246, 0.06);
-  --more-transparent-background: rgba(244, 245, 246, 0.03);
+  --transparent-background: rgba(242, 243, 245, 0.06);
+  --more-transparent-background: rgba(242, 243, 245, 0.03);
   --card-background: var(--surface);
   --dark-card-background: var(--bg);
   --font-color-primary: var(--ink);
@@ -24,8 +26,8 @@
 
   --primary-color: var(--accent);
   --primary-color-light: var(--accent);
-  --primary-color-transparent: rgba(212, 255, 63, 0.18);
-  --primary-color-more-transparent: rgba(10, 11, 13, 0.88);
+  --primary-color-transparent: rgba(76, 141, 255, 0.25);
+  --primary-color-more-transparent: rgba(10, 10, 11, 0.85);
 
   --green-color: var(--accent);
   --purple-color: var(--accent);

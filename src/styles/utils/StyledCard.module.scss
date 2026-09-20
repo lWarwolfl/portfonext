@@ -19,7 +19,7 @@
   }
 
   .glow {
-    $size: 240px;
+    $size: 220px;
     position: absolute;
     top: 0;
     left: 0;
@@ -27,7 +27,7 @@
     height: $size;
     border-radius: 50%;
     background-image: radial-gradient(circle, currentColor 0%, transparent 68%);
-    filter: blur(60px);
+    filter: blur(64px);
     opacity: 0;
     pointer-events: none;
     transition: opacity $transition-m $transition-ease;
@@ -36,7 +36,7 @@
 
   &:hover {
     .glow {
-      opacity: 0.14;
+      opacity: 0.1;
     }
   }
 }

@@ -9,7 +9,7 @@ body {
   display: block;
   overflow-y: hidden;
   overflow-x: hidden;
-  background-color: #0a0b0d;
+  background-color: #0a0a0b;
 }
 
 #globalLoader {
@@ -18,7 +18,7 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 100;
-  background-color: #0a0b0d;
+  background-color: #0a0a0b;
   left: 0;
   top: 0;
   width: 100dvw;
@@ -30,7 +30,7 @@ body {
 .loader {
   width: 72px;
   height: 1px;
-  background-color: #22252a;
+  background-color: #232327;
   overflow: hidden;
 }
 
@@ -38,7 +38,7 @@ body {
   display: block;
   width: 40%;
   height: 100%;
-  background-color: #d4ff3f;
+  background-color: #4c8dff;
   animation: slide 1.1s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 

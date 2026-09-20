@@ -7,18 +7,17 @@
   width: 100%;
 
   .panel {
-    padding: clamp(20px, 3vw, 40px);
+    padding: clamp(18px, 2.2vw, 26px);
   }
 
   .body {
     display: grid;
-    grid-template-columns: 200px minmax(0, 1fr);
-    gap: clamp(24px, 4vw, 48px);
+    grid-template-columns: 148px minmax(0, 1fr);
+    gap: clamp(18px, 2.6vw, 34px);
   }
 
   .portrait {
-    @include background-cover;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1 / 1;
     border: 1px solid var(--hairline);
     border-radius: $border-radius-global;
     overflow: hidden;
@@ -32,13 +31,14 @@
 
   .text {
     @include flex-column;
-    gap: 28px;
+    align-items: flex-start;
+    gap: 20px;
 
     .description {
       color: var(--font-color-secondary);
-      font-size: $font-size-l;
-      font-weight: $font-weight-light;
-      line-height: 1.55;
+      font-size: $font-size-em;
+      line-height: 1.65;
+      max-width: 68ch;
       text-wrap: pretty;
 
       .bold {
@@ -47,7 +47,7 @@
       }
 
       .accent {
-        font-family: $font-serif;
+        font-weight: $font-weight-semibold;
         color: var(--accent);
       }
     }
@@ -55,20 +55,19 @@
     .links {
       @include flex-row;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
     }
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   .container {
     .body {
       grid-template-columns: minmax(0, 1fr);
     }
 
     .portrait {
-      max-width: 220px;
-      aspect-ratio: 1 / 1;
+      max-width: 116px;
     }
   }
 }

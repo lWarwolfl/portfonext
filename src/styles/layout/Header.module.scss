@@ -15,7 +15,7 @@
     @include flex-row;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 16px;
     width: 100%;
     max-width: $max-width-global;
     height: $header-height;
@@ -26,20 +26,15 @@
     @include flex-row;
     align-items: center;
     flex-shrink: 0;
-    gap: 10px;
-    font-family: $font-mono;
-    font-size: $font-size-s;
-    font-weight: $font-weight-medium;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    gap: 9px;
+    font-size: $font-size-r;
+    font-weight: $font-weight-semibold;
     color: var(--font-color-primary);
 
     .logo {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid var(--hairline-strong);
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
     }
   }
 
@@ -51,14 +46,14 @@
     }
 
     .link {
-      padding: 8px 10px;
+      padding: 6px 9px;
       border-color: transparent;
       background-color: transparent;
       color: var(--font-color-secondary);
     }
 
     .active {
-      color: var(--body-color);
+      color: var(--font-color-primary);
     }
   }
 
@@ -67,12 +62,6 @@
     align-items: center;
     flex-shrink: 0;
     gap: 8px;
-  }
-
-  .button {
-    .text {
-      display: block;
-    }
   }
 }
 
@@ -84,7 +73,7 @@
   width: 1px;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1080px) {
   .header {
     .brand {
       .name {
@@ -108,10 +97,14 @@
       justify-content: space-between;
       gap: 0;
       width: 100%;
-      padding: 8px;
+      padding: 7px;
       border: 1px solid var(--hairline);
       border-radius: $border-radius-global;
       background-color: var(--surface);
+
+      .link {
+        padding: 7px;
+      }
     }
   }
 }

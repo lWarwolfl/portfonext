@@ -3,8 +3,8 @@
 
 .footer {
   width: 100%;
-  margin-top: clamp(48px, 6vw, 96px);
-  padding: 28px 0 40px;
+  margin-top: clamp(32px, 4vw, 64px);
+  padding: 22px 0 32px;
   border-top: 1px solid var(--hairline);
 
   .row {
@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 16px;
   }
 
   .copyrights {
@@ -26,32 +26,32 @@
     .name {
       @include flex-row-inline;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       color: var(--font-color-primary);
-      font-family: $font-mono;
-      font-size: $font-size-s;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      font-size: $font-size-r;
+      font-weight: $font-weight-semibold;
 
       .logo {
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 1px solid var(--hairline-strong);
+        width: 22px;
+        height: 22px;
+        border-radius: 6px;
       }
     }
 
     .container {
       @include flex-row-inline;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
 
       .link {
         @include flex-row-inline;
         align-items: center;
-        gap: 6px;
-        color: var(--accent);
+        gap: 5px;
+        color: var(--ink-2);
+
+        &:hover {
+          color: var(--accent);
+        }
 
         .icon {
           font-size: $font-size-l;

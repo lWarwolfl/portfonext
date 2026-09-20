@@ -13,46 +13,36 @@ interface Props {
 export default function Project({ index, item }: Props) {
   return (
     <StyledCard className={styles.project} move={false}>
+      <Frame title={item.title} link={item.link} embeddable={item.embeddable} />
+
       <div className={styles.head}>
         <span className={styles.index}>{String(index + 1).padStart(2, '0')}</span>
         <h3 className={styles.title}>{item.title}</h3>
         <span className={styles.accent}>{item.accent}</span>
       </div>
 
-      <div className={styles.body}>
-        <div className={styles.content}>
-          <p className={styles.description}>{item.description}</p>
+      <p className={styles.description}>{item.description}</p>
 
-          <div className={styles.skills}>
-            {item.skills.map((skill) => (
-              <span className={styles.skill} key={skill.name}>
-                <Icon icon={skill.logo} className={styles.logo} />
-                {skill.name}
-              </span>
-            ))}
-          </div>
+      <div className={styles.skills}>
+        {item.skills.map((skill) => (
+          <span className={styles.skill} key={skill.name}>
+            <Icon icon={skill.logo} className={styles.logo} />
+            {skill.name}
+          </span>
+        ))}
+      </div>
 
-          <div className={styles.links}>
-            {item.links.map((link) => (
-              <StyledButton
-                key={link.link}
-                externalLink={link.link}
-                staticIcon={link.icon}
-                icon="ci:chevron-right"
-                background="glass"
-              >
-                {link.text}
-              </StyledButton>
-            ))}
-          </div>
-        </div>
-
-        <Frame
-          className={styles.frame}
-          title={item.title}
-          link={item.link}
-          embeddable={item.embeddable}
-        />
+      <div className={styles.links}>
+        {item.links.map((link) => (
+          <StyledButton
+            key={link.link}
+            externalLink={link.link}
+            staticIcon={link.icon}
+            background="glass"
+          >
+            {link.text}
+          </StyledButton>
+        ))}
       </div>
     </StyledCard>
   )

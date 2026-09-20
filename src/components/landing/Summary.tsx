@@ -8,13 +8,13 @@ import Image from 'next/image'
 export default function Summary() {
   return (
     <div id="summary" className={`section ${styles.container}`}>
-      <Title index="01" title="My Story" description="A Pleasant Path" />
+      <Title index="01" className="animated-title" title="My Story" description="A Pleasant Path" />
 
-      <StyledCard className={styles.panel} move={false}>
+      <StyledCard className={styles.panel}>
         <div className={styles.body}>
           <div className={styles.portrait}>
             <Image
-              quality={60}
+              quality={70}
               placeholder="blur"
               src={summary.image}
               alt="Sina Kheiri"
@@ -23,14 +23,13 @@ export default function Summary() {
           </div>
 
           <div className={styles.text}>
-            <div className={styles.description}>{summary.content}</div>
+            <p className={styles.description}>{summary.content}</p>
 
             <div className={styles.links}>
               {summary.links.map((item) => (
                 <StyledButton
                   key={item.link}
                   externalLink={item.link}
-                  icon="ci:chevron-right"
                   staticIcon={item.icon}
                   background="glass"
                 >

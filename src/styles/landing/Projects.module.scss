@@ -7,22 +7,21 @@
   width: 100%;
 
   .list {
-    @include flex-column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
   }
 
   .project {
-    padding: clamp(20px, 3vw, 32px);
+    @include flex-column;
+    padding: 16px;
   }
 
   .head {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    @include flex-row;
     align-items: baseline;
-    gap: 16px;
-    padding-bottom: 18px;
-    margin-bottom: 26px;
-    border-bottom: 1px solid var(--hairline);
+    gap: 10px;
+    margin: 14px 0 8px;
 
     .index {
       @include label;
@@ -30,38 +29,24 @@
     }
 
     .title {
-      font-family: $font-serif;
-      font-size: clamp(1.75rem, 3.4vw, 2.5rem);
-      font-weight: $font-weight-regular;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
+      font-size: $font-size-el;
+      font-weight: $font-weight-semibold;
+      letter-spacing: -0.015em;
       color: var(--font-color-primary);
     }
 
     .accent {
       @include label;
-      max-width: 40ch;
+      margin-left: auto;
       text-align: right;
+      overflow-wrap: anywhere;
     }
   }
 
-  .body {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 440px);
-    align-items: start;
-    gap: clamp(24px, 4vw, 48px);
-  }
-
-  .content {
-    @include flex-column;
-    gap: 26px;
-  }
-
   .description {
-    max-width: 58ch;
     color: var(--font-color-secondary);
-    font-size: $font-size-em;
-    line-height: 1.7;
+    font-size: $font-size-r;
+    line-height: 1.6;
     text-wrap: pretty;
 
     .bold {
@@ -77,19 +62,22 @@
   .skills {
     @include flex-row;
     flex-wrap: wrap;
-    gap: 6px 18px;
+    gap: 4px 14px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--hairline);
 
     .skill {
       @include flex-row;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       font-family: $font-mono;
       font-size: $font-size-s;
       color: var(--font-color-secondary);
 
       .logo {
-        font-size: $font-size-l;
-        color: var(--accent);
+        font-size: $font-size-em;
+        color: var(--ink-3);
       }
     }
   }
@@ -97,31 +85,16 @@
   .links {
     @include flex-row;
     flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .frame {
-    height: 400px;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 16px;
   }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1000px) {
   .container {
-    .head {
-      grid-template-columns: auto minmax(0, 1fr);
-
-      .accent {
-        grid-column: 1 / -1;
-        text-align: left;
-      }
-    }
-
-    .body {
+    .list {
       grid-template-columns: minmax(0, 1fr);
-    }
-
-    .frame {
-      height: 340px;
     }
   }
 }

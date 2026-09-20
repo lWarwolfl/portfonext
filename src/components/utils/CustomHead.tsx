@@ -1,4 +1,4 @@
-import preview from '@public/image/jpg/preview.jpg'
+import preview from '@public/image/png/preview.png'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
@@ -15,22 +15,24 @@ export default function CustomHead(props: CustomHeadProps) {
   const router = useRouter()
 
   const seo = {
-    title: 'Front-end Developer | Next.js/React.js | Typescript | Three.js | Web3',
+    title: 'Sina Kheiri | Software Engineer',
     description:
-      'Front-end developer with 5 years of experience building performant and seamless applications. Skilled in Next.js and TypeScript, with experience in fast paced and Agile environments. Committed to always staying up-to-date and having an eye for detail. ',
+      'Software engineer with 5+ years of experience building performant applications. Frontend-focused with Next.js and TypeScript, and back-end/full-stack with Node.js and ASP.NET.',
     url: router.asPath,
     image: preview.src,
-    twitterCardType: 'summary',
+    twitterCardType: 'summary_large_image',
     keywords: [
       'Sina',
       'Kheiri',
       'Portfonext',
+      'Software Engineer',
       'Front-end',
       'Full-stack',
-      'Back-end',
       'Next.js',
       'React.js',
-      'Typescript',
+      'TypeScript',
+      'Node.js',
+      'ASP.NET',
       'Three.js',
       'Postgres',
       'Drizzle',
@@ -43,7 +45,6 @@ export default function CustomHead(props: CustomHeadProps) {
 
   return (
     <Head>
-      {/* Primary Meta Tags */}
       <meta name="viewport" content="width=device-width, height=device-height" />
       <title>{seo.title}</title>
       <meta name="title" content={seo.title} />
@@ -51,14 +52,12 @@ export default function CustomHead(props: CustomHeadProps) {
       <meta name="keywords" content={seo.keywords.join(', ')} />
       <meta name="author" content="Sina Kheiri" />
 
-      {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={seo.url} />
       <meta property="og:title" content={seo.title} />
       <meta property="og:description" content={seo.description} />
       <meta property="og:image" content={seo.image} />
 
-      {/* Twitter */}
       <meta property="twitter:card" content={seo.twitterCardType} />
       <meta property="twitter:url" content={seo.url} />
       <meta property="twitter:title" content={seo.title} />

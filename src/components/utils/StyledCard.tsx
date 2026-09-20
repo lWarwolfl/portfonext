@@ -11,8 +11,8 @@ interface Props {
   move?: boolean
 }
 
-const tiltAngle = 4
-const glowSize = 180
+const tiltAngle = 3
+const glowSize = 170
 
 export default function StyledCard({ id, glow = 'blue', className, children, move = true }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -30,7 +30,7 @@ export default function StyledCard({ id, glow = 'blue', className, children, mov
     const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * tiltAngle
     const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * tiltAngle
 
-    container.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${-rotateY}deg)`
+    container.style.transform = `perspective(1400px) rotateX(${rotateX}deg) rotateY(${-rotateY}deg)`
 
     const glowElement = glowRef.current
     if (glowElement) {

@@ -1,7 +1,6 @@
 @import '@/styles/colors.scss';
 @import '@/styles/globals.scss';
 @import '@/styles/mixins.scss';
-@import '@/styles/splitted-container.scss';
 
 * {
   box-sizing: border-box;
@@ -29,7 +28,7 @@ html body {
   color: var(--font-color-primary);
   font-family: $font-sans;
   font-size: $font-size-g-desktop;
-  line-height: 1.6;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -48,6 +47,11 @@ ol {
   list-style: none;
 }
 
+img,
+svg {
+  display: block;
+}
+
 ::selection {
   background-color: var(--accent);
   color: var(--body-color);
@@ -60,7 +64,7 @@ ol {
 }
 
 .section {
-  padding-block: clamp(64px, 8vw, 120px);
+  padding-block: clamp(44px, 5vw, 72px);
 }
 
 .section + .section {
@@ -78,21 +82,16 @@ ol {
 
 ::-webkit-scrollbar-thumb {
   background: var(--hairline-strong);
+  border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
-}
-
-@media screen and (max-width: 800px) {
-  html body {
-    font-size: $font-size-g-mobile;
-  }
+  background: var(--ink-3);
 }
 
 @media screen and (max-width: 530px) {
   .width-fix {
-    padding-bottom: 120px;
+    padding-bottom: 96px;
   }
 }
 

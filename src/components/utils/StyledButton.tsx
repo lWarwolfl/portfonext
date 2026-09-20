@@ -11,8 +11,6 @@ export interface StyledButtonProps {
   externalLink?: string
   download?: boolean
   color?: ColorType
-  fontSize?: 'small' | 'normal' | 'big' | 'large'
-  barHeight?: string
   background?: 'transparent' | 'glass' | 'solid' | 'invert'
   iconButton?: boolean
   icon?: string
@@ -32,8 +30,6 @@ export default function StyledButton({
   download = false,
   children,
   color = 'blue',
-  fontSize = 'normal',
-  barHeight,
   background = 'transparent',
   iconButton = false,
   icon,
@@ -59,23 +55,6 @@ export default function StyledButton({
     }
   }
 
-  const iconClasses = clsx(styles[fontSize])
-  const textClasses = clsx(styles.text, styles[fontSize])
-  const barStyles = {
-    backgroundColor: `var(--${color}-color)`,
-    height: barHeight,
-    borderRadius: `calc(${barHeight} / 2)`,
-  }
-
-  const renderContent = () => (
-    <>
-      {staticIcon && <Icon icon={staticIcon} className={clsx(iconClasses, styles.staticicon)} />}
-      <div className={textClasses}>{children}</div>
-      {icon && <Icon icon={icon} className={clsx(iconClasses, styles.icon)} />}
-      {barHeight && <div className={styles.bar} style={barStyles}></div>}
-    </>
-  )
-
   const buttonClass = clsx(className, styles.button, {
     [`${styles.glass}`]: background === 'glass',
     [`${styles.solid}`]: background === 'solid',
@@ -83,8 +62,17 @@ export default function StyledButton({
     [`${styles.iconbutton}`]: iconButton,
     [`${styles.disabled}`]: disabled,
     [`${styles.active}`]: active,
-    [`${styles.hasbar}`]: barHeight,
   })
+
+  const iconStyle = { color: `var(--${color}-color)` }
+
+  const content = (
+    <>
+      {staticIcon && <Icon icon={staticIcon} className={styles.staticicon} style={iconStyle} />}
+      <div className={styles.text}>{children}</div>
+      {icon && <Icon icon={icon} className={styles.icon} style={iconStyle} />}
+    </>
+  )
 
   if (externalLink) {
     return (
@@ -92,10 +80,9 @@ export default function StyledButton({
         href={externalLink}
         target="_blank"
         rel={download ? 'noopener noreferrer' : 'noreferrer'}
-        style={active ? { backgroundColor: `var(--${color}-color)` } : {}}
-        className={clsx(buttonClass, { [`${styles.singleicon}`]: !icon })}
+        className={buttonClass}
       >
-        {renderContent()}
+        {content}
       </a>
     )
   }
@@ -103,13 +90,12 @@ export default function StyledButton({
   return (
     <button
       onClick={handleClick}
-      style={active ? { backgroundColor: `var(--${color}-color)` } : {}}
-      className={clsx(buttonClass, { [`${styles.singleicon}`]: !icon })}
+      className={buttonClass}
       disabled={disabled}
       type={type}
       {...props}
     >
-      {renderContent()}
+      {content}
     </button>
   )
 }

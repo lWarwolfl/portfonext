@@ -6,25 +6,26 @@
   position: relative;
   border: 1px solid var(--hairline);
   border-radius: $border-radius-global;
-  background-color: var(--body-color);
+  background-color: var(--surface-2);
   overflow: hidden;
 
   .bar {
     @include flex-row;
-    @include hairline-bottom;
     align-items: center;
     gap: 10px;
-    padding: 8px 8px 8px 12px;
+    padding: 7px 8px 7px 10px;
+    border-bottom: 1px solid var(--hairline);
     background-color: var(--surface);
+    min-width: 0;
 
     .dots {
       @include flex-row;
       flex-shrink: 0;
-      gap: 6px;
+      gap: 5px;
 
       span {
-        width: 8px;
-        height: 8px;
+        width: 7px;
+        height: 7px;
         border-radius: 50%;
         background-color: var(--hairline-strong);
       }
@@ -35,49 +36,75 @@
       flex: 1;
       min-width: 0;
       font-family: $font-mono;
-      font-size: $font-size-es;
-      color: var(--font-color-secondary);
+      font-size: $font-size-s;
+      color: var(--ink-3);
     }
 
     .open {
+      @include focus-ring;
+      @include flex-row;
       flex-shrink: 0;
-      min-width: 32px;
-      min-height: 32px;
-      font-size: $font-size-m;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: $border-radius-sm;
+      color: var(--ink-2);
+
+      &:hover {
+        background-color: var(--surface-3);
+        color: var(--font-color-primary);
+      }
     }
   }
 
+  .viewport {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: var(--surface-2);
+  }
+
   .frame {
-    display: block;
-    flex: 1;
-    min-height: 0;
-    width: 100%;
-    border: none;
-    background-color: var(--surface);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 800px;
+    border: 0;
+    background-color: var(--body-color);
+    transform-origin: top left;
+    transform: scale(var(--frame-scale, 0.46));
+    pointer-events: none;
   }
 
   .blocked {
     @include flex-column;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 24px;
-    text-align: center;
+    aspect-ratio: 16 / 10;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 6px;
+    padding: 18px;
+    background-image: linear-gradient(var(--hairline) 1px, transparent 1px),
+      linear-gradient(90deg, var(--hairline) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: -1px -1px;
 
     .icon {
-      font-size: $font-size-4xl;
+      font-size: $font-size-2xl;
       color: var(--ink-3);
     }
 
     .name {
-      font-family: $font-serif;
-      font-size: $font-size-xl;
+      font-size: $font-size-l;
+      font-weight: $font-weight-semibold;
       color: var(--font-color-primary);
     }
 
     .note {
-      @include label;
+      font-family: $font-mono;
+      font-size: $font-size-s;
+      color: var(--ink-3);
     }
   }
 }

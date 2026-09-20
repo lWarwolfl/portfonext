@@ -3,15 +3,15 @@
 
 .container {
   @include flex-column;
-  gap: 12px;
+  gap: 8px;
   width: 100%;
-  margin-bottom: clamp(32px, 5vw, 64px);
+  margin-bottom: clamp(20px, 2.4vw, 32px);
 
   .meta {
     @include flex-row;
     @include label;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 
     .index {
       color: var(--accent);
@@ -25,10 +25,10 @@
   }
 
   .title {
-    font-family: $font-serif;
-    font-size: clamp(2.25rem, 5.5vw, 3.75rem);
-    font-weight: $font-weight-regular;
-    line-height: 1.04;
+    font-family: $font-sans;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    font-weight: $font-weight-semibold;
+    line-height: 1.15;
     letter-spacing: -0.02em;
     color: var(--font-color-primary);
     text-wrap: pretty;

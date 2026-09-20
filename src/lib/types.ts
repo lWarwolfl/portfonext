@@ -9,4 +9,4 @@ export type ColorType =
   | 'red'
   | 'orange'
 
-export type SkillCategoryType = 'code' | 'uiframework' | 'design' | 'other'
+export type SkillCategoryType = 'frontend' | 'backend' | 'workflow' | 'tools'

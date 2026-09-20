@@ -25,33 +25,16 @@
   text-overflow: ellipsis;
 }
 
-@mixin background-contain {
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-@mixin background-cover {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
 @mixin label {
   font-family: $font-mono;
-  font-size: $font-size-es;
+  font-size: $font-size-s;
   font-weight: $font-weight-medium;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--ink-3);
 }
 
-@mixin hairline-top {
+@mixin section-rule {
   border-top: 1px solid var(--hairline);
-}
-
-@mixin hairline-bottom {
-  border-bottom: 1px solid var(--hairline);
 }
 
 @mixin focus-ring {

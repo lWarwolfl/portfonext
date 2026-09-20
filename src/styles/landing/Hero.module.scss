@@ -5,49 +5,50 @@
   @include flex-column;
   position: relative;
   width: 100%;
-  padding-top: calc(#{$header-height} + clamp(48px, 9vw, 120px));
-  padding-bottom: clamp(56px, 8vw, 112px);
+  padding-top: calc(#{$header-height} + clamp(36px, 6vw, 72px));
+  padding-bottom: clamp(36px, 5vw, 64px);
 
   .name {
-    font-family: $font-serif;
+    font-family: $font-sans;
     font-size: $font-size-11xl;
-    font-weight: $font-weight-regular;
-    line-height: 0.94;
-    letter-spacing: -0.03em;
+    font-weight: $font-weight-semibold;
+    line-height: 1;
+    letter-spacing: -0.035em;
     color: var(--font-color-primary);
   }
 
   .role {
     @include label;
-    margin-top: clamp(20px, 3vw, 34px);
-    padding-top: 16px;
+    margin-top: clamp(14px, 2vw, 20px);
+    padding-top: 14px;
     border-top: 1px solid var(--hairline);
     color: var(--ink-2);
   }
 
   .grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-    gap: clamp(32px, 6vw, 80px);
-    margin-top: clamp(40px, 6vw, 76px);
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 64px);
+    margin-top: clamp(24px, 3.5vw, 44px);
   }
 
   .lead {
     @include flex-column;
-    gap: 28px;
-    max-width: 54ch;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 62ch;
 
     .paragraph {
       color: var(--font-color-secondary);
       font-size: $font-size-em;
-      line-height: 1.7;
+      line-height: 1.65;
       text-wrap: pretty;
     }
 
     .links {
       @include flex-row;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
     }
   }
 
@@ -57,10 +58,10 @@
 
     .metarow {
       display: grid;
-      grid-template-columns: 116px minmax(0, 1fr);
+      grid-template-columns: 104px minmax(0, 1fr);
       align-items: baseline;
-      gap: 16px;
-      padding: 12px 0;
+      gap: 14px;
+      padding: 9px 0;
       border-bottom: 1px solid var(--hairline);
     }
 
