@@ -6,14 +6,9 @@ import styles from '@/styles/landing/Projects.module.scss'
 export default function Projects() {
   return (
     <div id="projects" className={`section ${styles.container}`}>
-      <Title
-        index="03"
-        className="animated-title"
-        title="Significant Projects"
-        description="Best Of My Work"
-      />
+      <Title index="03" title="Significant Projects" description="Best Of My Work" />
 
-      <div className={`animated-container ${styles.list}`}>
+      <div className={styles.list}>
         {projects.map((item, index) => (
           <Project key={item.title} index={index} item={item} />
         ))}

@@ -28,8 +28,8 @@
 
     .avatar {
       flex-shrink: 0;
-      width: 160px;
-      height: 160px;
+      width: 128px;
+      height: 128px;
       border-radius: $border-radius-global;
       object-fit: cover;
       border: 1px solid var(--hairline-strong);
@@ -43,7 +43,7 @@
 
     .name {
       font-family: $font-sans;
-      font-size: $font-size-11xl;
+      font-size: $font-size-6xl;
       font-weight: $font-weight-semibold;
       line-height: 1;
       letter-spacing: -0.02em;
@@ -87,8 +87,8 @@
   .container {
     .masthead {
       .avatar {
-        width: 96px;
-        height: 96px;
+        width: 80px;
+        height: 80px;
       }
     }
   }

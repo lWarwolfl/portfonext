@@ -17,8 +17,8 @@ export default function Hero() {
               src={photo}
               alt="Sina Kheiri"
               className={styles.avatar}
-              width={160}
-              height={160}
+              width={128}
+              height={128}
             />
 
             <div className={styles.headline}>
