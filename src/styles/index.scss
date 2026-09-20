@@ -69,10 +69,6 @@ svg {
   padding-block: clamp(44px, 5vw, 72px);
 }
 
-.section + .section {
-  border-top: 1px solid var(--hairline);
-}
-
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
