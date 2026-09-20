@@ -1,3 +1,4 @@
+import Terminal from '@/components/utils/Terminal'
 import StyledButton from '@/components/utils/StyledButton'
 import { hero } from '@/data/hero'
 import styles from '@/styles/landing/Hero.module.scss'
@@ -5,9 +6,10 @@ import styles from '@/styles/landing/Hero.module.scss'
 export default function Hero() {
   return (
     <div id="hero" className={styles.container}>
-      <h1 className={styles.name}>{hero.name}</h1>
-
-      <div className={styles.role}>{hero.content}</div>
+      <div className={styles.masthead}>
+        <h1 className={styles.name}>{hero.name}</h1>
+        <span className={styles.role}>{hero.content}</span>
+      </div>
 
       <div className={styles.grid}>
         <div className={styles.lead}>
@@ -16,7 +18,7 @@ export default function Hero() {
           <div className={styles.links}>
             <StyledButton
               externalLink="https://github.com/lWarwolfl/portfonext"
-              background="glass"
+              background="invert"
               staticIcon="bxl:github"
             >
               Source of this site
@@ -25,16 +27,18 @@ export default function Hero() {
               Download resume
             </StyledButton>
           </div>
+
+          <dl className={styles.meta}>
+            {hero.meta.map((item) => (
+              <div className={styles.metarow} key={item.label}>
+                <dt className={styles.metakey}>{item.label}</dt>
+                <dd className={styles.metavalue}>{item.value}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
 
-        <dl className={styles.meta}>
-          {hero.meta.map((item) => (
-            <div className={styles.metarow} key={item.label}>
-              <dt className={styles.metakey}>{item.label}</dt>
-              <dd className={styles.metavalue}>{item.value}</dd>
-            </div>
-          ))}
-        </dl>
+        <Terminal className={styles.terminal} />
       </div>
     </div>
   )

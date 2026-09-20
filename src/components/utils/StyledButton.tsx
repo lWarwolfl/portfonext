@@ -64,7 +64,7 @@ export default function StyledButton({
     [`${styles.active}`]: active,
   })
 
-  const iconStyle = { color: `var(--${color}-color)` }
+  const iconStyle = background === 'invert' ? undefined : { color: `var(--${color}-color)` }
 
   const content = (
     <>

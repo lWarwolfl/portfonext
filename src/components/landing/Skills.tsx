@@ -21,7 +21,7 @@ export default function Skills() {
           <section className={styles.group} key={group.name}>
             <div className={styles.head}>
               <Icon icon={groupIcons[group.name] ?? 'ci:code'} className={styles.icon} />
-              <span className={styles.label}>{group.label}</span>
+              <span className={styles.label}>{`// ${group.label.toLowerCase()}`}</span>
               <span className={styles.count}>{group.items.length}</span>
             </div>
 

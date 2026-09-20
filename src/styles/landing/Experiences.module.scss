@@ -13,8 +13,8 @@
   .experience {
     display: grid;
     grid-template-columns: 148px minmax(0, 1fr);
-    gap: clamp(16px, 3vw, 40px);
-    padding: 22px 0;
+    gap: clamp(16px, 3vw, 36px);
+    padding: 20px 0;
     border-top: 1px solid var(--hairline);
 
     &:last-child {
@@ -24,13 +24,36 @@
 
   .period {
     @include label;
-    padding-top: 2px;
+    padding-top: 3px;
+    padding-right: 22px;
+    text-align: right;
   }
 
   .details {
     @include flex-column;
-    gap: 12px;
+    position: relative;
+    gap: 11px;
     min-width: 0;
+    padding-left: 22px;
+    border-left: 1px solid var(--hairline);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: -3.5px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--hairline-strong);
+      box-shadow: 0 0 0 3px var(--body-color);
+    }
+  }
+
+  .experience:first-child {
+    .details::before {
+      background-color: var(--accent);
+    }
   }
 
   .identity {
@@ -46,12 +69,8 @@
       color: var(--font-color-primary);
     }
 
-    .externallink {
-      color: var(--font-color-primary);
-
-      &:hover {
-        color: var(--accent);
-      }
+    .externallink:hover {
+      color: var(--accent);
     }
 
     .icon {
@@ -65,17 +84,16 @@
   }
 
   .about {
+    max-width: 70ch;
     color: var(--font-color-secondary);
     font-size: $font-size-r;
     line-height: 1.6;
-    max-width: 70ch;
     text-wrap: pretty;
   }
 
   .bullets {
     @include flex-column;
-    gap: 8px;
-    margin-top: 2px;
+    gap: 7px;
   }
 
   .bullet {
@@ -114,8 +132,17 @@
   .container {
     .experience {
       grid-template-columns: minmax(0, 1fr);
-      gap: 10px;
-      padding: 20px 0;
+      gap: 8px;
+      padding: 18px 0;
+    }
+
+    .period {
+      padding-right: 0;
+      text-align: left;
+    }
+
+    .details {
+      padding-left: 16px;
     }
   }
 }

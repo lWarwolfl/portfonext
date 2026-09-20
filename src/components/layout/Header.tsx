@@ -23,7 +23,7 @@ export default function Header() {
             <StyledButton
               externalLink="/files/Resume.pdf"
               download
-              background="glass"
+              background="invert"
               staticIcon="ci:file-document"
             >
               Resume

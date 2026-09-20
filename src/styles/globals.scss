@@ -1,5 +1,6 @@
-$border-radius-global: 6px;
-$border-radius-sm: 4px;
+$border-radius-global: 8px;
+$border-radius-sm: 5px;
+$border-radius-pill: 999px;
 $max-width-global: 1216px;
 $padding-global: 24px;
 $header-height: 60px;
@@ -34,7 +35,7 @@ $font-size-7xl: 4rem;
 $font-size-8xl: 4.5rem;
 $font-size-9xl: 5rem;
 $font-size-10xl: 5.5rem;
-$font-size-11xl: clamp(2.5rem, 7vw, 4.5rem);
+$font-size-11xl: clamp(2.5rem, 6.5vw, 4.25rem);
 
 $font-weight-thin: 200;
 $font-weight-light: 300;

@@ -5,43 +5,52 @@
   @include flex-column;
   position: relative;
   width: 100%;
-  padding-top: calc(#{$header-height} + clamp(36px, 6vw, 72px));
-  padding-bottom: clamp(36px, 5vw, 64px);
+  padding-top: calc(#{$header-height} + clamp(32px, 5vw, 64px));
+  padding-bottom: clamp(32px, 5vw, 60px);
 
-  .name {
-    font-family: $font-sans;
-    font-size: $font-size-11xl;
-    font-weight: $font-weight-semibold;
-    line-height: 1;
-    letter-spacing: -0.035em;
-    color: var(--font-color-primary);
-  }
+  .masthead {
+    @include flex-row;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--hairline);
 
-  .role {
-    @include label;
-    margin-top: clamp(14px, 2vw, 20px);
-    padding-top: 14px;
-    border-top: 1px solid var(--hairline);
-    color: var(--ink-2);
+    .name {
+      font-family: $font-sans;
+      font-size: $font-size-11xl;
+      font-weight: $font-weight-semibold;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--font-color-primary);
+    }
+
+    .role {
+      @include label;
+      padding-bottom: 6px;
+      color: var(--ink-2);
+    }
   }
 
   .grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    gap: clamp(24px, 4vw, 64px);
-    margin-top: clamp(24px, 3.5vw, 44px);
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(24px, 4vw, 56px);
+    margin-top: clamp(22px, 3vw, 38px);
   }
 
   .lead {
     @include flex-column;
     align-items: flex-start;
-    gap: 20px;
-    max-width: 62ch;
+    gap: 22px;
+    min-width: 0;
 
     .paragraph {
+      max-width: 60ch;
       color: var(--font-color-secondary);
       font-size: $font-size-em;
-      line-height: 1.65;
+      line-height: 1.7;
       text-wrap: pretty;
     }
 
@@ -54,6 +63,7 @@
 
   .meta {
     @include flex-column;
+    width: 100%;
     border-top: 1px solid var(--hairline);
 
     .metarow {
@@ -76,9 +86,13 @@
       overflow-wrap: anywhere;
     }
   }
+
+  .terminal {
+    width: 100%;
+  }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 940px) {
   .container {
     .grid {
       grid-template-columns: minmax(0, 1fr);

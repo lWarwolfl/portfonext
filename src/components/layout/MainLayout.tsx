@@ -8,15 +8,19 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import clsx from 'clsx'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { DM_Mono, DM_Sans } from 'next/font/google'
 import { useEffect, useRef } from 'react'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP)
 }
 
-const sans = Inter({ subsets: ['latin'], variable: '--font-sans' })
-const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
+const sans = DM_Sans({ subsets: ['latin'], variable: '--font-sans' })
+const mono = DM_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono',
+})
 
 interface Props {
   children: React.ReactNode
@@ -35,10 +39,10 @@ export default function MainLayout({ children }: Props) {
       const boxes = gsap.utils.toArray<HTMLElement>('.animated-container')
 
       const reveal = (box: HTMLElement, span: number) => {
-        gsap.set(box, { x: -80, opacity: 0 })
+        gsap.set(box, { y: 22, opacity: 0 })
 
         gsap.to(box, {
-          x: 0,
+          y: 0,
           opacity: 1,
           scrollTrigger: {
             trigger: box,

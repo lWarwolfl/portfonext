@@ -46,10 +46,14 @@
     }
 
     .link {
-      padding: 6px 9px;
+      padding: 7px 12px;
       border-color: transparent;
       background-color: transparent;
       color: var(--font-color-secondary);
+    }
+
+    .link:hover {
+      border-color: transparent;
     }
 
     .active {
