@@ -35,7 +35,6 @@
       @include overflow-ellipsis;
       flex: 1;
       min-width: 0;
-      font-family: $font-mono;
       font-size: $font-size-s;
       color: var(--ink-3);
     }
@@ -102,7 +101,6 @@
     }
 
     .note {
-      font-family: $font-mono;
       font-size: $font-size-s;
       color: var(--ink-3);
     }
