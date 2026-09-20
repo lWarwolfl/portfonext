@@ -47,18 +47,19 @@ export default function MainLayout({ children }: Props) {
         gsap.to(box, {
           y: 0,
           opacity: 1,
+          ease: 'none',
           scrollTrigger: {
             trigger: box,
             start: isMobile ? '240px bottom' : '120px bottom',
-            end: () => `+=${Math.min(box.offsetHeight, window.innerHeight * span)}`,
-            scrub: true,
+            end: () => `+=${window.innerHeight * span}`,
+            scrub: 0.5,
             invalidateOnRefresh: true,
           },
         })
       }
 
-      titles.forEach((box) => reveal(box, 0.35))
-      boxes.forEach((box) => reveal(box, 0.6))
+      titles.forEach((box) => reveal(box, 0.5))
+      boxes.forEach((box) => reveal(box, 0.9))
 
       ScrollTrigger.refresh()
     },
