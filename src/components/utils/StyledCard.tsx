@@ -1,77 +1,59 @@
 import { type ColorType } from '@/lib/types'
 import styles from '@/styles/utils/StyledCard.module.scss'
-import clsx from 'clsx' // Ensure you've installed the 'clsx' package
-import React, { useCallback, useRef, useState } from 'react'
+import clsx from 'clsx'
+import React, { useRef } from 'react'
 
 interface Props {
   id?: string
   className?: string
-  variant: 'narrowbottom' | 'small' | 'smallfull'
   children: React.ReactNode
   glow?: ColorType
   move?: boolean
 }
 
-const variantStyles = {
-  narrowbottom: styles.narrowbottom,
-  small: styles.small,
-  smallfull: styles.smallfull,
-}
+const tiltAngle = 4
+const glowSize = 180
 
-export default function StyledCard({
-  id,
-  glow = 'blue',
-  className,
-  variant,
-  children,
-  move = true,
-}: Props) {
-  const [glowPosition, setGlowPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 })
+export default function StyledCard({ id, glow = 'blue', className, children, move = true }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const glowRef = useRef<HTMLDivElement>(null)
 
-  const handleMouseMove = useCallback(
-    (event: React.MouseEvent<HTMLDivElement>) => {
-      if (!containerRef.current || window.innerWidth <= 768) return
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    const container = containerRef.current
+    if (!container || window.innerWidth <= 768) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
-      const containerRect = containerRef.current.getBoundingClientRect()
-      const mouseX = event.clientX - containerRect.left
-      const mouseY = event.clientY - containerRect.top
+    const rect = container.getBoundingClientRect()
+    const x = event.clientX - rect.left
+    const y = event.clientY - rect.top
 
-      const multiplier = variant === 'small' ? 8 : variant === 'smallfull' ? 4 : 2
-      const offset = variant === 'narrowbottom' ? 125 : 75
+    const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * tiltAngle
+    const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * tiltAngle
 
-      const xSkew = ((mouseX - containerRect.width / 2) / (containerRect.width / 2)) * multiplier
-      const ySkew = ((mouseY - containerRect.height / 2) / (containerRect.height / 2)) * multiplier
+    container.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${-rotateY}deg)`
 
-      containerRef.current.style.transform = `perspective(1000px) rotateX(${ySkew}deg) rotateY(${-xSkew}deg)`
-      setGlowPosition({ x: mouseX - offset, y: mouseY - offset })
-    },
-    [variant]
-  )
-
-  function handleMouseLeave() {
-    if (containerRef.current) {
-      containerRef.current.style.transform = ''
+    const glowElement = glowRef.current
+    if (glowElement) {
+      glowElement.style.top = `${y - glowSize}px`
+      glowElement.style.left = `${x - glowSize}px`
     }
+  }
+
+  const handleMouseLeave = () => {
+    const container = containerRef.current
+    if (container) container.style.transform = ''
   }
 
   return (
     <div
       id={id}
-      className={clsx(className, styles.container, variantStyles[variant])}
-      onMouseMove={move ? handleMouseMove : () => {}}
-      onMouseLeave={move ? handleMouseLeave : () => {}}
+      className={clsx(className, styles.container)}
+      onMouseMove={move ? handleMouseMove : undefined}
+      onMouseLeave={move ? handleMouseLeave : undefined}
       ref={containerRef}
     >
       {move ? (
-        <div
-          className={styles.glow}
-          style={{
-            top: `${glowPosition.y}px`,
-            left: `${glowPosition.x}px`,
-            backgroundColor: `var(--${glow}-color)`,
-          }}
-        />
+        <div ref={glowRef} className={styles.glow} style={{ color: `var(--${glow}-color)` }} />
       ) : null}
       {children}
     </div>

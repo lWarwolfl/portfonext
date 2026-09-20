@@ -10,29 +10,31 @@ export default function Menu() {
   const [activeLink, setActiveLink] = useState('')
 
   useEffect(() => {
+    let frame = 0
+
     const onScroll = () => {
-      let foundActive = false
+      if (frame) return
 
-      links.forEach((link) => {
-        const element = document.getElementById(link.id)
-        if (element) {
-          const bounding = element.getBoundingClientRect()
-          if (bounding.top < 350) {
-            setActiveLink(link.id)
-            foundActive = true
-          }
-        }
+      frame = requestAnimationFrame(() => {
+        frame = 0
+
+        let found = ''
+
+        links.forEach((link) => {
+          const element = document.getElementById(link.id)
+          if (element && element.getBoundingClientRect().top < 350) found = link.id
+        })
+
+        setActiveLink((current) => (current === found ? current : found))
       })
-
-      if (!foundActive) {
-        setActiveLink('')
-      }
     }
 
-    window.addEventListener('scroll', onScroll)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
 
     return () => {
       window.removeEventListener('scroll', onScroll)
+      cancelAnimationFrame(frame)
     }
   }, [])
 

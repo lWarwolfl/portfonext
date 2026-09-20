@@ -7,43 +7,40 @@ import Image from 'next/image'
 
 export default function Summary() {
   return (
-    <div id="summary" className={styles.container}>
-      <Title title="My Story" description="A Pleasant Path" />
+    <div id="summary" className={`section ${styles.container}`}>
+      <Title index="01" title="My Story" description="A Pleasant Path" />
 
-      <div>
-        <StyledCard move={false} variant="narrowbottom">
-          <div className={styles.splitimage}>
+      <StyledCard className={styles.panel} move={false}>
+        <div className={styles.body}>
+          <div className={styles.portrait}>
             <Image
-              quality={50}
+              quality={60}
               placeholder="blur"
               src={summary.image}
-              alt="My photo"
+              alt="Sina Kheiri"
               className={styles.image}
             />
           </div>
 
-          <div className={styles.splittext}>
+          <div className={styles.text}>
             <div className={styles.description}>{summary.content}</div>
-          </div>
 
-          <div className={styles.links}>
-            {summary.links.map((item, index) => (
-              <StyledButton
-                key={index}
-                className={styles.link}
-                externalLink={item.link}
-                icon="ci:chevron-right"
-                staticIcon={item.icon}
-                color={item.color}
-                background="glass"
-                barHeight="5px"
-              >
-                {item.text}
-              </StyledButton>
-            ))}
+            <div className={styles.links}>
+              {summary.links.map((item) => (
+                <StyledButton
+                  key={item.link}
+                  externalLink={item.link}
+                  icon="ci:chevron-right"
+                  staticIcon={item.icon}
+                  background="glass"
+                >
+                  {item.text}
+                </StyledButton>
+              ))}
+            </div>
           </div>
-        </StyledCard>
-      </div>
+        </div>
+      </StyledCard>
     </div>
   )
 }

@@ -2,22 +2,21 @@ import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
 import CustomHead from '@/components/utils/CustomHead'
 import { WebGLParticles } from '@/components/utils/Particles'
+import { useLenis } from '@/lib/lenis'
 import useWindowSize from '@/lib/useWindowSize'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import { Poppins } from 'next/font/google'
-import { useRef } from 'react'
+import { Instrument_Sans, Instrument_Serif } from 'next/font/google'
+import clsx from 'clsx'
+import { useEffect, useRef } from 'react'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP)
 }
 
-const font = Poppins({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-family',
-})
+const sans = Instrument_Sans({ subsets: ['latin'], variable: '--font-sans' })
+const serif = Instrument_Serif({ subsets: ['latin'], weight: '400', variable: '--font-serif' })
 
 interface Props {
   children: React.ReactNode
@@ -26,30 +25,17 @@ interface Props {
 export default function MainLayout({ children }: Props) {
   const main = useRef<HTMLDivElement>(null)
   const isMobile = useWindowSize()
+  const { lenis } = useLenis()
 
   useGSAP(
     () => {
-      const titles = gsap.utils.toArray('.animated-title') as HTMLElement[]
-      const boxes = gsap.utils.toArray('.animated-container') as HTMLElement[]
-      const reverseboxes = gsap.utils.toArray('.animated-container-reverse') as HTMLElement[]
+      if (isMobile === undefined) return
 
-      titles.forEach((box) => {
-        gsap.set(box, { x: -100, opacity: 0 })
+      const titles = gsap.utils.toArray<HTMLElement>('.animated-title')
+      const boxes = gsap.utils.toArray<HTMLElement>('.animated-container')
 
-        gsap.to(box, {
-          x: 0,
-          opacity: 1,
-          scrollTrigger: {
-            trigger: box,
-            start: isMobile ? '300px bottom' : '100px bottom',
-            end: isMobile ? '650px bottom' : '450px bottom',
-            scrub: true,
-          },
-        })
-      })
-
-      boxes.forEach((box, index: number) => {
-        gsap.set(box, { x: -100, opacity: 0 })
+      const reveal = (box: HTMLElement, from: number, end: string) => {
+        gsap.set(box, { x: from, opacity: 0 })
 
         gsap.to(box, {
           x: 0,
@@ -57,48 +43,68 @@ export default function MainLayout({ children }: Props) {
           scrollTrigger: {
             trigger: box,
             start: isMobile ? '350px bottom' : '150px bottom',
-            end:
-              boxes.length - 2 === index
-                ? '300px bottom'
-                : boxes.length - 1 === index
-                  ? 'bottom bottom'
-                  : isMobile
-                    ? '700px bottom'
-                    : '500px bottom',
+            end,
             scrub: true,
+            invalidateOnRefresh: true,
           },
         })
+      }
+
+      titles.forEach((box) => reveal(box, -100, isMobile ? '650px bottom' : '450px bottom'))
+
+      boxes.forEach((box, index) => {
+        const last = boxes.length - 1 === index
+
+        reveal(box, -100, last ? 'bottom bottom' : isMobile ? '700px bottom' : '500px bottom')
       })
 
-      reverseboxes.forEach((box, index: number) => {
-        gsap.set(box, { x: 100, opacity: 0 })
-
-        gsap.to(box, {
-          x: 0,
-          opacity: 1,
-          scrollTrigger: {
-            trigger: box,
-            start: isMobile ? '350px bottom' : '150px bottom',
-            end:
-              boxes.length - 1 === index
-                ? 'bottom bottom'
-                : isMobile
-                  ? '700px bottom'
-                  : '500px bottom',
-            scrub: true,
-          },
-        })
-      })
+      ScrollTrigger.refresh()
     },
-    { scope: main }
+    { scope: main, dependencies: [isMobile] }
   )
+
+  useEffect(() => {
+    if (!lenis) return
+
+    lenis.on('scroll', ScrollTrigger.update)
+
+    return () => {
+      lenis.off('scroll', ScrollTrigger.update)
+    }
+  }, [lenis])
+
+  useEffect(() => {
+    let alive = true
+    let height = 0
+
+    const refresh = () => {
+      if (alive) ScrollTrigger.refresh()
+    }
+
+    document.fonts?.ready.then(refresh)
+    window.addEventListener('load', refresh)
+
+    const observer = new ResizeObserver(([entry]) => {
+      const next = entry?.contentRect.height ?? 0
+      if (Math.abs(next - height) < 2) return
+
+      height = next
+      refresh()
+    })
+    observer.observe(document.body)
+
+    return () => {
+      alive = false
+      window.removeEventListener('load', refresh)
+      observer.disconnect()
+    }
+  }, [])
 
   return (
     <>
       <CustomHead />
       <WebGLParticles size={isMobile ? 260 : 200} />
-      <main className={font.className}>
-        <div id="full-size-image-slider"></div>
+      <main className={clsx(sans.variable, serif.variable)}>
         <Header />
         <div className="width-fix" ref={main}>
           {children}

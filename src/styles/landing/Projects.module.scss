@@ -1,238 +1,127 @@
-@import '@/styles/animations.scss';
-@import '@/styles/mixins.scss';
 @import '@/styles/globals.scss';
+@import '@/styles/mixins.scss';
 
 .container {
   @include flex-column;
-  width: 100%;
   position: relative;
+  width: 100%;
 
-  .projectcontainer {
+  .list {
     @include flex-column;
-    width: 100%;
+    gap: 20px;
+  }
 
-    .animatedcontainer {
-      margin-bottom: 50px;
+  .project {
+    padding: clamp(20px, 3vw, 32px);
+  }
 
-      &:last-child {
-        margin-bottom: 0;
-      }
+  .head {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 16px;
+    padding-bottom: 18px;
+    margin-bottom: 26px;
+    border-bottom: 1px solid var(--hairline);
 
-      .project {
-        @include flex-row;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
+    .index {
+      @include label;
+      color: var(--accent);
+    }
 
-        .slider {
-          width: 38%;
-          height: 400px;
-          margin: 0 0 20px;
-        }
+    .title {
+      font-family: $font-serif;
+      font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+      font-weight: $font-weight-regular;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--font-color-primary);
+    }
 
-        .content {
-          width: 62%;
-          padding-left: 30px;
+    .accent {
+      @include label;
+      max-width: 40ch;
+      text-align: right;
+    }
+  }
 
-          .section {
-            @include flex-column;
-            margin-bottom: 32px;
-            width: 100%;
+  .body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 440px);
+    align-items: start;
+    gap: clamp(24px, 4vw, 48px);
+  }
 
-            .title {
-              position: relative;
-              width: fit-content;
-              font-weight: $font-weight-semibold;
-              font-size: $font-size-l;
-              color: var(--font-color-primary);
-              margin-bottom: 10px;
+  .content {
+    @include flex-column;
+    gap: 26px;
+  }
 
-              .accent {
-                font-weight: $font-weight-regular;
-                font-size: $font-size-em;
-                color: var(--font-color-secondary);
-                margin-left: 4px;
-              }
-            }
+  .description {
+    max-width: 58ch;
+    color: var(--font-color-secondary);
+    font-size: $font-size-em;
+    line-height: 1.7;
+    text-wrap: pretty;
 
-            .description {
-              width: 100%;
-              font-weight: $font-weight-regular;
-              font-size: $font-size-em;
-              color: var(--font-color-secondary);
+    .bold {
+      font-weight: $font-weight-medium;
+      color: var(--font-color-primary);
+    }
 
-              .bold {
-                font-weight: $font-weight-semibold;
-                color: var(--font-color-primary);
-              }
-            }
+    a.bold:hover {
+      color: var(--accent);
+    }
+  }
 
-            .skillcontainer {
-              @include flex-row;
-              flex-wrap: wrap;
-              width: 100%;
+  .skills {
+    @include flex-row;
+    flex-wrap: wrap;
+    gap: 6px 18px;
 
-              .skill {
-                @include flex-row;
-                width: 23%;
-                justify-content: center;
-                align-items: center;
-                height: 40px;
-                padding: 0 16px 0 8px;
-                margin-bottom: 20px;
-                margin-right: 2%;
-                border-radius: 10px;
-                background-color: var(--more-transparent-background);
+    .skill {
+      @include flex-row;
+      align-items: center;
+      gap: 8px;
+      font-family: $font-mono;
+      font-size: $font-size-s;
+      color: var(--font-color-secondary);
 
-                .name {
-                  @include overflow-ellipsis;
-                  width: 100%;
-                  color: var(--font-color-primary);
-                  font-weight: $font-weight-regular;
-                  font-size: $font-size-r;
-                }
-
-                .logo {
-                  font-size: $font-size-xl;
-                  color: var(--blue-color);
-                  margin-right: 15px;
-                }
-              }
-            }
-
-            .linkcontainer {
-              @include flex-row;
-              flex-wrap: wrap;
-
-              .link {
-                margin-right: 15px;
-                margin-bottom: 20px;
-              }
-            }
-
-            &:nth-child(2) {
-              margin-bottom: 12px;
-            }
-
-            &:last-child {
-              margin-bottom: 0;
-            }
-          }
-        }
-
-        &.reverse {
-          flex-direction: row-reverse;
-
-          .content {
-            padding-left: 0;
-            padding-right: 30px;
-          }
-        }
+      .logo {
+        font-size: $font-size-l;
+        color: var(--accent);
       }
     }
   }
-}
 
-@media screen and (max-width: 1000px) {
-  .container {
-    .projectcontainer {
-      .animatedcontainer {
-        .project {
-          .content {
-            .section {
-              .skillcontainer {
-                .skill {
-                  width: 31%;
-                }
-              }
+  .links {
+    @include flex-row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 
-              .linkcontainer {
-                .link {
-                  width: 31%;
-                  margin-right: 2%;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+  .frame {
+    height: 400px;
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 950px) {
   .container {
-    .projectcontainer {
-      .animatedcontainer {
-        .project {
-          flex-wrap: wrap;
+    .head {
+      grid-template-columns: auto minmax(0, 1fr);
 
-          .slider {
-            width: 100%;
-          }
-
-          .content {
-            width: 100%;
-            padding-left: 0;
-
-            .section {
-              .skillcontainer {
-                justify-content: space-between;
-
-                .skill {
-                  width: 46%;
-                  margin-right: 0;
-                }
-              }
-
-              .linkcontainer {
-                justify-content: space-between;
-
-                .link {
-                  width: 46%;
-                  margin-right: 0;
-                }
-              }
-            }
-          }
-
-          &.reverse {
-            flex-direction: row;
-
-            .content {
-              padding-right: 0;
-            }
-          }
-        }
+      .accent {
+        grid-column: 1 / -1;
+        text-align: left;
       }
     }
-  }
-}
 
-@media screen and (max-width: 600px) {
-  .container {
-    .projectcontainer {
-      .animatedcontainer {
-        .project {
-          .content {
-            .section {
-              .title {
-                font-size: $font-size-em;
+    .body {
+      grid-template-columns: minmax(0, 1fr);
+    }
 
-                .accent {
-                  font-size: $font-size-m;
-                }
-              }
-
-              .skillcontainer {
-                .skill {
-                  width: 100%;
-                }
-              }
-            }
-          }
-        }
-      }
+    .frame {
+      height: 340px;
     }
   }
 }

@@ -12,7 +12,12 @@ export default function Educations() {
 
   return (
     <div id="educations" className={styles.container}>
-      <Title className="animated-title" title="Education" description="Academic Background" />
+      <Title
+        index="05"
+        className="animated-title"
+        title="Education"
+        description="Academic Background"
+      />
 
       <SplittedContainer className="animated-container">
         <div className={styles.container}>

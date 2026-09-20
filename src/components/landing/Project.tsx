@@ -1,79 +1,58 @@
-import ImageSlider from '@/components/utils/ImageSlider'
+import Frame from '@/components/utils/Frame'
 import StyledButton from '@/components/utils/StyledButton'
 import StyledCard from '@/components/utils/StyledCard'
 import { type ProjectInterface } from '@/data/projects'
 import styles from '@/styles/landing/Projects.module.scss'
 import { Icon } from '@iconify-icon/react'
-import clsx from 'clsx'
 
 interface Props {
   index: number
   item: ProjectInterface
-  className?: string
 }
 
-export default function Project({ index, item, className }: Props) {
+export default function Project({ index, item }: Props) {
   return (
-    <StyledCard
-      move={false}
-      className={clsx(className, styles.project, {
-        [`${styles.reverse}`]: index % 2 !== 0,
-      })}
-      variant="narrowbottom"
-    >
-      <ImageSlider
-        className={styles.slider}
-        title={item.title}
-        accent={item.accent}
-        images={item.images}
-        thumbnails={item.thumbnails}
-        fullSlide={item.fullSlide}
-      />
-      <div className={styles.content}>
-        <div className={styles.section}>
-          <div className={styles.title}>
-            {item.title} <span className={styles.accent}>{item.accent}</span>
+    <StyledCard className={styles.project} move={false}>
+      <div className={styles.head}>
+        <span className={styles.index}>{String(index + 1).padStart(2, '0')}</span>
+        <h3 className={styles.title}>{item.title}</h3>
+        <span className={styles.accent}>{item.accent}</span>
+      </div>
+
+      <div className={styles.body}>
+        <div className={styles.content}>
+          <p className={styles.description}>{item.description}</p>
+
+          <div className={styles.skills}>
+            {item.skills.map((skill) => (
+              <span className={styles.skill} key={skill.name}>
+                <Icon icon={skill.logo} className={styles.logo} />
+                {skill.name}
+              </span>
+            ))}
           </div>
-          <div className={styles.description}>{item.description}</div>
-        </div>
-        <div className={styles.section}>
-          <div className={styles.title}>
-            Skills <span className={styles.accent}>used in this project</span>
-          </div>
-          <div className={styles.skillcontainer}>
-            {item.skills.map((skill, i) => {
-              if (skill) {
-                return (
-                  <div key={i} className={styles.skill}>
-                    <Icon icon={skill.logo} className={styles.logo} />
-                    <div className={styles.name}>{skill.name}</div>
-                  </div>
-                )
-              }
-            })}
-          </div>
-        </div>
-        <div className={styles.section}>
-          <div className={styles.title}>
-            Links <span className={styles.accent}>to access the code or view the project</span>
-          </div>
-          <div className={styles.linkcontainer}>
-            {item.links.map((link, i) => (
+
+          <div className={styles.links}>
+            {item.links.map((link) => (
               <StyledButton
-                key={i}
-                className={styles.link}
+                key={link.link}
                 externalLink={link.link}
-                icon="ci:chevron-right"
                 staticIcon={link.icon}
-                color={link.color}
+                icon="ci:chevron-right"
                 background="glass"
-                barHeight="4px"
               >
                 {link.text}
               </StyledButton>
             ))}
           </div>
         </div>
+
+        <Frame
+          className={styles.frame}
+          title={item.title}
+          link={item.link}
+          embeddable={item.embeddable}
+        />
       </div>
     </StyledCard>
   )

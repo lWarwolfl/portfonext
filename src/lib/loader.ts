@@ -9,6 +9,7 @@ body {
   display: block;
   overflow-y: hidden;
   overflow-x: hidden;
+  background-color: #0a0b0d;
 }
 
 #globalLoader {
@@ -17,61 +18,36 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 100;
-  background-color: #0d1117;
+  background-color: #0a0b0d;
   left: 0;
   top: 0;
   width: 100dvw;
   height: 100dvh;
-  transition: 300ms;
-  backdrop-filter: blur(5px);
+  transition: opacity 300ms ease;
   overflow: hidden;
 }
 
 .loader {
-  position: absolute;
-  top: calc(50% - 40px);
-  left: calc(50% - 40px);
-  animation: spin 1.5s linear infinite;
-  width: 80px;
-  height: 80px;
-  border-radius: 50px;
-  opacity: 0.5;
-  background-image: linear-gradient(90deg, #b721ff88 0%, #6625ff88 50%, #257cff88 100%);
+  width: 72px;
+  height: 1px;
+  background-color: #22252a;
+  overflow: hidden;
 }
 
 .loader .loader-inside {
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  width: 68px;
-  height: 68px;
-  border-radius: 45px;
-  background-image: linear-gradient(90deg, #b721ff 0%, #6625ff 50%, #257cff88 100%);
+  display: block;
+  width: 40%;
+  height: 100%;
+  background-color: #d4ff3f;
+  animation: slide 1.1s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 
-.loaderring {
-  position: absolute !important;
-  top: calc(50% - 60px);
-  left: calc(50% - 60px);
-  border-radius: 50%;
-  animation: spin 1.6s linear infinite;
-  animation-direction: reverse;
-  width: 120px;
-  height: 120px;
-}
-
-@keyframes spin {
+@keyframes slide {
   0% {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
+    transform: translateX(-100%);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
+    transform: translateX(250%);
   }
 }
 `

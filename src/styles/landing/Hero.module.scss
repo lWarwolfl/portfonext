@@ -1,104 +1,96 @@
-@import '@/styles/animations.scss';
-@import '@/styles/mixins.scss';
 @import '@/styles/globals.scss';
+@import '@/styles/mixins.scss';
 
 .container {
-  @include flex-row;
-  align-items: center;
-  justify-content: center;
+  @include flex-column;
   position: relative;
   width: 100%;
-  height: 100dvh;
+  padding-top: calc(#{$header-height} + clamp(48px, 9vw, 120px));
+  padding-bottom: clamp(56px, 8vw, 112px);
 
-  .intro {
+  .name {
+    font-family: $font-serif;
+    font-size: $font-size-11xl;
+    font-weight: $font-weight-regular;
+    line-height: 0.94;
+    letter-spacing: -0.03em;
+    color: var(--font-color-primary);
+  }
+
+  .role {
+    @include label;
+    margin-top: clamp(20px, 3vw, 34px);
+    padding-top: 16px;
+    border-top: 1px solid var(--hairline);
+    color: var(--ink-2);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: clamp(32px, 6vw, 80px);
+    margin-top: clamp(40px, 6vw, 76px);
+  }
+
+  .lead {
     @include flex-column;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 0 auto;
-    width: 550px;
+    gap: 28px;
+    max-width: 54ch;
 
-    .animatedtext {
-      @include flex-row;
-
-      .text {
-        @include gradient-text-loop;
-        width: fit-content;
-        font-size: $font-size-11xl;
-        font-weight: $font-weight-black;
-        text-transform: uppercase;
-        animation: gradient-animation 8s linear infinite;
-      }
-
-      .caret {
-        color: var(--blue-color);
-        font-size: $font-size-10xl;
-        transform: scaleX(0.4);
-        animation: visibility-animation 1s step-end infinite;
-      }
-    }
-
-    .description {
-      display: inline-block;
-      color: var(--font-color-primary);
-      font-size: $font-size-m;
-      font-weight: $font-weight-semibold;
-      margin-bottom: 8px;
+    .paragraph {
+      color: var(--font-color-secondary);
+      font-size: $font-size-em;
+      line-height: 1.7;
+      text-wrap: pretty;
     }
 
     .links {
       @include flex-row;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  }
 
-      .link {
-        margin-top: 15px;
-        margin-right: 15px;
-      }
+  .meta {
+    @include flex-column;
+    border-top: 1px solid var(--hairline);
+
+    .metarow {
+      display: grid;
+      grid-template-columns: 116px minmax(0, 1fr);
+      align-items: baseline;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .metakey {
+      @include label;
+    }
+
+    .metavalue {
+      font-family: $font-mono;
+      font-size: $font-size-r;
+      color: var(--font-color-primary);
+      overflow-wrap: anywhere;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    .grid {
+      grid-template-columns: minmax(0, 1fr);
     }
   }
 }
 
 @media screen and (max-width: 600px) {
   .container {
-    align-items: flex-start;
-    padding-top: 80px;
-    height: auto;
-
-    .intro {
-      width: 100%;
-
-      .animatedtext {
-        .text {
-          font-size: $font-size-6xl;
-        }
-
-        .caret {
-          font-size: $font-size-6xl;
-          transform: scaleX(0.6);
-        }
-      }
-
-      .description {
-        width: 100%;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .container {
-    .intro {
-      .buttons {
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 100%;
-
-        .buttoncontainer {
-          margin-right: 0;
-          flex-basis: 48%;
-
-          .button {
-            width: 100%;
-          }
-        }
+    .meta {
+      .metarow {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2px;
       }
     }
   }

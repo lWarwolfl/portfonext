@@ -1,35 +1,22 @@
 @import '@/styles/colors.scss';
-@import '@/styles/animations.scss';
-@import '@/styles/mixins.scss';
 @import '@/styles/globals.scss';
+@import '@/styles/mixins.scss';
 @import '@/styles/splitted-container.scss';
-@import '@/styles/swiper.scss';
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  scroll-behavior: smooth;
-}
-
-.width-fix {
-  max-width: $max-width-global;
-  padding: $padding-global;
-  margin: 0 auto;
-}
-
-.animated-container {
-  will-change: transform, opacity;
-}
-
-.animated-container-reverse {
-  will-change: transform, opacity;
 }
 
 html,
 body {
   overflow-x: hidden;
   height: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
 #__next {
@@ -39,7 +26,12 @@ body {
 
 html body {
   background-color: var(--body-color);
+  color: var(--font-color-primary);
+  font-family: $font-sans;
   font-size: $font-size-g-desktop;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -47,9 +39,37 @@ a {
   text-decoration: none;
 }
 
+button {
+  font-family: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--body-color);
+}
+
+.width-fix {
+  max-width: $max-width-global;
+  padding: $padding-global;
+  margin: 0 auto;
+}
+
+.section {
+  padding-block: clamp(64px, 8vw, 120px);
+}
+
+.section + .section {
+  border-top: 1px solid var(--hairline);
+}
+
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -57,11 +77,11 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--contrast-color);
+  background: var(--hairline-strong);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--transparent-background);
+  background: var(--accent);
 }
 
 @media screen and (max-width: 800px) {
@@ -72,7 +92,7 @@ a {
 
 @media screen and (max-width: 530px) {
   .width-fix {
-    padding-bottom: 80px;
+    padding-bottom: 120px;
   }
 }
 

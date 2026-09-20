@@ -1,58 +1,70 @@
-@import '@/styles/animations.scss';
-@import '@/styles/mixins.scss';
 @import '@/styles/globals.scss';
+@import '@/styles/mixins.scss';
 
 .footer {
   width: 100%;
-  padding: 30px 0;
+  margin-top: clamp(48px, 6vw, 96px);
+  padding: 28px 0 40px;
+  border-top: 1px solid var(--hairline);
 
-  .fix {
-    @include flex-column;
-    @include width-fix;
+  .row {
+    @include flex-row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 
   .copyrights {
     @include flex-row;
     align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
     gap: 12px;
-    color: var(--font-color-primary);
-    font-size: $font-size-m;
+    color: var(--font-color-secondary);
+    font-size: $font-size-r;
 
     .name {
       @include flex-row-inline;
-      gap: 10px;
       align-items: center;
-      font-weight: $font-weight-regular;
+      gap: 10px;
+      color: var(--font-color-primary);
+      font-family: $font-mono;
+      font-size: $font-size-s;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
 
       .logo {
-        @include background-contain;
-        align-items: center;
-        justify-content: center;
-        height: 32px;
-        width: auto;
+        width: 24px;
+        height: 24px;
         border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid var(--hairline-strong);
       }
     }
 
     .container {
       @include flex-row-inline;
-      gap: 6px;
       align-items: center;
+      gap: 6px;
 
       .link {
-        @include flex-row;
+        @include flex-row-inline;
         align-items: center;
-        color: var(--blue-color);
+        gap: 6px;
+        color: var(--accent);
 
         .icon {
-          font-size: $font-size-xl;
-          margin-right: 3px;
+          font-size: $font-size-l;
         }
       }
     }
   }
 }
 
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 700px) {
+  .footer {
+    .row {
+      justify-content: flex-start;
+    }
+  }
 }

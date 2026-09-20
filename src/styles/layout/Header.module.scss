@@ -1,88 +1,96 @@
-@import '../animations.scss';
-@import '../mixins.scss';
-@import '../globals.scss';
-
-$height: 40px;
+@import '@/styles/globals.scss';
+@import '@/styles/mixins.scss';
 
 .header {
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 10;
   width: 100%;
-  transition-property: background-color, top;
-  transition-timing-function: $transition-ease;
-  transition-duration: $transition-s;
-  background-color: transparent;
-  padding: 0 20px;
-  top: 20px;
-  left: 0;
+  padding: 0 $padding-global;
+  border-bottom: 1px solid var(--hairline);
+  background-color: var(--body-color);
 
   .fix {
     @include flex-row;
-    @include width-fix;
-    padding: 0;
     align-items: center;
-    justify-content: flex-start;
-    max-width: 1260px;
-    border-radius: $border-radius-global;
-    transition-property: padding;
-    transition-timing-function: $transition-ease;
-    transition-duration: $transition-s;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: $max-width-global;
+    height: $header-height;
+    margin: 0 auto;
   }
 
-  .logo {
-    @include background-contain;
-    cursor: pointer;
+  .brand {
+    @include flex-row;
     align-items: center;
-    justify-content: center;
-    height: $height;
-    width: auto;
-    border-radius: 50%;
-    transition-duration: $transition-f;
-    transition-timing-function: $transition-ease;
-    transition-property: box-shadow;
-    box-shadow: 0 0px 0px var(--primary-color-transparent);
-  }
+    flex-shrink: 0;
+    gap: 10px;
+    font-family: $font-mono;
+    font-size: $font-size-s;
+    font-weight: $font-weight-medium;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--font-color-primary);
 
-  .logo:hover {
-    box-shadow: 0 0 30px var(--primary-color-transparent);
+    .logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--hairline-strong);
+    }
   }
 
   .navbarcontainer {
     .navbar {
       @include flex-row;
       align-items: center;
-      justify-content: center;
-      gap: 4px;
+      gap: 2px;
+    }
 
-      .link:first-child {
-        margin-left: 16px;
-      }
+    .link {
+      padding: 8px 10px;
+      border-color: transparent;
+      background-color: transparent;
+      color: var(--font-color-secondary);
+    }
+
+    .active {
+      color: var(--body-color);
     }
   }
 
-  .upbutton {
-    margin-left: 12px;
-    pointer-events: none;
-    opacity: 0;
+  .actions {
+    @include flex-row;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 8px;
   }
 
   .button {
-    margin-left: auto;
+    .text {
+      display: block;
+    }
   }
 }
 
-.header.stick {
-  top: 12px;
+#top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1px;
+  width: 1px;
+}
 
-  .fix {
-    backdrop-filter: blur(5px);
-    background-color: var(--primary-color-more-transparent);
-    padding: 10px;
-  }
-
-  .upbutton {
-    pointer-events: unset;
-    opacity: 1;
+@media screen and (max-width: 1050px) {
+  .header {
+    .brand {
+      .name {
+        display: none;
+      }
+    }
   }
 }
 
@@ -91,19 +99,19 @@ $height: 40px;
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;
-    padding: 10px 20px;
     z-index: 10;
+    width: 100%;
+    padding: 0 12px 12px;
 
     .navbar {
       @include flex-row;
       justify-content: space-between;
-      width: 100%;
-      padding: 10px;
-      backdrop-filter: blur(5px);
-      background-color: var(--primary-color-more-transparent);
-      border-radius: $border-radius-global;
       gap: 0;
+      width: 100%;
+      padding: 8px;
+      border: 1px solid var(--hairline);
+      border-radius: $border-radius-global;
+      background-color: var(--surface);
     }
   }
 }

@@ -1,47 +1,36 @@
-@import '@/styles/animations.scss';
-@import '@/styles/mixins.scss';
 @import '@/styles/globals.scss';
+@import '@/styles/mixins.scss';
 
 .container {
   @include flex-column;
+  gap: 12px;
   width: 100%;
-  margin-top: 50px;
-  margin-bottom: 20px;
-  font-size: $font-size-4xl;
+  margin-bottom: clamp(32px, 5vw, 64px);
 
-  .icon {
+  .meta {
     @include flex-row;
+    @include label;
     align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-bottom: 8px;
-    color: var(--font-color-primary);
-    font-size: $font-size-3xl;
-    background-color: var(--blue-color);
+    gap: 12px;
+
+    .index {
+      color: var(--accent);
+    }
+
+    .rule {
+      flex: 1;
+      height: 1px;
+      background-color: var(--hairline);
+    }
   }
 
   .title {
+    font-family: $font-serif;
+    font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+    font-weight: $font-weight-regular;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
     color: var(--font-color-primary);
-    font-weight: $font-weight-extrabold;
-    margin-bottom: -4px;
-  }
-
-  .description {
-    @include gradient-text-normal;
-    font-weight: $font-weight-black;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .container {
-    font-size: $font-size-3xl;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .container {
-    font-size: $font-size-2xl;
+    text-wrap: pretty;
   }
 }

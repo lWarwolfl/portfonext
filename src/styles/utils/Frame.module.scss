@@ -1,0 +1,83 @@
+@import '@/styles/globals.scss';
+@import '@/styles/mixins.scss';
+
+.container {
+  @include flex-column;
+  position: relative;
+  border: 1px solid var(--hairline);
+  border-radius: $border-radius-global;
+  background-color: var(--body-color);
+  overflow: hidden;
+
+  .bar {
+    @include flex-row;
+    @include hairline-bottom;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 8px 8px 12px;
+    background-color: var(--surface);
+
+    .dots {
+      @include flex-row;
+      flex-shrink: 0;
+      gap: 6px;
+
+      span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--hairline-strong);
+      }
+    }
+
+    .url {
+      @include overflow-ellipsis;
+      flex: 1;
+      min-width: 0;
+      font-family: $font-mono;
+      font-size: $font-size-es;
+      color: var(--font-color-secondary);
+    }
+
+    .open {
+      flex-shrink: 0;
+      min-width: 32px;
+      min-height: 32px;
+      font-size: $font-size-m;
+    }
+  }
+
+  .frame {
+    display: block;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    border: none;
+    background-color: var(--surface);
+  }
+
+  .blocked {
+    @include flex-column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 24px;
+    text-align: center;
+
+    .icon {
+      font-size: $font-size-4xl;
+      color: var(--ink-3);
+    }
+
+    .name {
+      font-family: $font-serif;
+      font-size: $font-size-xl;
+      color: var(--font-color-primary);
+    }
+
+    .note {
+      @include label;
+    }
+  }
+}

@@ -9,7 +9,7 @@ interface Props {
 
 export default function Education({ item }: Props) {
   return (
-    <StyledCard className={styles.education} variant="smallfull" glow={item.color}>
+    <StyledCard className={styles.education} glow={item.color} move={false}>
       <div className={styles.header}>
         <span className={styles.chip}>
           {' '}

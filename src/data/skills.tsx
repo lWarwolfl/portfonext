@@ -2,6 +2,7 @@ import { type ColorType, type SkillCategoryType } from '@/lib/types'
 
 export interface SkillCategoryInterface {
   name: SkillCategoryType
+  label: string
   color: ColorType
   icon: string
 }
@@ -15,21 +16,25 @@ export interface SkillInterface {
 export const skillCategories: SkillCategoryInterface[] = [
   {
     name: 'code',
+    label: 'Languages & Frameworks',
     color: 'blue',
     icon: 'ci:code',
   },
   {
     name: 'design',
+    label: 'Design',
     color: 'purple',
     icon: 'ci:swatches-palette',
   },
   {
     name: 'uiframework',
+    label: 'UI & Styling',
     color: 'pink',
     icon: 'ic:outline-format-paint',
   },
   {
     name: 'other',
+    label: 'Tooling & Practice',
     color: 'green',
     icon: 'ic:baseline-bolt',
   },
@@ -45,6 +50,11 @@ export const skills: SkillInterface[] = [
     name: 'ASP.NET (Entity Framework, Rest APIs)',
     category: 'code',
     logo: 'simple-icons:dotnet',
+  },
+  {
+    name: 'REST APIs',
+    category: 'code',
+    logo: 'mdi:api',
   },
   {
     name: 'SQL',
@@ -82,9 +92,29 @@ export const skills: SkillInterface[] = [
     logo: 'simple-icons:nextdotjs',
   },
   {
+    name: 'Server Actions',
+    category: 'code',
+    logo: 'mdi:server',
+  },
+  {
     name: 'TypeScript (JavaScript)',
     category: 'code',
     logo: 'simple-icons:typescript',
+  },
+  {
+    name: 'JavaScript',
+    category: 'code',
+    logo: 'simple-icons:javascript',
+  },
+  {
+    name: 'HTML 5',
+    category: 'code',
+    logo: 'simple-icons:html5',
+  },
+  {
+    name: 'CSS 3',
+    category: 'code',
+    logo: 'simple-icons:css3',
   },
   {
     name: 'Tailwind CSS (Shadcn UI)',
@@ -97,9 +127,24 @@ export const skills: SkillInterface[] = [
     logo: 'simple-icons:shopify',
   },
   {
+    name: 'GraphQL',
+    category: 'code',
+    logo: 'simple-icons:graphql',
+  },
+  {
+    name: 'Remix',
+    category: 'code',
+    logo: 'simple-icons:remix',
+  },
+  {
     name: 'Three.js (WebGL - GSAP)',
     category: 'code',
     logo: 'tabler:brand-threejs',
+  },
+  {
+    name: 'Vite',
+    category: 'code',
+    logo: 'simple-icons:vite',
   },
   {
     name: 'Framer Motion',
@@ -110,6 +155,16 @@ export const skills: SkillInterface[] = [
     name: 'Web3 (Wagmi - Hardhat)',
     category: 'code',
     logo: 'icon-park-outline:blockchain',
+  },
+  {
+    name: 'MetaMask',
+    category: 'code',
+    logo: 'simple-icons:metamask',
+  },
+  {
+    name: 'Figma',
+    category: 'design',
+    logo: 'simple-icons:figma',
   },
   {
     name: 'SASS (SCSS - Material UI)',
@@ -150,6 +205,16 @@ export const skills: SkillInterface[] = [
     name: 'Docker',
     category: 'other',
     logo: 'simple-icons:docker',
+  },
+  {
+    name: 'Stripe',
+    category: 'other',
+    logo: 'simple-icons:stripe',
+  },
+  {
+    name: 'Mapbox',
+    category: 'other',
+    logo: 'simple-icons:mapbox',
   },
   {
     name: 'Sentry',

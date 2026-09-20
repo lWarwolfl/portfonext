@@ -62,28 +62,16 @@ export default function StyledButton({
   const iconClasses = clsx(styles[fontSize])
   const textClasses = clsx(styles.text, styles[fontSize])
   const barStyles = {
-    backgroundImage: `var(--gradient-${color})`,
+    backgroundColor: `var(--${color}-color)`,
     height: barHeight,
     borderRadius: `calc(${barHeight} / 2)`,
   }
 
   const renderContent = () => (
     <>
-      {staticIcon && (
-        <Icon
-          icon={staticIcon}
-          className={clsx(iconClasses, styles.staticicon)}
-          style={active ? { color: 'var(--white-color)' } : { color: `var(--${color}-color)` }}
-        />
-      )}
+      {staticIcon && <Icon icon={staticIcon} className={clsx(iconClasses, styles.staticicon)} />}
       <div className={textClasses}>{children}</div>
-      {icon && (
-        <Icon
-          icon={icon}
-          style={active ? { color: 'var(--white-color)' } : { color: `var(--${color}-color)` }}
-          className={clsx(iconClasses, styles.icon)}
-        />
-      )}
+      {icon && <Icon icon={icon} className={clsx(iconClasses, styles.icon)} />}
       {barHeight && <div className={styles.bar} style={barStyles}></div>}
     </>
   )

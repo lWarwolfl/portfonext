@@ -10,7 +10,7 @@ interface Props {
 
 export default function Language({ item }: Props) {
   return (
-    <StyledCard glow={item.color} className={styles.skill} variant="small">
+    <StyledCard glow={item.color} className={styles.skill}>
       <div className={styles.data}>
         <Image
           quality={85}

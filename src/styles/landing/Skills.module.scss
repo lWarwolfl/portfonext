@@ -1,68 +1,85 @@
-@import '@/styles/animations.scss';
-@import '@/styles/mixins.scss';
 @import '@/styles/globals.scss';
+@import '@/styles/mixins.scss';
 
 .container {
   @include flex-column;
   position: relative;
   width: 100%;
 
-  .skillcontainer {
+  .groups {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .group {
+    padding: 22px 24px 10px;
+  }
+
+  .head {
     @include flex-row;
-    width: 100%;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 14px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid var(--hairline-strong);
 
-    .skill {
-      @include flex-column;
+    .icon {
+      font-size: $font-size-l;
+      color: var(--accent);
+    }
 
-      .data {
-        @include flex-row;
-        align-items: center;
-        width: 100%;
+    .label {
+      @include label;
+      color: var(--font-color-primary);
+    }
 
-        .image {
-          width: $font-size-3xl;
-          height: $font-size-3xl;
-          object-fit: contain;
-          object-position: center;
-          margin-right: 15px;
-          border-radius: 5px;
-        }
+    .count {
+      @include label;
+      margin-left: auto;
+    }
+  }
 
-        .logo {
-          font-size: $font-size-2xl;
-          margin-right: 15px;
-          color: var(--blue-color);
-        }
+  .items {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+  }
 
-        .name {
-          @include overflow-ellipsis;
-          width: 100%;
-          margin-right: 15px;
-          color: var(--font-color-primary);
-          font-weight: $font-weight-regular;
-          font-size: $font-size-m;
-        }
+  .item {
+    @include flex-row;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--hairline);
 
-        .icon {
-          color: var(--blue-color);
-          font-size: $font-size-2xl;
-        }
-      }
+    .logo {
+      flex-shrink: 0;
+      font-size: $font-size-l;
+      color: var(--accent);
+    }
 
-      .description {
-        margin-top: 12px;
-        color: var(--font-color-primary);
-        font-weight: $font-weight-regular;
-        font-size: $font-size-r;
-      }
+    .name {
+      @include overflow-ellipsis;
+      min-width: 0;
+      color: var(--font-color-secondary);
+      font-size: $font-size-r;
+    }
+  }
+}
 
-      .indicator {
-        width: 22px;
-        height: 22px;
-        border-radius: 2px;
-        filter: blur(38px);
-      }
+@media screen and (max-width: 1000px) {
+  .container {
+    .groups {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    .items {
+      grid-template-columns: minmax(0, 1fr);
     }
   }
 }

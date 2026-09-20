@@ -1,128 +1,114 @@
-@import '@/styles/animations.scss';
-@import '@/styles/mixins.scss';
 @import '@/styles/globals.scss';
+@import '@/styles/mixins.scss';
 
 .container {
   @include flex-column;
   position: relative;
   width: 100%;
 
-  .link {
-    @include flex-row;
-    align-items: center;
-    position: relative;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 10px;
-    width: 100%;
-    border-radius: $border-radius-global;
-    border: 1px solid var(--contrast-color);
-    background-color: var(--more-transparent-background);
-    color: var(--font-color-secondary);
-    font-weight: $font-weight-regular;
-    font-size: $font-size-em;
-    line-height: $font-size-2xl;
-    transition-duration: $transition-m;
-    transition-timing-function: $transition-ease;
-    transition-property: padding-right, padding-left, background-color;
-
-    .bold {
-      color: var(--font-color-primary);
-      font-weight: $font-weight-semibold;
-    }
-
-    .imagecontainer {
-      text-align: center;
-      width: 50px;
-      height: 50px;
-      margin-right: 15px;
-      z-index: 1;
-
-      .image {
-        @include background-contain;
-        width: auto;
-        height: 50px;
-        border-radius: 5px;
-      }
-    }
-
-    .text {
-      margin-right: 10px;
-    }
-
-    .icon {
-      margin-right: 10px;
-      margin-left: auto;
-      font-size: $font-size-2xl;
-      transition-duration: $transition-m;
-      transition-timing-function: $transition-ease;
-      transition-property: right, opacity;
-      z-index: 1;
-    }
-  }
-
-  .link:hover {
-    background-color: var(--transparent-background);
-  }
-
-  .link:first-child {
-    margin-top: 0;
+  .list {
+    @include flex-column;
   }
 
   .experience {
-    display: block;
+    display: grid;
+    grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+    gap: clamp(20px, 4vw, 48px);
+    padding: 28px 0;
+    border-top: 1px solid var(--hairline);
+
+    &:last-child {
+      border-bottom: 1px solid var(--hairline);
+    }
+  }
+
+  .identity {
+    @include flex-row;
+    align-items: flex-start;
+    gap: 14px;
+
+    .imagecontainer {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--hairline-strong);
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: var(--ink);
+
+      .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .employer {
+      color: var(--font-color-secondary);
+      font-size: $font-size-em;
+      line-height: 1.5;
+
+      .bold {
+        font-weight: $font-weight-medium;
+        color: var(--font-color-primary);
+      }
+    }
 
     .externallink {
-      text-decoration: underline;
-      text-underline-offset: 2px;
-      cursor: pointer;
+      color: var(--accent);
     }
 
     .icon {
-      vertical-align: middle;
-      font-size: $font-size-xl;
-      margin-right: 10px;
-      margin-bottom: 5px;
+      flex-shrink: 0;
+      margin-top: 4px;
+      margin-left: 2px;
+      font-size: $font-size-l;
+      color: var(--ink-3);
+    }
+  }
+
+  .bullets {
+    @include flex-column;
+    gap: 12px;
+  }
+
+  .bullet {
+    @include flex-row;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--font-color-secondary);
+    font-size: $font-size-r;
+    line-height: 1.65;
+
+    &::before {
+      content: '';
+      flex-shrink: 0;
+      width: 8px;
+      height: 1px;
+      margin-top: 12px;
+      background-color: var(--accent);
     }
 
-    .text {
-      color: var(--font-color-secondary);
-      font-weight: $font-weight-regular;
-      font-size: $font-size-em;
-      line-height: $font-size-2xl;
+    .bold {
+      font-weight: $font-weight-medium;
+      color: var(--font-color-primary);
+    }
 
-      .bold {
-        color: var(--font-color-primary);
-        font-weight: $font-weight-semibold;
-      }
+    .externallink {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--hairline-strong);
     }
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
   .container {
-    .link {
-      font-size: $font-size-m;
-
-      .text {
-        margin-right: 0;
-      }
-
-      .icon {
-        display: none;
-      }
-    }
-
-    .link:hover {
-      .icon {
-        opacity: 0;
-      }
-    }
-
     .experience {
-      .text {
-        font-size: $font-size-m;
-      }
+      grid-template-columns: minmax(0, 1fr);
+      gap: 20px;
+      padding: 24px 0;
     }
   }
 }

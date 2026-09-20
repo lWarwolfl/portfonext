@@ -1,50 +1,39 @@
 :root {
-  --gradient-main: linear-gradient(90deg, #257cff 0%, #3b21ff 100%);
-  --gradient-main-loop: linear-gradient(
-    90deg,
-    #b721ff 0%,
-    #6625ff 35%,
-    #257cff 50%,
-    #6625ff 65%,
-    #b721ff 100%
-  );
+  --bg: #0a0b0d;
+  --surface: #0e1013;
+  --surface-2: #14171b;
 
-  --gradient-green: linear-gradient(90deg, #40c463 0%, #6afb90 100%);
-  --gradient-blue: linear-gradient(90deg, #257cff, #72aaff);
-  --gradient-aqua: linear-gradient(90deg, #00aaff, hsl(170, 100%, 67%));
-  --gradient-purple: linear-gradient(90deg, #b721ff, #d16fff);
-  --gradient-pink: linear-gradient(90deg, #ff21e9, #ff6ff3);
-  --gradient-white: linear-gradient(90deg, #c8c8c8, #f1f1f1);
-  --gradient-yellow: linear-gradient(90deg, #fff421, #fdff6f);
-  --gradient-red: linear-gradient(90deg, #ff3021, #ff796f);
-  --gradient-orange: linear-gradient(90deg, #ff9421, #ffbe6f);
+  --hairline: #22252a;
+  --hairline-strong: #3a3f47;
 
-  --primary-color: #227bff;
-  --primary-color-light: #5d9eff;
-  --primary-color-transparent: rgba(24, 40, 63, 0.5);
-  --primary-color-more-transparent: rgba(24, 40, 63, 0.25);
+  --ink: #f4f5f6;
+  --ink-2: #a3a8b0;
+  --ink-3: #6a6f77;
 
-  --green-color: #40c463;
-  --purple-color: #c851ff;
-  --blue-color: #448fff;
-  --aqua-color: #5fdfff;
-  --white-color: #f1f1f1;
-  --pink-color: #da3dca;
-  --yellow-color: #dbd341;
-  --red-color: #d34339;
-  --orange-color: #ff9421;
-}
+  --accent: #d4ff3f;
 
-@media (prefers-color-scheme: light), (prefers-color-scheme: dark) {
-  :root {
-    --body-color: #0d1117;
-    --contrast-color: #30363d;
-    --transparent-background: hsla(0, 0%, 80%, 0.15);
-    --more-transparent-background: hsla(0, 0%, 80%, 0.08);
-    --card-background: #161b22d0;
-    --dark-card-background: #0e1115d0;
-    --font-color-primary: #f1f1f1;
-    --font-color-secondary: #d3d3d3;
-    --outline-color: #beb8ca;
-  }
+  --body-color: var(--bg);
+  --contrast-color: var(--hairline);
+  --transparent-background: rgba(244, 245, 246, 0.06);
+  --more-transparent-background: rgba(244, 245, 246, 0.03);
+  --card-background: var(--surface);
+  --dark-card-background: var(--bg);
+  --font-color-primary: var(--ink);
+  --font-color-secondary: var(--ink-2);
+  --outline-color: var(--hairline-strong);
+
+  --primary-color: var(--accent);
+  --primary-color-light: var(--accent);
+  --primary-color-transparent: rgba(212, 255, 63, 0.18);
+  --primary-color-more-transparent: rgba(10, 11, 13, 0.88);
+
+  --green-color: var(--accent);
+  --purple-color: var(--accent);
+  --blue-color: var(--accent);
+  --aqua-color: var(--accent);
+  --white-color: var(--ink);
+  --pink-color: var(--accent);
+  --yellow-color: var(--accent);
+  --red-color: var(--accent);
+  --orange-color: var(--accent);
 }

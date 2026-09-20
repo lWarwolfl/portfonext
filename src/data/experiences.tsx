@@ -13,10 +13,8 @@ export interface ExperienceInterface {
   link?: string
   logo: string | StaticImageData
   icon: string
-  listicon: string
   experiences: string[] | React.ReactNode[]
   color: ColorType
-  position: 'left' | 'right'
 }
 
 export const experiences: ExperienceInterface[] = [
@@ -30,7 +28,6 @@ export const experiences: ExperienceInterface[] = [
     link: 'https://www.sparkbridge.ca/about',
     logo: sparkbridge,
     icon: 'ci:external-link',
-    listicon: 'ci:checkbox-check',
     experiences: [
       <>
         Maintained{' '}
@@ -61,9 +58,7 @@ export const experiences: ExperienceInterface[] = [
         repos.
       </>,
     ],
-
     color: 'blue',
-    position: 'left',
   },
   {
     alt: 'Ponisha',
@@ -74,7 +69,6 @@ export const experiences: ExperienceInterface[] = [
     ),
     logo: ponisha,
     icon: 'ci:external-link',
-    listicon: 'ci:checkbox-check',
     experiences: [
       <>
         Applied <span className={styles.bold}>Next.js rendering strategies(SSR, SSG)</span> to
@@ -92,7 +86,6 @@ export const experiences: ExperienceInterface[] = [
       </>,
     ],
     color: 'blue',
-    position: 'right',
   },
   {
     alt: 'Agahpadidar',
@@ -104,7 +97,6 @@ export const experiences: ExperienceInterface[] = [
     link: 'https://www.linkedin.com/company/agahpadidar/',
     logo: agahpadidar,
     icon: 'ci:external-link',
-    listicon: 'ci:checkbox-check',
     experiences: [
       <>
         Established connections to <span className={styles.bold}>Restful APIs</span> using{' '}
@@ -117,6 +109,5 @@ export const experiences: ExperienceInterface[] = [
       </>,
     ],
     color: 'blue',
-    position: 'right',
   },
 ]

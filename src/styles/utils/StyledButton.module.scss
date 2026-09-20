@@ -1,115 +1,77 @@
-@import '@/styles/animations.scss';
-@import '@/styles/mixins.scss';
 @import '@/styles/globals.scss';
+@import '@/styles/mixins.scss';
 
 .button {
+  @include focus-ring;
   cursor: pointer;
   display: inline-flex;
-  overflow: hidden;
-  gap: 6px;
   align-items: center;
+  gap: 8px;
   position: relative;
-  border-radius: 10px;
-  padding: 8px 12px;
-  min-width: unset;
-  width: unset;
+  overflow: hidden;
+  max-width: 260px;
+  padding: 10px 14px;
+  border: 1px solid var(--hairline);
+  border-radius: $border-radius-global;
   background-color: transparent;
-  outline: none;
-  border: none;
-  max-width: 240px;
   color: var(--font-color-primary);
-  font-weight: $font-weight-regular;
-  text-transform: unset;
-  transition-duration: $transition-m;
-  transition-timing-function: $transition-ease;
-  transition-property: background-color;
+  font-family: $font-mono;
+  font-size: $font-size-s;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: left;
+  transition:
+    background-color $transition-f $transition-ease,
+    border-color $transition-f $transition-ease,
+    color $transition-f $transition-ease;
 
   &.hasbar {
-    padding: 12px 12px;
+    padding-bottom: 14px;
   }
 
   .text {
-    display: inline-block;
     @include overflow-ellipsis;
+    display: inline-block;
     width: 100%;
   }
 
   .text.small {
-    font-size: $font-size-s;
-  }
-
-  .text.normal {
-    font-size: $font-size-r;
+    font-size: $font-size-es;
   }
 
   .text.big {
-    font-size: $font-size-m;
+    font-size: $font-size-r;
   }
 
   .text.large {
+    font-size: $font-size-m;
+  }
+
+  .staticicon,
+  .icon {
+    flex-shrink: 0;
+    color: currentColor;
+  }
+
+  .small {
+    font-size: $font-size-m;
+  }
+
+  .normal {
+    font-size: 18px;
+  }
+
+  .big {
     font-size: $font-size-l;
   }
 
-  .icon {
-    opacity: 0;
-    transition-duration: $transition-m;
-    transition-timing-function: $transition-ease;
-    transition-property: margin, opacity;
-
-    &.small {
-      font-size: $font-size-l;
-      margin-right: calc(0px - $font-size-l);
-      min-width: $font-size-l;
-    }
-
-    &.normal {
-      font-size: $font-size-xl;
-      margin-right: calc(0px - $font-size-xl);
-      min-width: $font-size-xl;
-    }
-
-    &.big {
-      font-size: $font-size-2xl;
-      margin-right: calc(0px - $font-size-2xl);
-      min-width: $font-size-2xl;
-    }
-
-    &.large {
-      font-size: $font-size-3xl;
-      margin-right: calc(0px - $font-size-3xl);
-      min-width: $font-size-3xl;
-    }
+  .large {
+    font-size: $font-size-xl;
   }
 
-  .staticicon {
-    opacity: 1;
-    transition-duration: $transition-m;
-    transition-timing-function: $transition-ease;
-    transition-property: margin, opacity;
-
-    &.small {
-      font-size: $font-size-l;
-      margin-left: 0;
-      min-width: $font-size-l;
-    }
-
-    &.normal {
-      font-size: $font-size-xl;
-      margin-left: 0;
-      min-width: $font-size-xl;
-    }
-
-    &.big {
-      font-size: $font-size-2xl;
-      margin-left: 0;
-      min-width: $font-size-2xl;
-    }
-
-    &.large {
-      font-size: $font-size-3xl;
-      margin-left: 0;
-      min-width: $font-size-3xl;
-    }
+  .icon {
+    display: none;
   }
 
   .bar {
@@ -117,58 +79,27 @@
     left: 0;
     bottom: 0;
     width: 0%;
-    background-color: var(--gradient-green);
-    transition-duration: $transition-m;
-    transition-timing-function: $transition-ease;
-    transition-property: width;
+    background-color: var(--accent);
+    transition: width $transition-m $transition-ease;
     z-index: 2;
   }
 
   &:hover {
-    background-color: var(--transparent-background);
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--body-color);
 
     .icon {
-      opacity: 1;
-
-      &.small {
-        margin-right: 0;
-      }
-
-      &.normal {
-        margin-right: 0;
-      }
-
-      &.big {
-        margin-right: 0;
-      }
-
-      &.large {
-        margin-right: 0;
-      }
+      display: block;
     }
 
     .staticicon {
-      opacity: 0;
-
-      &.small {
-        margin-right: calc(0px - $font-size-l);
-      }
-
-      &.normal {
-        margin-right: calc(0px - $font-size-xl);
-      }
-
-      &.big {
-        margin-right: calc(0px - $font-size-2xl);
-      }
-
-      &.large {
-        margin-right: calc(0px - $font-size-3xl);
-      }
+      display: none;
     }
 
     .bar {
       width: 100%;
+      background-color: var(--body-color);
     }
   }
 
@@ -179,69 +110,34 @@
 
     &:hover {
       .staticicon {
-        opacity: 1;
-
-        &.small {
-          margin-right: 0;
-        }
-
-        &.normal {
-          margin-right: 0;
-        }
-
-        &.big {
-          margin-right: 0;
-        }
-
-        &.large {
-          margin-right: 0;
-        }
+        display: block;
       }
-    }
 
-    &.iconbutton {
-      &:hover {
-        .icon {
-          display: none;
-        }
-
-        .staticicon {
-          display: block;
-        }
+      .icon {
+        display: none;
       }
     }
   }
 
   &.glass {
-    background-color: var(--more-transparent-background);
-  }
-
-  &.glass:hover {
     background-color: var(--transparent-background);
   }
 
   &.solid {
-    background-color: var(--card-background);
-  }
-
-  &.solid:hover {
-    background-color: var(--dark-card-background);
+    background-color: var(--surface-2);
   }
 
   &.invert {
-    background-color: var(--dark-card-background);
-  }
-
-  &.invert:hover {
-    background-color: var(--card-background);
+    background-color: var(--ink);
+    border-color: var(--ink);
+    color: var(--body-color);
   }
 
   &.iconbutton {
-    padding: 5px 0;
+    padding: 6px;
+    min-width: 40px;
     min-height: 40px;
     justify-content: center;
-    aspect-ratio: 1 / 1;
-    max-width: unset;
 
     .text {
       display: none;
@@ -250,37 +146,17 @@
     .bar {
       display: none;
     }
-
-    .icon {
-      display: none;
-    }
-
-    .staticicon {
-      display: block;
-    }
-
-    &:hover {
-      .icon {
-        display: block;
-      }
-
-      .staticicon {
-        display: none;
-      }
-    }
   }
 
   &.disabled {
     pointer-events: none;
-    opacity: 0.6;
-    color: var(--font-color-primary);
+    opacity: 0.5;
   }
 
   &.active {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--body-color);
     pointer-events: none;
-    background-color: var(--transparent-background);
   }
-}
-
-@media screen and (max-width: 1050px) {
 }
