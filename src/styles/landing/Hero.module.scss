@@ -5,7 +5,7 @@
   @include flex-column;
   position: relative;
   width: 100%;
-  padding-top: calc(#{$header-height} + clamp(32px, 5vw, 64px));
+  padding-top: clamp(32px, 5vw, 64px);
   padding-bottom: clamp(32px, 5vw, 60px);
 
   .masthead {
