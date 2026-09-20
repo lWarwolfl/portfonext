@@ -18,7 +18,6 @@ export default function Project({ index, item }: Props) {
       <div className={styles.head}>
         <span className={styles.index}>{String(index + 1).padStart(2, '0')}</span>
         <h3 className={styles.title}>{item.title}</h3>
-        <span className={styles.accent}>{item.accent}</span>
       </div>
 
       <p className={styles.description}>{item.description}</p>

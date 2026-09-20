@@ -34,13 +34,6 @@
       letter-spacing: -0.015em;
       color: var(--font-color-primary);
     }
-
-    .accent {
-      @include label;
-      margin-left: auto;
-      text-align: right;
-      overflow-wrap: anywhere;
-    }
   }
 
   .description {
