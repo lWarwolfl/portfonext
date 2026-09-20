@@ -10,18 +10,31 @@
 
   .masthead {
     @include flex-row;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 10px 16px;
+    align-items: flex-start;
+    gap: clamp(16px, 2.4vw, 28px);
     padding-bottom: 18px;
     border-bottom: 1px solid var(--hairline);
 
     .avatar {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
+      flex-shrink: 0;
+      width: 160px;
+      height: 160px;
+      border-radius: $border-radius-global;
       object-fit: cover;
       border: 1px solid var(--hairline-strong);
+    }
+
+    .intro {
+      @include flex-column;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .headline {
+      @include flex-row;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 10px 16px;
     }
 
     .name {
@@ -48,50 +61,18 @@
     margin-top: clamp(22px, 3vw, 38px);
   }
 
-  .lead {
-    @include flex-column;
-    align-items: flex-start;
-    gap: 22px;
-    min-width: 0;
-
-    .paragraph {
-      max-width: 60ch;
-      color: var(--font-color-secondary);
-      font-size: $font-size-em;
-      line-height: 1.7;
-      text-wrap: pretty;
-    }
-
-    .links {
-      @include flex-row;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+  .paragraph {
+    max-width: 60ch;
+    color: var(--font-color-secondary);
+    font-size: $font-size-em;
+    line-height: 1.7;
+    text-wrap: pretty;
   }
 
-  .meta {
-    @include flex-column;
-    width: 100%;
-    border-top: 1px solid var(--hairline);
-
-    .metarow {
-      display: grid;
-      grid-template-columns: 104px minmax(0, 1fr);
-      align-items: baseline;
-      gap: 14px;
-      padding: 9px 0;
-      border-bottom: 1px solid var(--hairline);
-    }
-
-    .metakey {
-      @include label;
-    }
-
-    .metavalue {
-      font-size: $font-size-r;
-      color: var(--font-color-primary);
-      overflow-wrap: anywhere;
-    }
+  .links {
+    @include flex-row;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .terminal {
@@ -109,10 +90,10 @@
 
 @media screen and (max-width: 600px) {
   .container {
-    .meta {
-      .metarow {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 2px;
+    .masthead {
+      .avatar {
+        width: 96px;
+        height: 96px;
       }
     }
   }
