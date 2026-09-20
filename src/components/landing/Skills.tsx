@@ -14,7 +14,7 @@ const groupIcons: Record<string, string> = {
 export default function Skills() {
   return (
     <div id="skills" className={`section ${styles.container}`}>
-      <Title index="02" className="animated-title" title="Skills" description="And Tools" />
+      <Title index="01" className="animated-title" title="Skills" description="And Tools" />
 
       <div className={`animated-container ${styles.groups}`}>
         {skillGroups.map((group) => (

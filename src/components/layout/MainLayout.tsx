@@ -8,15 +8,20 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import clsx from 'clsx'
-import { DM_Mono, DM_Sans } from 'next/font/google'
+import { Poppins, Roboto_Mono } from 'next/font/google'
 import { useEffect, useRef } from 'react'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP)
 }
 
-const sans = DM_Sans({ subsets: ['latin'], variable: '--font-sans' })
-const mono = DM_Mono({
+const sans = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-sans',
+})
+
+const mono = Roboto_Mono({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-mono',

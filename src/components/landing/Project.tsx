@@ -12,7 +12,7 @@ interface Props {
 
 export default function Project({ index, item }: Props) {
   return (
-    <StyledCard className={styles.project} move={false}>
+    <StyledCard className={styles.project} glow="blue">
       <Frame title={item.title} link={item.link} embeddable={item.embeddable} />
 
       <div className={styles.head}>

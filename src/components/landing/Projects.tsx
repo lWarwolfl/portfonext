@@ -7,7 +7,7 @@ export default function Projects() {
   return (
     <div id="projects" className={`section ${styles.container}`}>
       <Title
-        index="04"
+        index="03"
         className="animated-title"
         title="Significant Projects"
         description="Best Of My Work"

@@ -109,14 +109,16 @@
   }
 
   &.active {
-    background-color: var(--accent-soft);
-    border-color: rgba(76, 141, 255, 0.4);
-    color: var(--font-color-primary);
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #06121d;
+    font-weight: $font-weight-semibold;
   }
 
   &.active:hover {
-    background-color: var(--accent-soft);
-    border-color: rgba(76, 141, 255, 0.4);
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #06121d;
   }
 }
 

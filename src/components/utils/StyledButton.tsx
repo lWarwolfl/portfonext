@@ -1,5 +1,4 @@
 import { useLenis } from '@/lib/lenis'
-import type { ColorType } from '@/lib/types'
 import styles from '@/styles/utils/StyledButton.module.scss'
 import { Icon } from '@iconify-icon/react'
 import clsx from 'clsx'
@@ -10,7 +9,7 @@ export interface StyledButtonProps {
   localLink?: string
   externalLink?: string
   download?: boolean
-  color?: ColorType
+  color?: string
   background?: 'transparent' | 'glass' | 'solid' | 'invert'
   iconButton?: boolean
   icon?: string
@@ -64,7 +63,8 @@ export default function StyledButton({
     [`${styles.active}`]: active,
   })
 
-  const iconStyle = background === 'invert' ? undefined : { color: `var(--${color}-color)` }
+  const tinted = !active && background !== 'invert'
+  const iconStyle = tinted ? { color: `var(--${color}-color)` } : undefined
 
   const content = (
     <>

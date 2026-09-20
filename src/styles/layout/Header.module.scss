@@ -26,15 +26,39 @@
     @include flex-row;
     align-items: center;
     flex-shrink: 0;
-    gap: 9px;
-    font-size: $font-size-r;
-    font-weight: $font-weight-semibold;
-    color: var(--font-color-primary);
+    gap: 10px;
 
-    .logo {
-      width: 26px;
-      height: 26px;
-      border-radius: 7px;
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--hairline-strong);
+      transition: border-color $transition-f $transition-ease;
+    }
+
+    &:hover {
+      .avatar {
+        border-color: var(--accent);
+      }
+    }
+
+    .ident {
+      @include flex-column;
+      gap: 1px;
+      line-height: 1.15;
+    }
+
+    .name {
+      font-size: $font-size-r;
+      font-weight: $font-weight-semibold;
+      color: var(--font-color-primary);
+    }
+
+    .role {
+      font-family: $font-mono;
+      font-size: $font-size-es;
+      color: var(--ink-3);
     }
   }
 
@@ -43,10 +67,14 @@
       @include flex-row;
       align-items: center;
       gap: 2px;
+      padding: 3px;
+      border: 1px solid var(--hairline);
+      border-radius: $border-radius-pill;
+      background-color: var(--surface);
     }
 
     .link {
-      padding: 7px 12px;
+      padding: 7px 14px;
       border-color: transparent;
       background-color: transparent;
       color: var(--font-color-secondary);
@@ -54,10 +82,16 @@
 
     .link:hover {
       border-color: transparent;
+      background-color: var(--surface-3);
+      color: var(--font-color-primary);
     }
 
-    .active {
-      color: var(--font-color-primary);
+    .link.active,
+    .link.active:hover {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: #06121d;
+      font-weight: $font-weight-semibold;
     }
   }
 
@@ -65,7 +99,15 @@
     @include flex-row;
     align-items: center;
     flex-shrink: 0;
-    gap: 8px;
+    gap: 10px;
+  }
+
+  .socials {
+    display: flex;
+
+    @media screen and (max-width: 1180px) {
+      display: none;
+    }
   }
 }
 
@@ -80,7 +122,7 @@
 @media screen and (max-width: 1080px) {
   .header {
     .brand {
-      .name {
+      .ident {
         display: none;
       }
     }
@@ -97,17 +139,13 @@
     padding: 0 12px 12px;
 
     .navbar {
-      @include flex-row;
       justify-content: space-between;
       gap: 0;
       width: 100%;
-      padding: 7px;
-      border: 1px solid var(--hairline);
-      border-radius: $border-radius-global;
-      background-color: var(--surface);
+      padding: 4px;
 
       .link {
-        padding: 7px;
+        padding: 8px;
       }
     }
   }

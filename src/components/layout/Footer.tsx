@@ -1,3 +1,4 @@
+import Socials from '@/components/utils/Socials'
 import StyledButton from '@/components/utils/StyledButton'
 import { footer } from '@/data/footer'
 import styles from '@/styles/layout/Footer.module.scss'
@@ -24,7 +25,10 @@ export default function Footer() {
           </span>
         </div>
 
-        <StyledButton idLink="top" staticIcon="mdi:arrow-up" background="glass" iconButton />
+        <div className={styles.actions}>
+          <Socials />
+          <StyledButton idLink="top" staticIcon="mdi:arrow-up" background="glass" iconButton />
+        </div>
       </div>
     </footer>
   )

@@ -1,0 +1,36 @@
+@import '@/styles/globals.scss';
+@import '@/styles/mixins.scss';
+
+.container {
+  @include flex-row;
+  align-items: center;
+  gap: 4px;
+
+  .link {
+    @include focus-ring;
+    @include flex-row;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--hairline);
+    border-radius: 50%;
+    color: var(--ink-2);
+    transition:
+      background-color $transition-f $transition-ease,
+      border-color $transition-f $transition-ease,
+      color $transition-f $transition-ease,
+      transform $transition-f $transition-ease;
+
+    .icon {
+      font-size: $font-size-l;
+    }
+
+    &:hover {
+      background-color: var(--surface-3);
+      border-color: var(--hairline-strong);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+  }
+}

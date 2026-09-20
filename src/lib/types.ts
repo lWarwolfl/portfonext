@@ -10,3 +10,16 @@ export type ColorType =
   | 'orange'
 
 export type SkillCategoryType = 'frontend' | 'backend' | 'workflow' | 'tools'
+
+export interface LinkInterface {
+  link: string
+  color: ColorType
+  text: string
+  icon: string
+}
+
+export interface SocialInterface {
+  link: string
+  label: string
+  icon: string
+}

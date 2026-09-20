@@ -1,5 +1,5 @@
 import { pickSkills, type SkillInterface } from '@/data/skills'
-import type { SummaryLinkInterface } from '@/data/summary'
+import { type LinkInterface } from '@/lib/types'
 import styles from '@/styles/landing/Projects.module.scss'
 import Link from 'next/link'
 import * as React from 'react'
@@ -11,7 +11,7 @@ export interface ProjectInterface {
   link: string
   embeddable: boolean
   skills: SkillInterface[]
-  links: SummaryLinkInterface[]
+  links: LinkInterface[]
 }
 
 export const projects: ProjectInterface[] = [

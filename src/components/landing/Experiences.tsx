@@ -7,7 +7,7 @@ export default function Experiences() {
   return (
     <div id="experiences" className={`section ${styles.container}`}>
       <Title
-        index="03"
+        index="02"
         className="animated-title"
         title="Career Journey"
         description="Becoming A Pro"
