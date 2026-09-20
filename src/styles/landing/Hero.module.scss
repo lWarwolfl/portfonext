@@ -13,8 +13,6 @@
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
     align-items: start;
     gap: clamp(24px, 4vw, 56px);
-    padding-bottom: 18px;
-    border-bottom: 1px solid var(--hairline);
   }
 
   .identity {

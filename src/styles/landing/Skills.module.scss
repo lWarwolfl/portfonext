@@ -63,14 +63,14 @@
     .logo {
       flex-shrink: 0;
       font-size: $font-size-em;
-      color: var(--ink-3);
+      color: var(--ink-2);
       transition: color $transition-f $transition-ease;
     }
 
     .name {
       @include overflow-ellipsis;
       min-width: 0;
-      color: var(--font-color-secondary);
+      color: var(--font-color-primary);
       font-size: $font-size-r;
       transition: color $transition-f $transition-ease;
     }
