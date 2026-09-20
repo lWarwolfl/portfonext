@@ -8,14 +8,13 @@
   margin: 0;
 }
 
-html,
-body {
+html {
   overflow-x: hidden;
-  height: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
-html {
-  -webkit-text-size-adjust: 100%;
+body {
+  overflow-x: clip;
 }
 
 #__next {

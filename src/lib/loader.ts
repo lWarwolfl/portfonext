@@ -7,9 +7,11 @@ export const loader = `
 
 body {
   display: block;
-  overflow-y: hidden;
-  overflow-x: hidden;
   background-color: #0a0a0b;
+}
+
+.loading body {
+  overflow: hidden;
 }
 
 #globalLoader {

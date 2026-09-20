@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
       setTimeout(() => {
         loader.style.display = 'none'
-        document.body.style.overflowY = 'auto'
+        document.documentElement.classList.remove('loading')
       }, 300)
     }
 
