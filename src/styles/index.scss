@@ -84,11 +84,5 @@ svg {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--ink-3);
-}
-
-@media screen and (max-width: 530px) {
-  .width-fix {
-    padding-bottom: 96px;
-  }
+  background-color: var(--ink-3);
 }

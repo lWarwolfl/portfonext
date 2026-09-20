@@ -22,7 +22,7 @@
     .navbar {
       @include flex-row;
       align-items: center;
-      gap: 2px;
+      gap: 4px;
       padding: 3px;
       border: 1px solid var(--hairline);
       border-radius: $border-radius-pill;
@@ -73,26 +73,4 @@
   left: 0;
   height: 1px;
   width: 1px;
-}
-
-@media screen and (max-width: 530px) {
-  .navbarcontainer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    z-index: 10;
-    width: 100%;
-    padding: 0 12px 12px;
-
-    .navbar {
-      justify-content: space-between;
-      gap: 0;
-      width: 100%;
-      padding: 4px;
-
-      .link {
-        padding: 8px;
-      }
-    }
-  }
 }
