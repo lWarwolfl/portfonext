@@ -1,4 +1,3 @@
-import { useLenis } from '@/lib/lenis'
 import styles from '@/styles/utils/StyledButton.module.scss'
 import { Icon } from '@iconify-icon/react'
 import clsx from 'clsx'
@@ -41,14 +40,13 @@ export default function StyledButton({
   ...props
 }: StyledButtonProps) {
   const router = useRouter()
-  const { lenis } = useLenis()
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (customClick) {
       customClick(e)
     } else if (idLink) {
       const element = document.getElementById(idLink)
-      if (element) lenis?.scrollTo(element.offsetTop - 100)
+      if (element) window.scrollTo({ top: element.offsetTop - 100, behavior: 'smooth' })
     } else if (localLink) {
       router.push(localLink)
     }

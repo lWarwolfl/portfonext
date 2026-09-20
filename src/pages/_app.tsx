@@ -1,6 +1,5 @@
 import GoogleAnalytics from '@/components/layout/GoogleAnalytics'
 import MainLayout from '@/components/layout/MainLayout'
-import { LenisProvider } from '@/lib/lenis'
 import '@/styles/index.scss'
 import raf from '@studio-freight/tempus'
 import { Analytics } from '@vercel/analytics/react'
@@ -45,13 +44,13 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [])
 
   return (
-    <LenisProvider>
+    <>
       <GoogleAnalytics />
       <Analytics />
 
       <MainLayout>
         <Component {...pageProps} />
       </MainLayout>
-    </LenisProvider>
+    </>
   )
 }

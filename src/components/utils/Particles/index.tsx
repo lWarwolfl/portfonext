@@ -1,6 +1,5 @@
 import fragmentShader from '@/components/utils/Particles/shaders/fragment.glsl'
 import vertexShader from '@/components/utils/Particles/shaders/vertex.glsl'
-import { useScroll } from '@/lib/lenis'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useFrame as useRaf } from '@studio-freight/hamo'
 import { Suspense, useEffect, useMemo, useRef } from 'react'
@@ -97,9 +96,16 @@ function Particles({
     uniforms.uTime.value = clock.elapsedTime
   })
 
-  useScroll(({ scroll }) => {
-    uniforms.uScroll.value = scroll * 2
-  })
+  useEffect(() => {
+    const onScroll = () => {
+      uniforms.uScroll.value = window.scrollY * 2
+    }
+
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [uniforms])
 
   return (
     <points ref={points}>

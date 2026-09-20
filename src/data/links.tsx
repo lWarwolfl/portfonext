@@ -5,6 +5,7 @@ export interface LinkInterface {
 }
 
 export const links: LinkInterface[] = [
+  { id: 'hero', text: 'Summary', icon: 'ci:user' },
   { id: 'skills', text: 'Skills', icon: 'ci:bulb' },
   {
     id: 'experiences',

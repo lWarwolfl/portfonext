@@ -16,6 +16,14 @@
     padding-bottom: 18px;
     border-bottom: 1px solid var(--hairline);
 
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--hairline-strong);
+    }
+
     .name {
       font-family: $font-sans;
       font-size: $font-size-11xl;

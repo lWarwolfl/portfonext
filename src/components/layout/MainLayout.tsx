@@ -2,7 +2,6 @@ import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
 import CustomHead from '@/components/utils/CustomHead'
 import { WebGLParticles } from '@/components/utils/Particles'
-import { useLenis } from '@/lib/lenis'
 import useWindowSize from '@/lib/useWindowSize'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
@@ -34,7 +33,6 @@ interface Props {
 export default function MainLayout({ children }: Props) {
   const main = useRef<HTMLDivElement>(null)
   const isMobile = useWindowSize()
-  const { lenis } = useLenis()
 
   useGSAP(
     () => {
@@ -66,16 +64,6 @@ export default function MainLayout({ children }: Props) {
     },
     { scope: main, dependencies: [isMobile] }
   )
-
-  useEffect(() => {
-    if (!lenis) return
-
-    lenis.on('scroll', ScrollTrigger.update)
-
-    return () => {
-      lenis.off('scroll', ScrollTrigger.update)
-    }
-  }, [lenis])
 
   useEffect(() => {
     let alive = true

@@ -14,7 +14,6 @@
     "@iconify-icon/react": "^2.0.1",
     "@react-three/fiber": "^8.16.0",
     "@studio-freight/hamo": "^0.6.28",
-    "@studio-freight/lenis": "^1.0.42",
     "@studio-freight/tempus": "^0.0.44",
     "@vercel/analytics": "^1.2.2",
     "clsx": "^2.1.0",
