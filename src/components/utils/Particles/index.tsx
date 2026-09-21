@@ -86,6 +86,7 @@ function Particles({
 
   const points = useRef<THREE.Points>(null!)
   const material = useRef<THREE.ShaderMaterial>(null!)
+  const smoothScroll = useRef(typeof window === 'undefined' ? 0 : window.scrollY * 2)
 
   const uniforms = useMemo(
     () => ({
@@ -112,20 +113,16 @@ function Particles({
   // NOTE: fiber v9 merges `uniforms` entries into the material instead of
   // assigning by reference, so per-frame writes must go through the live
   // material object or they never reach the GPU.
-  useFrame((state) => {
-    material.current.uniforms.uTime!.value = state.clock.elapsedTime
+  // Scroll is sampled every frame and eased toward the live scroll position,
+  // so fast scrolls glide instead of jumping between discrete scroll events.
+  useFrame((state, delta) => {
+    const live = material.current.uniforms
+    live.uTime!.value = state.clock.elapsedTime
+
+    const blend = 1 - Math.exp(-Math.min(delta, 0.05) * 8)
+    smoothScroll.current += (window.scrollY * 2 - smoothScroll.current) * blend
+    live.uScroll!.value = smoothScroll.current
   })
-
-  useEffect(() => {
-    const onScroll = () => {
-      material.current.uniforms.uScroll!.value = window.scrollY * 2
-    }
-
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   return (
     <points ref={points}>
