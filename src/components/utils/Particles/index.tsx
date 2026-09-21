@@ -109,20 +109,23 @@ function Particles({
     uniforms.uResolution.value.set(width, height)
   }, [width, height, uniforms.uResolution.value])
 
-  useFrame(({ clock }) => {
-    uniforms.uTime.value = clock.elapsedTime
+  // NOTE: fiber v9 merges `uniforms` entries into the material instead of
+  // assigning by reference, so per-frame writes must go through the live
+  // material object or they never reach the GPU.
+  useFrame((state) => {
+    material.current.uniforms.uTime!.value = state.clock.elapsedTime
   })
 
   useEffect(() => {
     const onScroll = () => {
-      uniforms.uScroll.value = window.scrollY * 2
+      material.current.uniforms.uScroll!.value = window.scrollY * 2
     }
 
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
 
     return () => window.removeEventListener('scroll', onScroll)
-  }, [uniforms])
+  }, [])
 
   return (
     <points ref={points}>
