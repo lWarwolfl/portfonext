@@ -62,6 +62,11 @@
     font-size: $font-size-em;
     line-height: 1.7;
     text-wrap: pretty;
+
+    .bold {
+      font-weight: $font-weight-medium;
+      color: var(--font-color-primary);
+    }
   }
 
   .links {
