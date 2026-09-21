@@ -1,10 +1,27 @@
 import fragmentShader from '@/components/utils/Particles/shaders/fragment.glsl'
 import vertexShader from '@/components/utils/Particles/shaders/vertex.glsl'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { useFrame as useRaf } from '@studio-freight/hamo'
 import { Suspense, useEffect, useMemo, useRef } from 'react'
 import type * as THREE from 'three'
 import { Color, MathUtils, Vector2 } from 'three'
+
+function useRaf(callback: (time: number) => void) {
+  const ref = useRef(callback)
+  ref.current = callback
+
+  useEffect(() => {
+    let id = 0
+
+    const loop = (time: number) => {
+      ref.current(time)
+      id = requestAnimationFrame(loop)
+    }
+
+    id = requestAnimationFrame(loop)
+
+    return () => cancelAnimationFrame(id)
+  }, [])
+}
 
 function Raf({ render = true }) {
   const { advance } = useThree()
