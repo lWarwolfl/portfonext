@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "preview": "node scripts/generate-preview.mjs",
     "format": "prettier . --ignore-unknown --write"
   },
   "dependencies": {
