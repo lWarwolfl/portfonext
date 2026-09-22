@@ -12,7 +12,7 @@
 
   .experience {
     display: grid;
-    grid-template-columns: 148px minmax(0, 1fr);
+    grid-template-columns: 176px minmax(0, 1fr);
     gap: clamp(16px, 3vw, 36px);
     padding: 20px 0;
     border-top: 1px solid var(--hairline);
@@ -24,9 +24,18 @@
 
   .period {
     @include label;
+    @include flex-row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
     padding-top: 3px;
-    padding-right: 22px;
-    text-align: right;
+    padding-right: 16px;
+  }
+
+  .icon {
+    flex-shrink: 0;
+    font-size: $font-size-m;
+    color: var(--ink-3);
   }
 
   .details {
@@ -73,18 +82,19 @@
       color: var(--accent);
     }
 
-    .icon {
-      font-size: $font-size-m;
-      color: var(--ink-3);
-    }
-
     .role {
       @include label;
+    }
+
+    .location {
+      @include flex-row;
+      @include label;
+      align-items: center;
+      gap: 6px;
     }
   }
 
   .about {
-    max-width: 70ch;
     color: var(--font-color-secondary);
     font-size: $font-size-r;
     line-height: 1.6;
@@ -137,8 +147,8 @@
     }
 
     .period {
+      justify-content: flex-start;
       padding-right: 0;
-      text-align: left;
     }
 
     .details {

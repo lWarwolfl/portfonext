@@ -9,7 +9,10 @@ interface Props {
 export default function Experience({ item }: Props) {
   return (
     <article className={styles.experience}>
-      <div className={styles.period}>{item.period}</div>
+      <div className={styles.period}>
+        <Icon icon="mdi:calendar-blank-outline" className={styles.icon} />
+        {item.period}
+      </div>
 
       <div className={styles.details}>
         <div className={styles.identity}>
@@ -23,8 +26,11 @@ export default function Experience({ item }: Props) {
 
           {item.link ? <Icon icon="ci:external-link" className={styles.icon} /> : null}
 
-          <span className={styles.role}>
-            {item.jobTitle} / {item.location}
+          <span className={styles.role}>{item.jobTitle}</span>
+
+          <span className={styles.location}>
+            <Icon icon="mdi:map-marker-outline" className={styles.icon} />
+            {item.location}
           </span>
         </div>
 
