@@ -9,34 +9,43 @@
   border-radius: $border-radius-global;
   background-color: var(--surface);
   overflow: hidden;
-  transform-style: preserve-3d;
+  isolation: isolate;
   transition:
-    transform $transition-m $transition-ease,
+    background-color $transition-m $transition-ease,
     border-color $transition-m $transition-ease;
 
-  &:hover {
-    border-color: var(--hairline-strong);
-  }
-
   .glow {
-    $size: 220px;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: $size;
-    height: $size;
-    border-radius: 50%;
-    background-image: radial-gradient(circle, currentColor 0%, transparent 68%);
-    filter: blur(64px);
+    inset: 0;
+    background-image: radial-gradient(115% 75% at 50% 0%, currentColor, transparent 72%);
     opacity: 0;
     pointer-events: none;
     transition: opacity $transition-m $transition-ease;
     z-index: -2;
   }
 
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 1px;
+    background-image: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $transition-m $transition-ease;
+    z-index: -1;
+  }
+
   &:hover {
+    background-color: var(--surface-2);
+    border-color: var(--hairline-strong);
+
     .glow {
-      opacity: 0.1;
+      opacity: 0.15;
+    }
+
+    &::before {
+      opacity: 0.6;
     }
   }
 }
