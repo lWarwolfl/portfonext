@@ -16,61 +16,6 @@ export interface ProjectInterface {
 
 export const projects: ProjectInterface[] = [
   {
-    title: 'GamerHaven',
-    accent: 'Next.js - TypeScript - Tailwind CSS - Shadcn - Drizzle - Postgres - Server Actions',
-    description: (
-      <>
-        A platform for game mods consisting of an <span className={styles.bold}>SSR-rendered</span>{' '}
-        landing and a <span className={styles.bold}>dynamic panel</span>.
-      </>
-    ),
-    link: 'https://gamer-haven.sinakheiri.dev/',
-    embeddable: true,
-    skills: pickSkills([
-      'Next.js (Vercel - PWA - React.js)',
-      'TypeScript (JavaScript)',
-      'Tailwind CSS (Shadcn UI)',
-      'ORM (Drizzle, Prisma)',
-      'SQL (PostgreSQL)',
-      'Server Actions',
-    ]),
-    links: [
-      {
-        link: 'https://github.com/lWarwolfl/gamer-haven',
-        color: 'blue',
-        text: 'GitHub',
-        icon: 'bxl:github',
-      },
-      {
-        link: 'https://gamer-haven.sinakheiri.dev/',
-        color: 'blue',
-        text: 'Live site',
-        icon: 'ci:external-link',
-      },
-    ],
-  },
-  {
-    title: 'Greenward',
-    accent: 'Shopify - GraphQL - Remix',
-    description: (
-      <>
-        A <span className={styles.bold}>Shopify app</span> that tracks user behavior and enhances
-        loyalty by generating <span className={styles.bold}>discount codes</span>.
-      </>
-    ),
-    link: 'https://apps.shopify.com/greenward',
-    embeddable: false,
-    skills: pickSkills(['Shopify (GraphQL - Remix)', 'GraphQL', 'Remix']),
-    links: [
-      {
-        link: 'https://apps.shopify.com/greenward',
-        color: 'blue',
-        text: 'Shopify App Store',
-        icon: 'ci:external-link',
-      },
-    ],
-  },
-  {
     title: 'Mocko',
     accent: 'Next.js - Tailwind CSS - REST APIs',
     description: (
@@ -127,6 +72,61 @@ export const projects: ProjectInterface[] = [
     ],
   },
   {
+    title: 'GamerHaven',
+    accent: 'Next.js - TypeScript - Tailwind CSS - Shadcn - Drizzle - Postgres - Server Actions',
+    description: (
+      <>
+        A platform for game mods consisting of an <span className={styles.bold}>SSR-rendered</span>{' '}
+        landing and a <span className={styles.bold}>dynamic panel</span>.
+      </>
+    ),
+    link: 'https://gamer-haven.sinakheiri.dev/',
+    embeddable: true,
+    skills: pickSkills([
+      'Next.js (Vercel - PWA - React.js)',
+      'TypeScript (JavaScript)',
+      'Tailwind CSS (Shadcn UI)',
+      'ORM (Drizzle, Prisma)',
+      'SQL (PostgreSQL)',
+      'Server Actions',
+    ]),
+    links: [
+      {
+        link: 'https://github.com/lWarwolfl/gamer-haven',
+        color: 'blue',
+        text: 'GitHub',
+        icon: 'bxl:github',
+      },
+      {
+        link: 'https://gamer-haven.sinakheiri.dev/',
+        color: 'blue',
+        text: 'Live site',
+        icon: 'ci:external-link',
+      },
+    ],
+  },
+  {
+    title: 'Greenward',
+    accent: 'Shopify - GraphQL - Remix',
+    description: (
+      <>
+        A <span className={styles.bold}>Shopify app</span> that tracks user behavior and enhances
+        loyalty by generating <span className={styles.bold}>discount codes</span>.
+      </>
+    ),
+    link: 'https://apps.shopify.com/greenward',
+    embeddable: false,
+    skills: pickSkills(['Shopify (GraphQL - Remix)', 'GraphQL', 'Remix']),
+    links: [
+      {
+        link: 'https://apps.shopify.com/greenward',
+        color: 'blue',
+        text: 'Shopify App Store',
+        icon: 'ci:external-link',
+      },
+    ],
+  },
+  {
     title: 'My Three.js Journey',
     accent: 'Three.js - Vite - CSS',
     description: (
@@ -156,38 +156,7 @@ export const projects: ProjectInterface[] = [
       },
     ],
   },
-  {
-    title: 'BlockT',
-    accent: 'Next.js - Tailwind CSS - Web3 - MetaMask',
-    description: (
-      <>
-        Utilizes a contract I deployed on <span className={styles.bold}>Polygon Amoy testnet</span>{' '}
-        and calls it through a <span className={styles.bold}>MetaMask provider</span>.
-      </>
-    ),
-    link: 'https://blockt.sinakheiri.dev/',
-    embeddable: true,
-    skills: pickSkills([
-      'Next.js (Vercel - PWA - React.js)',
-      'Tailwind CSS (Shadcn UI)',
-      'Web3 (Wagmi - Hardhat)',
-      'MetaMask',
-    ]),
-    links: [
-      {
-        link: 'https://github.com/lWarwolfl/blockt',
-        color: 'blue',
-        text: 'GitHub',
-        icon: 'bxl:github',
-      },
-      {
-        link: 'https://blockt.sinakheiri.dev/',
-        color: 'blue',
-        text: 'Live site',
-        icon: 'ci:external-link',
-      },
-    ],
-  },
+
   {
     title: 'Farzam.at',
     accent: 'Next.js - TypeScript - Modular SCSS',
@@ -238,6 +207,38 @@ export const projects: ProjectInterface[] = [
       },
       {
         link: 'https://sinakheiri.dev/',
+        color: 'blue',
+        text: 'Live site',
+        icon: 'ci:external-link',
+      },
+    ],
+  },
+  {
+    title: 'BlockT',
+    accent: 'Next.js - Tailwind CSS - Web3 - MetaMask',
+    description: (
+      <>
+        Utilizes a contract I deployed on <span className={styles.bold}>Polygon Amoy testnet</span>{' '}
+        and calls it through a <span className={styles.bold}>MetaMask provider</span>.
+      </>
+    ),
+    link: 'https://blockt.sinakheiri.dev/',
+    embeddable: true,
+    skills: pickSkills([
+      'Next.js (Vercel - PWA - React.js)',
+      'Tailwind CSS (Shadcn UI)',
+      'Web3 (Wagmi - Hardhat)',
+      'MetaMask',
+    ]),
+    links: [
+      {
+        link: 'https://github.com/lWarwolfl/blockt',
+        color: 'blue',
+        text: 'GitHub',
+        icon: 'bxl:github',
+      },
+      {
+        link: 'https://blockt.sinakheiri.dev/',
         color: 'blue',
         text: 'Live site',
         icon: 'ci:external-link',
