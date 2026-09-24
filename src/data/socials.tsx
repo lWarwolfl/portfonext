@@ -17,7 +17,7 @@ export const socials: SocialInterface[] = [
     icon: 'bxl:linkedin-square',
   },
   {
-    link: 'https://t.me/cnawam',
+    link: 'https://telegram.me/cnawam',
     label: 'Telegram',
     icon: 'bxl:telegram',
   },
