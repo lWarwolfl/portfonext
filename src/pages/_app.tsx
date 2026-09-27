@@ -10,24 +10,14 @@ export default function App({ Component, pageProps }: AppProps) {
     const loader = document.getElementById('globalLoader')
     if (!loader) return
 
-    const release = () => {
-      loader.style.opacity = '0'
+    loader.style.opacity = '0'
 
-      setTimeout(() => {
-        loader.style.display = 'none'
-        document.documentElement.classList.remove('loading')
-      }, 300)
-    }
+    const timer = setTimeout(() => {
+      loader.style.display = 'none'
+      document.documentElement.classList.remove('loading')
+    }, 300)
 
-    if (document.readyState === 'complete') {
-      release()
-    } else {
-      window.addEventListener('load', release, { once: true })
-    }
-
-    return () => {
-      window.removeEventListener('load', release)
-    }
+    return () => clearTimeout(timer)
   }, [])
 
   return (

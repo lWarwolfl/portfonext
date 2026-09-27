@@ -1,7 +1,7 @@
 import styles from '@/styles/utils/Frame.module.scss'
 import { Icon } from '@iconify-icon/react'
 import clsx from 'clsx'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface Props {
   className?: string
@@ -14,6 +14,7 @@ const frameWidth = 1280
 
 export default function Frame({ className, title, link, embeddable }: Props) {
   const viewportRef = useRef<HTMLDivElement>(null)
+  const [loaded, setLoaded] = useState(false)
   const host = link.replace(/^https?:\/\//, '').replace(/\/$/, '')
 
   useEffect(() => {
@@ -26,10 +27,25 @@ export default function Frame({ className, title, link, embeddable }: Props) {
 
     fit()
 
-    const observer = new ResizeObserver(fit)
-    observer.observe(viewport)
+    const resize = new ResizeObserver(fit)
+    resize.observe(viewport)
 
-    return () => observer.disconnect()
+    const visible = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) return
+
+        setLoaded(true)
+        visible.disconnect()
+      },
+      { rootMargin: '400px' }
+    )
+
+    visible.observe(viewport)
+
+    return () => {
+      resize.disconnect()
+      visible.disconnect()
+    }
   }, [embeddable])
 
   return (
@@ -56,16 +72,18 @@ export default function Frame({ className, title, link, embeddable }: Props) {
 
       {embeddable ? (
         <div className={styles.viewport} ref={viewportRef}>
-          <iframe
-            className={styles.frame}
-            src={link}
-            title={`${title} preview`}
-            loading="lazy"
-            referrerPolicy="no-referrer"
-            scrolling="no"
-            tabIndex={-1}
-            aria-hidden="true"
-          />
+          {loaded && (
+            <iframe
+              className={styles.frame}
+              src={link}
+              title={`${title} preview`}
+              loading="lazy"
+              referrerPolicy="no-referrer"
+              scrolling="no"
+              tabIndex={-1}
+              aria-hidden="true"
+            />
+          )}
         </div>
       ) : (
         <div className={styles.blocked}>
