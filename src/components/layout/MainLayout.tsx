@@ -1,5 +1,6 @@
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
+import MotionEffects from '@/components/utils/MotionEffects'
 import CustomHead from '@/components/utils/CustomHead'
 import { WebGLParticles } from '@/components/utils/Particles'
 import useWindowSize from '@/lib/useWindowSize'
@@ -28,6 +29,7 @@ export default function MainLayout({ children }: Props) {
   return (
     <>
       <CustomHead />
+      <MotionEffects />
       <WebGLParticles size={isMobile ? 260 : 200} />
       <main className={clsx(sans.variable, mono.variable)}>
         <Header />

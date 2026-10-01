@@ -10,7 +10,7 @@ export default function Hero() {
     <div id="hero" className={styles.container}>
       <div className={styles.grid}>
         <div className={styles.identity}>
-          <div className={styles.masthead}>
+          <div className={styles.masthead} data-reveal>
             <Image
               quality={70}
               placeholder="blur"
@@ -27,9 +27,11 @@ export default function Hero() {
             </div>
           </div>
 
-          <p className={styles.paragraph}>{hero.lead}</p>
+          <p className={styles.paragraph} data-reveal>
+            {hero.lead}
+          </p>
 
-          <div className={styles.links}>
+          <div className={styles.links} data-reveal>
             <StyledButton
               externalLink="https://github.com/lWarwolfl/portfonext"
               background="invert"
@@ -43,7 +45,9 @@ export default function Hero() {
           </div>
         </div>
 
-        <Terminal className={styles.terminal} />
+        <div className={styles.terminal} data-reveal>
+          <Terminal />
+        </div>
       </div>
     </div>
   )

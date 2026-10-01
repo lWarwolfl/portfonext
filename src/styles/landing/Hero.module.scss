@@ -111,3 +111,17 @@
     }
   }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .container {
+    .paragraph[data-motion] {
+      transition-delay: 90ms;
+    }
+    .links[data-motion] {
+      transition-delay: 180ms;
+    }
+    .terminal[data-motion] {
+      transition-delay: 270ms;
+    }
+  }
+}

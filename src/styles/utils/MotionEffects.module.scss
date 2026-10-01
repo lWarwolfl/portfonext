@@ -1,0 +1,31 @@
+.spotlight {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    420px circle at var(--pointer-x, 50%) var(--pointer-y, 30%),
+    var(--accent-soft),
+    transparent 75%
+  );
+  transition: opacity 500ms ease;
+}
+
+.progress {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 2px;
+  z-index: 100;
+  pointer-events: none;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@media (prefers-reduced-motion: reduce), (hover: none) {
+  .spotlight {
+    display: none;
+  }
+}

@@ -5,7 +5,7 @@ import styles from '@/styles/landing/Projects.module.scss'
 
 export default function Projects() {
   return (
-    <div id="projects" className={`section ${styles.container}`}>
+    <div id="projects" className={`section ${styles.container}`} data-reveal>
       <Title index="03" title="Significant Projects" description="Best Of My Work" />
 
       <div className={styles.list}>
