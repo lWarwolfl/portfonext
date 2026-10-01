@@ -20,7 +20,7 @@
     position: absolute;
     inset: 0;
     background-image: radial-gradient(
-      500px circle at var(--glow-x, 50%) var(--glow-y, 0%),
+      320px circle at var(--glow-x, 50%) var(--glow-y, 0%),
       currentColor,
       transparent 72%
     );
@@ -47,11 +47,11 @@
     border-color: var(--hairline-strong);
 
     .glow {
-      opacity: 0.15;
+      opacity: 0.045;
     }
 
     &::before {
-      opacity: 0.6;
+      opacity: 0.3;
     }
   }
 }
@@ -65,7 +65,7 @@
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .container:hover {
     transform: perspective(1200px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg))
-      translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+      translateY(-2px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
   }
 }

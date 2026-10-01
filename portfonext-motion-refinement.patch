@@ -1,0 +1,129 @@
+diff --git a/src/components/utils/MotionEffects.tsx b/src/components/utils/MotionEffects.tsx
+index 15aa3f9..bc868c9 100644
+--- a/src/components/utils/MotionEffects.tsx
++++ b/src/components/utils/MotionEffects.tsx
+@@ -38,7 +38,7 @@ export default function MotionEffects() {
+           observer.unobserve(target)
+         })
+       },
+-      { threshold: 0.08 }
++      { threshold: 0.08, rootMargin: '0px 0px -8% 0px' }
+     )
+ 
+     const setupReveals = () => {
+@@ -48,7 +48,12 @@ export default function MotionEffects() {
+         target.removeAttribute('data-revealed')
+         if (!reducedMotion.matches) {
+           target.setAttribute('data-motion', 'true')
+-          observer.observe(target)
++          const isAboveFold = target.getBoundingClientRect().top < window.innerHeight * 0.92
++          if (isAboveFold) {
++            requestAnimationFrame(() => target.setAttribute('data-revealed', 'true'))
++          } else {
++            observer.observe(target)
++          }
+         }
+       })
+       if (reducedMotion.matches) onPointerLeave()
+diff --git a/src/components/utils/StyledCard.tsx b/src/components/utils/StyledCard.tsx
+index ee18a54..e5cd7f4 100644
+--- a/src/components/utils/StyledCard.tsx
++++ b/src/components/utils/StyledCard.tsx
+@@ -28,8 +28,8 @@ export default function StyledCard({ id, glow = 'blue', className, children }: P
+     const y = (event.clientY - bounds.top) / bounds.height
+     element.style.setProperty('--glow-x', `${x * 100}%`)
+     element.style.setProperty('--glow-y', `${y * 100}%`)
+-    element.style.setProperty('--tilt-x', `${(0.5 - y) * 3}deg`)
+-    element.style.setProperty('--tilt-y', `${(x - 0.5) * 3}deg`)
++    element.style.setProperty('--tilt-x', `${(0.5 - y) * 1.5}deg`)
++    element.style.setProperty('--tilt-y', `${(x - 0.5) * 1.5}deg`)
+   }
+ 
+   const resetTilt = () => {
+diff --git a/src/styles/index.scss b/src/styles/index.scss
+index 718bb3c..769e0ba 100644
+--- a/src/styles/index.scss
++++ b/src/styles/index.scss
+@@ -95,10 +95,10 @@ svg {
+ 
+   [data-motion='true'] {
+     opacity: 0;
+-    transform: translateY(24px);
++    transform: translateY(30px);
+     transition:
+-      opacity 700ms ease,
+-      transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
++      opacity 850ms ease,
++      transform 850ms cubic-bezier(0.22, 1, 0.36, 1);
+   }
+ 
+   [data-motion='true'][data-revealed='true'] {
+diff --git a/src/styles/utils/MotionEffects.module.scss b/src/styles/utils/MotionEffects.module.scss
+index 246399a..821c94f 100644
+--- a/src/styles/utils/MotionEffects.module.scss
++++ b/src/styles/utils/MotionEffects.module.scss
+@@ -5,21 +5,22 @@
+   pointer-events: none;
+   opacity: 0;
+   background: radial-gradient(
+-    420px circle at var(--pointer-x, 50%) var(--pointer-y, 30%),
+-    var(--accent-soft),
+-    transparent 75%
++    280px circle at var(--pointer-x, 50%) var(--pointer-y, 30%),
++    rgba(76, 141, 255, 0.035),
++    transparent 72%
+   );
++  mix-blend-mode: screen;
+   transition: opacity 500ms ease;
+ }
+ 
+ .progress {
+   position: fixed;
+   inset: 0 0 auto;
+-  height: 2px;
++  height: 1px;
+   z-index: 100;
+   pointer-events: none;
+   background: var(--accent);
+-  box-shadow: 0 0 12px var(--accent);
++  box-shadow: 0 0 6px rgba(76, 141, 255, 0.45);
+   transform: scaleX(0);
+   transform-origin: left;
+ }
+diff --git a/src/styles/utils/StyledCard.module.scss b/src/styles/utils/StyledCard.module.scss
+index e82b41e..34c447d 100644
+--- a/src/styles/utils/StyledCard.module.scss
++++ b/src/styles/utils/StyledCard.module.scss
+@@ -20,7 +20,7 @@
+     position: absolute;
+     inset: 0;
+     background-image: radial-gradient(
+-      500px circle at var(--glow-x, 50%) var(--glow-y, 0%),
++      320px circle at var(--glow-x, 50%) var(--glow-y, 0%),
+       currentColor,
+       transparent 72%
+     );
+@@ -47,11 +47,11 @@
+     border-color: var(--hairline-strong);
+ 
+     .glow {
+-      opacity: 0.15;
++      opacity: 0.045;
+     }
+ 
+     &::before {
+-      opacity: 0.6;
++      opacity: 0.3;
+     }
+   }
+ }
+@@ -65,7 +65,7 @@
+ @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+   .container:hover {
+     transform: perspective(1200px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg))
+-      translateY(-4px);
+-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
++      translateY(-2px);
++    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+   }
+ }

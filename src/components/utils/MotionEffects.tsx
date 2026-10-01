@@ -38,7 +38,7 @@ export default function MotionEffects() {
           observer.unobserve(target)
         })
       },
-      { threshold: 0.08 }
+      { threshold: 0.08, rootMargin: '0px 0px -8% 0px' }
     )
 
     const setupReveals = () => {
@@ -48,7 +48,12 @@ export default function MotionEffects() {
         target.removeAttribute('data-revealed')
         if (!reducedMotion.matches) {
           target.setAttribute('data-motion', 'true')
-          observer.observe(target)
+          const isAboveFold = target.getBoundingClientRect().top < window.innerHeight * 0.92
+          if (isAboveFold) {
+            requestAnimationFrame(() => target.setAttribute('data-revealed', 'true'))
+          } else {
+            observer.observe(target)
+          }
         }
       })
       if (reducedMotion.matches) onPointerLeave()

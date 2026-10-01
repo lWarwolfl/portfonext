@@ -28,8 +28,8 @@ export default function StyledCard({ id, glow = 'blue', className, children }: P
     const y = (event.clientY - bounds.top) / bounds.height
     element.style.setProperty('--glow-x', `${x * 100}%`)
     element.style.setProperty('--glow-y', `${y * 100}%`)
-    element.style.setProperty('--tilt-x', `${(0.5 - y) * 3}deg`)
-    element.style.setProperty('--tilt-y', `${(x - 0.5) * 3}deg`)
+    element.style.setProperty('--tilt-x', `${(0.5 - y) * 1.5}deg`)
+    element.style.setProperty('--tilt-y', `${(x - 0.5) * 1.5}deg`)
   }
 
   const resetTilt = () => {

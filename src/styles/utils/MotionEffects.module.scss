@@ -5,21 +5,22 @@
   pointer-events: none;
   opacity: 0;
   background: radial-gradient(
-    420px circle at var(--pointer-x, 50%) var(--pointer-y, 30%),
-    var(--accent-soft),
-    transparent 75%
+    280px circle at var(--pointer-x, 50%) var(--pointer-y, 30%),
+    rgba(76, 141, 255, 0.035),
+    transparent 72%
   );
+  mix-blend-mode: screen;
   transition: opacity 500ms ease;
 }
 
 .progress {
   position: fixed;
   inset: 0 0 auto;
-  height: 2px;
+  height: 1px;
   z-index: 100;
   pointer-events: none;
   background: var(--accent);
-  box-shadow: 0 0 12px var(--accent);
+  box-shadow: 0 0 6px rgba(76, 141, 255, 0.45);
   transform: scaleX(0);
   transform-origin: left;
 }
