@@ -1,0 +1,243 @@
+diff --git a/src/components/utils/MotionEffects.tsx b/src/components/utils/MotionEffects.tsx
+index 15aa3f9..7a7a2d0 100644
+--- a/src/components/utils/MotionEffects.tsx
++++ b/src/components/utils/MotionEffects.tsx
+@@ -38,7 +38,7 @@ export default function MotionEffects() {
+           observer.unobserve(target)
+         })
+       },
+-      { threshold: 0.08 }
++      { threshold: 0.08, rootMargin: '0px 0px -8% 0px' }
+     )
+ 
+     const setupReveals = () => {
+@@ -46,8 +46,11 @@ export default function MotionEffects() {
+       targets.forEach((target) => {
+         target.removeAttribute('data-motion')
+         target.removeAttribute('data-revealed')
+-        if (!reducedMotion.matches) {
+-          target.setAttribute('data-motion', 'true')
++        target.setAttribute('data-motion', 'true')
++        const isAboveFold = target.getBoundingClientRect().top < window.innerHeight * 0.92
++        if (isAboveFold) {
++          requestAnimationFrame(() => target.setAttribute('data-revealed', 'true'))
++        } else {
+           observer.observe(target)
+         }
+       })
+diff --git a/src/components/utils/StyledCard.tsx b/src/components/utils/StyledCard.tsx
+index ee18a54..9b79121 100644
+--- a/src/components/utils/StyledCard.tsx
++++ b/src/components/utils/StyledCard.tsx
+@@ -1,7 +1,7 @@
+ import { type ColorType } from '@/lib/types'
+ import styles from '@/styles/utils/StyledCard.module.scss'
+ import clsx from 'clsx'
+-import React, { useRef } from 'react'
++import React from 'react'
+ 
+ interface Props {
+   id?: string
+@@ -11,41 +11,8 @@ interface Props {
+ }
+ 
+ export default function StyledCard({ id, glow = 'blue', className, children }: Props) {
+-  const card = useRef<HTMLDivElement>(null)
+-
+-  const onPointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
+-    if (
+-      event.pointerType === 'touch' ||
+-      !window.matchMedia('(hover: hover) and (pointer: fine)').matches ||
+-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+-    )
+-      return
+-
+-    const element = card.current
+-    if (!element) return
+-    const bounds = element.getBoundingClientRect()
+-    const x = (event.clientX - bounds.left) / bounds.width
+-    const y = (event.clientY - bounds.top) / bounds.height
+-    element.style.setProperty('--glow-x', `${x * 100}%`)
+-    element.style.setProperty('--glow-y', `${y * 100}%`)
+-    element.style.setProperty('--tilt-x', `${(0.5 - y) * 3}deg`)
+-    element.style.setProperty('--tilt-y', `${(x - 0.5) * 3}deg`)
+-  }
+-
+-  const resetTilt = () => {
+-    card.current?.style.setProperty('--tilt-x', '0deg')
+-    card.current?.style.setProperty('--tilt-y', '0deg')
+-  }
+-
+   return (
+-    <div
+-      ref={card}
+-      id={id}
+-      className={clsx(className, styles.container)}
+-      onPointerMove={onPointerMove}
+-      onPointerLeave={resetTilt}
+-      onPointerCancel={resetTilt}
+-    >
++    <div id={id} className={clsx(className, styles.container)}>
+       <div className={styles.glow} style={{ color: `var(--${glow}-color)` }} />
+       {children}
+     </div>
+diff --git a/src/styles/index.scss b/src/styles/index.scss
+index 718bb3c..db8b187 100644
+--- a/src/styles/index.scss
++++ b/src/styles/index.scss
+@@ -88,21 +88,26 @@ svg {
+ }
+ 
+ // Content stays visible when JavaScript or motion effects are unavailable.
+-@media (prefers-reduced-motion: no-preference) {
+-  html {
+-    scroll-behavior: smooth;
+-  }
++html {
++  scroll-behavior: smooth;
++}
+ 
+-  [data-motion='true'] {
+-    opacity: 0;
+-    transform: translateY(24px);
+-    transition:
+-      opacity 700ms ease,
+-      transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+-  }
++[data-motion='true'] {
++  opacity: 0;
++  transform: translateY(30px);
++  transition:
++    opacity 850ms ease,
++    transform 850ms cubic-bezier(0.22, 1, 0.36, 1);
++}
++
++[data-motion='true'][data-revealed='true'] {
++  opacity: 1;
++  transform: translateY(0);
++}
+ 
+-  [data-motion='true'][data-revealed='true'] {
+-    opacity: 1;
+-    transform: translateY(0);
++@media (prefers-reduced-motion: reduce) {
++  [data-motion='true'] {
++    transform: none;
++    transition-duration: 1ms;
+   }
+ }
+diff --git a/src/styles/landing/Hero.module.scss b/src/styles/landing/Hero.module.scss
+index 6fe8b2e..07ae6ed 100644
+--- a/src/styles/landing/Hero.module.scss
++++ b/src/styles/landing/Hero.module.scss
+@@ -112,16 +112,20 @@
+   }
+ }
+ 
+-@media (prefers-reduced-motion: no-preference) {
+-  .container {
+-    .paragraph[data-motion] {
+-      transition-delay: 90ms;
+-    }
+-    .links[data-motion] {
+-      transition-delay: 180ms;
+-    }
+-    .terminal[data-motion] {
+-      transition-delay: 270ms;
+-    }
++.container {
++  .paragraph[data-motion] {
++    transition-delay: 90ms;
++  }
++  .links[data-motion] {
++    transition-delay: 180ms;
++  }
++  .terminal[data-motion] {
++    transition-delay: 270ms;
++  }
++}
++
++@media (prefers-reduced-motion: reduce) {
++  .container [data-motion] {
++    transition-delay: 0ms;
+   }
+ }
+diff --git a/src/styles/utils/MotionEffects.module.scss b/src/styles/utils/MotionEffects.module.scss
+index 246399a..821c94f 100644
+--- a/src/styles/utils/MotionEffects.module.scss
++++ b/src/styles/utils/MotionEffects.module.scss
+@@ -5,21 +5,22 @@
+   pointer-events: none;
+   opacity: 0;
+   background: radial-gradient(
+-    420px circle at var(--pointer-x, 50%) var(--pointer-y, 30%),
+-    var(--accent-soft),
+-    transparent 75%
++    280px circle at var(--pointer-x, 50%) var(--pointer-y, 30%),
++    rgba(76, 141, 255, 0.035),
++    transparent 72%
+   );
++  mix-blend-mode: screen;
+   transition: opacity 500ms ease;
+ }
+ 
+ .progress {
+   position: fixed;
+   inset: 0 0 auto;
+-  height: 2px;
++  height: 1px;
+   z-index: 100;
+   pointer-events: none;
+   background: var(--accent);
+-  box-shadow: 0 0 12px var(--accent);
++  box-shadow: 0 0 6px rgba(76, 141, 255, 0.45);
+   transform: scaleX(0);
+   transform-origin: left;
+ }
+diff --git a/src/styles/utils/StyledCard.module.scss b/src/styles/utils/StyledCard.module.scss
+index e82b41e..02b9fa0 100644
+--- a/src/styles/utils/StyledCard.module.scss
++++ b/src/styles/utils/StyledCard.module.scss
+@@ -11,7 +11,6 @@
+   overflow: hidden;
+   isolation: isolate;
+   transition:
+-    transform 250ms ease-out,
+     box-shadow 250ms ease-out,
+     background-color $transition-m $transition-ease,
+     border-color $transition-m $transition-ease;
+@@ -20,7 +19,7 @@
+     position: absolute;
+     inset: 0;
+     background-image: radial-gradient(
+-      500px circle at var(--glow-x, 50%) var(--glow-y, 0%),
++      320px circle at var(--glow-x, 50%) var(--glow-y, 0%),
+       currentColor,
+       transparent 72%
+     );
+@@ -47,11 +46,11 @@
+     border-color: var(--hairline-strong);
+ 
+     .glow {
+-      opacity: 0.15;
++      opacity: 0.045;
+     }
+ 
+     &::before {
+-      opacity: 0.6;
++      opacity: 0.3;
+     }
+   }
+ }
+@@ -61,11 +60,3 @@
+     transition: none;
+   }
+ }
+-
+-@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+-  .container:hover {
+-    transform: perspective(1200px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg))
+-      translateY(-4px);
+-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+-  }
+-}
