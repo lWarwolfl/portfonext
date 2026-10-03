@@ -5,7 +5,7 @@ import styles from '@/styles/landing/Experiences.module.scss'
 
 export default function Experiences() {
   return (
-    <div id="experiences" className={`section ${styles.container}`} data-reveal>
+    <div id="experiences" className={`section ${styles.container}`}>
       <Title index="02" title="Career Journey" description="Becoming A Pro" />
 
       <div className={styles.list}>

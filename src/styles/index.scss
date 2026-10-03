@@ -86,23 +86,3 @@ svg {
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--ink-3);
 }
-
-// Content stays visible when JavaScript or motion effects are unavailable.
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-
-  [data-motion='true'] {
-    opacity: 0;
-    transform: translateY(30px);
-    transition:
-      opacity 850ms ease,
-      transform 850ms cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  [data-motion='true'][data-revealed='true'] {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}

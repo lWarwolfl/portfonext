@@ -13,7 +13,7 @@ const groupIcons: Record<string, string> = {
 
 export default function Skills() {
   return (
-    <div id="skills" className={`section ${styles.container}`} data-reveal>
+    <div id="skills" className={`section ${styles.container}`}>
       <Title index="01" title="Skills" description="And Tools" />
 
       <div className={styles.groups}>

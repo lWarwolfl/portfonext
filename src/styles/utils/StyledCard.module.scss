@@ -11,19 +11,13 @@
   overflow: hidden;
   isolation: isolate;
   transition:
-    transform 250ms ease-out,
-    box-shadow 250ms ease-out,
     background-color $transition-m $transition-ease,
     border-color $transition-m $transition-ease;
 
   .glow {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(
-      320px circle at var(--glow-x, 50%) var(--glow-y, 0%),
-      currentColor,
-      transparent 72%
-    );
+    background-image: radial-gradient(115% 75% at 50% 0%, currentColor, transparent 72%);
     opacity: 0;
     pointer-events: none;
     transition: opacity $transition-m $transition-ease;
@@ -47,11 +41,11 @@
     border-color: var(--hairline-strong);
 
     .glow {
-      opacity: 0.045;
+      opacity: 0.15;
     }
 
     &::before {
-      opacity: 0.3;
+      opacity: 0.6;
     }
   }
 }
@@ -59,13 +53,5 @@
 @media (prefers-reduced-motion: reduce) {
   .container {
     transition: none;
-  }
-}
-
-@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .container:hover {
-    transform: perspective(1200px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg))
-      translateY(-2px);
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
   }
 }
